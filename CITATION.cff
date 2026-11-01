@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "cell-molecular-biology-ai999x: an offline, verified cell and molecular biology solver"
+authors:
+  - family-names: Farabi
+    given-names: Ibnul Jaif
+    affiliation: AI999X
+version: 1.0.0
+license: Apache-2.0
+url: "https://huggingface.co/AI999X/cell-molecular-biology-ai999x"
+repository-code: "https://huggingface.co/AI999X/cell-molecular-biology-ai999x"
+keywords:
+  - cell biology
+  - molecular biology
+  - biochemistry
+  - enzyme kinetics
+  - michaelis-menten
+  - melting temperature
+  - pcr
+  - qpcr
+  - buffers
+  - osmosis
+  - diffusion
+  - ai999x
