@@ -1,5 +1,5 @@
 {
- "package": "1.1.0",
+ "package": "1.5.0",
  "pack": "1.0.0",
  "knowledge_db": null,
  "files": {
@@ -9,10 +9,7 @@
   "knowledge/reference_cases.json": "7414a14e2c4202a7fae8cdd14e1a2ef7267f35a9665b0633001349c698d4e4e7",
   "capabilities/procedures.py": "31c4ca1b65d1264c0ae463c10809375df4210944e6cbdc7bfd89accff9e62e9f",
   "capabilities/procedures_certified.json": "f325e77ab2c4bac015950702b64291d7a4daa9e364e54fa5938e000d5c3d1933",
-  "cell_molecular_biology_knowledge_public.sqlite": "399fe037225a777702163958fcf1b21fc3748a56820ae26e473ad0573d370f08",
-  "search/encoder.int8.onnx": "521452d928a72da4d241b1835ab0f46b0e81ff58ffff0367b9a7029bd129fbd9",
-  "search/tokenizer.json": "b2f2deb461e6ad672b8e42aac29773e7a9be77d582cdf58808113ea43fda565e",
-  "search/index.json": "cbd28f9d940abc33d3bfd4a61beed818eda670deffcfe40b46845d84423f9ef9"
+  "cell_molecular_biology_knowledge_public.sqlite": "5bab41962273062bc0d43e819fe6b2c6b6c61ea888cf77fb60b0a3753921f13f"
  },
  "engine": [
   "__init__.py",

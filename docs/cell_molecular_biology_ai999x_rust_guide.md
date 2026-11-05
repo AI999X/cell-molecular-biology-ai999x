@@ -1,4 +1,4 @@
-# cell-molecular-biology: the Cell and Molecular Biology program — user guide
+# cell-molecular-biology: the Cell and Molecular Biology program, user guide
 
 **cell-molecular-biology-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
@@ -17,63 +17,63 @@ Cell and Molecular Biology covers membranes and diffusion, osmosis and membrane 
 
 ## 1. Get it
 
-Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Cell and Molecular Biology | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cell-molecular-biology-1.4.0-windows-x86_64.zip |
-| Desktop app: Cell and Molecular Biology | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cell-molecular-biology-1.4.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz |
+| Desktop app: Cell and Molecular Biology | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cell-molecular-biology-1.5.0-windows-x86_64.zip |
+| Desktop app: Cell and Molecular Biology | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cell-molecular-biology-1.5.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
-Cell and Molecular Biology in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-cell-molecular-biology-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-cell-molecular-biology.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+Cell and Molecular Biology in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-cell-molecular-biology-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-cell-molecular-biology.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cell-molecular-biology-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cell-molecular-biology-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-cell-molecular-biology-1.4.0-linux-x86_64.tar.gz
-./ai999x-cell-molecular-biology-1.4.0-linux-x86_64/ai999x-cell-molecular-biology
+tar xzf ai999x-cell-molecular-biology-1.5.0-linux-x86_64.tar.gz
+./ai999x-cell-molecular-biology-1.5.0-linux-x86_64/ai999x-cell-molecular-biology
 ```
 
-It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.4.0-linux-x86_64.tar.gz
-./ai999x-1.4.0-linux-x86_64/ai999x
+tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
+./ai999x-1.5.0-linux-x86_64/ai999x
 ```
 
-### Command line — Linux
+### Command line: Linux
 
 The bundle holds one program per model; `cell-molecular-biology` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 cell-molecular-biology --version
 ```
 
-### Command line — Windows (PowerShell)
+### Command line: Windows (PowerShell)
 
 The fourth line should print True.
 
 ```powershell
-$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 cell-molecular-biology --version
 ```
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ cell-molecular-biology --version
-cell-molecular-biology-ai999x 1.0.0 (Rust build, ax-engine 0.1.0)
+cell-molecular-biology-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)
 ```
 
 ### 2.2 Find a capability
@@ -182,35 +182,7 @@ $ cell-molecular-biology solve cmb_nernst_potential z=1 "C_out=5 (mmol/L)" "C_in
 NEEDS_INPUT: cmb_nernst_potential needs T (absolute temperature (degC is converted)). Example: solve('cmb_nernst_potential', z=1, C_out='5 mol/m^3', C_in='140 mol/m^3', T='310.15 K').
 ```
 
-### 2.8 Draw the figures
-
-The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
-
-```shell
-$ cell-molecular-biology figures cmb_nernst_potential z=1 "C_out=5 (mmol/L)" "C_in=140 (mmol/L)" "T=37 degC" --out .
-[
-  {
-    "slug": "cmb-nernst-potential-e-vs-c-out",
-    "title": "Nernst potential against the outside concentration",
-    "caption": "E (equilibrium potential (inside minus outside)) against C_out (outside concentration) from 0.5 to 50 (logarithmic axis across), the other inputs as given: 31 points, each a run of the model. Marked: C_out = 5, E = -0.08906. Your inputs: z = 1, C_out = 5 (mmol/L), C_in = 140 (mmol/L), T = 37 degC.",
-    "file": ".\\cmb-nernst-potential-e-vs-c-out.svg"
-  },
-  {
-    "slug": "cmb-nernst-potential-live-1",
-    "title": "Equilibrium potential (inside minus outside) as charge number of the ion (e.g. 1 for K+, 2 for... varies",
-    "caption": "Equilibrium potential (inside minus outside) as z runs from 1 to 3, every other input as you entered it (3 solutions). Marked: your z = 1 gives E = -0.08906. Your inputs: z = 1, C_out = 5 (mmol/L), C_in = 140 (mmol/L), T = 37 degC.",
-    "file": ".\\cmb-nernst-potential-live-1.svg"
-  },
-  {
-    "slug": "cmb-nernst-potential-live-2",
-    "title": "Equilibrium potential (inside minus outside) as absolute temperature (degC is converted) varies",
-    "caption": "Equilibrium potential (inside minus outside) as T runs from 9.25 to 64.75 degC, every other input as you entered it (29 solutions). Marked: your T = 37 degC gives E = -0.08906. Your inputs: z = 1, C_out = 5 (mmol/L), C_in = 140 (mmol/L), T = 37 degC.",
-    "file": ".\\cmb-nernst-potential-live-2.svg"
-  }
-]
-```
-
-### 2.9 Many questions at once
+### 2.8 Many questions at once
 
 One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | cell-molecular-biology batch
 
@@ -283,30 +255,6 @@ answers = [json.loads(line) for line in out.splitlines()]
 
 `cell-molecular-biology figures <capability> name=value ... --out DIR` draws the live figures for those inputs and writes each as an SVG file into DIR (an existing folder); without `--out` the SVG text comes back as JSON. The desktop app and the model page draw the same figures as soon as you press Compute.
 
-```shell
-$ cell-molecular-biology figures cmb_nernst_potential z=1 "C_out=5 (mmol/L)" "C_in=140 (mmol/L)" "T=37 degC" --out .
-[
-  {
-    "slug": "cmb-nernst-potential-e-vs-c-out",
-    "title": "Nernst potential against the outside concentration",
-    "caption": "E (equilibrium potential (inside minus outside)) against C_out (outside concentration) from 0.5 to 50 (logarithmic axis across), the other inputs as given: 31 points, each a run of the model. Marked: C_out = 5, E = -0.08906. Your inputs: z = 1, C_out = 5 (mmol/L), C_in = 140 (mmol/L), T = 37 degC.",
-    "file": ".\\cmb-nernst-potential-e-vs-c-out.svg"
-  },
-  {
-    "slug": "cmb-nernst-potential-live-1",
-    "title": "Equilibrium potential (inside minus outside) as charge number of the ion (e.g. 1 for K+, 2 for... varies",
-    "caption": "Equilibrium potential (inside minus outside) as z runs from 1 to 3, every other input as you entered it (3 solutions). Marked: your z = 1 gives E = -0.08906. Your inputs: z = 1, C_out = 5 (mmol/L), C_in = 140 (mmol/L), T = 37 degC.",
-    "file": ".\\cmb-nernst-potential-live-1.svg"
-  },
-  {
-    "slug": "cmb-nernst-potential-live-2",
-    "title": "Equilibrium potential (inside minus outside) as absolute temperature (degC is converted) varies",
-    "caption": "Equilibrium potential (inside minus outside) as T runs from 9.25 to 64.75 degC, every other input as you entered it (29 solutions). Marked: your T = 37 degC gives E = -0.08906. Your inputs: z = 1, C_out = 5 (mmol/L), C_in = 140 (mmol/L), T = 37 degC.",
-    "file": ".\\cmb-nernst-potential-live-2.svg"
-  }
-]
-```
-
 ## 7. In a web page or Node.js: WebAssembly
 
 The same model is a WebAssembly module, `cell_molecular_biology_ai999x.wasm` (https://www.ai999x.com/compute/rust/cell_molecular_biology_ai999x.wasm), with a small loader, `ax-wasm.js` (https://www.ai999x.com/compute/rust/ax-wasm.js). It runs in a browser, a Web Worker or Node.js, with no server.
@@ -330,7 +278,7 @@ By topic. For each: what it does, what it needs and gives, when it applies, and 
 
 <a id="cmb_monod_batch_time"></a>
 
-#### Batch culture time under Monod kinetics — `cmb_monod_batch_time`
+#### Batch culture time under Monod kinetics: `cmb_monod_batch_time`
 
 The time for a batch culture (constant yield Y, Monod growth) to grow from biomass X0 to X, and the substrate left then.
 
@@ -342,14 +290,14 @@ $$
 |---|---|---|---|
 | `X0` | in | initial biomass concentration | kg/m^3 |
 | `S0` | in | initial substrate concentration | kg/m^3 |
-| `Y` | in | biomass yield (g biomass per g substrate) | — |
+| `Y` | in | biomass yield (g biomass per g substrate) | - |
 | `mu_max` | in | maximum specific growth rate | 1/s |
 | `Ks` | in | half-saturation constant | kg/m^3 |
 | `X` | in | target biomass concentration | kg/m^3 |
 | `t` | out | time to reach X | s |
-| `t_h` | out | time in hours | — |
+| `t_h` | out | time in hours | - |
 | `S` | out | substrate remaining | kg/m^3 |
-| `S_g_L` | out | substrate remaining in g/L | — |
+| `S_g_L` | out | substrate remaining in g/L | - |
 
 **Applies when:** all inputs > 0; X0 < X < X0 + Y S0; no maintenance or death.
 
@@ -369,11 +317,11 @@ S_g_L = 2.2
   assumes: all inputs > 0; X0 < X < X0 + Y S0; no maintenance or death
 ```
 
-In the worked example, X0 = 0.1 g/L, S0 = 10 g/L, Y = 0.5, mu_max = 0.72 1/h, Ks = 0.2 g/L, X = 4 g/L go through the equation above and give t = 18954.49601 s, t_h = 5.265137782, S = 2.2 kg/m^3, S_g_L = 2.2. It applies only when all inputs > 0; X0 < X < X0 + Y S0; no maintenance or death: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the time required for a microbial population to grow from an initial biomass of 0.1 g/L to a final biomass of 4 g/L under Monod kinetics. It uses the maximum specific growth rate of 0.72 1/h, the half-saturation constant of 0.2 g/L, and the yield coefficient of 0.5. The result, 5.26514, represents the duration in hours needed for this growth phase. Simultaneously, it computes the remaining substrate concentration as 2.2, indicating how much nutrient is left after the specified biomass increase.
 
 <a id="cmb_hemocytometer_count"></a>
 
-#### Cell concentration from a hemocytometer count — `cmb_hemocytometer_count`
+#### Cell concentration from a hemocytometer count, `cmb_hemocytometer_count`
 
 The cell concentration from counts in the large (1 mm x 1 mm x 0.1 mm) squares of a hemocytometer, the dilution factor and, optionally, the total cells in a suspension volume.
 
@@ -383,12 +331,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `counts` | in | cells counted in each large square | — |
-| `dilution` | in | dilution factor of the counted sample (1 for undiluted, 2 for 1:1 trypan blue) | — |
+| `counts` | in | cells counted in each large square | - |
+| `dilution` | in | dilution factor of the counted sample (1 for undiluted, 2 for 1:1 trypan blue) | - |
 | `V` | in | volume of the cell suspension (optional) (optional) | m^3 |
-| `mean_count` | out | mean count per large square | — |
-| `cells_per_mL` | out | cells per mL | — |
-| `total_cells` | out | total cells in V (when V is given) | — |
+| `mean_count` | out | mean count per large square | - |
+| `cells_per_mL` | out | cells per mL | - |
+| `total_cells` | out | total cells in V (when V is given) | - |
 
 **Applies when:** counts >= 0; dilution >= 1; large squares of 0.1 uL.
 
@@ -401,11 +349,11 @@ cells_per_mL = 1000000
   assumes: counts >= 0; dilution >= 1; large squares of 0.1 uL
 ```
 
-In the worked example, counts = [52, 48, 55, 45], dilution = 2 go through the equation above and give mean_count = 50, cells_per_mL = 1000000. It applies only when counts >= 0; dilution >= 1; large squares of 0.1 uL: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the density of cells in a suspension using data from a hemocytometer. The process begins by averaging the number of cells counted in the large squares to obtain the mean count per square, which is 50. This value is then multiplied by the dilution factor, 2, to account for any reduction in sample concentration due to staining or mixing. Finally, the result is scaled by ten thousand because each large square holds one tenth of a microliter. The resulting concentration, 1e+06, represents the number of viable cells present in every milliliter of the original undiluted sample.
 
 <a id="cmb_cell_cycle_age_corrected"></a>
 
-#### Cell-cycle phase durations corrected for the exponential age distribution — `cmb_cell_cycle_age_corrected`
+#### Cell-cycle phase durations corrected for the exponential age distribution, `cmb_cell_cycle_age_corrected`
 
 The durations of G1, S, G2 and M from phase fractions of an exponentially growing asynchronous population, using the age distribution n(a) = 2 ln2/T 2^(-a/T) (young cells are over-represented).
 
@@ -416,11 +364,11 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `Tc` | in | total cell-cycle (doubling) time | s |
-| `fractions` | in | fractions of cells in G1, S, G2 and M (in this order, summing to 1) | — |
-| `G1_h` | out | G1 duration in hours | — |
-| `S_h` | out | S duration in hours | — |
-| `G2_h` | out | G2 duration in hours | — |
-| `M_h` | out | M duration in hours | — |
+| `fractions` | in | fractions of cells in G1, S, G2 and M (in this order, summing to 1) | - |
+| `G1_h` | out | G1 duration in hours | - |
+| `S_h` | out | S duration in hours | - |
+| `G2_h` | out | G2 duration in hours | - |
+| `M_h` | out | M duration in hours | - |
 
 **Applies when:** Tc > 0; four positive fractions summing to 1; balanced exponential growth.
 
@@ -435,11 +383,11 @@ M_h = 1.689343869
   assumes: Tc > 0; four positive fractions summing to 1; balanced exponential growth
 ```
 
-In the worked example, Tc = 24 h, fractions = [0.45, 0.35, 0.15, 0.05] go through the equation above and give G1_h = 8.825562828, S_h = 8.861611432, G2_h = 4.623481871, M_h = 1.689343869. It applies only when Tc > 0; four positive fractions summing to 1; balanced exponential growth: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the actual durations of the cell cycle phases by accounting for the exponential age distribution inherent in asynchronously growing populations. Given a total doubling time of 24 h and specific proportions of cells in each phase, the model computes the corrected length of G1 as 8.82556. These values reflect the true temporal progression of the cell cycle rather than simple population snapshots.
 
 <a id="cmb_cell_cycle_phase_durations"></a>
 
-#### Cell-cycle phase durations from phase fractions — `cmb_cell_cycle_phase_durations`
+#### Cell-cycle phase durations from phase fractions, `cmb_cell_cycle_phase_durations`
 
 The durations of G1, S, G2 and M from the fraction of an asynchronous population in each phase (simple proportion to the cycle time).
 
@@ -450,11 +398,11 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `Tc` | in | total cell-cycle time | s |
-| `fractions` | in | fractions of cells in G1, S, G2 and M (in this order, summing to 1) | — |
-| `G1_h` | out | G1 duration in hours | — |
-| `S_h` | out | S duration in hours | — |
-| `G2_h` | out | G2 duration in hours | — |
-| `M_h` | out | M duration in hours | — |
+| `fractions` | in | fractions of cells in G1, S, G2 and M (in this order, summing to 1) | - |
+| `G1_h` | out | G1 duration in hours | - |
+| `S_h` | out | S duration in hours | - |
+| `G2_h` | out | G2 duration in hours | - |
+| `M_h` | out | M duration in hours | - |
 
 **Applies when:** Tc > 0; four positive fractions summing to 1.
 
@@ -469,11 +417,11 @@ M_h = 1.2
   assumes: Tc > 0; four positive fractions summing to 1
 ```
 
-In the worked example, Tc = 24 h, fractions = [0.45, 0.35, 0.15, 0.05] go through the equation above and give G1_h = 10.8, S_h = 8.4, G2_h = 3.6, M_h = 1.2. It applies only when Tc > 0; four positive fractions summing to 1: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the time spent in each phase of the cell cycle by multiplying the total cycle duration 24 h by the fraction of cells observed in that specific phase. The resulting values represent how long a typical cell remains in G1, S, G2 and M before progressing to the next stage. For example, the G1 phase lasts 10.8, while the synthesis phase lasts 8.4. These estimates assume an asynchronous population where the proportion of cells in a given phase reflects the relative duration of that phase within the entire cycle.
 
 <a id="cmb_plate_count"></a>
 
-#### Colony-forming units per mL from a plate count — `cmb_plate_count`
+#### Colony-forming units per mL from a plate count, `cmb_plate_count`
 
 The viable count (CFU per mL) of the original culture from the colonies on a plate, the dilution factor of the plated sample and the plated volume.
 
@@ -483,11 +431,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `colonies` | in | colonies counted on the plate | — |
-| `dilution` | in | dilution factor of the plated sample (1e6 for a 10^-6 dilution) | — |
+| `colonies` | in | colonies counted on the plate | - |
+| `dilution` | in | dilution factor of the plated sample (1e6 for a 10^-6 dilution) | - |
 | `V` | in | volume plated | m^3 |
-| `cfu_per_mL` | out | colony-forming units per mL of the original culture | — |
-| `log10_cfu_per_mL` | out | log10 of CFU per mL (0 when no colonies) | — |
+| `cfu_per_mL` | out | colony-forming units per mL of the original culture | - |
+| `log10_cfu_per_mL` | out | log10 of CFU per mL (0 when no colonies) | - |
 
 **Applies when:** colonies a whole number; dilution >= 1; V > 0.
 
@@ -501,11 +449,11 @@ log10_cfu_per_mL = 9.176091259
   assumes: colonies a whole number; dilution >= 1; V > 0
 ```
 
-In the worked example, colonies = 150, dilution = 1000000, V = 0.1 mL go through the equation above and give cfu_per_mL = 1500000000, log10_cfu_per_mL = 9.176091259. It applies only when colonies a whole number; dilution >= 1; V > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the concentration of viable microorganisms in the original sample. It uses the number of colonies counted on the plate, which was 150, multiplied by the dilution factor of 1e+06, and divided by the volume plated of 0.1 mL. The result represents the estimated density of living cells capable of forming colonies in the undiluted culture, expressed as 1.5e+09 CFU per mL.
 
 <a id="cmb_doubling_time_from_counts"></a>
 
-#### Doubling time and number of generations from two counts — `cmb_doubling_time_from_counts`
+#### Doubling time and number of generations from two counts, `cmb_doubling_time_from_counts`
 
 The doubling (generation) time, the number of generations and the specific growth rate from the cell counts at the start and end of an interval of exponential growth.
 
@@ -515,14 +463,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `N0` | in | initial cell count (or concentration) | — |
-| `N` | in | final cell count (same unit) | — |
+| `N0` | in | initial cell count (or concentration) | - |
+| `N` | in | final cell count (same unit) | - |
 | `t` | in | elapsed time | s |
 | `td` | out | doubling time | s |
-| `td_h` | out | doubling time in hours | — |
-| `generations` | out | number of generations log2(N/N0) | — |
+| `td_h` | out | doubling time in hours | - |
+| `generations` | out | number of generations log2(N/N0) | - |
 | `mu` | out | specific growth rate | 1/s |
-| `mu_per_h` | out | specific growth rate per hour | — |
+| `mu_per_h` | out | specific growth rate per hour | - |
 
 **Applies when:** N > N0 > 0; t > 0; exponential growth over the interval.
 
@@ -540,11 +488,11 @@ mu_per_h = 0.3465735903
   assumes: N > N0 > 0; t > 0; exponential growth over the interval
 ```
 
-In the worked example, N0 = 10000, N = 160000, t = 8 h go through the equation above and give td = 7200 s, td_h = 2, generations = 4, mu = 9.627044174e-05 1/s. It applies only when N > N0 > 0; t > 0; exponential growth over the interval: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the growth kinetics of a microbial population during exponential phase. By comparing the initial cell count of 10000 to the final count of 160000 over an elapsed time of 8 h, the population completed 4 generations. Consequently, the time required for the population to double in size, known as the doubling time, is 7200 s. The specific growth rate, which represents the instantaneous rate of increase per unit of biomass or cell number, is calculated as 9.62704e-05 1/s. These metrics allow researchers to quantify how rapidly the cells are proliferating under the given experimental conditions.
 
 <a id="cmb_exponential_growth"></a>
 
-#### Exponential growth of a cell population — `cmb_exponential_growth`
+#### Exponential growth of a cell population: `cmb_exponential_growth`
 
 The number of cells after a time t of exponential growth from N0 with doubling time td, the number of generations and the specific growth rate.
 
@@ -554,14 +502,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `N0` | in | initial number (or concentration) of cells | — |
+| `N0` | in | initial number (or concentration) of cells | - |
 | `td` | in | doubling (generation) time | s |
 | `t` | in | elapsed time | s |
-| `N` | out | number of cells at time t | — |
-| `generations` | out | number of generations t/td | — |
-| `fold` | out | fold increase N/N0 | — |
+| `N` | out | number of cells at time t | - |
+| `generations` | out | number of generations t/td | - |
+| `fold` | out | fold increase N/N0 | - |
 | `mu` | out | specific growth rate ln2/td | 1/s |
-| `mu_per_h` | out | specific growth rate per hour | — |
+| `mu_per_h` | out | specific growth rate per hour | - |
 
 **Applies when:** N0, td > 0; t >= 0; balanced exponential growth (no lag, no limitation).
 
@@ -579,11 +527,11 @@ mu_per_h = 2.079441542
   assumes: N0, td > 0; t >= 0; balanced exponential growth (no lag, no limitation)
 ```
 
-In the worked example, N0 = 1000, td = 0.3333333333 h, t = 2 h go through the equation above and give N = 64000.00003, generations = 6.000000001, fold = 64.00000003, mu = 0.0005776226505 1/s. It applies only when N0, td > 0; t >= 0; balanced exponential growth (no lag, no limitation): outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the final cell count using exponential growth kinetics. Given an initial population of 1000 and a specific doubling time of 0.333333 h, the model computes that after an elapsed time of 2 h, the culture contains 64000 cells. This represents 6 generations, corresponding to a fold increase of 64. The specific growth rate is calculated as 0.000577623 1/s per second, which converts to 2.07944 per hour.
 
 <a id="cmb_logistic_growth"></a>
 
-#### Logistic growth of a population — `cmb_logistic_growth`
+#### Logistic growth of a population: `cmb_logistic_growth`
 
 The population at time t under logistic growth with carrying capacity K and intrinsic rate r, the growth rate dN/dt there and the time of the inflection point (N = K/2).
 
@@ -593,15 +541,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `N0` | in | initial population | — |
-| `K` | in | carrying capacity (same unit) | — |
+| `N0` | in | initial population | - |
+| `K` | in | carrying capacity (same unit) | - |
 | `r` | in | intrinsic growth rate | 1/s |
 | `t` | in | elapsed time | s |
-| `N` | out | population at time t | — |
-| `dNdt` | out | growth rate at time t in cells per second | — |
-| `dNdt_per_h` | out | growth rate at time t in cells per hour | — |
+| `N` | out | population at time t | - |
+| `dNdt` | out | growth rate at time t in cells per second | - |
+| `dNdt_per_h` | out | growth rate at time t in cells per hour | - |
 | `t_inflection` | out | time when N = K/2 (negative if already past) | s |
-| `t_inflection_h` | out | time of the inflection point in hours | — |
+| `t_inflection_h` | out | time of the inflection point in hours | - |
 
 **Applies when:** 0 < N0 < K; r > 0; t >= 0.
 
@@ -620,11 +568,11 @@ t_inflection_h = 12.79200051
   assumes: 0 < N0 < K; r > 0; t >= 0
 ```
 
-In the worked example, N0 = 10000, K = 100000000, r = 0.72 1/h, t = 10 h go through the equation above and give N = 11813193.49, dNdt = 2083.535616, dNdt_per_h = 7500728.219, t_inflection = 46051.20183 s. It applies only when 0 < N0 < K; r > 0; t >= 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the state of a population undergoing logistic growth. Using the initial population 10000, carrying capacity 1e+08, intrinsic growth rate 0.72 1/h, and elapsed time 10 h, this gives the current population size 1.18132e+07. The instantaneous growth rate is found to be 2083.54 cells per second, which equals 7.50073e+06 cells per hour. Additionally, the time when the population reaches half the carrying capacity, known as the inflection point, is calculated as 46051.2 s seconds, or 12.792 hours.
 
 <a id="cmb_monod_growth_rate"></a>
 
-#### Monod specific growth rate — `cmb_monod_growth_rate`
+#### Monod specific growth rate: `cmb_monod_growth_rate`
 
 The specific growth rate of a microbial culture limited by one substrate (Monod), its fraction of the maximum and the corresponding doubling time.
 
@@ -638,9 +586,9 @@ $$
 | `S` | in | limiting substrate concentration | kg/m^3 |
 | `Ks` | in | half-saturation constant | kg/m^3 |
 | `mu` | out | specific growth rate | 1/s |
-| `mu_per_h` | out | growth rate per hour | — |
-| `fraction` | out | mu / mu_max | — |
-| `td_h` | out | doubling time ln2/mu in hours (0 when mu = 0) | — |
+| `mu_per_h` | out | growth rate per hour | - |
+| `fraction` | out | mu / mu_max | - |
+| `td_h` | out | doubling time ln2/mu in hours (0 when mu = 0) | - |
 
 **Applies when:** mu_max, Ks > 0; S >= 0; a single limiting substrate.
 
@@ -657,11 +605,11 @@ td_h = 1.155245301
   assumes: mu_max, Ks > 0; S >= 0; a single limiting substrate
 ```
 
-In the worked example, mu_max = 0.72 1/h, S = 50 mg/L, Ks = 10 mg/L go through the equation above and give mu = 0.0001666666667 1/s, mu_per_h = 0.6, fraction = 0.8333333333, td_h = 1.155245301. It applies only when mu_max, Ks > 0; S >= 0; a single limiting substrate: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the specific growth rate of a microbial culture using Monod kinetics. By combining the maximum specific growth rate 0.72 1/h with the limiting substrate concentration 50 mg/L and the half-saturation constant 10 mg/L, the model computes the actual growth rate as 0.000166667 1/s. This result indicates that the culture is growing at 0.833333 of its theoretical maximum capacity, corresponding to a doubling time of 1.15525 hours.
 
 <a id="cmb_molecules_per_cell"></a>
 
-#### Number of molecules in a cell from a concentration — `cmb_molecules_per_cell`
+#### Number of molecules in a cell from a concentration, `cmb_molecules_per_cell`
 
 The number of molecules of a species at concentration c in a compartment of volume V, and the concentration that one molecule per compartment represents.
 
@@ -673,9 +621,9 @@ $$
 |---|---|---|---|
 | `c` | in | concentration | mol/m^3 |
 | `V` | in | cell (compartment) volume | m^3 |
-| `N` | out | number of molecules | — |
+| `N` | out | number of molecules | - |
 | `one_molecule` | out | concentration of one molecule in V | mol/m^3 |
-| `one_molecule_nM` | out | one molecule per compartment in nM | — |
+| `one_molecule_nM` | out | one molecule per compartment in nM | - |
 
 **Applies when:** c, V > 0.
 
@@ -690,11 +638,11 @@ one_molecule_nM = 1.660539067
   assumes: c, V > 0
 ```
 
-In the worked example, c = 1 (nmol/L), V = 1 fL go through the equation above and give N = 0.602214076, one_molecule = 1.660539067e-06 mol/m^3, one_molecule_nM = 1.660539067. It applies only when c, V > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the total count of specific molecules present within a cellular compartment based on its volume and the local concentration. By multiplying the concentration 1 (nmol/L) by the compartment volume 1 fL and Avogadro's constant, this gives the absolute number of molecules, which is 0.602214. Additionally, the model computes the concentration that would result from having exactly one single molecule in this space, yielding 1.66054e-06 mol/m^3 or approximately 1.66054 when converted to nanomolar units.
 
 <a id="cmb_growth_rate_fit"></a>
 
-#### Specific growth rate fitted to growth-curve data — `cmb_growth_rate_fit`
+#### Specific growth rate fitted to growth-curve data, `cmb_growth_rate_fit`
 
 The specific growth rate, doubling time and back-extrapolated initial count from counts (or OD) measured during exponential growth, by a least-squares line through ln N against time.
 
@@ -704,12 +652,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `t` | in | sampling times in hours | — |
-| `N` | in | cell counts or optical densities (positive) | — |
-| `mu_per_h` | out | specific growth rate per hour | — |
-| `td_h` | out | doubling time in hours | — |
-| `N0_fit` | out | fitted count at t = 0 | — |
-| `r2` | out | coefficient of determination of the log-linear fit | — |
+| `t` | in | sampling times in hours | - |
+| `N` | in | cell counts or optical densities (positive) | - |
+| `mu_per_h` | out | specific growth rate per hour | - |
+| `td_h` | out | doubling time in hours | - |
+| `N0_fit` | out | fitted count at t = 0 | - |
+| `r2` | out | coefficient of determination of the log-linear fit | - |
 
 **Applies when:** at least 3 points; counts > 0, increasing; exponential phase only.
 
@@ -723,11 +671,11 @@ r2 = 0.9998073985
   assumes: at least 3 points; counts > 0, increasing; exponential phase only
 ```
 
-In the worked example, t = [0, 1, 2, 3, 4], N = [1000, 1980, 4100, 7900, 16200] go through the equation above and give mu_per_h = 0.6953788399, td_h = 0.9967907287, N0_fit = 998.4351099, r2 = 0.9998073985. It applies only when at least 3 points; counts > 0, increasing; exponential phase only: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the exponential growth kinetics by applying a least-squares linear regression to the natural logarithm of cell counts or optical densities plotted against sampling times. The slope of this line yields the specific growth rate, reported as 0.695379, while the intercept provides the back-extrapolated initial population size, 998.435. From the growth rate, the doubling time is derived as 0.996791 hours using the relationship between exponential increase and generation time. The coefficient of determination, 0.999807, indicates how well the log-linear model fits the observed data during the exponential phase.
 
 <a id="cmb_logistic_time_to_reach"></a>
 
-#### Time for a logistic population to reach a size — `cmb_logistic_time_to_reach`
+#### Time for a logistic population to reach a size, `cmb_logistic_time_to_reach`
 
 The time for a population growing logistically from N0 (carrying capacity K, rate r) to reach N.
 
@@ -737,12 +685,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `N0` | in | initial population | — |
-| `K` | in | carrying capacity | — |
+| `N0` | in | initial population | - |
+| `K` | in | carrying capacity | - |
 | `r` | in | intrinsic growth rate | 1/s |
-| `N` | in | target population | — |
+| `N` | in | target population | - |
 | `t` | out | time to reach N | s |
-| `t_h` | out | time in hours | — |
+| `t_h` | out | time in hours | - |
 
 **Applies when:** 0 < N0 < N < K; r > 0.
 
@@ -758,11 +706,11 @@ t_h = 12.79200051
   assumes: 0 < N0 < N < K; r > 0
 ```
 
-In the worked example, N0 = 10000, K = 100000000, r = 0.72 1/h, N = 50000000 go through the equation above and give t = 46051.20183 s, t_h = 12.79200051. It applies only when 0 < N0 < N < K; r > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the duration required for a population starting at 10000 to grow to 5e+07 under logistic constraints defined by carrying capacity 1e+08 and intrinsic growth rate 0.72 1/h. The result, expressed as 46051.2 s, represents the specific elapsed time in seconds. This value indicates how long the biological system takes to approach the specified density while respecting environmental limits.
 
 <a id="cmb_transformation_efficiency"></a>
 
-#### Transformation efficiency — `cmb_transformation_efficiency`
+#### Transformation efficiency: `cmb_transformation_efficiency`
 
 Transformants per microgram of DNA from the colonies on a plate, the DNA mass used and the fraction of the transformation plated.
 
@@ -772,13 +720,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `colonies` | in | transformant colonies counted | — |
+| `colonies` | in | transformant colonies counted | - |
 | `m_DNA` | in | DNA mass used in the transformation | kg |
 | `V_plated` | in | volume plated | m^3 |
 | `V_total` | in | total volume after recovery | m^3 |
-| `efficiency` | out | transformants per microgram of DNA | — |
-| `log10_efficiency` | out | log10 of the efficiency | — |
-| `DNA_plated_ug` | out | micrograms of DNA plated | — |
+| `efficiency` | out | transformants per microgram of DNA | - |
+| `log10_efficiency` | out | log10 of the efficiency | - |
+| `DNA_plated_ug` | out | micrograms of DNA plated | - |
 
 **Applies when:** colonies a whole number; m_DNA, volumes > 0; V_plated <= V_total.
 
@@ -794,11 +742,11 @@ DNA_plated_ug = 0.0001
   assumes: colonies a whole number; m_DNA, volumes > 0; V_plated <= V_total
 ```
 
-In the worked example, colonies = 200, m_DNA = 1 ng, V_plated = 100 uL, V_total = 1000 uL go through the equation above and give efficiency = 2000000, log10_efficiency = 6.301029996, DNA_plated_ug = 0.0001. It applies only when colonies a whole number; m_DNA, volumes > 0; V_plated <= V_total: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the number of successful transformants per microgram of DNA used. It takes the count of visible colonies, which was 200, and divides it by the mass of DNA actually plated. This plated mass is derived from the total DNA input of 1 ng scaled by the fraction of the recovery volume that was spread on the plate, calculated as 100 uL divided by 1000 uL. The resulting efficiency value of 2e+06 indicates how effectively the cells took up the foreign DNA under these specific conditions.
 
 <a id="cmb_cell_geometry"></a>
 
-#### Volume, surface area and surface-to-volume ratio of a spherical cell — `cmb_cell_geometry`
+#### Volume, surface area and surface-to-volume ratio of a spherical cell, `cmb_cell_geometry`
 
 The volume (fL), surface area and surface-to-volume ratio of a spherical cell of a given diameter.
 
@@ -810,10 +758,10 @@ $$
 |---|---|---|---|
 | `d` | in | cell diameter | m |
 | `V` | out | cell volume | m^3 |
-| `V_fL` | out | volume in femtolitres (um^3) | — |
+| `V_fL` | out | volume in femtolitres (um^3) | - |
 | `A` | out | surface area | m^2 |
-| `A_um2` | out | surface area in um^2 | — |
-| `SA_V_per_um` | out | surface-to-volume ratio in 1/um | — |
+| `A_um2` | out | surface area in um^2 | - |
+| `SA_V_per_um` | out | surface-to-volume ratio in 1/um | - |
 
 **Applies when:** d > 0; a sphere.
 
@@ -829,13 +777,13 @@ SA_V_per_um = 0.6
   assumes: d > 0; a sphere
 ```
 
-In the worked example, d = 10 um go through the equation above and give V = 5.235987756e-16 m^3, V_fL = 523.5987756, A = 3.141592654e-10 m^2, A_um2 = 314.1592654. It applies only when d > 0; a sphere: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the geometric properties of a spherical cell based on its diameter. Using the input diameter 10 um, the model computes the total volume as 5.23599e-16 m^3 and the surface area as 3.14159e-10 m^2. These values are also provided in more biologically relevant units, showing a volume of 523.599 and a surface area of 314.159. The resulting surface-to-volume ratio is 0.6, which indicates how much membrane area is available per unit of internal volume.
 
 ### DNA and RNA (20)
 
 <a id="cmb_absorbance_ratios"></a>
 
-#### A260/A280 and A260/A230 purity ratios — `cmb_absorbance_ratios`
+#### A260/A280 and A260/A230 purity ratios: `cmb_absorbance_ratios`
 
 The A260/A280 and A260/A230 ratios of a nucleic acid sample after subtracting the A320 background (about 1.8 for pure DNA, 2.0 for pure RNA; lower values suggest protein or organic contaminants).
 
@@ -845,12 +793,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `A260` | in | absorbance at 260 nm | — |
-| `A280` | in | absorbance at 280 nm | — |
-| `A230` | in | absorbance at 230 nm (optional) (optional) | — |
-| `A320` | in | background absorbance at 320 nm (default 0) (optional) | — |
-| `ratio_260_280` | out | A260/A280 after background subtraction | — |
-| `ratio_260_230` | out | A260/A230 after background subtraction (when A230 is given) | — |
+| `A260` | in | absorbance at 260 nm | - |
+| `A280` | in | absorbance at 280 nm | - |
+| `A230` | in | absorbance at 230 nm (optional) (optional) | - |
+| `A320` | in | background absorbance at 320 nm (default 0) (optional) | - |
+| `ratio_260_280` | out | A260/A280 after background subtraction | - |
+| `ratio_260_230` | out | A260/A230 after background subtraction (when A230 is given) | - |
 
 **Applies when:** absorbances > 0; A320 below the other readings.
 
@@ -865,11 +813,11 @@ ratio_260_230 = 2.142857143
   assumes: absorbances > 0; A320 below the other readings
 ```
 
-In the worked example, A260 = 0.9, A280 = 0.5, A230 = 0.42 go through the equation above and give ratio_260_280 = 1.8, ratio_260_230 = 2.142857143. It applies only when absorbances > 0; A320 below the other readings: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines nucleic acid purity by computing the ratios of absorbance at 260 nm to those at 280 nm and 230 nm, after subtracting the background absorbance at 320 nm from all readings. The resulting A260 to A280 ratio of 1.8 reflects protein contamination levels, while the A260 to A230 ratio of 2.14286 indicates organic or salt contaminants. Pure DNA typically yields a value near 1.8 and pure RNA near 2.0 for the first ratio; deviations suggest impurities that may affect downstream applications.
 
 <a id="cmb_tm_basic"></a>
 
-#### Basic GC melting temperature of an oligonucleotide — `cmb_tm_basic`
+#### Basic GC melting temperature of an oligonucleotide, `cmb_tm_basic`
 
 The basic melting temperature of a DNA oligonucleotide of 14 nt or more, Tm = 64.9 + 41 (G + C - 16.4) / N (50 mM Na+ assumed, no salt term).
 
@@ -879,10 +827,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | DNA sequence (A, C, G, T), at least 14 nt | — |
-| `Tm` | out | melting temperature in degC | — |
-| `gc_percent` | out | GC content in per cent | — |
-| `length` | out | length in nt | — |
+| `seq` | in | DNA sequence (A, C, G, T), at least 14 nt | - |
+| `Tm` | out | melting temperature in degC | - |
+| `gc_percent` | out | GC content in per cent | - |
+| `length` | out | length in nt | - |
 
 **Applies when:** DNA letters only; N >= 14.
 
@@ -896,11 +844,11 @@ length = 24
   assumes: DNA letters only; N >= 14
 ```
 
-In the worked example, seq = AGCGGATAACAATTTCACACAGGA go through the equation above and give Tm = 53.96666667, gc_percent = 41.66666667, length = 24. It applies only when DNA letters only; N >= 14: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the basic melting temperature for a DNA oligonucleotide. It uses the sequence length, which is 24, and the number of guanine and cytosine bases to estimate stability. The resulting temperature, 53.9667, indicates where half of the double-stranded DNA dissociates into single strands under standard salt conditions.
 
 <a id="cmb_dna_copy_number"></a>
 
-#### Copy number and moles of a DNA or RNA molecule from its mass — `cmb_dna_copy_number`
+#### Copy number and moles of a DNA or RNA molecule from its mass, `cmb_dna_copy_number`
 
 The molecular weight, picomoles and number of copies in a mass of dsDNA, ssDNA or RNA of a given length (NEB average-mass formulas).
 
@@ -911,12 +859,12 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `m` | in | mass of nucleic acid | kg |
-| `n` | in | length in base pairs (dsDNA) or bases (ssDNA, RNA) | — |
-| `molecule` | in | dsDNA, ssDNA or RNA | — |
+| `n` | in | length in base pairs (dsDNA) or bases (ssDNA, RNA) | - |
+| `molecule` | in | dsDNA, ssDNA or RNA | - |
 | `MW` | out | molecular weight | kg/mol |
-| `MW_g_mol` | out | molecular weight in g/mol | — |
-| `pmol` | out | picomoles | — |
-| `copies` | out | number of molecules | — |
+| `MW_g_mol` | out | molecular weight in g/mol | - |
+| `pmol` | out | picomoles | - |
+| `copies` | out | number of molecules | - |
 
 **Applies when:** m > 0; n a whole number >= 1.
 
@@ -932,11 +880,11 @@ copies = 324833521.6
   assumes: m > 0; n a whole number >= 1
 ```
 
-In the worked example, m = 1 ng, n = 3000, molecule = dsDNA go through the equation above and give MW = 1853.91604 kg/mol, MW_g_mol = 1853916.04, pmol = 0.0005393987529, copies = 324833521.6. It applies only when m > 0; n a whole number >= 1: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the molecular weight, amount in picomoles, and total number of copies for a specific mass of nucleic acid. The process begins by computing the average molecular weight based on the molecule type and length, yielding 1853.92 kg/mol. This value is then converted to grams per mole as 1.85392e+06. Using this weight, the input mass 1 ng is divided by the molecular weight and multiplied by Avogadro's constant to find the molar quantity, expressed here as 0.000539399. Finally, the absolute number of individual molecules, or copies, is derived from these moles, resulting in 3.24834e+08.
 
 <a id="cmb_oligo_extinction_coefficient"></a>
 
-#### Extinction coefficient of a DNA oligonucleotide at 260 nm (nearest neighbour) — `cmb_oligo_extinction_coefficient`
+#### Extinction coefficient of a DNA oligonucleotide at 260 nm (nearest neighbour), `cmb_oligo_extinction_coefficient`
 
 The molar extinction coefficient at 260 nm of a single-stranded DNA oligonucleotide by the nearest-neighbour method, with micrograms and nanomoles per A260 unit (5'-hydroxyl oligo, 1 mL, 1 cm).
 
@@ -946,11 +894,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | DNA oligonucleotide 5'->3' (A, C, G, T) | — |
+| `seq` | in | DNA oligonucleotide 5'->3' (A, C, G, T) | - |
 | `eps` | out | molar extinction coefficient at 260 nm | m^2/mol |
-| `eps_L_mol_cm` | out | extinction coefficient in L/(mol cm) | — |
-| `ug_per_A260` | out | micrograms per A260 unit (per mL at 1 cm) | — |
-| `nmol_per_A260` | out | nanomoles per A260 unit (per mL at 1 cm) | — |
+| `eps_L_mol_cm` | out | extinction coefficient in L/(mol cm) | - |
+| `ug_per_A260` | out | micrograms per A260 unit (per mL at 1 cm) | - |
+| `nmol_per_A260` | out | nanomoles per A260 unit (per mL at 1 cm) | - |
 
 **Applies when:** DNA letters only; single strand.
 
@@ -965,11 +913,11 @@ nmol_per_A260 = 10.20408163
   assumes: DNA letters only; single strand
 ```
 
-In the worked example, seq = ATGCATGCAT go through the equation above and give eps = 9800 m^2/mol, eps_L_mol_cm = 98000, ug_per_A260 = 30.8878561, nmol_per_A260 = 10.20408163. It applies only when DNA letters only; single strand: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the molar extinction coefficient at 260 nanometers for a single-stranded DNA oligonucleotide using the nearest neighbour method. The result, 9800 m^2/mol, represents the light absorption capacity of one mole of the sequence in square meters per mole. This gives practical conversion factors: 30.8879 indicates how many micrograms of the specific sequence correspond to an absorbance reading of one unit, while 10.2041 shows the equivalent amount in nanomoles. These values allow researchers to accurately quantify the concentration of their DNA samples from spectrophotometric readings.
 
 <a id="cmb_gc_content"></a>
 
-#### GC content of a DNA or RNA sequence — `cmb_gc_content`
+#### GC content of a DNA or RNA sequence: `cmb_gc_content`
 
 The fraction and percentage of G + C in a DNA or RNA sequence, with the base counts and the length.
 
@@ -979,14 +927,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | DNA or RNA sequence (A, C, G, T or U) | — |
-| `gc_fraction` | out | fraction of G + C | — |
-| `gc_percent` | out | GC content in per cent | — |
-| `length` | out | length in bases | — |
-| `G` | out | number of G | — |
-| `C` | out | number of C | — |
-| `A` | out | number of A | — |
-| `T_or_U` | out | number of T (DNA) or U (RNA) | — |
+| `seq` | in | DNA or RNA sequence (A, C, G, T or U) | - |
+| `gc_fraction` | out | fraction of G + C | - |
+| `gc_percent` | out | GC content in per cent | - |
+| `length` | out | length in bases | - |
+| `G` | out | number of G | - |
+| `C` | out | number of C | - |
+| `A` | out | number of A | - |
+| `T_or_U` | out | number of T (DNA) or U (RNA) | - |
 
 **Applies when:** only A, C, G, T or U.
 
@@ -1004,11 +952,11 @@ T_or_U = 3
   assumes: only A, C, G, T or U
 ```
 
-In the worked example, seq = ATGCGCGATTACGC go through the equation above and give gc_fraction = 0.5714285714, gc_percent = 57.14285714, length = 14, G = 4. It applies only when only A, C, G, T or U: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the proportion of guanine and cytosine bases in the provided nucleic acid sequence. By summing the count of guanine residues, which is 4, and cytosine residues, which is 4, and dividing by the total length of the sequence, 14, this gives the GC fraction of 0.571429. This value is then expressed as a percentage, resulting in a GC content of 57.1429. The remaining bases are accounted for by 3 adenines and 3 thymines or uracils, ensuring that all positions in the sequence are classified according to their specific nitrogenous base type.
 
 <a id="cmb_ligation_insert_mass"></a>
 
-#### Insert mass for a ligation at an insert:vector molar ratio — `cmb_ligation_insert_mass`
+#### Insert mass for a ligation at an insert:vector molar ratio, `cmb_ligation_insert_mass`
 
 The mass of insert DNA needed for a ligation at a chosen insert:vector molar ratio, and the femtomoles of vector and insert (660 g/mol per bp).
 
@@ -1019,13 +967,13 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `m_vector` | in | mass of vector DNA | kg |
-| `L_vector` | in | vector length in bp | — |
-| `L_insert` | in | insert length in bp | — |
-| `ratio` | in | insert:vector molar ratio (e.g. 3 for 3:1) | — |
+| `L_vector` | in | vector length in bp | - |
+| `L_insert` | in | insert length in bp | - |
+| `ratio` | in | insert:vector molar ratio (e.g. 3 for 3:1) | - |
 | `m_insert` | out | mass of insert | kg |
-| `m_insert_ng` | out | mass of insert in ng | — |
-| `vector_fmol` | out | vector in fmol | — |
-| `insert_fmol` | out | insert in fmol | — |
+| `m_insert_ng` | out | mass of insert in ng | - |
+| `vector_fmol` | out | vector in fmol | - |
+| `insert_fmol` | out | insert in fmol | - |
 
 **Applies when:** masses, ratio > 0; lengths whole numbers >= 1.
 
@@ -1041,11 +989,11 @@ insert_fmol = 75.75757576
   assumes: masses, ratio > 0; lengths whole numbers >= 1
 ```
 
-In the worked example, m_vector = 50 ng, L_vector = 3000, L_insert = 1000, ratio = 3 go through the equation above and give m_insert = 5e-11 kg, m_insert_ng = 50, vector_fmol = 25.25252525, insert_fmol = 75.75757576. It applies only when masses, ratio > 0; lengths whole numbers >= 1: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the mass of insert DNA needed for a ligation reaction at a specific molar ratio relative to the vector. Using the input vector mass of 50 ng and lengths of 3000 base pairs for the vector and 1000 base pairs for the insert, the tool computes that you need 5e-11 kg of insert material. This result ensures the desired stoichiometry for efficient cloning.
 
 <a id="cmb_orf_finder"></a>
 
-#### Longest open reading frame on both strands — `cmb_orf_finder`
+#### Longest open reading frame on both strands, `cmb_orf_finder`
 
 The longest open reading frame (ATG to the first in-frame stop) in all six frames of a DNA sequence with at least min_aa codons, its strand, coordinates on that strand, protein and the number of such ORFs.
 
@@ -1055,15 +1003,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | DNA sequence 5'->3' | — |
-| `min_aa` | in | minimum ORF length in codons (amino acids, stop excluded) | — |
-| `strand` | out | + (given strand) or - (reverse complement) | — |
-| `start` | out | 1-based start of the ATG on that strand (read 5'->3') | — |
-| `end` | out | 1-based end of the stop codon on that strand | — |
-| `length_nt` | out | ORF length in nt including the stop | — |
-| `length_aa` | out | protein length in amino acids | — |
-| `protein` | out | encoded protein (one-letter code) | — |
-| `n_orfs` | out | number of ORFs of at least min_aa codons | — |
+| `seq` | in | DNA sequence 5'->3' | - |
+| `min_aa` | in | minimum ORF length in codons (amino acids, stop excluded) | - |
+| `strand` | out | + (given strand) or - (reverse complement) | - |
+| `start` | out | 1-based start of the ATG on that strand (read 5'->3') | - |
+| `end` | out | 1-based end of the stop codon on that strand | - |
+| `length_nt` | out | ORF length in nt including the stop | - |
+| `length_aa` | out | protein length in amino acids | - |
+| `protein` | out | encoded protein (one-letter code) | - |
+| `n_orfs` | out | number of ORFs of at least min_aa codons | - |
 
 **Applies when:** DNA letters only; min_aa >= 1; at least one ORF.
 
@@ -1081,11 +1029,11 @@ n_orfs = 1
   assumes: DNA letters only; min_aa >= 1; at least one ORF
 ```
 
-In the worked example, seq = CCATGAAACGCATTAGCACCACCATTACCACCACCATCACCATTACCACAGGTAACGGTGCGGGCTGAGG, min_aa = 10 go through the equation above and give strand = +, start = 3, end = 68, length_nt = 66. It applies only when DNA letters only; min_aa >= 1; at least one ORF: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation identifies the longest open reading frame within a DNA sequence by scanning all six possible frames. The result indicates that the most significant coding region lies on the + strand, beginning at position 3 and ending at position 68. This segment contains 21 amino acids and translates into the protein sequence MKRISTTITTTITITTGNGAG. A total of 1 distinct open reading frames meeting the minimum length criteria were detected in the input sequence.
 
 <a id="cmb_oligo_molecular_weight"></a>
 
-#### Molecular weight of a DNA or RNA oligonucleotide — `cmb_oligo_molecular_weight`
+#### Molecular weight of a DNA or RNA oligonucleotide, `cmb_oligo_molecular_weight`
 
 The average molecular weight of a single- or double-stranded DNA or RNA oligonucleotide, with a 5'-phosphate (sum of nucleotide monophosphates minus waters) and as the 5'-hydroxyl form of synthetic oligos.
 
@@ -1095,11 +1043,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | DNA or RNA sequence 5'->3' | — |
-| `strands` | in | single strand or the duplex with its complement | — |
+| `seq` | in | DNA or RNA sequence 5'->3' | - |
+| `strands` | in | single strand or the duplex with its complement | - |
 | `MW` | out | molecular weight (5'-phosphate) | kg/mol |
-| `MW_g_mol` | out | molecular weight in g/mol (5'-phosphate) | — |
-| `MW_hydroxyl_g_mol` | out | molecular weight in g/mol with 5'-hydroxyl ends | — |
+| `MW_g_mol` | out | molecular weight in g/mol (5'-phosphate) | - |
+| `MW_hydroxyl_g_mol` | out | molecular weight in g/mol with 5'-hydroxyl ends | - |
 
 **Applies when:** only A, C, G, T (DNA) or A, C, G, U (RNA).
 
@@ -1109,16 +1057,16 @@ MW = 3.1069898 kg/mol
 MW_g_mol = 3106.9898
 MW_hydroxyl_g_mol = 3027.009898
   by: Molecular weight of a DNA or RNA oligonucleotide  (MW = sum of nucleotide monophosphate weights - (n - 1) x 18.0153; 5'-OH form minus HPO3 (79.98) per strand)
-  strands = single
   seq = ATGCATGCAT
+  strands = single
   assumes: only A, C, G, T (DNA) or A, C, G, U (RNA)
 ```
 
-In the worked example, seq = ATGCATGCAT, strands = single go through the equation above and give MW = 3.1069898 kg/mol, MW_g_mol = 3106.9898, MW_hydroxyl_g_mol = 3027.009898. It applies only when only A, C, G, T (DNA) or A, C, G, U (RNA): outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the average molecular weight of a DNA or RNA sequence by summing the weights of its individual nucleotide monophosphates and subtracting the mass of water molecules lost during phosphodiester bond formation. The result depends on whether the strand is single or double, as indicated by the input single. The primary output 3106.99 represents the weight in grams per mole assuming a 5'-phosphate group, while 3027.01 adjusts this value for synthetic oligos that typically have free hydroxyl ends at both termini.
 
 <a id="cmb_mutation_rate_p0"></a>
 
-#### Mutation rate by the fluctuation-test p0 method — `cmb_mutation_rate_p0`
+#### Mutation rate by the fluctuation-test p0 method, `cmb_mutation_rate_p0`
 
 The expected number of mutations per culture m = -ln p0 from the fraction of parallel cultures without mutants (Luria-Delbruck p0 method) and the mutation rate m / Nt.
 
@@ -1128,12 +1076,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `n0` | in | number of cultures with no mutants | — |
-| `n` | in | total number of cultures | — |
-| `Nt` | in | final number of cells per culture | — |
-| `p0` | out | fraction of cultures without mutants | — |
-| `m` | out | mean mutations per culture | — |
-| `mutation_rate` | out | mutations per cell per generation (m / Nt) | — |
+| `n0` | in | number of cultures with no mutants | - |
+| `n` | in | total number of cultures | - |
+| `Nt` | in | final number of cells per culture | - |
+| `p0` | out | fraction of cultures without mutants | - |
+| `m` | out | mean mutations per culture | - |
+| `mutation_rate` | out | mutations per cell per generation (m / Nt) | - |
 
 **Applies when:** 1 <= n0 < n; Nt > 0; Poisson number of mutational events per culture.
 
@@ -1147,11 +1095,11 @@ mutation_rate = 2.989185004e-09
   assumes: 1 <= n0 < n; Nt > 0; Poisson number of mutational events per culture
 ```
 
-In the worked example, n0 = 11, n = 20, Nt = 200000000 go through the equation above and give p0 = 0.55, m = 0.5978370008, mutation_rate = 2.989185004e-09. It applies only when 1 <= n0 < n; Nt > 0; Poisson number of mutational events per culture: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the mutation rate using the Luria-Delbruck p0 method. First, the fraction of cultures without mutants, denoted as 0.55, is calculated from the input counts of non-mutant cultures 11 and total cultures 20. The expected number of mutations per culture, 0.597837, is then derived as the negative natural logarithm of this fraction. Finally, the mutation rate 2.98919e-09 is obtained by dividing the mean mutations per culture by the final number of cells per culture 2e+08. This result represents the probability of a mutation occurring per cell division.
 
 <a id="cmb_tm_nearest_neighbor"></a>
 
-#### Nearest-neighbour melting temperature of a DNA duplex — `cmb_tm_nearest_neighbor`
+#### Nearest-neighbour melting temperature of a DNA duplex, `cmb_tm_nearest_neighbor`
 
 The melting temperature of a perfectly matched DNA duplex by nearest-neighbour thermodynamics (SantaLucia-Hicks 2004 unified parameters) with the SantaLucia (1998) sodium correction, and the duplex dH, dS and dG at 37 degC.
 
@@ -1161,14 +1109,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | DNA sequence 5'->3' (A, C, G, T) | — |
+| `seq` | in | DNA sequence 5'->3' (A, C, G, T) | - |
 | `Na` | in | monovalent cation (Na+) concentration | mol/m^3 |
 | `c1` | in | concentration of the more concentrated strand | mol/m^3 |
 | `c2` | in | concentration of the less concentrated strand (0 if in large excess) | mol/m^3 |
-| `Tm` | out | melting temperature in degC | — |
-| `dH` | out | duplex enthalpy in kcal/mol | — |
-| `dS` | out | salt-corrected duplex entropy in cal/(mol K) | — |
-| `dG37` | out | free energy at 37 degC in kcal/mol | — |
+| `Tm` | out | melting temperature in degC | - |
+| `dH` | out | duplex enthalpy in kcal/mol | - |
+| `dS` | out | salt-corrected duplex entropy in cal/(mol K) | - |
+| `dG37` | out | free energy at 37 degC in kcal/mol | - |
 
 **Applies when:** DNA letters, length >= 2; Na+ > 0; c1 > c2/2 (self-complementary: k = c1).
 
@@ -1186,11 +1134,11 @@ dG37 = -26.68835044
   assumes: DNA letters, length >= 2; Na+ > 0; c1 > c2/2 (self-complementary: k = c1)
 ```
 
-In the worked example, seq = CGTTCCAAAGATGTGGGCATGAGCTTAC, Na = 50 (mmol/L), c1 = 250 (nmol/L), c2 = 250 (nmol/L) go through the equation above and give Tm = 62.58162841, dH = -221.7, dS = -628.7655959, dG37 = -26.68835044. It applies only when DNA letters, length >= 2; Na+ > 0; c1 > c2/2 (self-complementary: k = c1): outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the thermodynamic stability of a perfectly matched DNA duplex using nearest-neighbour parameters. It sums enthalpy and entropy contributions from adjacent base pairs, applies initiation and terminal corrections, and adjusts entropy for salt concentration and strand asymmetry. The resulting melting temperature, 62.5816 degrees Celsius, represents the point where half of the duplexes are dissociated under conditions defined by inputs CGTTCCAAAGATGTGGGCATGAGCTTAC, 50 (mmol/L), 250 (nmol/L), and 250 (nmol/L).
 
 <a id="cmb_nucleic_acid_a260"></a>
 
-#### Nucleic acid concentration from A260 — `cmb_nucleic_acid_a260`
+#### Nucleic acid concentration from A260: `cmb_nucleic_acid_a260`
 
 The concentration of dsDNA, ssDNA or RNA from its absorbance at 260 nm (50, 33 and 40 ug/mL per unit at 1 cm), with the dilution and path length, and the mass in a volume.
 
@@ -1200,14 +1148,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `A260` | in | absorbance at 260 nm (blank-corrected) | — |
-| `molecule` | in | dsDNA, ssDNA or RNA | — |
-| `dilution` | in | dilution factor of the measured sample (default 1) (optional) | — |
+| `A260` | in | absorbance at 260 nm (blank-corrected) | - |
+| `molecule` | in | dsDNA, ssDNA or RNA | - |
+| `dilution` | in | dilution factor of the measured sample (default 1) (optional) | - |
 | `l` | in | path length (default 1 cm) (optional) | m |
 | `V` | in | volume of the stock (optional, for the total mass) (optional) | m^3 |
 | `c` | out | concentration of the stock | kg/m^3 |
-| `c_ug_mL` | out | concentration in ug/mL (= ng/uL) | — |
-| `mass_ug` | out | micrograms in V (when V is given) | — |
+| `c_ug_mL` | out | concentration in ug/mL (= ng/uL) | - |
+| `mass_ug` | out | micrograms in V (when V is given) | - |
 
 **Applies when:** A260 >= 0 (best within 0.1-1.0); dilution >= 1; l > 0.
 
@@ -1222,11 +1170,11 @@ c_ug_mL = 250
   assumes: A260 >= 0 (best within 0.1-1.0); dilution >= 1; l > 0
 ```
 
-In the worked example, A260 = 0.5, molecule = dsDNA, dilution = 10 go through the equation above and give c = 0.25 kg/m^3, c_ug_mL = 250. It applies only when A260 >= 0 (best within 0.1-1.0); dilution >= 1; l > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** The stock concentration is 0.25 kg/m^3, which equals 250 in micrograms per milliliter.
 
 <a id="cmb_library_size"></a>
 
-#### Number of clones for a genomic library (Clarke-Carbon) — `cmb_library_size`
+#### Number of clones for a genomic library (Clarke-Carbon), `cmb_library_size`
 
 The number of random clones needed so that any given sequence is present with probability P, for a genome of size G and inserts of size I.
 
@@ -1236,11 +1184,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `G` | in | genome size in bp | — |
-| `I` | in | insert size in bp | — |
-| `P` | in | desired probability (e.g. 99%) | — |
-| `clones_exact` | out | number of clones (real value) | — |
-| `clones` | out | number of clones rounded up | — |
+| `G` | in | genome size in bp | - |
+| `I` | in | insert size in bp | - |
+| `P` | in | desired probability (e.g. 99%) | - |
+| `clones_exact` | out | number of clones (real value) | - |
+| `clones` | out | number of clones rounded up | - |
 
 **Applies when:** 0 < I < G; 0 < P < 1.
 
@@ -1255,11 +1203,11 @@ clones = 345386
   assumes: 0 < I < G; 0 < P < 1
 ```
 
-In the worked example, G = 3000000000, I = 40000, P = 0.99 go through the equation above and give clones_exact = 345385.4614, clones = 345386. It applies only when 0 < I < G; 0 < P < 1: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This model computes the number of clones needed for a genomic library using the Clarke-Carbon equation. It takes the genome size 3e+09, insert size 40000, and desired probability 0.99 as inputs. The result, 345385, represents the precise mathematical value, while 345386 provides the practical integer count by rounding up. This ensures that there is a high likelihood, specifically 0.99, that any specific DNA sequence from the genome is represented in the library.
 
 <a id="cmb_tm_wallace"></a>
 
-#### Primer melting temperature by the Wallace rule — `cmb_tm_wallace`
+#### Primer melting temperature by the Wallace rule, `cmb_tm_wallace`
 
 The approximate melting temperature (degC) of a short DNA primer (about 14-20 nt) by the Wallace rule, 2 degC per A/T and 4 degC per G/C.
 
@@ -1269,10 +1217,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | DNA primer sequence (A, C, G, T) | — |
-| `Tm` | out | melting temperature in degC | — |
-| `AT` | out | number of A and T | — |
-| `GC` | out | number of G and C | — |
+| `seq` | in | DNA primer sequence (A, C, G, T) | - |
+| `Tm` | out | melting temperature in degC | - |
+| `AT` | out | number of A and T | - |
+| `GC` | out | number of G and C | - |
 
 **Applies when:** DNA letters only; at least 2 bases (meant for 14-20 nt).
 
@@ -1286,11 +1234,11 @@ GC = 8
   assumes: DNA letters only; at least 2 bases (meant for 14-20 nt)
 ```
 
-In the worked example, seq = ACGTTGCAATGCCGTA go through the equation above and give Tm = 48, AT = 8, GC = 8. It applies only when DNA letters only; at least 2 bases (meant for 14-20 nt): outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the approximate melting temperature of a short DNA primer using the Wallace rule. The method sums the contributions of each base type, assigning 2 degrees Celsius for every adenine or thymine and 4 degrees Celsius for every guanine or cytosine. For the input sequence, there are 8 instances of A or T and 8 instances of G or C, resulting in a final melting temperature of 48. This value represents the temperature at which half of the primer strands are expected to be dissociated from their complementary targets under standard conditions.
 
 <a id="cmb_warburg_christian"></a>
 
-#### Protein concentration by Warburg-Christian (A280 and A260) — `cmb_warburg_christian`
+#### Protein concentration by Warburg-Christian (A280 and A260), `cmb_warburg_christian`
 
 The protein concentration (mg/mL) of a sample containing nucleic acid from its absorbances at 280 and 260 nm, protein = 1.55 A280 - 0.76 A260 (1 cm).
 
@@ -1300,11 +1248,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `A280` | in | absorbance at 280 nm | — |
-| `A260` | in | absorbance at 260 nm | — |
+| `A280` | in | absorbance at 280 nm | - |
+| `A260` | in | absorbance at 260 nm | - |
 | `protein` | out | protein concentration | kg/m^3 |
-| `protein_mg_mL` | out | protein in mg/mL | — |
-| `ratio_280_260` | out | A280/A260 | — |
+| `protein_mg_mL` | out | protein in mg/mL | - |
+| `ratio_280_260` | out | A280/A260 | - |
 
 **Applies when:** absorbances >= 0, 1 cm path; a positive estimate.
 
@@ -1319,11 +1267,11 @@ ratio_280_260 = 1.6
   assumes: absorbances >= 0, 1 cm path; a positive estimate
 ```
 
-In the worked example, A280 = 0.8, A260 = 0.5 go through the equation above and give protein = 0.86 kg/m^3, protein_mg_mL = 0.86, ratio_280_260 = 1.6. It applies only when absorbances >= 0, 1 cm path; a positive estimate: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the protein concentration in mg/mL using the Warburg-Christian method. It takes the measured absorbance at 280 nm, which reflects both protein and nucleic acid content, and subtracts a correction factor based on the absorbance at 260 nm to account for nucleic acid interference. The result, 0.86, represents the estimated protein mass per volume after removing the contribution of nucleic acids. A higher ratio of 1.6 generally indicates purer protein samples, while lower ratios suggest significant nucleic acid contamination.
 
 <a id="cmb_protein_concentration_a280"></a>
 
-#### Protein concentration from A280 and the extinction coefficient — `cmb_protein_concentration_a280`
+#### Protein concentration from A280 and the extinction coefficient, `cmb_protein_concentration_a280`
 
 The molar (and, with the molar mass, mass) concentration of a protein from its absorbance at 280 nm and molar extinction coefficient (Beer-Lambert).
 
@@ -1333,13 +1281,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `A280` | in | absorbance at 280 nm | — |
+| `A280` | in | absorbance at 280 nm | - |
 | `eps` | in | molar extinction coefficient at 280 nm | m^2/mol |
 | `MW` | in | molar mass of the protein (optional) (optional) | kg/mol |
 | `l` | in | path length (default 1 cm) (optional) | m |
 | `c` | out | protein concentration | mol/m^3 |
-| `c_uM` | out | concentration in uM | — |
-| `c_mg_mL` | out | concentration in mg/mL (when MW is given) | — |
+| `c_uM` | out | concentration in uM | - |
+| `c_mg_mL` | out | concentration in mg/mL (when MW is given) | - |
 
 **Applies when:** A280 >= 0; eps, l > 0.
 
@@ -1355,11 +1303,11 @@ c_mg_mL = 1.143504705
   assumes: A280 >= 0; eps, l > 0
 ```
 
-In the worked example, A280 = 0.75, eps = 43570 L/(mol*cm), MW = 66430 g/mol go through the equation above and give c = 0.01721367914 mol/m^3, c_uM = 17.21367914, c_mg_mL = 1.143504705. It applies only when A280 >= 0; eps, l > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** The molar concentration is 0.0172137 mol/m^3 and the mass concentration is 1.1435.
 
 <a id="cmb_reverse_complement"></a>
 
-#### Reverse complement of a DNA or RNA sequence — `cmb_reverse_complement`
+#### Reverse complement of a DNA or RNA sequence, `cmb_reverse_complement`
 
 The reverse complement (the other strand read 5'->3'), the complement and the reverse of a DNA or RNA sequence.
 
@@ -1369,10 +1317,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | DNA or RNA sequence 5'->3' | — |
-| `reverse_complement` | out | reverse complement 5'->3' | — |
-| `complement` | out | complement 3'->5' | — |
-| `reverse` | out | the sequence reversed | — |
+| `seq` | in | DNA or RNA sequence 5'->3' | - |
+| `reverse_complement` | out | reverse complement 5'->3' | - |
+| `complement` | out | complement 3'->5' | - |
+| `reverse` | out | the sequence reversed | - |
 
 **Applies when:** only A, C, G, T or U.
 
@@ -1386,11 +1334,11 @@ reverse = AGTCCATGCGTA
   assumes: only A, C, G, T or U
 ```
 
-In the worked example, seq = ATGCGTACCTGA go through the equation above and give reverse_complement = TCAGGTACGCAT, complement = TACGCATGGACT, reverse = AGTCCATGCGTA. It applies only when only A, C, G, T or U: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the reverse complement of the input sequence ATGCGTACCTGA, which represents the complementary strand read in the five-prime to three-prime direction. The process involves first generating the complement of each nucleotide, resulting in TACGCATGGACT, and then reversing that string to produce TCAGGTACGCAT. This output is essential for understanding how DNA or RNA strands pair during replication and transcription.
 
 <a id="cmb_tm_salt_adjusted"></a>
 
-#### Salt-adjusted melting temperature of an oligonucleotide — `cmb_tm_salt_adjusted`
+#### Salt-adjusted melting temperature of an oligonucleotide, `cmb_tm_salt_adjusted`
 
 The melting temperature of a DNA oligonucleotide of 14 nt or more with a sodium correction: Tm = 81.5 + 16.6 log10[Na+] + 0.41 %GC - 600/N.
 
@@ -1400,11 +1348,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | DNA sequence (A, C, G, T), at least 14 nt | — |
+| `seq` | in | DNA sequence (A, C, G, T), at least 14 nt | - |
 | `Na` | in | monovalent cation (Na+) concentration | mol/m^3 |
-| `Tm` | out | melting temperature in degC | — |
-| `gc_percent` | out | GC content in per cent | — |
-| `salt_term` | out | salt term 16.6 log10[Na+] in degC | — |
+| `Tm` | out | melting temperature in degC | - |
+| `gc_percent` | out | GC content in per cent | - |
+| `salt_term` | out | salt term 16.6 log10[Na+] in degC | - |
 
 **Applies when:** DNA letters only; N >= 14; Na+ > 0.
 
@@ -1419,11 +1367,11 @@ salt_term = -21.59709793
   assumes: DNA letters only; N >= 14; Na+ > 0
 ```
 
-In the worked example, seq = AGCGGATAACAATTTCACACAGGA, Na = 50 (mmol/L) go through the equation above and give Tm = 51.98623541, gc_percent = 41.66666667, salt_term = -21.59709793. It applies only when DNA letters only; N >= 14; Na+ > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the thermal stability of a DNA oligonucleotide by estimating its melting temperature. The process begins by measuring the length and base composition of the sequence, specifically calculating the percentage of guanine and cytosine pairs as 41.6667. It then adjusts for ionic strength using the sodium concentration to produce a salt correction term of -21.5971. These values are combined with constant factors to yield the final melting temperature of 51.9862. This result indicates the temperature at which half of the DNA duplexes dissociate into single strands, serving as a critical parameter for designing primers and probes in molecular biology applications.
 
 <a id="cmb_genome_coverage"></a>
 
-#### Sequencing coverage and uncovered fraction (Lander-Waterman) — `cmb_genome_coverage`
+#### Sequencing coverage and uncovered fraction (Lander-Waterman), `cmb_genome_coverage`
 
 The mean sequencing depth C = L N / G, the expected fraction and number of bases not covered (e^-C) and the expected number of contigs (N e^-C).
 
@@ -1433,13 +1381,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `L` | in | read length in bp | — |
-| `N` | in | number of reads | — |
-| `G` | in | genome size in bp | — |
-| `coverage` | out | mean coverage (depth) | — |
-| `fraction_uncovered` | out | fraction of bases not covered e^-C | — |
-| `bases_uncovered` | out | expected bases not covered | — |
-| `contigs` | out | expected number of contigs N e^-C | — |
+| `L` | in | read length in bp | - |
+| `N` | in | number of reads | - |
+| `G` | in | genome size in bp | - |
+| `coverage` | out | mean coverage (depth) | - |
+| `fraction_uncovered` | out | fraction of bases not covered e^-C | - |
+| `bases_uncovered` | out | expected bases not covered | - |
+| `contigs` | out | expected number of contigs N e^-C | - |
 
 **Applies when:** L, N whole numbers >= 1; G > 0; reads placed uniformly at random.
 
@@ -1454,11 +1402,11 @@ contigs = 1.751302153e-20
   assumes: L, N whole numbers >= 1; G > 0; reads placed uniformly at random
 ```
 
-In the worked example, L = 150, N = 2000000, G = 5000000 go through the equation above and give coverage = 60, fraction_uncovered = 8.756510763e-27, bases_uncovered = 4.378255381e-20, contigs = 1.751302153e-20. It applies only when L, N whole numbers >= 1; G > 0; reads placed uniformly at random: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** The model calculates the mean sequencing depth using the Lander-Waterman equation. Given a read length of 150 and a total number of reads of 2000000 mapped to a genome size of 5e+06, the resulting coverage is 60. This value determines the probability that any specific base is missed, which is calculated as e raised to the negative coverage, yielding an uncovered fraction of 8.75651e-27. Consequently, the expected number of bases not covered by any read is 4.37826e-20, and the expected number of contiguous sequences or contigs formed is 1.7513e-20.
 
 <a id="cmb_transcribe"></a>
 
-#### Transcription of a DNA strand into mRNA — `cmb_transcribe`
+#### Transcription of a DNA strand into mRNA: `cmb_transcribe`
 
 The mRNA (5'->3') transcribed from a DNA sequence given 5'->3' as either the coding (sense) strand or the template (antisense) strand.
 
@@ -1468,10 +1416,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | DNA sequence 5'->3' | — |
-| `strand` | in | whether the given strand is the coding or the template strand | — |
-| `mRNA` | out | mRNA sequence 5'->3' | — |
-| `length` | out | length in nt | — |
+| `seq` | in | DNA sequence 5'->3' | - |
+| `strand` | in | whether the given strand is the coding or the template strand | - |
+| `mRNA` | out | mRNA sequence 5'->3' | - |
+| `length` | out | length in nt | - |
 
 **Applies when:** DNA letters only.
 
@@ -1480,8 +1428,8 @@ $ cell-molecular-biology solve cmb_transcribe seq=ATGGCCTTTAAG strand=coding
 mRNA = AUGGCCUUUAAG
 length = 12
   by: Transcription of a DNA strand into mRNA  (coding strand: T -> U; template strand: reverse complement, then T -> U)
-  strand = coding
   seq = ATGGCCTTTAAG
+  strand = coding
   assumes: DNA letters only
 ```
 
@@ -1489,7 +1437,7 @@ In the worked example, seq = ATGGCCTTTAAG, strand = coding go through the equati
 
 <a id="cmb_translate"></a>
 
-#### Translation of an mRNA or DNA sequence into protein — `cmb_translate`
+#### Translation of an mRNA or DNA sequence into protein, `cmb_translate`
 
 The protein encoded from the first base (frame 1) by the standard genetic code: up to the first stop codon, and the full translation with stops as *. A trailing incomplete codon is ignored.
 
@@ -1499,11 +1447,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `seq` | in | mRNA or coding-strand DNA 5'->3' | — |
-| `protein` | out | amino acids up to the first stop (one-letter code) | — |
-| `full_translation` | out | full translation with * for stops | — |
-| `length_aa` | out | length of the protein up to the first stop | — |
-| `stops` | out | number of stop codons | — |
+| `seq` | in | mRNA or coding-strand DNA 5'->3' | - |
+| `protein` | out | amino acids up to the first stop (one-letter code) | - |
+| `full_translation` | out | full translation with * for stops | - |
+| `length_aa` | out | length of the protein up to the first stop | - |
+| `stops` | out | number of stop codons | - |
 
 **Applies when:** only A, C, G, T or U; at least one codon.
 
@@ -1518,13 +1466,13 @@ stops = 2
   assumes: only A, C, G, T or U; at least one codon
 ```
 
-In the worked example, seq = AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG go through the equation above and give protein = MAIVMGR, full_translation = MAIVMGR*KGAR*, length_aa = 7, stops = 2. It applies only when only A, C, G, T or U; at least one codon: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the protein sequence encoded by the input nucleic acid string. It reads the sequence from the first base in triplets, mapping each codon to an amino acid using the standard genetic code. The primary output is the amino acid chain up to the first stop signal, which has a length of 7. The full translation including stops as asterisks is also provided, along with a count of 2 stop codons found in the entire frame.
 
 ### Enzyme kinetics (12)
 
 <a id="cmb_competitive_inhibition"></a>
 
-#### Competitive inhibition rate — `cmb_competitive_inhibition`
+#### Competitive inhibition rate: `cmb_competitive_inhibition`
 
 The rate of an enzyme with a competitive inhibitor (binding free enzyme only): Km rises by (1 + I/Ki), Vmax unchanged.
 
@@ -1542,7 +1490,7 @@ $$
 | `v` | out | rate with the inhibitor | mol/(m^3*s) |
 | `Km_app` | out | apparent Km | mol/m^3 |
 | `Vmax_app` | out | apparent Vmax | mol/(m^3*s) |
-| `percent_inhibition` | out | per cent inhibition at this S | — |
+| `percent_inhibition` | out | per cent inhibition at this S | - |
 
 **Applies when:** Vmax, Km, Ki > 0; S, I >= 0; rapid-equilibrium inhibitor binding.
 
@@ -1561,11 +1509,11 @@ percent_inhibition = 40
   assumes: Vmax, Km, Ki > 0; S, I >= 0; rapid-equilibrium inhibitor binding
 ```
 
-In the worked example, Vmax = 6 (umol/L)/min, Km = 50 (umol/L), S = 100 (umol/L), I = 20 (umol/L), Ki = 10 (umol/L) go through the equation above and give v = 4e-05 mol/(m^3*s), Km_app = 0.15 mol/m^3, Vmax_app = 0.0001 mol/(m^3*s), percent_inhibition = 40. It applies only when Vmax, Km, Ki > 0; S, I >= 0; rapid-equilibrium inhibitor binding: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the enzyme reaction velocity under competitive inhibition using the provided substrate and inhibitor concentrations. The resulting rate is 4e-05 mol/(m^3*s), reflecting a shift in the apparent Michaelis constant to 0.15 mol/m^3 while the maximum velocity remains at 0.0001 mol/(m^3*s). This indicates that 40 of the potential activity is lost due to the inhibitor presence.
 
 <a id="cmb_enzyme_assay_activity"></a>
 
-#### Enzyme activity and specific activity from a spectrophotometric assay — `cmb_enzyme_assay_activity`
+#### Enzyme activity and specific activity from a spectrophotometric assay, `cmb_enzyme_assay_activity`
 
 The enzyme activity (units = umol/min) in a cuvette from the absorbance change over a time (Beer-Lambert), the activity per mL of the enzyme sample and, with its protein concentration, the specific activity (U/mg).
 
@@ -1575,7 +1523,7 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `dA` | in | absorbance change over dt | — |
+| `dA` | in | absorbance change over dt | - |
 | `dt` | in | time of the absorbance change | s |
 | `eps` | in | molar absorptivity of the measured product or substrate (NADH 6220 L/(mol cm)) | m^2/mol |
 | `l` | in | path length | m |
@@ -1583,9 +1531,9 @@ $$
 | `V_enzyme` | in | volume of enzyme sample added | m^3 |
 | `protein` | in | protein concentration of the enzyme sample (optional) (optional) | kg/m^3 |
 | `rate` | out | rate of concentration change in the cuvette | mol/(m^3*s) |
-| `units` | out | activity in the cuvette in umol/min (U) | — |
-| `units_per_mL` | out | activity of the enzyme sample in U/mL | — |
-| `specific_activity` | out | specific activity in U/mg (when protein is given) | — |
+| `units` | out | activity in the cuvette in umol/min (U) | - |
+| `units_per_mL` | out | activity of the enzyme sample in U/mL | - |
+| `specific_activity` | out | specific activity in U/mg (when protein is given) | - |
 
 **Applies when:** dA != 0; dt, eps, l, volumes > 0; V_enzyme <= V_assay; linear initial rate.
 
@@ -1606,11 +1554,11 @@ specific_activity = 1.92926045
   assumes: dA != 0; dt, eps, l, volumes > 0; V_enzyme <= V_assay; linear initial rate
 ```
 
-In the worked example, dA = 0.12, dt = 1 min, eps = 6220 L/(mol*cm), l = 1 cm, V_assay = 1 mL, V_enzyme = 20 uL, protein = 0.5 mg/mL go through the equation above and give rate = 0.0003215434084 mol/(m^3*s), units = 0.0192926045, units_per_mL = 0.9646302251, specific_activity = 1.92926045. It applies only when dA != 0; dt, eps, l, volumes > 0; V_enzyme <= V_assay; linear initial rate: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines enzyme activity from a spectrophotometric assay using the Beer-Lambert law. The rate of concentration change in the cuvette was found to be 0.000321543 mol/(m^3*s), which translates to an absolute activity of 0.0192926. When normalized by the volume of enzyme added, this results in an activity concentration of 0.96463. If protein concentration data is available, the specific activity is calculated as 1.92926, providing a measure of purity and catalytic efficiency relative to the total protein mass present in the sample.
 
 <a id="cmb_ic50_to_ki"></a>
 
-#### Inhibition constant from IC50 (Cheng-Prusoff) — `cmb_ic50_to_ki`
+#### Inhibition constant from IC50 (Cheng-Prusoff), `cmb_ic50_to_ki`
 
 The inhibition constant Ki from a measured IC50 at substrate concentration S for a competitive, uncompetitive or noncompetitive inhibitor (Cheng-Prusoff relations).
 
@@ -1620,12 +1568,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `mode` | in | mechanism of inhibition | — |
+| `mode` | in | mechanism of inhibition | - |
 | `IC50` | in | inhibitor concentration giving 50 % inhibition | mol/m^3 |
 | `S` | in | substrate concentration of the assay | mol/m^3 |
 | `Km` | in | Michaelis constant | mol/m^3 |
 | `Ki` | out | inhibition constant | mol/m^3 |
-| `Ki_uM` | out | Ki in uM | — |
+| `Ki_uM` | out | Ki in uM | - |
 
 **Applies when:** IC50, S, Km > 0; inhibitor not depleted (I >> E).
 
@@ -1641,11 +1589,11 @@ Ki_uM = 3.333333333
   assumes: IC50, S, Km > 0; inhibitor not depleted (I >> E)
 ```
 
-In the worked example, mode = competitive, IC50 = 10 (umol/L), S = 100 (umol/L), Km = 50 (umol/L) go through the equation above and give Ki = 0.003333333333 mol/m^3, Ki_uM = 3.333333333. It applies only when IC50, S, Km > 0; inhibitor not depleted (I >> E): outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the true inhibition constant, denoted as Ki, which represents the concentration of inhibitor required to occupy half the enzyme sites at equilibrium. The value is derived from the observed half-maximal inhibitory concentration, IC50, using the Cheng-Prusoff equation appropriate for the specific mode of inhibition. For competitive inhibitors, the formula adjusts the IC50 by accounting for the substrate concentration and the Michaelis constant, yielding a Ki of 0.00333333 mol/m^3. This distinction is crucial because IC50 values depend on assay conditions such as substrate levels, whereas Ki is an intrinsic property of the inhibitor-enzyme interaction. The result provides a standardized metric for comparing inhibitor potency across different experimental setups.
 
 <a id="cmb_michaelis_menten_nonlinear_fit"></a>
 
-#### Km and Vmax by nonlinear least squares — `cmb_michaelis_menten_nonlinear_fit`
+#### Km and Vmax by nonlinear least squares: `cmb_michaelis_menten_nonlinear_fit`
 
 Km and Vmax fitted directly to initial-rate data by nonlinear least squares on v = Vmax S/(Km + S) (no linearizing transform), with the residual sum of squares and r^2.
 
@@ -1655,12 +1603,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `S` | in | substrate concentrations (any one unit) | — |
-| `v` | in | initial rates (any one unit) | — |
-| `Km` | out | Michaelis constant (unit of S) | — |
-| `Vmax` | out | maximum rate (unit of v) | — |
-| `rss` | out | residual sum of squares | — |
-| `r2` | out | coefficient of determination | — |
+| `S` | in | substrate concentrations (any one unit) | - |
+| `v` | in | initial rates (any one unit) | - |
+| `Km` | out | Michaelis constant (unit of S) | - |
+| `Vmax` | out | maximum rate (unit of v) | - |
+| `rss` | out | residual sum of squares | - |
+| `r2` | out | coefficient of determination | - |
 
 **Applies when:** at least 3 points; S, v > 0; an interior least-squares minimum.
 
@@ -1674,11 +1622,11 @@ r2 = 0.9986415273
   assumes: at least 3 points; S, v > 0; an interior least-squares minimum
 ```
 
-In the worked example, S = [1, 2, 5, 10, 20, 50], v = [16, 29.5, 49, 68, 79, 92] go through the equation above and give Km = 5.079276612, Vmax = 100.7136844, rss = 5.867526413, r2 = 0.9986415273. It applies only when at least 3 points; S, v > 0; an interior least-squares minimum: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the Michaelis constant and maximum reaction velocity by fitting the hyperbolic rate equation directly to your experimental data. The algorithm minimizes the squared differences between observed initial rates and predicted values, resulting in a Km of 5.07928 and a Vmax of 100.714. The goodness of fit is indicated by an r-squared value of 0.998642, where values closer to one suggest the model accurately describes the relationship between substrate concentration and reaction rate.
 
 <a id="cmb_lineweaver_burk_fit"></a>
 
-#### Km and Vmax from a Lineweaver-Burk plot — `cmb_lineweaver_burk_fit`
+#### Km and Vmax from a Lineweaver-Burk plot: `cmb_lineweaver_burk_fit`
 
 Km and Vmax from initial-rate data by the double-reciprocal (Lineweaver-Burk) least-squares line 1/v = (Km/Vmax)(1/S) + 1/Vmax.
 
@@ -1688,13 +1636,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `S` | in | substrate concentrations (any one unit, e.g. uM) | — |
-| `v` | in | initial rates (any one unit) | — |
-| `Km` | out | Michaelis constant (unit of S) | — |
-| `Vmax` | out | maximum rate (unit of v) | — |
-| `slope` | out | slope Km/Vmax | — |
-| `intercept` | out | intercept 1/Vmax | — |
-| `r2` | out | r^2 of the double-reciprocal line | — |
+| `S` | in | substrate concentrations (any one unit, e.g. uM) | - |
+| `v` | in | initial rates (any one unit) | - |
+| `Km` | out | Michaelis constant (unit of S) | - |
+| `Vmax` | out | maximum rate (unit of v) | - |
+| `slope` | out | slope Km/Vmax | - |
+| `intercept` | out | intercept 1/Vmax | - |
+| `r2` | out | r^2 of the double-reciprocal line | - |
 
 **Applies when:** at least 3 points; S, v > 0; positive slope and intercept.
 
@@ -1709,11 +1657,11 @@ r2 = 0.9999996643
   assumes: at least 3 points; S, v > 0; positive slope and intercept
 ```
 
-In the worked example, S = [1, 2, 5, 10, 20, 50], v = [16.7, 28.6, 50, 66.7, 80, 90.9] go through the equation above and give Km = 4.982268904, Vmax = 99.88884109, slope = 0.04987813304, intercept = 0.01001112826. It applies only when at least 3 points; S, v > 0; positive slope and intercept: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the kinetic parameters Km and Vmax by fitting initial rate data to a linear model. The reciprocal of the reaction velocity is plotted against the reciprocal of the substrate concentration, allowing for a least-squares regression. The resulting intercept provides the inverse of the maximum velocity, while the slope relates to the ratio of the Michaelis constant to the maximum velocity. For the dataset provided, the computed values are 4.98227 for the affinity constant and 99.8888 for the peak catalytic rate.
 
 <a id="cmb_michaelis_menten_rate"></a>
 
-#### Michaelis-Menten reaction rate — `cmb_michaelis_menten_rate`
+#### Michaelis-Menten reaction rate: `cmb_michaelis_menten_rate`
 
 The initial rate of an enzyme-catalysed reaction at substrate concentration S from Vmax and Km, and the fraction of Vmax.
 
@@ -1727,8 +1675,8 @@ $$
 | `Km` | in | Michaelis constant | mol/m^3 |
 | `S` | in | substrate concentration | mol/m^3 |
 | `v` | out | initial rate | mol/(m^3*s) |
-| `v_uM_min` | out | rate in uM/min | — |
-| `fraction` | out | v / Vmax | — |
+| `v_uM_min` | out | rate in uM/min | - |
+| `fraction` | out | v / Vmax | - |
 
 **Applies when:** Vmax, Km > 0; S >= 0; initial-rate conditions, S >> E.
 
@@ -1744,11 +1692,11 @@ fraction = 0.6666666667
   assumes: Vmax, Km > 0; S >= 0; initial-rate conditions, S >> E
 ```
 
-In the worked example, Vmax = 100 (umol/L)/min, Km = 50 (umol/L), S = 100 (umol/L) go through the equation above and give v = 0.001111111111 mol/(m^3*s), v_uM_min = 66.66666667, fraction = 0.6666666667. It applies only when Vmax, Km > 0; S >= 0; initial-rate conditions, S >> E: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the initial velocity of an enzyme-catalyzed reaction using the Michaelis-Menten equation. Given a maximum velocity of 100 (umol/L)/min, a Michaelis constant of 50 (umol/L), and a substrate concentration of 100 (umol/L), the resulting initial rate is 0.00111111 mol/(m^3*s). The fraction of the maximum velocity achieved under these conditions is 0.666667, indicating how close the enzyme is to saturation.
 
 <a id="cmb_mixed_inhibition"></a>
 
-#### Mixed inhibition rate — `cmb_mixed_inhibition`
+#### Mixed inhibition rate: `cmb_mixed_inhibition`
 
 The rate, apparent Km and apparent Vmax of an enzyme with a mixed inhibitor that binds free enzyme (Ki) and the enzyme-substrate complex (Kii) with different affinities.
 
@@ -1767,7 +1715,7 @@ $$
 | `v` | out | rate with the inhibitor | mol/(m^3*s) |
 | `Km_app` | out | apparent Km | mol/m^3 |
 | `Vmax_app` | out | apparent Vmax | mol/(m^3*s) |
-| `alpha` | out | Kii / Ki | — |
+| `alpha` | out | Kii / Ki | - |
 
 **Applies when:** Vmax, Km, Ki, Kii > 0; S, I >= 0; rapid equilibrium.
 
@@ -1787,11 +1735,11 @@ alpha = 4
   assumes: Vmax, Km, Ki, Kii > 0; S, I >= 0; rapid equilibrium
 ```
 
-In the worked example, Vmax = 6 (umol/L)/min, Km = 50 (umol/L), S = 100 (umol/L), I = 20 (umol/L), Ki = 10 (umol/L), Kii = 40 (umol/L) go through the equation above and give v = 3.333333333e-05 mol/(m^3*s), Km_app = 0.1 mol/m^3, Vmax_app = 6.666666667e-05 mol/(m^3*s), alpha = 4. It applies only when Vmax, Km, Ki, Kii > 0; S, I >= 0; rapid equilibrium: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the enzyme kinetics under mixed inhibition. Using the maximum rate without inhibitor, Michaelis constant, substrate concentration, inhibitor concentration, and dissociation constants for the free enzyme and enzyme-substrate complex, this gives the current rate, apparent Km, and apparent Vmax. The resulting rate is 3.33333e-05 mol/(m^3*s), indicating how fast the product forms given the inhibitor's presence. The apparent Km is 0.1 mol/m^3, reflecting changes in substrate affinity, while the apparent Vmax is 6.66667e-05 mol/(m^3*s), showing the altered maximum velocity.
 
 <a id="cmb_noncompetitive_inhibition"></a>
 
-#### Noncompetitive inhibition rate — `cmb_noncompetitive_inhibition`
+#### Noncompetitive inhibition rate: `cmb_noncompetitive_inhibition`
 
 The rate of an enzyme with a pure noncompetitive inhibitor (equal affinity for E and ES): Vmax falls by (1 + I/Ki), Km unchanged.
 
@@ -1809,7 +1757,7 @@ $$
 | `v` | out | rate with the inhibitor | mol/(m^3*s) |
 | `Km_app` | out | apparent Km | mol/m^3 |
 | `Vmax_app` | out | apparent Vmax | mol/(m^3*s) |
-| `percent_inhibition` | out | per cent inhibition at this S | — |
+| `percent_inhibition` | out | per cent inhibition at this S | - |
 
 **Applies when:** Vmax, Km, Ki > 0; S, I >= 0; rapid-equilibrium inhibitor binding.
 
@@ -1832,7 +1780,7 @@ In the worked example, Vmax = 6 (umol/L)/min, Km = 50 (umol/L), S = 100 (umol/L)
 
 <a id="cmb_q10_temperature"></a>
 
-#### Rate at another temperature from Q10 — `cmb_q10_temperature`
+#### Rate at another temperature from Q10: `cmb_q10_temperature`
 
 A biological rate at temperature T2 from its value at T1 and the temperature coefficient Q10, and the equivalent Arrhenius activation energy over that interval.
 
@@ -1842,14 +1790,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `k1` | in | rate at T1 (any unit) | — |
+| `k1` | in | rate at T1 (any unit) | - |
 | `T1` | in | first temperature (degC is converted) | K |
 | `T2` | in | second temperature (degC is converted) | K |
-| `Q10` | in | temperature coefficient Q10 | — |
-| `k2` | out | rate at T2 (unit of k1) | — |
-| `ratio` | out | k2 / k1 | — |
+| `Q10` | in | temperature coefficient Q10 | - |
+| `k2` | out | rate at T2 (unit of k1) | - |
+| `ratio` | out | k2 / k1 | - |
 | `Ea` | out | equivalent activation energy | J/mol |
-| `Ea_kJ_mol` | out | activation energy in kJ/mol | — |
+| `Ea_kJ_mol` | out | activation energy in kJ/mol | - |
 
 **Applies when:** k1, Q10 > 0; T1 != T2, both > 0 K.
 
@@ -1867,11 +1815,11 @@ Ea_kJ_mol = 52.94886217
   assumes: k1, Q10 > 0; T1 != T2, both > 0 K
 ```
 
-In the worked example, k1 = 10, T1 = 298.15 K, T2 = 308.15 K, Q10 = 2 go through the equation above and give k2 = 20, ratio = 2, Ea = 52948.86217 J/mol, Ea_kJ_mol = 52.94886217. It applies only when k1, Q10 > 0; T1 != T2, both > 0 K: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the biological reaction rate at temperature 308.15 K based on its known value 10 at temperature 298.15 K and the temperature coefficient 2. The resulting rate is 20, which represents a change factor of 2 compared to the original rate. Additionally, the equivalent Arrhenius activation energy for this temperature interval is computed as 52.9489, providing insight into the thermal sensitivity of the process.
 
 <a id="cmb_substrate_for_fraction_of_vmax"></a>
 
-#### Substrate concentration for a fraction of Vmax — `cmb_substrate_for_fraction_of_vmax`
+#### Substrate concentration for a fraction of Vmax, `cmb_substrate_for_fraction_of_vmax`
 
 The substrate concentration at which a Michaelis-Menten enzyme runs at a fraction f of Vmax (e.g. 90 % needs 9 Km).
 
@@ -1882,10 +1830,10 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `Km` | in | Michaelis constant | mol/m^3 |
-| `f` | in | fraction of Vmax (0 to 1) | — |
+| `f` | in | fraction of Vmax (0 to 1) | - |
 | `S` | out | required substrate concentration | mol/m^3 |
-| `S_uM` | out | S in uM | — |
-| `S_over_Km` | out | S as a multiple of Km | — |
+| `S_uM` | out | S in uM | - |
+| `S_over_Km` | out | S as a multiple of Km | - |
 
 **Applies when:** Km > 0; 0 < f < 1.
 
@@ -1900,11 +1848,11 @@ S_over_Km = 9
   assumes: Km > 0; 0 < f < 1
 ```
 
-In the worked example, Km = 50 (umol/L), f = 0.9 go through the equation above and give S = 0.45 mol/m^3, S_uM = 450, S_over_Km = 9. It applies only when Km > 0; 0 < f < 1: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the substrate concentration needed for an enzyme to operate at a specific fraction of its maximum velocity. Using the input values of 50 (umol/L) and 0.9, the result shows that the necessary substrate level is 0.45 mol/m^3. Expressed in micromolar units, this concentration is 450. The outcome indicates that achieving this rate requires a substrate amount equal to 9 times the Michaelis constant, highlighting how sensitive the reaction rate is to substrate availability near saturation.
 
 <a id="cmb_kcat_catalytic_efficiency"></a>
 
-#### Turnover number kcat and catalytic efficiency kcat/Km — `cmb_kcat_catalytic_efficiency`
+#### Turnover number kcat and catalytic efficiency kcat/Km, `cmb_kcat_catalytic_efficiency`
 
 The turnover number kcat = Vmax/[E]t, the catalytic efficiency kcat/Km (compare with the diffusion limit of about 1e8-1e9 per M per s) and the time per turnover.
 
@@ -1918,9 +1866,9 @@ $$
 | `Et` | in | total enzyme concentration | mol/m^3 |
 | `Km` | in | Michaelis constant | mol/m^3 |
 | `kcat` | out | turnover number | 1/s |
-| `kcat_per_s` | out | kcat in 1/s | — |
+| `kcat_per_s` | out | kcat in 1/s | - |
 | `efficiency` | out | catalytic efficiency kcat/Km | m^3/(mol*s) |
-| `efficiency_per_M_s` | out | kcat/Km in 1/(M s) | — |
+| `efficiency_per_M_s` | out | kcat/Km in 1/(M s) | - |
 | `turnover_time` | out | time per catalytic event 1/kcat | s |
 
 **Applies when:** Vmax, Et, Km > 0.
@@ -1939,11 +1887,11 @@ turnover_time = 0.01 s
   assumes: Vmax, Et, Km > 0
 ```
 
-In the worked example, Vmax = 60 (umol/L)/min, Et = 10 (nmol/L), Km = 25 (umol/L) go through the equation above and give kcat = 100 1/s, kcat_per_s = 100, efficiency = 4000 m^3/(mol*s), efficiency_per_M_s = 4000000. It applies only when Vmax, Et, Km > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the enzyme's performance by first finding the turnover number, which represents how many substrate molecules each active site converts per second. The result for the turnover number is 100 1/s. Next, the catalytic efficiency is calculated by dividing this rate by the Michaelis constant to assess how effectively the enzyme works at low substrate concentrations. The computed efficiency value is 4000 m^3/(mol*s), indicating the enzyme's ability to compete with other reactions or approach diffusion limits.
 
 <a id="cmb_uncompetitive_inhibition"></a>
 
-#### Uncompetitive inhibition rate — `cmb_uncompetitive_inhibition`
+#### Uncompetitive inhibition rate: `cmb_uncompetitive_inhibition`
 
 The rate of an enzyme with an uncompetitive inhibitor (binding the enzyme-substrate complex only): Km and Vmax both fall by (1 + I/Ki).
 
@@ -1961,7 +1909,7 @@ $$
 | `v` | out | rate with the inhibitor | mol/(m^3*s) |
 | `Km_app` | out | apparent Km | mol/m^3 |
 | `Vmax_app` | out | apparent Vmax | mol/(m^3*s) |
-| `percent_inhibition` | out | per cent inhibition at this S | — |
+| `percent_inhibition` | out | per cent inhibition at this S | - |
 
 **Applies when:** Vmax, Km, Ki > 0; S, I >= 0; rapid-equilibrium inhibitor binding.
 
@@ -1986,7 +1934,7 @@ In the worked example, Vmax = 6 (umol/L)/min, Km = 50 (umol/L), S = 100 (umol/L)
 
 <a id="cmb_ligand_depletion_binding"></a>
 
-#### Complex concentration with ligand depletion (quadratic binding) — `cmb_ligand_depletion_binding`
+#### Complex concentration with ligand depletion (quadratic binding), `cmb_ligand_depletion_binding`
 
 The concentration of receptor-ligand complex when neither component is in excess (exact quadratic solution), with the fractions bound and the free ligand.
 
@@ -2000,9 +1948,9 @@ $$
 | `Lt` | in | total ligand concentration | mol/m^3 |
 | `Kd` | in | dissociation constant | mol/m^3 |
 | `RL` | out | complex concentration | mol/m^3 |
-| `fraction_receptor_bound` | out | RL / Rt | — |
+| `fraction_receptor_bound` | out | RL / Rt | - |
 | `free_ligand` | out | free ligand Lt - RL | mol/m^3 |
-| `fraction_ligand_bound` | out | RL / Lt | — |
+| `fraction_ligand_bound` | out | RL / Lt | - |
 
 **Applies when:** Rt, Lt, Kd > 0; single site, 1:1 binding at equilibrium.
 
@@ -2019,11 +1967,11 @@ fraction_ligand_bound = 0.2928932188
   assumes: Rt, Lt, Kd > 0; single site, 1:1 binding at equilibrium
 ```
 
-In the worked example, Rt = 10 (nmol/L), Lt = 20 (nmol/L), Kd = 10 (nmol/L) go through the equation above and give RL = 5.857864376e-06 mol/m^3, fraction_receptor_bound = 0.5857864376, free_ligand = 1.414213562e-05 mol/m^3, fraction_ligand_bound = 0.2928932188. It applies only when Rt, Lt, Kd > 0; single site, 1:1 binding at equilibrium: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the equilibrium concentration of receptor-ligand complexes using the exact quadratic solution for single-site binding. Given total receptor 10 (nmol/L), total ligand 20 (nmol/L), and dissociation constant 10 (nmol/L), the resulting complex concentration is 5.85786e-06 mol/m^3. This corresponds to a fraction of receptors bound of 0.585786 and free ligand remaining at 1.41421e-05 mol/m^3.
 
 <a id="cmb_kd_from_rates"></a>
 
-#### Dissociation constant from association and dissociation rates — `cmb_kd_from_rates`
+#### Dissociation constant from association and dissociation rates, `cmb_kd_from_rates`
 
 The equilibrium dissociation constant Kd = koff/kon, the association constant, the complex half-life and the residence time.
 
@@ -2036,8 +1984,8 @@ $$
 | `kon` | in | association rate constant | m^3/(mol*s) |
 | `koff` | in | dissociation rate constant | 1/s |
 | `Kd` | out | dissociation constant | mol/m^3 |
-| `Kd_nM` | out | Kd in nM | — |
-| `Ka_per_M` | out | association constant in 1/M | — |
+| `Kd_nM` | out | Kd in nM | - |
+| `Ka_per_M` | out | association constant in 1/M | - |
 | `half_life` | out | complex half-life ln2/koff | s |
 | `residence_time` | out | mean residence time 1/koff | s |
 
@@ -2056,11 +2004,11 @@ residence_time = 1000 s
   assumes: kon, koff > 0; simple 1:1 binding
 ```
 
-In the worked example, kon = 1000000 1/((mol/L)*s), koff = 0.001 1/s go through the equation above and give Kd = 1e-06 mol/m^3, Kd_nM = 1, Ka_per_M = 1000, half_life = 693.1471806 s. It applies only when kon, koff > 0; simple 1:1 binding: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the equilibrium dissociation constant Kd from the association rate kon and dissociation rate koff. The result, 1e-06 mol/m^3, represents the concentration at which half the binding sites are occupied. A lower value indicates tighter binding. Additionally, the complex half-life 693.147 s and mean residence time 1000 s describe how long the bound state persists.
 
 <a id="cmb_fraction_bound"></a>
 
-#### Fraction of receptor bound at a free ligand concentration — `cmb_fraction_bound`
+#### Fraction of receptor bound at a free ligand concentration, `cmb_fraction_bound`
 
 The fractional occupancy L/(Kd + L) of a single-site receptor at free ligand concentration L, and the bound concentration for a receptor total Rt (ligand not depleted).
 
@@ -2073,8 +2021,8 @@ $$
 | `L` | in | free ligand concentration | mol/m^3 |
 | `Kd` | in | dissociation constant | mol/m^3 |
 | `Rt` | in | total receptor concentration (optional) (optional) | mol/m^3 |
-| `theta` | out | fraction bound | — |
-| `theta_percent` | out | per cent bound | — |
+| `theta` | out | fraction bound | - |
+| `theta_percent` | out | per cent bound | - |
 | `bound` | out | bound complex concentration (when Rt is given) | mol/m^3 |
 
 **Applies when:** L, Kd > 0; single independent site; ligand in excess (free = total).
@@ -2093,7 +2041,7 @@ In the worked example, L = 10 (nmol/L), Kd = 5 (nmol/L) go through the equation 
 
 <a id="cmb_hill_equation"></a>
 
-#### Fractional saturation by the Hill equation — `cmb_hill_equation`
+#### Fractional saturation by the Hill equation, `cmb_hill_equation`
 
 The fractional saturation (or response) of a cooperative binding protein at ligand concentration L, with half-saturation K and Hill coefficient n.
 
@@ -2105,9 +2053,9 @@ $$
 |---|---|---|---|
 | `L` | in | free ligand concentration | mol/m^3 |
 | `K` | in | ligand concentration for half saturation (K0.5) | mol/m^3 |
-| `n` | in | Hill coefficient | — |
-| `theta` | out | fractional saturation | — |
-| `theta_percent` | out | saturation in per cent | — |
+| `n` | in | Hill coefficient | - |
+| `theta` | out | fractional saturation | - |
+| `theta_percent` | out | saturation in per cent | - |
 
 **Applies when:** L, K, n > 0.
 
@@ -2122,11 +2070,11 @@ theta_percent = 50
   assumes: L, K, n > 0
 ```
 
-In the worked example, L = 26 (umol/L), K = 26 (umol/L), n = 2.8 go through the equation above and give theta = 0.5, theta_percent = 50. It applies only when L, K, n > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the fractional saturation of a cooperative binding protein using the Hill equation. Given a free ligand concentration of 26 (umol/L), a half-saturation constant of 26 (umol/L), and a Hill coefficient of 2.8, the model computes the fraction of binding sites occupied by the ligand. The resulting fractional saturation is 0.5, indicating that 50 of the available sites are bound at this specific ligand concentration.
 
 <a id="cmb_mwc_saturation"></a>
 
-#### Fractional saturation in the MWC (concerted) model — `cmb_mwc_saturation`
+#### Fractional saturation in the MWC (concerted) model, `cmb_mwc_saturation`
 
 The fractional saturation and the fraction of molecules in the R state of an allosteric protein with n sites in the Monod-Wyman-Changeux model (L0 = [T]/[R] without ligand, c = KR/KT).
 
@@ -2138,11 +2086,11 @@ $$
 |---|---|---|---|
 | `S` | in | ligand concentration | mol/m^3 |
 | `KR` | in | dissociation constant of a site in the R state | mol/m^3 |
-| `c` | in | ratio KR/KT (0 < c < 1) | — |
-| `L0` | in | allosteric constant [T0]/[R0] | — |
-| `n` | in | number of binding sites | — |
-| `Y` | out | fractional saturation | — |
-| `R_fraction` | out | fraction of molecules in the R state | — |
+| `c` | in | ratio KR/KT (0 < c < 1) | - |
+| `L0` | in | allosteric constant [T0]/[R0] | - |
+| `n` | in | number of binding sites | - |
+| `Y` | out | fractional saturation | - |
+| `R_fraction` | out | fraction of molecules in the R state | - |
 
 **Applies when:** S, KR, c, L0 > 0; 1 <= n <= 12; concerted R/T transition.
 
@@ -2158,11 +2106,11 @@ R_fraction = 0.1059208076
   assumes: S, KR, c, L0 > 0; 1 <= n <= 12; concerted R/T transition
 ```
 
-In the worked example, S = 10 (umol/L), KR = 2 (umol/L), c = 0.01, L0 = 9000, n = 4 go through the equation above and give Y = 0.1308425393, R_fraction = 0.1059208076. It applies only when S, KR, c, L0 > 0; 1 <= n <= 12; concerted R/T transition: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the fractional saturation Y and the fraction of molecules in the R state for an allosteric protein using the Monod-Wyman-Changeux model. The result depends on the ligand concentration S, the dissociation constant KR, the ratio c, the allosteric constant L0, and the number of binding sites n. With the current inputs, the protein exhibits a fractional saturation of 0.130843, indicating that this proportion of available sites are occupied by the ligand. Simultaneously, the fraction of molecules in the high-affinity R state is 0.105921, reflecting how the ligand shifts the equilibrium between the tense and relaxed conformations.
 
 <a id="cmb_hill_coefficient_from_ec"></a>
 
-#### Hill coefficient from EC10 and EC90 — `cmb_hill_coefficient_from_ec`
+#### Hill coefficient from EC10 and EC90: `cmb_hill_coefficient_from_ec`
 
 The Hill coefficient n = ln 81 / ln(EC90/EC10) and the EC50 (their geometric mean) of a Hill dose-response curve (81-fold range for n = 1).
 
@@ -2174,9 +2122,9 @@ $$
 |---|---|---|---|
 | `EC10` | in | concentration giving 10 % of the maximum | mol/m^3 |
 | `EC90` | in | concentration giving 90 % of the maximum | mol/m^3 |
-| `n` | out | Hill coefficient | — |
+| `n` | out | Hill coefficient | - |
 | `EC50` | out | half-maximal concentration | mol/m^3 |
-| `ratio` | out | EC90 / EC10 | — |
+| `ratio` | out | EC90 / EC10 | - |
 
 **Applies when:** 0 < EC10 < EC90; a Hill curve.
 
@@ -2191,11 +2139,11 @@ ratio = 81
   assumes: 0 < EC10 < EC90; a Hill curve
 ```
 
-In the worked example, EC10 = 1 (umol/L), EC90 = 81 (umol/L) go through the equation above and give n = 1, EC50 = 0.009 mol/m^3, ratio = 81. It applies only when 0 < EC10 < EC90; a Hill curve: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the steepness of a dose-response curve using the Hill equation. By taking the natural logarithm of eighty-one divided by the natural logarithm of the ratio between the concentration at ninety percent response (81 (umol/L)) and ten percent response (1 (umol/L)), this gives the Hill coefficient (1). The half-maximal effective concentration (0.009 mol/m^3) is calculated as the geometric mean of these two input values. A higher coefficient indicates a steeper transition between low and high response states, while the EC50 represents the potency of the stimulus.
 
 <a id="cmb_scatchard_fit"></a>
 
-#### Kd and Bmax from a Scatchard plot — `cmb_scatchard_fit`
+#### Kd and Bmax from a Scatchard plot: `cmb_scatchard_fit`
 
 The dissociation constant and the total binding sites from saturation-binding data by the Scatchard least-squares line B/F = Bmax/Kd - B/Kd.
 
@@ -2205,13 +2153,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `B` | in | bound ligand concentrations (any one unit, e.g. nM or fmol/mg) | — |
-| `F` | in | free ligand concentrations (e.g. nM) | — |
-| `Kd` | out | dissociation constant (unit of F) | — |
-| `Bmax` | out | total binding sites (unit of B) | — |
-| `slope` | out | slope -1/Kd | — |
-| `intercept` | out | intercept Bmax/Kd | — |
-| `r2` | out | r^2 of the Scatchard line | — |
+| `B` | in | bound ligand concentrations (any one unit, e.g. nM or fmol/mg) | - |
+| `F` | in | free ligand concentrations (e.g. nM) | - |
+| `Kd` | out | dissociation constant (unit of F) | - |
+| `Bmax` | out | total binding sites (unit of B) | - |
+| `slope` | out | slope -1/Kd | - |
+| `intercept` | out | intercept Bmax/Kd | - |
+| `r2` | out | r^2 of the Scatchard line | - |
 
 **Applies when:** at least 3 points; B, F > 0; negative slope (one class of sites).
 
@@ -2226,11 +2174,11 @@ r2 = 0.9999971119
   assumes: at least 3 points; B, F > 0; negative slope (one class of sites)
 ```
 
-In the worked example, B = [16.7, 28.6, 50, 66.7, 80], F = [1, 2, 5, 10, 20] go through the equation above and give Kd = 4.986488927, Bmax = 99.93037658, slope = -0.2005419073, intercept = 20.04022831. It applies only when at least 3 points; B, F > 0; negative slope (one class of sites): outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the affinity and capacity of a receptor for its ligand using linear regression on Scatchard coordinates. By plotting the ratio of bound to free ligand against the bound concentration, this gives a straight line where the negative reciprocal of the slope yields the dissociation constant 4.98649, and the negative ratio of the intercept to the slope gives the maximum number of binding sites 99.9304. The resulting fit quality is indicated by an r-squared value of 0.999997, confirming how well the data adheres to the single-site binding model.
 
 <a id="cmb_hill_ligand_for_fraction"></a>
 
-#### Ligand concentration for a given saturation (Hill) — `cmb_hill_ligand_for_fraction`
+#### Ligand concentration for a given saturation (Hill), `cmb_hill_ligand_for_fraction`
 
 The ligand concentration that gives a fractional saturation theta for a cooperative protein with half-saturation K and Hill coefficient n.
 
@@ -2241,10 +2189,10 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `K` | in | half-saturation concentration K0.5 | mol/m^3 |
-| `n` | in | Hill coefficient | — |
-| `theta` | in | fractional saturation (0 to 1) | — |
+| `n` | in | Hill coefficient | - |
+| `theta` | in | fractional saturation (0 to 1) | - |
 | `L` | out | required ligand concentration | mol/m^3 |
-| `L_uM` | out | L in uM | — |
+| `L_uM` | out | L in uM | - |
 
 **Applies when:** K, n > 0; 0 < theta < 1.
 
@@ -2259,11 +2207,11 @@ L_uM = 56.98679654
   assumes: K, n > 0; 0 < theta < 1
 ```
 
-In the worked example, K = 26 (umol/L), n = 2.8, theta = 0.9 go through the equation above and give L = 0.05698679654 mol/m^3, L_uM = 56.98679654. It applies only when K, n > 0; 0 < theta < 1: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the ligand concentration needed for a cooperative protein to reach a specific fractional saturation. Using the Hill equation, the result shows that with a half-saturation constant of 26 (umol/L) and a Hill coefficient of 2.8, a concentration of 0.0569868 mol/m^3 is required to bind enough ligand to satisfy the target saturation level of 0.9.
 
 <a id="cmb_competitive_occupancy"></a>
 
-#### Receptor occupancy with a competing ligand — `cmb_competitive_occupancy`
+#### Receptor occupancy with a competing ligand, `cmb_competitive_occupancy`
 
 The fractions of a receptor occupied by a ligand and by a competitor binding the same site, the free fraction and the apparent Kd of the ligand in the competitor's presence (no depletion).
 
@@ -2277,9 +2225,9 @@ $$
 | `Kd` | in | ligand dissociation constant | mol/m^3 |
 | `I` | in | free competitor concentration | mol/m^3 |
 | `Ki` | in | competitor dissociation constant | mol/m^3 |
-| `occupancy_L` | out | fraction occupied by the ligand | — |
-| `occupancy_I` | out | fraction occupied by the competitor | — |
-| `free_fraction` | out | fraction of free receptor | — |
+| `occupancy_L` | out | fraction occupied by the ligand | - |
+| `occupancy_I` | out | fraction occupied by the competitor | - |
+| `free_fraction` | out | fraction of free receptor | - |
 | `Kd_app` | out | apparent Kd of the ligand Kd (1 + I/Ki) | mol/m^3 |
 
 **Applies when:** Kd, Ki > 0; L, I >= 0; one site, mutually exclusive binding, no depletion.
@@ -2298,11 +2246,11 @@ Kd_app = 1.5e-05 mol/m^3
   assumes: Kd, Ki > 0; L, I >= 0; one site, mutually exclusive binding, no depletion
 ```
 
-In the worked example, L = 10 (nmol/L), Kd = 5 (nmol/L), I = 20 (nmol/L), Ki = 10 (nmol/L) go through the equation above and give occupancy_L = 0.4, occupancy_I = 0.4, free_fraction = 0.2, Kd_app = 1.5e-05 mol/m^3. It applies only when Kd, Ki > 0; L, I >= 0; one site, mutually exclusive binding, no depletion: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines how a single receptor site is distributed among three states: bound to the primary ligand, bound to a competing inhibitor, or unbound. Using the provided concentrations and dissociation constants, it computes that the fraction occupied by the ligand is 0.4 and the fraction occupied by the competitor is 0.4. The remaining portion, 0.2, represents receptors not currently bound by either molecule. Additionally, the apparent dissociation constant for the ligand in the presence of this competitor is calculated as 1.5e-05 mol/m^3, reflecting how the competitor reduces the effective affinity of the ligand for the receptor.
 
 <a id="cmb_binding_free_energy"></a>
 
-#### Standard binding free energy from Kd — `cmb_binding_free_energy`
+#### Standard binding free energy from Kd: `cmb_binding_free_energy`
 
 The standard free energy of binding dG = RT ln(Kd / 1 M) (negative for favourable binding) at temperature T.
 
@@ -2315,8 +2263,8 @@ $$
 | `Kd` | in | dissociation constant | mol/m^3 |
 | `T` | in | absolute temperature (degC is converted) | K |
 | `dG` | out | standard binding free energy | J/mol |
-| `dG_kJ_mol` | out | dG in kJ/mol | — |
-| `dG_kcal_mol` | out | dG in kcal/mol | — |
+| `dG_kJ_mol` | out | dG in kJ/mol | - |
+| `dG_kcal_mol` | out | dG in kcal/mol | - |
 
 **Applies when:** Kd, T > 0; standard state 1 M.
 
@@ -2331,13 +2279,13 @@ dG_kcal_mol = -10.9139761
   assumes: Kd, T > 0; standard state 1 M
 ```
 
-In the worked example, Kd = 10 (nmol/L), T = 298.15 K go through the equation above and give dG = -45664.07602 J/mol, dG_kJ_mol = -45.66407602, dG_kcal_mol = -10.9139761. It applies only when Kd, T > 0; standard state 1 M: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the standard Gibbs free energy change for a binding interaction using the relationship between the dissociation constant and thermodynamic stability. By inputting the measured dissociation constant 10 (nmol/L) and the absolute temperature 298.15 K, the model computes the energy required to separate the complex into its components under standard conditions of one molar concentration. The resulting value, expressed as -45664.1 J/mol in joules per mole or equivalently -45.6641 in kilojoules per mole, indicates the spontaneity of the association; a negative value signifies favorable binding where the complex is more stable than the separated parts.
 
 ### Membranes and diffusion (14)
 
 <a id="cmb_cell_volume_osmotic"></a>
 
-#### Cell volume after an osmotic change (Boyle-van 't Hoff) — `cmb_cell_volume_osmotic`
+#### Cell volume after an osmotic change (Boyle-van 't Hoff), `cmb_cell_volume_osmotic`
 
 The equilibrium volume of a cell moved from osmolarity osm0 to osm1, with an osmotically inactive volume fraction b (an ideal osmometer).
 
@@ -2348,12 +2296,12 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `V0` | in | initial cell volume | m^3 |
-| `b` | in | osmotically inactive fraction of the initial volume (0 to 1) | — |
+| `b` | in | osmotically inactive fraction of the initial volume (0 to 1) | - |
 | `osm0` | in | initial (isotonic) osmolarity | mol/m^3 |
 | `osm1` | in | new outside osmolarity | mol/m^3 |
 | `V` | out | new equilibrium cell volume | m^3 |
-| `V_fL` | out | new volume in femtolitres | — |
-| `ratio` | out | new volume relative to the initial volume | — |
+| `V_fL` | out | new volume in femtolitres | - |
+| `ratio` | out | new volume relative to the initial volume | - |
 
 **Applies when:** V0, osm0, osm1 > 0; 0 <= b < 1; impermeant solutes, water in equilibrium.
 
@@ -2370,11 +2318,11 @@ ratio = 0.7
   assumes: V0, osm0, osm1 > 0; 0 <= b < 1; impermeant solutes, water in equilibrium
 ```
 
-In the worked example, V0 = 90 fL, b = 0.4, osm0 = 300 mmol/L, osm1 = 600 mmol/L go through the equation above and give V = 6.3e-17 m^3, V_fL = 63, ratio = 0.7. It applies only when V0, osm0, osm1 > 0; 0 <= b < 1; impermeant solutes, water in equilibrium: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the final volume of a cell after it moves from an initial osmolarity to a new external osmolarity, assuming the cell acts as an ideal osmometer with impermeant solutes. Using the Boyle-van 't Hoff relationship, the result shows that the new equilibrium volume is 6.3e-17 m^3. This corresponds to 63 in femtolitres. The volume has changed by a factor of 0.7 compared to the starting size, reflecting how water shifts across the membrane to balance osmotic pressure while accounting for the osmotically inactive volume fraction.
 
 <a id="cmb_frap_diffusion"></a>
 
-#### Diffusion coefficient from a FRAP half-time (Soumpasis) — `cmb_frap_diffusion`
+#### Diffusion coefficient from a FRAP half-time (Soumpasis), `cmb_frap_diffusion`
 
 The two-dimensional diffusion coefficient from the half-time of fluorescence recovery after photobleaching a uniform circular spot of radius w (Soumpasis' exact solution, D = 0.224 w^2 / t_half).
 
@@ -2387,9 +2335,9 @@ $$
 | `w` | in | radius of the bleached spot | m |
 | `t_half` | in | half-time of recovery | s |
 | `D` | out | diffusion coefficient | m^2/s |
-| `D_um2_s` | out | D in um^2/s | — |
+| `D_um2_s` | out | D in um^2/s | - |
 | `tauD` | out | characteristic diffusion time w^2/(4D) | s |
-| `gamma` | out | tauD / t_half (about 1.12) | — |
+| `gamma` | out | tauD / t_half (about 1.12) | - |
 
 **Applies when:** w, t_half > 0; 2-D free diffusion, uniform circular bleach, full mobile fraction.
 
@@ -2405,11 +2353,11 @@ gamma = 1.117829076
   assumes: w, t_half > 0; 2-D free diffusion, uniform circular bleach, full mobile fraction
 ```
 
-In the worked example, w = 1 um, t_half = 0.5 s go through the equation above and give D = 4.472955755e-13 m^2/s, D_um2_s = 0.4472955755, tauD = 0.5589145382 s, gamma = 1.117829076. It applies only when w, t_half > 0; 2-D free diffusion, uniform circular bleach, full mobile fraction: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the two-dimensional diffusion coefficient using Soumpasis' exact solution for fluorescence recovery after photobleaching. By inputting the bleached spot radius 1 um and the measured half-time of recovery 0.5 s, the model solves for the characteristic diffusion time, yielding a diffusion coefficient of 4.47296e-13 m^2/s. This value quantifies how rapidly molecules move within the plane of the membrane or cytoplasm under the assumption of free, uniform diffusion.
 
 <a id="cmb_diffusion_limited_rate"></a>
 
-#### Diffusion-limited association rate constant (Smoluchowski) — `cmb_diffusion_limited_rate`
+#### Diffusion-limited association rate constant (Smoluchowski), `cmb_diffusion_limited_rate`
 
 The maximum (diffusion-limited) bimolecular association rate constant of two spheres that react on contact.
 
@@ -2424,7 +2372,7 @@ $$
 | `rA` | in | radius of molecule A | m |
 | `rB` | in | radius of molecule B | m |
 | `k` | out | diffusion-limited rate constant | m^3/(mol*s) |
-| `k_per_M_s` | out | rate constant in 1/(M s) | — |
+| `k_per_M_s` | out | rate constant in 1/(M s) | - |
 
 **Applies when:** all inputs > 0; reaction on every contact, no interaction forces.
 
@@ -2444,7 +2392,7 @@ In the worked example, DA = 100 um^2/s, DB = 1000 um^2/s, rA = 2 nm, rB = 0.5 nm
 
 <a id="cmb_donnan_equilibrium"></a>
 
-#### Donnan equilibrium with an impermeant anion — `cmb_donnan_equilibrium`
+#### Donnan equilibrium with an impermeant anion, `cmb_donnan_equilibrium`
 
 The inside cation and anion concentrations, the Donnan ratio, the Donnan potential and the osmotic excess when a cell holds impermeant anions (charge -zA) bathed in a monovalent salt (KCl) of concentration c.
 
@@ -2455,15 +2403,15 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `A` | in | concentration of impermeant anions inside | mol/m^3 |
-| `zA` | in | magnitude of the impermeant anion's charge (1, 2 or 3) | — |
+| `zA` | in | magnitude of the impermeant anion's charge (1, 2 or 3) | - |
 | `c` | in | outside concentration of the monovalent salt | mol/m^3 |
 | `T` | in | absolute temperature (degC is converted) | K |
 | `K_in` | out | inside cation concentration | mol/m^3 |
 | `Cl_in` | out | inside permeant anion concentration | mol/m^3 |
-| `ratio` | out | Donnan ratio K_in / K_out = Cl_out / Cl_in | — |
+| `ratio` | out | Donnan ratio K_in / K_out = Cl_out / Cl_in | - |
 | `E` | out | Donnan potential (inside minus outside) | V |
-| `E_mV` | out | Donnan potential in mV | — |
-| `excess_mOsm` | out | inside minus outside osmolarity in mOsm/L | — |
+| `E_mV` | out | Donnan potential in mV | - |
+| `excess_mOsm` | out | inside minus outside osmolarity in mOsm/L | - |
 
 **Applies when:** A, c, T > 0; zA = 1, 2 or 3; ideal solutions, electroneutral compartments.
 
@@ -2482,11 +2430,11 @@ excess_mOsm = 123.6067977
   assumes: A, c, T > 0; zA = 1, 2 or 3; ideal solutions, electroneutral compartments
 ```
 
-In the worked example, A = 100 (mmol/L), zA = 1, c = 100 (mmol/L), T = 298.15 K go through the equation above and give K_in = 161.8033989 mol/m^3, Cl_in = 61.80339887 mol/m^3, ratio = 1.618033989, E = -0.01236357289 V. It applies only when A, c, T > 0; zA = 1, 2 or 3; ideal solutions, electroneutral compartments: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the equilibrium state of a cell containing impermeant anions bathed in a monovalent salt solution. Given the internal impermeant anion concentration of 100 (mmol/L), its charge magnitude of 1, the external salt concentration of 100 (mmol/L), and the temperature of 298.15 K, the model computes the resulting ion distributions. The inside potassium concentration reaches 161.803 mol/m^3, while the inside chloride concentration is 61.8034 mol/m^3. This imbalance creates a Donnan ratio of 1.61803 and generates a membrane potential of -12.3636 millivolts, accompanied by an osmotic excess of 123.607 milliosmoles per liter.
 
 <a id="cmb_cell_equilibration"></a>
 
-#### Equilibration of a solute across a spherical cell's membrane — `cmb_cell_equilibration`
+#### Equilibration of a solute across a spherical cell's membrane, `cmb_cell_equilibration`
 
 The internal concentration of a permeant solute at time t for a spherical cell (A/V = 3/r) bathed at a constant outside concentration, with the time constant and half-time.
 
@@ -2521,11 +2469,11 @@ t_half = 23.10490602 s
   assumes: r, P > 0; C_out, C0, t >= 0; well-mixed cell of constant volume, outside unchanged
 ```
 
-In the worked example, r = 10 um, P = 1e-05 cm/s, C_out = 10 (mmol/L), C0 = 0 (mmol/L), t = 30 s go through the equation above and give C = 5.934303403 mol/m^3, tau = 33.33333333 s, t_half = 23.10490602 s. It applies only when r, P > 0; C_out, C0, t >= 0; well-mixed cell of constant volume, outside unchanged: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the solute concentration inside a spherical cell at a specific moment. It uses the cell radius, membrane permeability, constant outside concentration, initial inside concentration, and elapsed time. The result, 5.9343 mol/m^3, represents the current internal level as it approaches equilibrium with the surrounding medium.
 
 <a id="cmb_fick_flux"></a>
 
-#### Fick's first law: steady diffusion flux — `cmb_fick_flux`
+#### Fick's first law: steady diffusion flux, `cmb_fick_flux`
 
 The steady one-dimensional diffusive flux between two concentrations a distance apart (positive from side 1 to side 2).
 
@@ -2540,7 +2488,7 @@ $$
 | `C2` | in | concentration on side 2 | mol/m^3 |
 | `dx` | in | distance between the two sides | m |
 | `J` | out | molar flux from side 1 to side 2 | mol/(m^2*s) |
-| `J_nmol_cm2_s` | out | flux in nmol per cm^2 per second | — |
+| `J_nmol_cm2_s` | out | flux in nmol per cm^2 per second | - |
 
 **Applies when:** D > 0, dx > 0; C1, C2 >= 0; steady state, linear profile.
 
@@ -2556,11 +2504,11 @@ J_nmol_cm2_s = 80
   assumes: D > 0, dx > 0; C1, C2 >= 0; steady state, linear profile
 ```
 
-In the worked example, D = 1000 um^2/s, C1 = 10 (mmol/L), C2 = 2 (mmol/L), dx = 10 um go through the equation above and give J = 0.0008 mol/(m^2*s), J_nmol_cm2_s = 80. It applies only when D > 0, dx > 0; C1, C2 >= 0; steady state, linear profile: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the molar flux of a solute moving through a medium based on Fick's first law. Using a diffusion coefficient of 1000 um^2/s and a concentration difference between side one (10 (mmol/L)) and side two (2 (mmol/L)) across a distance of 10 um, the resulting flux from side one to side two is 0.0008 mol/(m^2*s). This value represents the rate at which particles move per unit area due to the concentration gradient.
 
 <a id="cmb_channel_current"></a>
 
-#### Macroscopic current through ion channels — `cmb_channel_current`
+#### Macroscopic current through ion channels: `cmb_channel_current`
 
 The whole-cell current I = N Po gamma (V - E) through N channels of single-channel conductance gamma and open probability Po, and the single-channel current.
 
@@ -2570,13 +2518,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `N` | in | number of channels | — |
-| `Po` | in | open probability (0 to 1) | — |
+| `N` | in | number of channels | - |
+| `Po` | in | open probability (0 to 1) | - |
 | `gamma` | in | single-channel conductance | S |
 | `V` | in | membrane potential | V |
 | `E` | in | reversal potential of the channel | V |
 | `I` | out | macroscopic current (positive outward) | A |
-| `I_pA` | out | current in pA | — |
+| `I_pA` | out | current in pA | - |
 | `G` | out | total open conductance N Po gamma | S |
 | `i_single` | out | single open-channel current gamma (V - E) | A |
 
@@ -2596,11 +2544,11 @@ i_single = 1e-12 A
   assumes: N >= 1; 0 <= Po <= 1; gamma > 0; ohmic open channels
 ```
 
-In the worked example, N = 1000, Po = 0.3, gamma = 20 pS, V = -40 mV, E = -90 mV go through the equation above and give I = 3e-10 A, I_pA = 300, G = 6e-09 S, i_single = 1e-12 A. It applies only when N >= 1; 0 <= Po <= 1; gamma > 0; ohmic open channels: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the total ionic current flowing through a population of ion channels. It multiplies the number of functional channels by their open probability and single-channel conductance to find the total conductance, then applies the electrochemical driving force defined by the difference between the membrane potential and the reversal potential. The result, 3e-10 A, represents the net flow of charge across the membrane in amperes, while 6e-09 S shows the aggregate ease with which ions can pass through the open channels.
 
 <a id="cmb_membrane_permeability"></a>
 
-#### Membrane permeability coefficient and flux — `cmb_membrane_permeability`
+#### Membrane permeability coefficient and flux, `cmb_membrane_permeability`
 
 The permeability coefficient P = K D / L of a lipid membrane for a solute with partition coefficient K, and the inward flux P (C_out - C_in).
 
@@ -2611,12 +2559,12 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `D` | in | diffusion coefficient of the solute inside the membrane | m^2/s |
-| `K` | in | membrane/water partition coefficient | — |
+| `K` | in | membrane/water partition coefficient | - |
 | `L` | in | membrane thickness | m |
 | `C_out` | in | concentration outside the cell | mol/m^3 |
 | `C_in` | in | concentration inside the cell | mol/m^3 |
 | `P` | out | permeability coefficient | m/s |
-| `P_cm_s` | out | permeability coefficient in cm/s | — |
+| `P_cm_s` | out | permeability coefficient in cm/s | - |
 | `J` | out | inward flux (positive into the cell) | mol/(m^2*s) |
 
 **Applies when:** D, K, L > 0; concentrations >= 0; steady state, linear profile in the membrane.
@@ -2635,11 +2583,11 @@ J = 0.0018 mol/(m^2*s)
   assumes: D, K, L > 0; concentrations >= 0; steady state, linear profile in the membrane
 ```
 
-In the worked example, D = 100 um^2/s, K = 0.01, L = 5 nm, C_out = 10 (mmol/L), C_in = 1 (mmol/L) go through the equation above and give P = 0.0002 m/s, P_cm_s = 0.02, J = 0.0018 mol/(m^2*s). It applies only when D, K, L > 0; concentrations >= 0; steady state, linear profile in the membrane: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the rate at which a solute crosses a lipid bilayer. The permeability coefficient, reported as 0.0002 m/s, combines the solute's diffusion speed within the membrane with its tendency to partition into the lipid phase relative to water, divided by the barrier thickness. Using this coefficient and the difference between external and internal concentrations, the model computes the net inward flux, given here as 0.0018 mol/(m^2*s). A positive value indicates movement into the cell, while a negative value signifies efflux.
 
 <a id="cmb_nernst_potential"></a>
 
-#### Nernst equilibrium potential of an ion across a cell membrane — `cmb_nernst_potential`
+#### Nernst equilibrium potential of an ion across a cell membrane, `cmb_nernst_potential`
 
 The equilibrium (reversal) potential inside relative to outside for an ion of charge z from its outside and inside concentrations.
 
@@ -2649,12 +2597,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `z` | in | charge number of the ion (e.g. 1 for K+, 2 for Ca2+, -1 for Cl-) | — |
+| `z` | in | charge number of the ion (e.g. 1 for K+, 2 for Ca2+, -1 for Cl-) | - |
 | `C_out` | in | outside concentration | mol/m^3 |
 | `C_in` | in | inside concentration | mol/m^3 |
 | `T` | in | absolute temperature (degC is converted) | K |
 | `E` | out | equilibrium potential (inside minus outside) | V |
-| `E_mV` | out | equilibrium potential in mV | — |
+| `E_mV` | out | equilibrium potential in mV | - |
 
 **Applies when:** z a non-zero whole number; concentrations > 0; T > 0.
 
@@ -2669,11 +2617,11 @@ E_mV = -89.05869404
   assumes: z a non-zero whole number; concentrations > 0; T > 0
 ```
 
-In the worked example, z = 1, C_out = 5 (mmol/L), C_in = 140 (mmol/L), T = 310.15 K go through the equation above and give E = -0.08905869404 V, E_mV = -89.05869404. It applies only when z a non-zero whole number; concentrations > 0; T > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the electrical potential difference across a cell membrane that exactly balances the concentration gradient of a specific ion. Using the Nernst equation, the result depends on the ion's charge, the absolute temperature, and the ratio of external to internal concentrations. For the given inputs, the computed equilibrium potential is -0.0890587 V volts, which corresponds to -89.0587 millivolts. This value represents the voltage at which there is no net movement of the ion across the membrane.
 
 <a id="cmb_osmolarity_tonicity"></a>
 
-#### Osmolarity of a solution and its tonicity for a cell — `cmb_osmolarity_tonicity`
+#### Osmolarity of a solution and its tonicity for a cell, `cmb_osmolarity_tonicity`
 
 The total osmolarity of a solution of several solutes (sum of i c) and whether it is hypertonic, hypotonic or isotonic (within 1 %) relative to the cell's osmolarity, assuming impermeant solutes.
 
@@ -2683,12 +2631,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `c` | in | solute concentrations in mM (one per solute) | — |
-| `i` | in | van 't Hoff factor of each solute | — |
+| `c` | in | solute concentrations in mM (one per solute) | - |
+| `i` | in | van 't Hoff factor of each solute | - |
 | `osm_cell` | in | osmolarity of the cell interior | mol/m^3 |
-| `osmolarity_mOsm` | out | osmolarity of the solution in mOsm/L | — |
-| `difference_mOsm` | out | solution minus cell osmolarity in mOsm/L | — |
-| `tonicity` | out | hypertonic, hypotonic or isotonic (within 1 %) | — |
+| `osmolarity_mOsm` | out | osmolarity of the solution in mOsm/L | - |
+| `difference_mOsm` | out | solution minus cell osmolarity in mOsm/L | - |
+| `tonicity` | out | hypertonic, hypotonic or isotonic (within 1 %) | - |
 
 **Applies when:** one factor per concentration; solutes impermeant (tonicity = osmolarity).
 
@@ -2702,11 +2650,11 @@ tonicity = isotonic
   assumes: one factor per concentration; solutes impermeant (tonicity = osmolarity)
 ```
 
-In the worked example, c = [150], i = [2], osm_cell = 300 mmol/L go through the equation above and give osmolarity_mOsm = 300, difference_mOsm = 0, tonicity = isotonic. It applies only when one factor per concentration; solutes impermeant (tonicity = osmolarity): outside that it says what is wrong instead of returning a number.
+**What the worked example means:** The total osmolarity is the sum of each solute's concentration times its van 't Hoff factor. The result, 300, represents the total particle concentration in milliosmoles per liter. By comparing this value to the internal osmolarity of the cell, this gives the difference, reported as 0. Based on whether this difference falls within one percent of the cell's value, the solution is classified as isotonic, indicating how water will move across the membrane.
 
 <a id="cmb_osmotic_pressure"></a>
 
-#### Osmotic pressure (van 't Hoff) — `cmb_osmotic_pressure`
+#### Osmotic pressure (van 't Hoff): `cmb_osmotic_pressure`
 
 The osmotic pressure of a dilute solution from the solute concentration, the van 't Hoff factor and the temperature.
 
@@ -2716,12 +2664,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `i` | in | van 't Hoff factor (particles per formula unit, e.g. 2 for NaCl) | — |
+| `i` | in | van 't Hoff factor (particles per formula unit, e.g. 2 for NaCl) | - |
 | `c` | in | solute concentration | mol/m^3 |
 | `T` | in | absolute temperature (degC is converted) | K |
 | `pi` | out | osmotic pressure | Pa |
-| `pi_atm` | out | osmotic pressure in atm | — |
-| `pi_kPa` | out | osmotic pressure in kPa | — |
+| `pi_atm` | out | osmotic pressure in atm | - |
+| `pi_kPa` | out | osmotic pressure in kPa | - |
 
 **Applies when:** i, c, T > 0; ideal dilute solution.
 
@@ -2737,11 +2685,11 @@ pi_kPa = 773.6191743
   assumes: i, c, T > 0; ideal dilute solution
 ```
 
-In the worked example, i = 2, c = 150 (mmol/L), T = 310.15 K go through the equation above and give pi = 773619.1743 Pa, pi_atm = 7.635027627, pi_kPa = 773.6191743. It applies only when i, c, T > 0; ideal dilute solution: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the osmotic pressure of a dilute solution using the van 't Hoff equation. It combines the solute concentration, the absolute temperature, and the van 't Hoff factor to estimate the pressure required to prevent water from flowing into the solution through a semipermeable membrane. The resulting osmotic pressure is 773619 Pa, which corresponds to 773.619 in kilopascals.
 
 <a id="cmb_rms_displacement"></a>
 
-#### Root-mean-square displacement of a diffusing particle — `cmb_rms_displacement`
+#### Root-mean-square displacement of a diffusing particle, `cmb_rms_displacement`
 
 The mean-square and root-mean-square displacement of a particle diffusing freely for a time t in 1, 2 or 3 dimensions.
 
@@ -2753,9 +2701,9 @@ $$
 |---|---|---|---|
 | `D` | in | diffusion coefficient | m^2/s |
 | `t` | in | elapsed time | s |
-| `dims` | in | number of dimensions (1, 2 or 3) | — |
+| `dims` | in | number of dimensions (1, 2 or 3) | - |
 | `rms` | out | root-mean-square displacement | m |
-| `rms_um` | out | root-mean-square displacement in micrometres | — |
+| `rms_um` | out | root-mean-square displacement in micrometres | - |
 | `msd` | out | mean-square displacement | m^2 |
 
 **Applies when:** D > 0, t > 0; dims = 1, 2 or 3.
@@ -2771,11 +2719,11 @@ msd = 6e-09 m^2
   assumes: D > 0, t > 0; dims = 1, 2 or 3
 ```
 
-In the worked example, D = 1000 um^2/s, t = 1 s, dims = 3 go through the equation above and give rms = 7.745966692e-05 m, rms_um = 77.45966692, msd = 6e-09 m^2. It applies only when D > 0, t > 0; dims = 1, 2 or 3: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the mean-square and root-mean-square displacement for a particle undergoing free diffusion. Using a diffusion coefficient of 1000 um^2/s and an elapsed time of 1 s, the model computes the result based on the dimensionality specified by 3. The final root-mean-square displacement is 7.74597e-05 m meters, providing a characteristic distance scale for the random walk in this context.
 
 <a id="cmb_stokes_einstein"></a>
 
-#### Stokes-Einstein diffusion coefficient — `cmb_stokes_einstein`
+#### Stokes-Einstein diffusion coefficient: `cmb_stokes_einstein`
 
 The diffusion coefficient of a sphere of hydrodynamic radius r in a fluid of viscosity eta at temperature T.
 
@@ -2789,8 +2737,8 @@ $$
 | `eta` | in | viscosity of the medium | Pa*s |
 | `r` | in | hydrodynamic radius | m |
 | `D` | out | diffusion coefficient | m^2/s |
-| `D_um2_s` | out | diffusion coefficient in um^2/s | — |
-| `friction` | out | friction coefficient 6 pi eta r in kg/s | — |
+| `D_um2_s` | out | diffusion coefficient in um^2/s | - |
+| `friction` | out | friction coefficient 6 pi eta r in kg/s | - |
 
 **Applies when:** T, eta, r > 0; a sphere at low Reynolds number.
 
@@ -2806,11 +2754,11 @@ friction = 4.194026193e-11
   assumes: T, eta, r > 0; a sphere at low Reynolds number
 ```
 
-In the worked example, T = 298.15 K, eta = 0.89 mPa*s, r = 2.5 nm go through the equation above and give D = 9.814924382e-11 m^2/s, D_um2_s = 98.14924382, friction = 4.194026193e-11. It applies only when T, eta, r > 0; a sphere at low Reynolds number: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the diffusion coefficient for a spherical particle using the Stokes-Einstein equation. It relies on the absolute temperature, the viscosity of the surrounding medium, and the hydrodynamic radius of the particle. The resulting diffusion coefficient, reported as 9.81492e-11 m^2/s, indicates how rapidly the particle moves through the fluid due to thermal energy. Additionally, the friction coefficient is calculated as 4.19403e-11, representing the resistance encountered by the sphere during its motion.
 
 <a id="cmb_diffusion_time"></a>
 
-#### Time to diffuse a distance — `cmb_diffusion_time`
+#### Time to diffuse a distance: `cmb_diffusion_time`
 
 The time for the root-mean-square displacement of a diffusing molecule to reach a distance x in 1, 2 or 3 dimensions.
 
@@ -2822,9 +2770,9 @@ $$
 |---|---|---|---|
 | `x` | in | distance (root-mean-square displacement to reach) | m |
 | `D` | in | diffusion coefficient | m^2/s |
-| `dims` | in | number of dimensions (1, 2 or 3) | — |
+| `dims` | in | number of dimensions (1, 2 or 3) | - |
 | `t` | out | diffusion time | s |
-| `t_min` | out | diffusion time in minutes | — |
+| `t_min` | out | diffusion time in minutes | - |
 
 **Applies when:** x > 0, D > 0; dims = 1, 2 or 3.
 
@@ -2838,13 +2786,13 @@ t_min = 0.0002777777778
   assumes: x > 0, D > 0; dims = 1, 2 or 3
 ```
 
-In the worked example, x = 10 um, D = 1000 um^2/s, dims = 3 go through the equation above and give t = 0.01666666667 s, t_min = 0.0002777777778. It applies only when x > 0, D > 0; dims = 1, 2 or 3: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the time required for a molecule to achieve a root-mean-square displacement of 10 um through diffusion. Using the diffusion coefficient of 1000 um^2/s and considering 3 dimensions, the resulting time is 0.0166667 s. This duration represents how long it takes for random thermal motion to move the substance across that specific distance.
 
 ### PCR and gene expression (11)
 
 <a id="cmb_induction_dynamics"></a>
 
-#### mRNA and protein after switching a gene on — `cmb_induction_dynamics`
+#### mRNA and protein after switching a gene on, `cmb_induction_dynamics`
 
 The mRNA and protein numbers a time t after a gene is switched on from zero (constant transcription and translation, first-order decay), and the protein's fraction of its steady state.
 
@@ -2859,9 +2807,9 @@ $$
 | `k_tl` | in | translation rate per mRNA | Hz |
 | `delta_p` | in | protein decay (plus dilution) rate constant | 1/s |
 | `t` | in | time since induction | s |
-| `m` | out | mRNA per cell at time t | — |
-| `p` | out | protein per cell at time t | — |
-| `fraction_of_steady_state` | out | p / p_ss | — |
+| `m` | out | mRNA per cell at time t | - |
+| `p` | out | protein per cell at time t | - |
+| `fraction_of_steady_state` | out | p / p_ss | - |
 
 **Applies when:** all rates > 0; t >= 0; m(0) = p(0) = 0.
 
@@ -2879,11 +2827,11 @@ fraction_of_steady_state = 0.4876292336
   assumes: all rates > 0; t >= 0; m(0) = p(0) = 0
 ```
 
-In the worked example, k_tx = 36 1/h, delta_m = 7.2 1/h, k_tl = 180 1/h, delta_p = 0.36 1/h, t = 2 h go through the equation above and give m = 4.999997213, p = 1219.073084, fraction_of_steady_state = 0.4876292336. It applies only when all rates > 0; t >= 0; m(0) = p(0) = 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the abundance of messenger RNA and protein in a single cell at a specific moment after gene induction. Starting from zero, it applies constant transcription and translation rates alongside first-order decay for both species. The result shows that the system contains 5 mRNA copies and 1219.07 protein copies, with the protein level representing 0.487629 of its eventual equilibrium value.
 
 <a id="cmb_mrna_half_life_fit"></a>
 
-#### mRNA half-life fitted to a decay time course — `cmb_mrna_half_life_fit`
+#### mRNA half-life fitted to a decay time course, `cmb_mrna_half_life_fit`
 
 The decay rate constant and half-life of an mRNA (or protein) from levels measured after transcription is stopped, by a least-squares line through ln(level) against time.
 
@@ -2893,12 +2841,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `t` | in | times after the shut-off in minutes | — |
-| `level` | in | measured levels (relative units, positive) | — |
-| `k_per_min` | out | decay rate constant per minute | — |
-| `half_life_min` | out | half-life in minutes | — |
-| `initial_fit` | out | fitted level at t = 0 | — |
-| `r2` | out | coefficient of determination of the log-linear fit | — |
+| `t` | in | times after the shut-off in minutes | - |
+| `level` | in | measured levels (relative units, positive) | - |
+| `k_per_min` | out | decay rate constant per minute | - |
+| `half_life_min` | out | half-life in minutes | - |
+| `initial_fit` | out | fitted level at t = 0 | - |
+| `r2` | out | coefficient of determination of the log-linear fit | - |
 
 **Applies when:** at least 3 points; levels > 0 and decaying; first-order decay.
 
@@ -2912,11 +2860,11 @@ r2 = 0.9997993322
   assumes: at least 3 points; levels > 0 and decaying; first-order decay
 ```
 
-In the worked example, t = [0, 30, 60, 90, 120], level = [100, 70, 50.5, 35.2, 24.8] go through the equation above and give k_per_min = 0.01158700742, half_life_min = 59.82106989, initial_fit = 99.95560576, r2 = 0.9997993322. It applies only when at least 3 points; levels > 0 and decaying; first-order decay: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the stability of mRNA by fitting a first-order decay model to measured levels over time. Using least squares regression on the natural logarithm of the level against time, the algorithm extracts the decay rate constant 0.011587. The resulting half-life, calculated as the natural log of two divided by this rate constant, is 59.8211 minutes. This value represents the time required for the mRNA population to reduce to fifty percent of its initial amount under the assumption of exponential decay.
 
 <a id="cmb_pcr_amplification"></a>
 
-#### PCR amplification after n cycles — `cmb_pcr_amplification`
+#### PCR amplification after n cycles: `cmb_pcr_amplification`
 
 The number of copies after n PCR cycles from N0 template copies at an amplification efficiency E (1 = perfect doubling).
 
@@ -2926,12 +2874,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `N0` | in | initial template copies | — |
-| `E` | in | amplification efficiency per cycle (0 to 1, e.g. 95%) | — |
-| `n` | in | number of cycles | — |
-| `N` | out | copies after n cycles | — |
-| `fold` | out | fold amplification (1 + E)^n | — |
-| `log10_fold` | out | log10 of the fold amplification | — |
+| `N0` | in | initial template copies | - |
+| `E` | in | amplification efficiency per cycle (0 to 1, e.g. 95%) | - |
+| `n` | in | number of cycles | - |
+| `N` | out | copies after n cycles | - |
+| `fold` | out | fold amplification (1 + E)^n | - |
+| `log10_fold` | out | log10 of the fold amplification | - |
 
 **Applies when:** N0 > 0; 0 < E <= 1; 0 <= n <= 60; exponential phase (no plateau).
 
@@ -2950,7 +2898,7 @@ In the worked example, N0 = 100, E = 1, n = 30 go through the equation above and
 
 <a id="cmb_pcr_cycles_needed"></a>
 
-#### PCR cycles needed to reach a number of copies — `cmb_pcr_cycles_needed`
+#### PCR cycles needed to reach a number of copies, `cmb_pcr_cycles_needed`
 
 The number of PCR cycles needed to amplify N0 copies to N at efficiency E (exact value and whole cycles, rounded up).
 
@@ -2960,11 +2908,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `N0` | in | initial template copies | — |
-| `N` | in | target number of copies | — |
-| `E` | in | amplification efficiency per cycle (0 to 1) | — |
-| `cycles_exact` | out | cycles needed (real value) | — |
-| `cycles` | out | whole cycles needed | — |
+| `N0` | in | initial template copies | - |
+| `N` | in | target number of copies | - |
+| `E` | in | amplification efficiency per cycle (0 to 1) | - |
+| `cycles_exact` | out | cycles needed (real value) | - |
+| `cycles` | out | whole cycles needed | - |
 
 **Applies when:** N > N0 > 0; 0 < E <= 1.
 
@@ -2983,7 +2931,7 @@ In the worked example, N0 = 100, N = 1e+10, E = 0.95 go through the equation abo
 
 <a id="cmb_qpcr_delta_delta_ct"></a>
 
-#### qPCR relative expression by the delta-delta Ct method — `cmb_qpcr_delta_delta_ct`
+#### qPCR relative expression by the delta-delta Ct method, `cmb_qpcr_delta_delta_ct`
 
 The fold change in a target gene's expression between treated and control samples, normalized to a reference gene, by 2^-ddCt (100 % efficiency assumed).
 
@@ -2993,15 +2941,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Ct_target_treated` | in | Ct of the target gene in the treated sample | — |
-| `Ct_ref_treated` | in | Ct of the reference gene in the treated sample | — |
-| `Ct_target_control` | in | Ct of the target gene in the control sample | — |
-| `Ct_ref_control` | in | Ct of the reference gene in the control sample | — |
-| `dCt_treated` | out | Ct target - Ct reference, treated | — |
-| `dCt_control` | out | Ct target - Ct reference, control | — |
-| `ddCt` | out | dCt treated - dCt control | — |
-| `fold_change` | out | relative expression 2^-ddCt | — |
-| `log2_fold_change` | out | log2 fold change (-ddCt) | — |
+| `Ct_target_treated` | in | Ct of the target gene in the treated sample | - |
+| `Ct_ref_treated` | in | Ct of the reference gene in the treated sample | - |
+| `Ct_target_control` | in | Ct of the target gene in the control sample | - |
+| `Ct_ref_control` | in | Ct of the reference gene in the control sample | - |
+| `dCt_treated` | out | Ct target - Ct reference, treated | - |
+| `dCt_control` | out | Ct target - Ct reference, control | - |
+| `ddCt` | out | dCt treated - dCt control | - |
+| `fold_change` | out | relative expression 2^-ddCt | - |
+| `log2_fold_change` | out | log2 fold change (-ddCt) | - |
 
 **Applies when:** 0 < Ct <= 60; efficiencies of target and reference near 100 %.
 
@@ -3024,7 +2972,7 @@ In the worked example, Ct_target_treated = 24.5, Ct_ref_treated = 18, Ct_target_
 
 <a id="cmb_qpcr_pfaffl_ratio"></a>
 
-#### qPCR relative expression with efficiency correction (Pfaffl) — `cmb_qpcr_pfaffl_ratio`
+#### qPCR relative expression with efficiency correction (Pfaffl), `cmb_qpcr_pfaffl_ratio`
 
 The efficiency-corrected expression ratio of a target gene in a sample versus a control, normalized to a reference gene (Pfaffl 2001).
 
@@ -3034,16 +2982,16 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `E_target` | in | amplification efficiency of the target assay (0 to 1) | — |
-| `E_ref` | in | amplification efficiency of the reference assay (0 to 1) | — |
-| `Ct_target_control` | in | target Ct in the control | — |
-| `Ct_target_sample` | in | target Ct in the sample | — |
-| `Ct_ref_control` | in | reference Ct in the control | — |
-| `Ct_ref_sample` | in | reference Ct in the sample | — |
-| `ratio` | out | expression ratio sample/control | — |
-| `log2_ratio` | out | log2 of the ratio | — |
-| `dCt_target` | out | Ct control - Ct sample for the target | — |
-| `dCt_ref` | out | Ct control - Ct sample for the reference | — |
+| `E_target` | in | amplification efficiency of the target assay (0 to 1) | - |
+| `E_ref` | in | amplification efficiency of the reference assay (0 to 1) | - |
+| `Ct_target_control` | in | target Ct in the control | - |
+| `Ct_target_sample` | in | target Ct in the sample | - |
+| `Ct_ref_control` | in | reference Ct in the control | - |
+| `Ct_ref_sample` | in | reference Ct in the sample | - |
+| `ratio` | out | expression ratio sample/control | - |
+| `log2_ratio` | out | log2 of the ratio | - |
+| `dCt_target` | out | Ct control - Ct sample for the target | - |
+| `dCt_ref` | out | Ct control - Ct sample for the reference | - |
 
 **Applies when:** 0 < E <= 1; 0 < Ct <= 60.
 
@@ -3063,11 +3011,11 @@ dCt_ref = -0.3
   assumes: 0 < E <= 1; 0 < Ct <= 60
 ```
 
-In the worked example, E_target = 0.95, E_ref = 0.9, Ct_target_control = 26, Ct_target_sample = 23.5, Ct_ref_control = 18, Ct_ref_sample = 18.3 go through the equation above and give ratio = 6.437431321, log2_ratio = 2.686485135, dCt_target = 2.5, dCt_ref = -0.3. It applies only when 0 < E <= 1; 0 < Ct <= 60: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the relative expression of a target gene in an experimental sample compared to a control, normalized against a reference gene. It uses the Pfaffl method, which accounts for differences in amplification efficiency between the target and reference assays. The target Ct difference is 2.5 and the reference Ct difference is -0.3. Based on these values and the respective efficiencies, the final expression ratio is 6.43743, meaning the gene is expressed at this level relative to the control after normalization.
 
 <a id="cmb_qpcr_standard_curve"></a>
 
-#### qPCR standard curve: slope, intercept and efficiency — `cmb_qpcr_standard_curve`
+#### qPCR standard curve: slope, intercept and efficiency, `cmb_qpcr_standard_curve`
 
 The least-squares standard curve Ct = m log10(quantity) + b from a dilution series, its r^2 and the amplification efficiency 10^(-1/m) - 1.
 
@@ -3077,13 +3025,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `quantity` | in | starting quantities of the standards (copies or ng) | — |
-| `Ct` | in | measured Ct of each standard | — |
-| `slope` | out | slope m (about -3.32 at 100 %) | — |
-| `intercept` | out | intercept b (Ct of one unit) | — |
-| `r2` | out | coefficient of determination | — |
-| `efficiency` | out | efficiency 10^(-1/m) - 1 | — |
-| `amplification_factor` | out | amplification per cycle 10^(-1/m) | — |
+| `quantity` | in | starting quantities of the standards (copies or ng) | - |
+| `Ct` | in | measured Ct of each standard | - |
+| `slope` | out | slope m (about -3.32 at 100 %) | - |
+| `intercept` | out | intercept b (Ct of one unit) | - |
+| `r2` | out | coefficient of determination | - |
+| `efficiency` | out | efficiency 10^(-1/m) - 1 | - |
+| `amplification_factor` | out | amplification per cycle 10^(-1/m) | - |
 
 **Applies when:** at least 3 standards; quantities > 0; negative slope.
 
@@ -3102,7 +3050,7 @@ In the worked example, quantity = [1e+06, 100000, 10000, 1000, 100], Ct = [15.1,
 
 <a id="cmb_qpcr_quantify"></a>
 
-#### Quantity from a Ct and a standard curve — `cmb_qpcr_quantify`
+#### Quantity from a Ct and a standard curve: `cmb_qpcr_quantify`
 
 The starting quantity of an unknown from its Ct and the standard curve Ct = m log10 q + b.
 
@@ -3112,11 +3060,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `slope` | in | standard-curve slope m (negative) | — |
-| `intercept` | in | standard-curve intercept b | — |
-| `Ct` | in | Ct of the unknown | — |
-| `quantity` | out | starting quantity (unit of the standards) | — |
-| `log10_quantity` | out | log10 of the quantity | — |
+| `slope` | in | standard-curve slope m (negative) | - |
+| `intercept` | in | standard-curve intercept b | - |
+| `Ct` | in | Ct of the unknown | - |
+| `quantity` | out | starting quantity (unit of the standards) | - |
+| `log10_quantity` | out | log10 of the quantity | - |
 
 **Applies when:** slope < 0; Ct inside the range of the standards.
 
@@ -3131,11 +3079,11 @@ log10_quantity = 4.006024096
   assumes: slope < 0; Ct inside the range of the standards
 ```
 
-In the worked example, slope = -3.32, intercept = 38, Ct = 24.7 go through the equation above and give quantity = 10139.67643, log10_quantity = 4.006024096. It applies only when slope < 0; Ct inside the range of the standards: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the initial amount of target material in an unknown sample using its cycle threshold value and a standard curve. By substituting the observed Ct of 24.7 into the rearranged equation, the log base ten of the quantity is 4.00602. This corresponds to an absolute starting quantity of 10139.7, which is expressed in the same units as the calibration standards used to generate the curve.
 
 <a id="cmb_expression_steady_state"></a>
 
-#### Steady-state mRNA and protein numbers — `cmb_expression_steady_state`
+#### Steady-state mRNA and protein numbers: `cmb_expression_steady_state`
 
 The steady-state numbers of mRNA (k_tx/delta_m) and protein (k_tl m/delta_p) per cell for constant transcription, translation and first-order decay (dilution included), with the half-lives.
 
@@ -3149,12 +3097,12 @@ $$
 | `delta_m` | in | mRNA decay rate constant | 1/s |
 | `k_tl` | in | translation rate (proteins per mRNA per unit time) | Hz |
 | `delta_p` | in | protein decay (plus dilution) rate constant | 1/s |
-| `m_ss` | out | steady-state mRNA per cell | — |
-| `p_ss` | out | steady-state protein per cell | — |
+| `m_ss` | out | steady-state mRNA per cell | - |
+| `p_ss` | out | steady-state protein per cell | - |
 | `mRNA_half_life` | out | mRNA half-life | s |
 | `protein_half_life` | out | protein half-life | s |
-| `mRNA_half_life_min` | out | mRNA half-life in minutes | — |
-| `protein_half_life_h` | out | protein half-life in hours | — |
+| `mRNA_half_life_min` | out | mRNA half-life in minutes | - |
+| `protein_half_life_h` | out | protein half-life in hours | - |
 
 **Applies when:** all rates > 0; constant rates, first-order decay.
 
@@ -3174,11 +3122,11 @@ protein_half_life_h = 1.925408835
   assumes: all rates > 0; constant rates, first-order decay
 ```
 
-In the worked example, k_tx = 36 1/h, delta_m = 7.2 1/h, k_tl = 180 1/h, delta_p = 0.36 1/h go through the equation above and give m_ss = 5, p_ss = 2500, mRNA_half_life = 346.5735903 s, protein_half_life = 6931.471806 s. It applies only when all rates > 0; constant rates, first-order decay: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the equilibrium number of mRNA molecules per cell, which is 5, and the corresponding number of protein molecules per cell, which is 2500. These values are derived from the transcription rate 36 1/h, the translation rate 180 1/h, and the decay constants 7.2 1/h for mRNA and 0.36 1/h for protein. The result indicates that under constant production and first-order degradation, the cellular concentrations stabilize when synthesis balances removal. The stability of these pools is characterized by their half-lives: 5.77623 minutes for the transcript and 1.92541 hours for the protein product.
 
 <a id="cmb_transcription_time"></a>
 
-#### Time to transcribe a gene — `cmb_transcription_time`
+#### Time to transcribe a gene: `cmb_transcription_time`
 
 The time for RNA polymerase to transcribe a gene of n nucleotides at an elongation rate, and, with an initiation rate, the number of polymerases on the gene and their spacing.
 
@@ -3188,13 +3136,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `n` | in | gene (transcript) length in nucleotides | — |
-| `rate` | in | elongation rate in nucleotides per second | — |
+| `n` | in | gene (transcript) length in nucleotides | - |
+| `rate` | in | elongation rate in nucleotides per second | - |
 | `k_init` | in | initiation rate (optional) (optional) | Hz |
 | `t` | out | transcription time | s |
-| `t_min` | out | time in minutes | — |
-| `polymerases` | out | polymerases on the gene at steady state (when k_init is given) | — |
-| `spacing_nt` | out | mean spacing between polymerases in nt (when k_init is given) | — |
+| `t_min` | out | time in minutes | - |
+| `polymerases` | out | polymerases on the gene at steady state (when k_init is given) | - |
+| `spacing_nt` | out | mean spacing between polymerases in nt (when k_init is given) | - |
 
 **Applies when:** n >= 1; rate > 0; constant elongation rate.
 
@@ -3211,7 +3159,7 @@ In the worked example, n = 20000, rate = 40 go through the equation above and gi
 
 <a id="cmb_translation_time"></a>
 
-#### Time to translate a protein — `cmb_translation_time`
+#### Time to translate a protein: `cmb_translation_time`
 
 The time for a ribosome to synthesise a protein of n_aa amino acids at an elongation rate, the coding length with the stop codon, and, with an initiation rate, the ribosomes per mRNA and their spacing.
 
@@ -3221,14 +3169,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `n_aa` | in | protein length in amino acids | — |
-| `rate` | in | elongation rate in amino acids per second | — |
+| `n_aa` | in | protein length in amino acids | - |
+| `rate` | in | elongation rate in amino acids per second | - |
 | `k_init` | in | initiation rate per mRNA (optional) (optional) | Hz |
 | `t` | out | translation time | s |
-| `t_min` | out | time in minutes | — |
-| `coding_nt` | out | coding sequence length in nt including the stop codon | — |
-| `ribosomes` | out | ribosomes per mRNA at steady state (when k_init is given) | — |
-| `spacing_codons` | out | mean spacing between ribosomes in codons (when k_init is given) | — |
+| `t_min` | out | time in minutes | - |
+| `coding_nt` | out | coding sequence length in nt including the stop codon | - |
+| `ribosomes` | out | ribosomes per mRNA at steady state (when k_init is given) | - |
+| `spacing_codons` | out | mean spacing between ribosomes in codons (when k_init is given) | - |
 
 **Applies when:** n_aa >= 1; rate > 0.
 
@@ -3242,13 +3190,13 @@ coding_nt = 903
   assumes: n_aa >= 1; rate > 0
 ```
 
-In the worked example, n_aa = 300, rate = 6 go through the equation above and give t = 50 s, t_min = 0.8333333333, coding_nt = 903. It applies only when n_aa >= 1; rate > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** Translation of a protein with 300 amino acids at an elongation rate of 6 takes 50 s seconds, corresponding to a coding length of 903 nucleotides.
 
 ### Solution biochemistry (13)
 
 <a id="cmb_buffer_capacity"></a>
 
-#### Buffer capacity of a weak-acid buffer — `cmb_buffer_capacity`
+#### Buffer capacity of a weak-acid buffer: `cmb_buffer_capacity`
 
 The buffer capacity beta = dCb/dpH (strong base per unit pH change) of a monoprotic buffer of total concentration C at a pH, including water, and the buffer's own contribution (25 degC, Kw = 1e-14).
 
@@ -3259,11 +3207,11 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `C` | in | total buffer concentration | mol/m^3 |
-| `pKa` | in | pKa of the buffer acid | — |
-| `pH` | in | pH | — |
+| `pKa` | in | pKa of the buffer acid | - |
+| `pH` | in | pH | - |
 | `beta` | out | buffer capacity per pH unit | mol/m^3 |
-| `beta_mM` | out | buffer capacity in mM per pH unit | — |
-| `beta_buffer_mM` | out | contribution of the buffer alone in mM per pH unit | — |
+| `beta_mM` | out | buffer capacity in mM per pH unit | - |
+| `beta_buffer_mM` | out | contribution of the buffer alone in mM per pH unit | - |
 
 **Applies when:** C > 0; monoprotic acid; Kw = 1e-14 (25 degC), ideal solution.
 
@@ -3279,11 +3227,11 @@ beta_buffer_mM = 57.56462732
   assumes: C > 0; monoprotic acid; Kw = 1e-14 (25 degC), ideal solution
 ```
 
-In the worked example, C = 100 (mmol/L), pKa = 7.21, pH = 7.21 go through the equation above and give beta = 57.56514274 mol/m^3, beta_mM = 57.56514274, beta_buffer_mM = 57.56462732. It applies only when C > 0; monoprotic acid; Kw = 1e-14 (25 degC), ideal solution: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the buffer capacity, which measures how much strong base is needed to change the pH by one unit. It combines the effects of free hydrogen ions, hydroxide ions from water, and the weak acid equilibrium. The total capacity computed here is 57.5651 mol/m^3, while the portion arising solely from the buffer species is 57.5646. A higher value indicates a solution that resists pH changes more effectively when acids or bases are added.
 
 <a id="cmb_buffer_after_addition"></a>
 
-#### Buffer pH after adding strong acid or base — `cmb_buffer_after_addition`
+#### Buffer pH after adding strong acid or base, `cmb_buffer_after_addition`
 
 The pH of a buffer (total concentration C, volume V, initial pH0) after adding an amount of strong acid or strong base, by Henderson-Hasselbalch on the new amounts.
 
@@ -3295,12 +3243,12 @@ $$
 |---|---|---|---|
 | `C` | in | total buffer concentration | mol/m^3 |
 | `V` | in | buffer volume | m^3 |
-| `pH0` | in | initial pH | — |
-| `pKa` | in | pKa of the buffer acid | — |
+| `pH0` | in | initial pH | - |
+| `pKa` | in | pKa of the buffer acid | - |
 | `n_add` | in | amount of strong acid or base added | mol |
-| `added` | in | strong acid or strong base | — |
-| `pH` | out | new pH | — |
-| `delta_pH` | out | change in pH | — |
+| `added` | in | strong acid or strong base | - |
+| `pH` | out | new pH | - |
+| `delta_pH` | out | change in pH | - |
 | `n_base` | out | base form after the addition | mol |
 | `n_acid` | out | acid form after the addition | mol |
 
@@ -3326,7 +3274,7 @@ In the worked example, C = 100 (mmol/L), V = 100 mL, pH0 = 7.21, pKa = 7.21, n_a
 
 <a id="cmb_henderson_hasselbalch"></a>
 
-#### Buffer pH by the Henderson-Hasselbalch equation — `cmb_henderson_hasselbalch`
+#### Buffer pH by the Henderson-Hasselbalch equation, `cmb_henderson_hasselbalch`
 
 The pH of a buffer from the pKa and the concentrations of the conjugate base and the weak acid.
 
@@ -3336,12 +3284,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `pKa` | in | pKa of the weak acid | — |
+| `pKa` | in | pKa of the weak acid | - |
 | `A` | in | conjugate base concentration | mol/m^3 |
 | `HA` | in | weak acid concentration | mol/m^3 |
-| `pH` | out | buffer pH | — |
-| `ratio` | out | [A-]/[HA] | — |
-| `fraction_base` | out | fraction in the base form | — |
+| `pH` | out | buffer pH | - |
+| `ratio` | out | [A-]/[HA] | - |
+| `fraction_base` | out | fraction in the base form | - |
 
 **Applies when:** A, HA > 0; buffer concentrations well above [H+] and [OH-].
 
@@ -3357,11 +3305,11 @@ fraction_base = 0.6
   assumes: A, HA > 0; buffer concentrations well above [H+] and [OH-]
 ```
 
-In the worked example, pKa = 7.21, A = 60 (mmol/L), HA = 40 (mmol/L) go through the equation above and give pH = 7.386091259, ratio = 1.5, fraction_base = 0.6. It applies only when A, HA > 0; buffer concentrations well above [H+] and [OH-]: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the pH of a buffer solution using the Henderson-Hasselbalch equation. It takes the pKa of the weak acid, which is 7.21, and the concentrations of the conjugate base at 60 (mmol/L) and the weak acid at 40 (mmol/L). The resulting pH is 7.38609, indicating the acidity level maintained by the buffer system.
 
 <a id="cmb_c1v1_dilution"></a>
 
-#### Dilution of a stock solution (C1 V1 = C2 V2) — `cmb_c1v1_dilution`
+#### Dilution of a stock solution (C1 V1 = C2 V2), `cmb_c1v1_dilution`
 
 The volume of stock and of diluent needed to make a volume V2 at concentration C2 from a stock at C1.
 
@@ -3375,9 +3323,9 @@ $$
 | `C2` | in | final concentration | mol/m^3 |
 | `V2` | in | final volume | m^3 |
 | `V1` | out | volume of stock | m^3 |
-| `V1_uL` | out | volume of stock in uL | — |
+| `V1_uL` | out | volume of stock in uL | - |
 | `V_diluent` | out | volume of diluent | m^3 |
-| `dilution_factor` | out | dilution factor C1/C2 | — |
+| `dilution_factor` | out | dilution factor C1/C2 | - |
 
 **Applies when:** C1, C2, V2 > 0; C2 <= C1; volumes additive.
 
@@ -3394,11 +3342,11 @@ dilution_factor = 20
   assumes: C1, C2, V2 > 0; C2 <= C1; volumes additive
 ```
 
-In the worked example, C1 = 1000 (mmol/L), C2 = 50 (mmol/L), V2 = 10 mL go through the equation above and give V1 = 5e-07 m^3, V1_uL = 500, V_diluent = 9.5e-06 m^3, dilution_factor = 20. It applies only when C1, C2, V2 > 0; C2 <= C1; volumes additive: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the specific volumes required to prepare a diluted solution using the conservation of mass principle, expressed as C1 V1 equals C2 V2. Given a stock concentration of 1000 (mmol/L) and a desired final concentration of 50 (mmol/L) for a target volume of 10 mL, the algorithm computes that 5e-07 m^3 of stock is needed. Consequently, 9.5e-06 m^3 of diluent must be added to reach the final volume. The process assumes that volumes are additive and that the final concentration does not exceed the stock concentration.
 
 <a id="cmb_ionic_strength"></a>
 
-#### Ionic strength of a solution — `cmb_ionic_strength`
+#### Ionic strength of a solution: `cmb_ionic_strength`
 
 The ionic strength I = (1/2) sum c z^2 of a solution from the concentration and charge of each ion.
 
@@ -3408,11 +3356,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `c` | in | ion concentrations in mM (one per ion) | — |
-| `z` | in | charge of each ion (e.g. 1, -1, 2) | — |
+| `c` | in | ion concentrations in mM (one per ion) | - |
+| `z` | in | charge of each ion (e.g. 1, -1, 2) | - |
 | `I` | out | ionic strength | mol/m^3 |
-| `I_mM` | out | ionic strength in mM | — |
-| `I_M` | out | ionic strength in M | — |
+| `I_mM` | out | ionic strength in mM | - |
+| `I_M` | out | ionic strength in M | - |
 
 **Applies when:** one charge per concentration; charges non-zero whole numbers.
 
@@ -3425,11 +3373,11 @@ I_M = 0.15
   assumes: one charge per concentration; charges non-zero whole numbers
 ```
 
-In the worked example, c = [150, 150], z = [1, -1] go through the equation above and give I = 150 mol/m^3, I_mM = 150, I_M = 0.15. It applies only when one charge per concentration; charges non-zero whole numbers: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the ionic strength, which quantifies the concentration of electrically charged particles in a solution. It uses the formula where each ion's contribution is its concentration multiplied by the square of its charge, summed together and then halved. The result, 150, reflects how strongly the ions influence electrostatic interactions within the mixture, affecting properties like protein stability and reaction rates.
 
 <a id="cmb_mass_for_molarity"></a>
 
-#### Mass of solute for a solution of given molarity — `cmb_mass_for_molarity`
+#### Mass of solute for a solution of given molarity, `cmb_mass_for_molarity`
 
 The mass of a compound to weigh out for a volume V of solution at molar concentration C.
 
@@ -3443,8 +3391,8 @@ $$
 | `V` | in | volume of solution | m^3 |
 | `MW` | in | molar mass of the compound | kg/mol |
 | `m` | out | mass to weigh | kg |
-| `m_g` | out | mass in grams | — |
-| `m_mg` | out | mass in milligrams | — |
+| `m_g` | out | mass in grams | - |
+| `m_mg` | out | mass in milligrams | - |
 | `n` | out | amount of substance | mol |
 
 **Applies when:** C, V, MW > 0.
@@ -3462,11 +3410,11 @@ n = 0.075 mol
   assumes: C, V, MW > 0
 ```
 
-In the worked example, C = 150 (mmol/L), V = 500 mL, MW = 58.44 g/mol go through the equation above and give m = 0.004383 kg, m_g = 4.383, m_mg = 4383, n = 0.075 mol. It applies only when C, V, MW > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This capability determines the precise mass of a compound required to create a solution with a specific molarity. It multiplies the target concentration 150 (mmol/L) by the final volume 500 mL to find the total amount of substance needed, then converts this mole count into mass using the compound's molar mass 58.44 g/mol. The resulting weight to measure on a balance is 0.004383 kg, which equals 4.383 grams or 4383 milligrams depending on the scale of the experiment.
 
 <a id="cmb_molarity_from_mass"></a>
 
-#### Molar concentration from mass and volume — `cmb_molarity_from_mass`
+#### Molar concentration from mass and volume: `cmb_molarity_from_mass`
 
 The molar concentration of a solution made by dissolving a mass of compound to a final volume V.
 
@@ -3480,8 +3428,8 @@ $$
 | `MW` | in | molar mass | kg/mol |
 | `V` | in | final volume | m^3 |
 | `C` | out | molar concentration | mol/m^3 |
-| `C_mM` | out | concentration in mM | — |
-| `C_M` | out | concentration in M | — |
+| `C_mM` | out | concentration in mM | - |
+| `C_M` | out | concentration in M | - |
 | `n` | out | amount of substance | mol |
 
 **Applies when:** m, MW, V > 0.
@@ -3499,11 +3447,11 @@ n = 0.04996577687 mol
   assumes: m, MW, V > 0
 ```
 
-In the worked example, m = 2920 mg, MW = 58.44 g/mol, V = 500 mL go through the equation above and give C = 99.93155373 mol/m^3, C_mM = 99.93155373, C_M = 0.09993155373, n = 0.04996577687 mol. It applies only when m, MW, V > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the molar concentration of a solution by dividing the mass of the solute by the product of its molar mass and the final volume. Using an input mass of 2920 mg, a molar mass of 58.44 g/mol, and a volume of 500 mL, the resulting concentration is 99.9316 mol/m^3 in moles per cubic meter. This value corresponds to 0.0999316 in molarity and 99.9316 in millimolar. The amount of substance present is calculated as 0.0499658 mol moles.
 
 <a id="cmb_percent_wv_to_molarity"></a>
 
-#### Molarity of a per cent (w/v) solution — `cmb_percent_wv_to_molarity`
+#### Molarity of a per cent (w/v) solution: `cmb_percent_wv_to_molarity`
 
 The molar concentration and grams per litre of a solution given in per cent weight per volume (g per 100 mL), e.g. 0.9 % NaCl.
 
@@ -3513,13 +3461,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `p` | in | concentration in per cent w/v (written with %, e.g. 0.9%) | — |
+| `p` | in | concentration in per cent w/v (written with %, e.g. 0.9%) | - |
 | `MW` | in | molar mass of the solute | kg/mol |
 | `C` | out | molar concentration | mol/m^3 |
-| `C_mM` | out | concentration in mM | — |
-| `C_M` | out | concentration in M | — |
+| `C_mM` | out | concentration in mM | - |
+| `C_M` | out | concentration in M | - |
 | `mass_concentration` | out | mass concentration | kg/m^3 |
-| `g_per_L` | out | grams per litre | — |
+| `g_per_L` | out | grams per litre | - |
 
 **Applies when:** 0 < p < 100 %; MW > 0.
 
@@ -3536,11 +3484,11 @@ g_per_L = 9
   assumes: 0 < p < 100 %; MW > 0
 ```
 
-In the worked example, p = 0.009, MW = 58.44 g/mol go through the equation above and give C = 154.0041068 mol/m^3, C_mM = 154.0041068, C_M = 0.1540041068, mass_concentration = 9 kg/m^3. It applies only when 0 < p < 100 %; MW > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the molarity and grams per litre of a solution defined by its weight-per-volume percentage. By converting the input percentage 0.009 into grams per litre, the solution contains 9. Dividing this mass concentration by the solute's molar mass 58.44 g/mol gives the final molar concentration of 0.154004, or equivalently 154.004 millimolar.
 
 <a id="cmb_buffer_preparation"></a>
 
-#### Recipe for a buffer of given pH and concentration — `cmb_buffer_preparation`
+#### Recipe for a buffer of given pH and concentration, `cmb_buffer_preparation`
 
 The concentrations, amounts and (with molar masses) masses of the weak acid and its conjugate base needed for a volume V of buffer at total concentration C and a target pH.
 
@@ -3552,17 +3500,17 @@ $$
 |---|---|---|---|
 | `C` | in | total buffer concentration | mol/m^3 |
 | `V` | in | volume of buffer | m^3 |
-| `pH` | in | target pH | — |
-| `pKa` | in | pKa of the buffer acid | — |
+| `pH` | in | target pH | - |
+| `pKa` | in | pKa of the buffer acid | - |
 | `MW_acid` | in | molar mass of the acid form (optional) (optional) | kg/mol |
 | `MW_base` | in | molar mass of the base form (optional) (optional) | kg/mol |
 | `C_base` | out | base-form concentration | mol/m^3 |
 | `C_acid` | out | acid-form concentration | mol/m^3 |
 | `n_base` | out | amount of base form | mol |
 | `n_acid` | out | amount of acid form | mol |
-| `ratio` | out | [A-]/[HA] | — |
-| `m_acid_g` | out | grams of the acid form (when MW_acid is given) | — |
-| `m_base_g` | out | grams of the base form (when MW_base is given) | — |
+| `ratio` | out | [A-]/[HA] | - |
+| `m_acid_g` | out | grams of the acid form (when MW_acid is given) | - |
+| `m_base_g` | out | grams of the base form (when MW_base is given) | - |
 
 **Applies when:** C, V > 0; Henderson-Hasselbalch valid (pH within about 1 of pKa).
 
@@ -3585,11 +3533,11 @@ m_base_g = 8.626356466
   assumes: C, V > 0; Henderson-Hasselbalch valid (pH within about 1 of pKa)
 ```
 
-In the worked example, C = 100 (mmol/L), V = 1000 mL, pH = 7.4, pKa = 7.21, MW_acid = 137.99 g/mol, MW_base = 141.96 g/mol go through the equation above and give C_base = 60.76610641 mol/m^3, C_acid = 39.23389359 mol/m^3, n_base = 0.06076610641 mol, n_acid = 0.03923389359 mol. It applies only when C, V > 0; Henderson-Hasselbalch valid (pH within about 1 of pKa): outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the precise amounts of weak acid and conjugate base required to prepare a buffer solution. Given a target pH, the ratio of base to acid is found using the Henderson-Hasselbalch equation. This ratio, combined with the total desired concentration 100 (mmol/L) and volume 1000 mL, yields the individual concentrations 39.2339 mol/m^3 and 60.7661 mol/m^3. Multiplying these by the volume gives the molar amounts needed for weighing or dispensing.
 
 <a id="cmb_centrifuge_rcf"></a>
 
-#### Relative centrifugal force from rotor speed — `cmb_centrifuge_rcf`
+#### Relative centrifugal force from rotor speed, `cmb_centrifuge_rcf`
 
 The relative centrifugal force (x g) at radius r for a rotor speed in rpm.
 
@@ -3601,8 +3549,8 @@ $$
 |---|---|---|---|
 | `rpm` | in | rotor speed | rad/s |
 | `r` | in | radius from the rotor axis | m |
-| `RCF` | out | relative centrifugal force in multiples of g | — |
-| `rpm_value` | out | rotor speed in rpm | — |
+| `RCF` | out | relative centrifugal force in multiples of g | - |
+| `rpm_value` | out | rotor speed in rpm | - |
 
 **Applies when:** rpm, r > 0.
 
@@ -3616,11 +3564,11 @@ rpm_value = 3000
   assumes: rpm, r > 0
 ```
 
-In the worked example, rpm = 3000 rpm, r = 10 cm go through the equation above and give RCF = 1006.419562, rpm_value = 3000. It applies only when rpm, r > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the relative centrifugal force expressed as multiples of Earth's gravity. It uses the rotor speed of 3000 rpm and the radius from the axis of 10 cm. The resulting force is 1006.42, which indicates how strongly particles are pushed outward during centrifugation.
 
 <a id="cmb_centrifuge_rpm"></a>
 
-#### Rotor speed for a required centrifugal force — `cmb_centrifuge_rpm`
+#### Rotor speed for a required centrifugal force, `cmb_centrifuge_rpm`
 
 The rotor speed (rpm) that gives a required relative centrifugal force (x g) at radius r.
 
@@ -3630,10 +3578,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `RCF` | in | required relative centrifugal force in multiples of g | — |
+| `RCF` | in | required relative centrifugal force in multiples of g | - |
 | `r` | in | radius from the rotor axis | m |
 | `omega` | out | angular speed | rad/s |
-| `rpm_value` | out | rotor speed in rpm | — |
+| `rpm_value` | out | rotor speed in rpm | - |
 
 **Applies when:** RCF, r > 0.
 
@@ -3647,11 +3595,11 @@ rpm_value = 2990.416772
   assumes: RCF, r > 0
 ```
 
-In the worked example, RCF = 1000, r = 10 cm go through the equation above and give omega = 313.1557121 rad/s, rpm_value = 2990.416772. It applies only when RCF, r > 0: outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines the angular velocity and rotational speed needed for a centrifuge rotor. Given a required relative centrifugal force of 1000 at a radius of 10 cm, the model computes an angular speed of 313.156 rad/s radians per second, which corresponds to a rotor speed of 2990.42. This ensures that samples placed at the specified distance from the axis experience the desired gravitational equivalent force.
 
 <a id="cmb_serial_dilution"></a>
 
-#### Serial dilution series — `cmb_serial_dilution`
+#### Serial dilution series: `cmb_serial_dilution`
 
 The concentrations after each step of a serial dilution with a constant factor, the final concentration and total dilution, and (with the tube volume) the transfer and diluent volumes per step.
 
@@ -3662,12 +3610,12 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `C0` | in | starting concentration | mol/m^3 |
-| `f` | in | dilution factor per step (e.g. 10) | — |
-| `n` | in | number of dilution steps | — |
+| `f` | in | dilution factor per step (e.g. 10) | - |
+| `n` | in | number of dilution steps | - |
 | `V` | in | final volume in each tube (optional) (optional) | m^3 |
 | `C_final` | out | concentration after n steps | mol/m^3 |
-| `total_dilution` | out | total dilution factor f^n | — |
-| `concentrations_mM` | out | concentration after each step in mM | — |
+| `total_dilution` | out | total dilution factor f^n | - |
+| `concentrations_mM` | out | concentration after each step in mM | - |
 | `transfer` | out | volume carried to the next tube (when V is given) | m^3 |
 | `diluent` | out | diluent per tube (when V is given) | m^3 |
 
@@ -3688,7 +3636,7 @@ In the worked example, C0 = 10 (mmol/L), f = 10, n = 4 go through the equation a
 
 <a id="cmb_sedimentation_time"></a>
 
-#### Time to pellet a particle in a centrifuge (k-factor) — `cmb_sedimentation_time`
+#### Time to pellet a particle in a centrifuge (k-factor), `cmb_sedimentation_time`
 
 The time to sediment a particle of sedimentation coefficient s from r_min to r_max at a rotor speed, and the rotor's k-factor (t in hours = k / s).
 
@@ -3698,13 +3646,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `s` | in | sedimentation coefficient in svedbergs | — |
+| `s` | in | sedimentation coefficient in svedbergs | - |
 | `rpm` | in | rotor speed | rad/s |
 | `r_min` | in | starting (minimum) radius | m |
 | `r_max` | in | radius of the pellet (maximum radius) | m |
 | `t` | out | sedimentation time | s |
-| `t_h` | out | time in hours | — |
-| `k_factor` | out | k-factor (t_h = k / s) | — |
+| `t_h` | out | time in hours | - |
+| `k_factor` | out | k-factor (t_h = k / s) | - |
 
 **Applies when:** s, rpm > 0; 0 < r_min < r_max; constant s (no diffusion).
 
@@ -3721,6 +3669,6 @@ k_factor = 109.735145
   assumes: s, rpm > 0; 0 < r_min < r_max; constant s (no diffusion)
 ```
 
-In the worked example, s = 70, rpm = 40000 rpm, r_min = 5 cm, r_max = 10 cm go through the equation above and give t = 5643.521741 s, t_h = 1.567644928, k_factor = 109.735145. It applies only when s, rpm > 0; 0 < r_min < r_max; constant s (no diffusion): outside that it says what is wrong instead of returning a number.
+**What the worked example means:** This calculation determines how long it takes for a particle with a sedimentation coefficient of 70 to move from a starting radius of 5 cm to a maximum radius of 10 cm while spinning at 40000 rpm. The result shows that the process requires 5643.52 s seconds, or 1.56764 hours. Additionally, the rotor's efficiency is characterized by a k-factor of 109.735, which allows you to estimate the time in hours by dividing this value by the particle's sedimentation coefficient.
 
-Questions and reports: support@ai999x.com. AI999X — The Future Is Self-Improving.
+Questions and reports: support@ai999x.com. AI999X, The Future Is Self-Improving.

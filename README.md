@@ -1,16 +1,16 @@
-# cell-molecular-biology-ai999x — offline, verified cell and molecular biology solver with step-by-step answers
+# cell-molecular-biology-ai999x: offline, verified cell and molecular biology solver with step-by-step answers
 
 [![tests](https://github.com/AI999X/cell-molecular-biology-ai999x/actions/workflows/ci.yml/badge.svg)](https://github.com/AI999X/cell-molecular-biology-ai999x/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/cell-molecular-biology-ai999x)](https://pypi.org/project/cell-molecular-biology-ai999x/) [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/AI999X/cell-molecular-biology-ai999x)
 
 **[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/cell-molecular-biology-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/cell-molecular-biology-ai999x/)** · **[Guides](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.1.0
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.5.0
 
-Field: **Life Sciences** · Tasks: Question Answering, Sentence Similarity, Feature Extraction
+Field: **Life Sciences** · Tasks: Question Answering
 
-cell-molecular-biology-ai999x is an offline, deterministic Python solver that answers cell and molecular biology questions with verified results from 94 certified capabilities, gives 619 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
+cell-molecular-biology-ai999x is an offline, deterministic cell and molecular biology solver written in Rust: a desktop app, a command-line program, a browser module and a Python package. It answers cell and molecular biology questions with verified results from 94 certified capabilities, gives 619 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
 
-**cell-molecular-biology-ai999x** is a compact, deterministic cell and molecular biology engine for Python. It reads a question in plain English (or a typed call), picks a certified cell and molecular biology capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions — or an honest refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
+**cell-molecular-biology-ai999x** reads a question in plain English (or a typed call), picks a certified cell and molecular biology capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions, or a refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green) ![Rust](https://img.shields.io/badge/Rust-Windows%20%7C%20Linux%20%7C%20WebAssembly-orange)
 
@@ -20,13 +20,13 @@ cell-molecular-biology-ai999x is an offline, deterministic Python solver that an
 
 | Way to run it | For | Get it |
 |---|---|---|
-| **AI999X Cell and Molecular Biology desktop app** 1.4.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cell-molecular-biology-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cell-molecular-biology-1.4.0-linux-x86_64.tar.gz) |
-| **AI999X desktop app** 1.4.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz) |
-| **Command line** (`cell-molecular-biology`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz) |
-| **In your browser** | any device — nothing to install | [Compute on the model page](https://www.ai999x.com/models/cell-molecular-biology-ai999x/#try) |
+| **AI999X Cell and Molecular Biology desktop app** 1.5.0 | Windows, Linux. This model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cell-molecular-biology-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cell-molecular-biology-1.5.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.5.0 | Windows, Linux. Every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz) |
+| **Command line** (`cell-molecular-biology`) | Windows, Linux. One program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz) |
+| **In your browser** | any device. Nothing to install | [Compute on the model page](https://www.ai999x.com/models/cell-molecular-biology-ai999x/#try) |
 | **Python** | Python 3.10+ | `pip install cell-molecular-biology-ai999x` |
 
-Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
+Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
 
 ## Quick start
 
@@ -37,11 +37,11 @@ Download **AI999X Cell and Molecular Biology** for your system (above), unpack i
 Linux, from a terminal:
 
 ```bash
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cell-molecular-biology-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cell-molecular-biology-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-cell-molecular-biology-1.4.0-linux-x86_64.tar.gz
-./ai999x-cell-molecular-biology-1.4.0-linux-x86_64/ai999x-cell-molecular-biology
+tar xzf ai999x-cell-molecular-biology-1.5.0-linux-x86_64.tar.gz
+./ai999x-cell-molecular-biology-1.5.0-linux-x86_64/ai999x-cell-molecular-biology
 ```
 
 ### Command line
@@ -49,30 +49,30 @@ tar xzf ai999x-cell-molecular-biology-1.4.0-linux-x86_64.tar.gz
 Linux:
 
 ```bash
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 cell-molecular-biology --version
 ```
 
 Windows (PowerShell):
 
 ```powershell
-$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 cell-molecular-biology --version
 ```
 
 Every command below was run as shown; the text under it is what the program printed.
 
-**What a capability needs** — The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.
+**What a capability needs**: The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.
 
 ```console
 $ cell-molecular-biology info cmb_nernst_potential
@@ -86,7 +86,7 @@ Nernst equilibrium potential of an ion across a cell membrane
   out  E_mV     equilibrium potential in mV []
 ```
 
-**Solve** — Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.
+**Solve**: Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.
 
 ```console
 $ cell-molecular-biology solve cmb_nernst_potential z=1 "C_out=5 (mmol/L)" "C_in=140 (mmol/L)" "T=37 degC"
@@ -99,7 +99,7 @@ E_mV = -89.05869404
   assumes: z a non-zero whole number; concentrations > 0; T > 0
 ```
 
-**Many questions at once** — One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | cell-molecular-biology batch
+**Many questions at once**: One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | cell-molecular-biology batch
 
 `cases.jsonl`:
 
@@ -163,6 +163,8 @@ print(a.values or (a.value, a.unit))
 
 Browser: [open this capability on the model page](https://www.ai999x.com/models/cell-molecular-biology-ai999x/#cap-cmb_monod_batch_time) and press **Compute in your browser**.
 
+_What this means:_ This calculation determines the time required for a microbial population to grow from an initial biomass of 0.1 g/L to a final biomass of 4 g/L under Monod kinetics. It uses the maximum specific growth rate of 0.72 1/h, the half-saturation constant of 0.2 g/L, and the yield coefficient of 0.5. The result, 5.26514, represents the duration in hours needed for this growth phase. Simultaneously, it computes the remaining substrate concentration as 2.2, indicating how much nutrient is left after the specified biomass increase.
+
 ### Cell concentration from a hemocytometer count
 
 The cell concentration from counts in the large (1 mm x 1 mm x 0.1 mm) squares of a hemocytometer, the dilution factor and, optionally, the total cells in a suspension volume.
@@ -188,6 +190,8 @@ print(a.values or (a.value, a.unit))
 ```
 
 Browser: [open this capability on the model page](https://www.ai999x.com/models/cell-molecular-biology-ai999x/#cap-cmb_hemocytometer_count) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the density of cells in a suspension using data from a hemocytometer. The process begins by averaging the number of cells counted in the large squares to obtain the mean count per square, which is 50. This value is then multiplied by the dilution factor, 2, to account for any reduction in sample concentration due to staining or mixing. Finally, the result is scaled by ten thousand because each large square holds one tenth of a microliter. The resulting concentration, 1e+06, represents the number of viable cells present in every milliliter of the original undiluted sample.
 
 ### Cell-cycle phase durations corrected for the exponential age distribution
 
@@ -217,6 +221,8 @@ print(a.values or (a.value, a.unit))
 
 Browser: [open this capability on the model page](https://www.ai999x.com/models/cell-molecular-biology-ai999x/#cap-cmb_cell_cycle_age_corrected) and press **Compute in your browser**.
 
+_What this means:_ This calculation determines the actual durations of the cell cycle phases by accounting for the exponential age distribution inherent in asynchronously growing populations. Given a total doubling time of 24 h and specific proportions of cells in each phase, the model computes the corrected length of G1 as 8.82556. These values reflect the true temporal progression of the cell cycle rather than simple population snapshots.
+
 ### Cell-cycle phase durations from phase fractions
 
 The durations of G1, S, G2 and M from the fraction of an asynchronous population in each phase (simple proportion to the cycle time).
@@ -245,20 +251,22 @@ print(a.values or (a.value, a.unit))
 
 Browser: [open this capability on the model page](https://www.ai999x.com/models/cell-molecular-biology-ai999x/#cap-cmb_cell_cycle_phase_durations) and press **Compute in your browser**.
 
+_What this means:_ This calculation determines the time spent in each phase of the cell cycle by multiplying the total cycle duration 24 h by the fraction of cells observed in that specific phase. The resulting values represent how long a typical cell remains in G1, S, G2 and M before progressing to the next stage. For example, the G1 phase lasts 10.8, while the synthesis phase lasts 8.4. These estimates assume an asynchronous population where the proportion of cells in a given phase reflects the relative duration of that phase within the entire cycle.
+
 ## Documentation
 
-- **Rust user guide** — the command line, every capability with a command and what it printed: [PDF](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_rust_guide.pdf) · [Markdown](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_rust_guide.md)
-- **Python guide** — every capability with a Python example: [PDF](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_capabilities.pdf) · [Markdown](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_capabilities.md)
-- **Desktop app & command line** — downloads, install, ask and search, figures, offline use, checksums: https://www.ai999x.com/desktop-cli/
-- **Model page** — compute in your browser, every capability explained: https://www.ai999x.com/models/cell-molecular-biology-ai999x/
+- **Rust user guide**: the command line, every capability with a command and what it printed: [PDF](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_rust_guide.pdf) · [Markdown](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_rust_guide.md)
+- **Python guide**: every capability with a Python example: [PDF](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_capabilities.pdf) · [Markdown](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_capabilities.md)
+- **Desktop app & command line**: downloads, install, ask and search, figures, offline use, checksums: https://www.ai999x.com/desktop-cli/
+- **Model page**: compute in your browser, every capability explained: https://www.ai999x.com/models/cell-molecular-biology-ai999x/
 
 ## Highlights
 
 - **Verified, not generated.** Every answer is computed by a certified cell and molecular biology capability and checked (substituted back, dimension-checked or compared with an independent computation) before it is returned.
-- **Zero wrong answers by design.** Seven explicit outcomes — SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR — never a silent guess. Every one of its 619 documented answers is reproduced exactly on every tested platform.
+- **Zero wrong answers by design.** Seven explicit outcomes (SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR), never a silent guess. Every one of its 619 documented answers is reproduced exactly on every tested platform.
 - **Plain-English questions and a guaranteed typed interface.** `ask()` reads documented question forms; `solve(capability_id, **inputs)` always solves a supported task with valid inputs.
 - **Explains itself.** Steps, formulas in LaTeX, units, assumptions and the model used, ready for notebooks, tutoring apps and homework checkers.
-- **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `cell-molecular-biology` command line for Windows and Linux, and WebAssembly on the model page — no Python, no network.
+- **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `cell-molecular-biology` command line for Windows and Linux, and WebAssembly on the model page, no Python, no network.
 - **Small and portable.** Pure Python (sympy, mpmath); identical answers on Windows and Linux (Python 3.10, 3.11, 3.12, 3.13, 3.14).
 - **Coverage:** membranes and diffusion, cell growth, DNA and RNA, PCR and gene expression, enzyme kinetics and binding, solution biochemistry.
 
@@ -266,7 +274,7 @@ Browser: [open this capability on the model page](https://www.ai999x.com/models/
 
 | Property | Value |
 |---|---|
-| Package | `cell-molecular-biology-ai999x` 1.1.0 (import `cell_molecular_biology_ai999x`) |
+| Package | `cell-molecular-biology-ai999x` 1.5.0 (import `cell_molecular_biology_ai999x`) |
 | Type | Deterministic neuro-symbolic cell and molecular biology engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 94 certified procedures |
 | Knowledge pack | version 1.0.0 |
@@ -300,14 +308,14 @@ cell_molecular_biology.ask("Who created you?").message
 # -> cell-molecular-biology-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-The Python package also installs a Python command, `cell-molecular-biology-ai999x "<question>"`; for the native program use `cell-molecular-biology` (above). The outputs above were produced by running this exact code on cell-molecular-biology-ai999x 1.1.0.
+The Python package also installs a Python command, `cell-molecular-biology-ai999x "<question>"`; for the native program use `cell-molecular-biology` (above). The outputs above were produced by running this exact code on cell-molecular-biology-ai999x 1.5.0.
 
 ## How every answer is verified
 
-1. **Reading** — the question is turned into typed quantities (value, unit, kind, role) and one asked quantity; every stated number must be used or the question is refused.
-2. **Planning** — only certified capabilities may answer; a capability applies only under the conditions the wording states (for example a pendulum, a liquid at rest, boiling).
-3. **Computing** — exact symbolic or high-precision numeric evaluation.
-4. **Checking** — dimensions, substitution back into the defining equation, and agreement between independent readings; any disagreement becomes a refusal, never a number.
+1. **Reading**: the question is turned into typed quantities (value, unit, kind, role) and one asked quantity; every stated number must be used or the question is refused.
+2. **Planning**: only certified capabilities may answer; a capability applies only under the conditions the wording states (for example a pendulum, a liquid at rest, boiling).
+3. **Computing**: exact symbolic or high-precision numeric evaluation.
+4. **Checking**: dimensions, substitution back into the defining equation, and agreement between independent readings; any disagreement becomes a refusal, never a number.
 
 Capabilities are certified before they ship: each must reproduce hand-worked reference cases, reject a deliberately wrong variant (a control), and leave every benchmark answer unchanged.
 
@@ -393,25 +401,25 @@ Every point was computed by `cell-molecular-biology-ai999x`.
 
 **Fractional saturation by the Hill equation**
 
-![Fractional saturation by the Hill equation — computed by cell-molecular-biology-ai999x](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-hill-equation-theta-vs-l.svg)
+![Fractional saturation by the Hill equation, computed by cell-molecular-biology-ai999x](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-hill-equation-theta-vs-l.svg)
 
 _theta (fractional saturation) against L (free ligand concentration), with K = 0.026 mol/m^3, n = 2.8. 31 points computed by cell-molecular-biology-ai999x; marked: L = 0.026, theta = 0.5._
 
 **Nernst equilibrium potential of an ion across a cell membrane**
 
-![Nernst equilibrium potential of an ion across a cell membrane — computed by cell-molecular-biology-ai999x](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-nernst-potential-e-vs-c-out.svg)
+![Nernst equilibrium potential of an ion across a cell membrane, computed by cell-molecular-biology-ai999x](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-nernst-potential-e-vs-c-out.svg)
 
 _E (equilibrium potential (inside minus outside)) against C_out (outside concentration), with C_in = 140 mol/m^3, T = 310.15 K, z = 1. 31 points computed by cell-molecular-biology-ai999x; marked: C_out = 5, E = -0.0890587 V._
 
 **qPCR relative expression by the delta-delta Ct method**
 
-![qPCR relative expression by the delta-delta Ct method — computed by cell-molecular-biology-ai999x](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-qpcr-delta-delta-ct-fold-change-vs-ct-target-treated.svg)
+![qPCR relative expression by the delta-delta Ct method, computed by cell-molecular-biology-ai999x](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-qpcr-delta-delta-ct-fold-change-vs-ct-target-treated.svg)
 
 _fold_change (relative expression 2^-ddCt) against Ct_target_treated (Ct of the target gene in the treated sample), with Ct_ref_control = 18.2, Ct_ref_treated = 18, Ct_target_control = 27. 31 points computed by cell-molecular-biology-ai999x; marked: Ct_target_treated = 24.5, fold_change = 4.92458._
 
 **Doubling time and number of generations from two counts**
 
-![Doubling time and number of generations from two counts — computed by cell-molecular-biology-ai999x](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-doubling-time-from-counts-td-vs-n0.svg)
+![Doubling time and number of generations from two counts, computed by cell-molecular-biology-ai999x](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-doubling-time-from-counts-td-vs-n0.svg)
 
 _td (doubling time) against N0 (initial cell count (or concentration)), with N = 1.60e5, t = 28800 s. 31 points computed by cell-molecular-biology-ai999x; marked: N0 = 10000, td = 7200 s._
 
@@ -426,23 +434,23 @@ _td (doubling time) against N0 (initial cell count (or concentration)), with N =
 ## Out of scope
 
 - Open-ended explanation, essay writing or tutoring dialogue: it is a solver, not a chatbot.
-- Questions outside its certified cell and molecular biology capabilities, and any question whose stated numbers it cannot all use — it refuses with the reason instead.
+- Questions outside its certified cell and molecular biology capabilities, and any question whose stated numbers it cannot all use: it refuses with the reason instead.
 - High-stakes engineering, medical or legal decisions without independent review.
 - **Not medical advice.** It computes textbook quantities from the numbers you give it; it does not diagnose, treat or recommend doses, and its results are no substitute for a qualified clinician.
 
 ## Limitations
 
 - It answers what its certified capabilities cover (membranes and diffusion, cell growth, DNA and RNA, PCR and gene expression, enzyme kinetics and binding, solution biochemistry); anything else is refused with a reason.
-- `ask()` reads documented question forms and common phrasings; unusual wording may be refused — use `solve()` for guaranteed results.
+- `ask()` reads documented question forms and common phrasings; unusual wording may be refused; use `solve()` for guaranteed results.
 - Results are as correct as the certified relations and their stated conditions; a certified relation is a checked model, not a claim about every physical situation.
 
 ## Citation
 
 ```bibtex
-@software{cell_molecular_biology_ai999x_1_1_0,
+@software{cell_molecular_biology_ai999x_1_5_0,
   title  = {cell-molecular-biology-ai999x: an offline, verified cell and molecular biology solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.1.0},
+  year   = {2026}, version = {1.5.0},
   url    = {https://huggingface.co/AI999X/cell-molecular-biology-ai999x}
 }
 ```
@@ -459,4 +467,15 @@ Created and engineered by **Ibnul Jaif Farabi** · **[AI999X](https://huggingfac
 
 ## Source and releases
 
-This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/cell-molecular-biology-ai999x/) (`pip install .` builds it). Releases are tagged `v<version>`; the wheel is attached to each [GitHub release](https://github.com/AI999X/cell-molecular-biology-ai999x/releases). The optional ONNX models (formula graphs and, where measured, a decision model) are on [Hugging Face](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/tree/main/onnx).
+This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/cell-molecular-biology-ai999x/) (`pip install .` builds it). Releases are tagged `v1.5.0`; the [GitHub release](https://github.com/AI999X/cell-molecular-biology-ai999x/releases/tag/v1.5.0) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
+
+## Build the program from source
+
+`rust/` holds the Rust source of the `cell-molecular-biology` command-line program and browser module: the AI999X engine (`rust/ax-engine`), this model (`rust/cell-molecular-biology`) and its data (`rust/models/cell_molecular_biology/pack.json`). With Rust 1.80 or later:
+
+```bash
+cd rust
+cargo build --release -p cell-molecular-biology-ai999x
+./target/release/cell-molecular-biology --help
+cargo test -p cell-molecular-biology-ai999x
+```
