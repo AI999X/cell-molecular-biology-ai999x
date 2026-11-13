@@ -490,7 +490,7 @@ $$
 
 ![C (inside concentration at time t) against r (cell radius) from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-equilibration-curve)
 
-*C (inside concentration at time t) against r (cell radius) from 1.0000e-06 m to 0.0001 m on a logarithmic axis. One curve for each value of C_out (constant outside concentration): 10 mol/m^3, 5 mol/m^3, 20 mol/m^3. Other inputs as in the worked example: P = 1e-07 m/s, C0 = 0.0 mol/m^3, t = 30.0 s. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, r = 1.0000e-05 m, C = 5.9343 mol/m^3.*
+*C (inside concentration at time t) against r (cell radius) from 1.0000e-06 m to 0.0001 m on a logarithmic axis. One curve for each value of C_out (constant outside concentration): 10 mol/m^3, 5 mol/m^3, 20 mol/m^3. Other inputs as in the worked example: P = 1.0000000000000001e-07 m/s, C0 = 0.0 mol/m^3, t = 30.0 s. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, r = 1.0000e-05 m, C = 5.9343 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_cell_equilibration', r=1e-05, P=1e-07, C_out=10.0, C0=0.0, t=30.0)
@@ -1216,7 +1216,7 @@ $$
 
 ![mu (specific growth rate) against S (limiting substrate concentration) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-monod-growth-rate-curve)
 
-*mu (specific growth rate) against S (limiting substrate concentration) from 0.005 kg/m^3 to 0.5 kg/m^3 on a logarithmic axis. One curve for each value of mu_max (maximum specific growth rate): 0.0002 1/s, 0.0001 1/s, 0.0004 1/s. Other inputs as in the worked example: Ks = 0.01 kg/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, S = 0.05 kg/m^3, mu = 0.000166667 1/s.*
+*mu (specific growth rate) against S (limiting substrate concentration) from 0.005 kg/m^3 to 0.5 kg/m^3 on a logarithmic axis. One curve for each value of mu_max (maximum specific growth rate): 0.0002 1/s, 1.0000e-04 1/s, 0.0004 1/s. Other inputs as in the worked example: Ks = 0.01 kg/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, S = 0.05 kg/m^3, mu = 0.000166667 1/s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_monod_growth_rate', mu_max=0.0002, S=0.05, Ks=0.01)
@@ -1517,7 +1517,7 @@ $$
 
 ![efficiency (transformants per microgram of DNA) against colonies (transformant colonies counted) from 1 to 400 on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transformation-efficiency-curve)
 
-*efficiency (transformants per microgram of DNA) against colonies (transformant colonies counted) from 1 to 400 on a logarithmic axis. One curve for each value of m_DNA (DNA mass used in the transformation): 1.0000e-12 kg, 5.0000e-13 kg, 2.0000e-12 kg. Other inputs as in the worked example: V_plated = 1e-07 m^3, V_total = 1e-06 m^3. 35 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, colonies = 200, efficiency = 2e+06.*
+*efficiency (transformants per microgram of DNA) against colonies (transformant colonies counted) from 1 to 400 on a logarithmic axis. One curve for each value of m_DNA (DNA mass used in the transformation): 1.0000e-12 kg, 5.0000e-13 kg, 2.0000e-12 kg. Other inputs as in the worked example: V_plated = 1.0000000000000001e-07 m^3, V_total = 1.0000000000000002e-06 m^3. 35 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, colonies = 200, efficiency = 2e+06.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_transformation_efficiency', colonies=200, m_DNA=1e-12, V_plated=1e-07, V_total=1e-06)
@@ -2826,7 +2826,7 @@ $$
 
 ![ratio (expression ratio sample/control) against Ct_target_control (target Ct in the control) from 13 to 39, logarithmic output axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-pfaffl-ratio-curve)
 
-*ratio (expression ratio sample/control) against Ct_target_control (target Ct in the control) from 13 to 39, logarithmic output axis. One curve for each value of Ct_ref_sample (reference Ct in the sample): 18.3, 9.15, 36.6. Other inputs as in the worked example: E_target = 0.95, E_ref = 0.9, Ct_target_sample = 23.5, Ct_ref_control = 18.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Ct_target_control = 26, ratio = 6.43743.*
+*ratio (expression ratio sample/control) against Ct_target_control (target Ct in the control) from 13 to 39, logarithmic output axis. One curve for each value of Ct_ref_sample (reference Ct in the sample): 18.3, 9.15, 36.6. Other inputs as in the worked example: E_target = 0.9500000000000001, E_ref = 0.9, Ct_target_sample = 23.5, Ct_ref_control = 18.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Ct_target_control = 26, ratio = 6.43743.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_qpcr_pfaffl_ratio', E_target=0.95, E_ref=0.9, Ct_target_control=26.0, Ct_target_sample=23.5, Ct_ref_control=18.0, Ct_ref_sample=18.3)
@@ -3089,7 +3089,7 @@ $$
 
 ![p_ss (steady-state protein per cell) against delta_m (mRNA decay rate constant) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-expression-steady-state-curve)
 
-*p_ss (steady-state protein per cell) against delta_m (mRNA decay rate constant) from 0.001 1/s to 0.003 1/s. One curve for each value of k_tx (transcription rate (mRNA made per cell per unit time)): 0.01 Hz, 0.005 Hz, 0.02 Hz. Other inputs as in the worked example: k_tl = 0.05 Hz, delta_p = 0.0001 1/s. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, delta_m = 0.002 1/s, p_ss = 2500.*
+*p_ss (steady-state protein per cell) against delta_m (mRNA decay rate constant) from 0.001 1/s to 0.003 1/s. One curve for each value of k_tx (transcription rate (mRNA made per cell per unit time)): 0.01 Hz, 0.005 Hz, 0.02 Hz. Other inputs as in the worked example: k_tl = 0.05 Hz, delta_p = 9.999999999999999e-05 1/s. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, delta_m = 0.002 1/s, p_ss = 2500.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_expression_steady_state', k_tx=0.01, delta_m=0.002, k_tl=0.05, delta_p=0.0001)
@@ -3141,7 +3141,7 @@ $$
 
 ![p (protein per cell at time t) against delta_m (mRNA decay rate constant) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-induction-dynamics-curve)
 
-*p (protein per cell at time t) against delta_m (mRNA decay rate constant) from 0.0002 1/s to 0.02 1/s on a logarithmic axis. One curve for each value of k_tx (transcription rate): 0.01 Hz, 0.005 Hz, 0.02 Hz. Other inputs as in the worked example: k_tl = 0.05 Hz, delta_p = 0.0001 1/s, t = 7200.0 s. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, delta_m = 0.002 1/s, p = 1219.07.*
+*p (protein per cell at time t) against delta_m (mRNA decay rate constant) from 0.0002 1/s to 0.02 1/s on a logarithmic axis. One curve for each value of k_tx (transcription rate): 0.01 Hz, 0.005 Hz, 0.02 Hz. Other inputs as in the worked example: k_tl = 0.05 Hz, delta_p = 9.999999999999999e-05 1/s, t = 7200.0 s. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, delta_m = 0.002 1/s, p = 1219.07.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_induction_dynamics', k_tx=0.01, delta_m=0.002, k_tl=0.05, delta_p=0.0001, t=7200.0)
@@ -3955,7 +3955,7 @@ $$
 
 ![RL (complex concentration) against Rt (total receptor concentration) from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ligand-depletion-binding-curve)
 
-*RL (complex concentration) against Rt (total receptor concentration) from 1.0000e-06 mol/m^3 to 0.0001 mol/m^3 on a logarithmic axis. One curve for each value of Lt (total ligand concentration): 2.0000e-05 mol/m^3, 1.0000e-05 mol/m^3, 4.0000e-05 mol/m^3. Other inputs as in the worked example: Kd = 1e-05 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Rt = 1.0000e-05 mol/m^3, RL = 5.8579e-06 mol/m^3.*
+*RL (complex concentration) against Rt (total receptor concentration) from 1.0000e-06 mol/m^3 to 0.0001 mol/m^3 on a logarithmic axis. One curve for each value of Lt (total ligand concentration): 2.0000e-05 mol/m^3, 1.0000e-05 mol/m^3, 4.0000e-05 mol/m^3. Other inputs as in the worked example: Kd = 9.999999999999999e-06 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Rt = 1.0000e-05 mol/m^3, RL = 5.8579e-06 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_ligand_depletion_binding', Rt=1e-05, Lt=2e-05, Kd=1e-05)
@@ -4164,7 +4164,7 @@ $$
 
 ![occupancy_L (fraction occupied by the ligand) against L (free ligand concentration) from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-competitive-occupancy-curve)
 
-*occupancy_L (fraction occupied by the ligand) against L (free ligand concentration) from 1.0000e-06 mol/m^3 to 0.0001 mol/m^3 on a logarithmic axis. One curve for each value of Kd (ligand dissociation constant): 5.0000e-06 mol/m^3, 2.5000e-06 mol/m^3, 1.0000e-05 mol/m^3. Other inputs as in the worked example: I = 2e-05 mol/m^3, Ki = 1e-05 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, L = 1.0000e-05 mol/m^3, occupancy_L = 0.4.*
+*occupancy_L (fraction occupied by the ligand) against L (free ligand concentration) from 1.0000e-06 mol/m^3 to 0.0001 mol/m^3 on a logarithmic axis. One curve for each value of Kd (ligand dissociation constant): 5.0000e-06 mol/m^3, 2.5000e-06 mol/m^3, 1.0000e-05 mol/m^3. Other inputs as in the worked example: I = 1.9999999999999998e-05 mol/m^3, Ki = 9.999999999999999e-06 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, L = 1.0000e-05 mol/m^3, occupancy_L = 0.4.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_competitive_occupancy', L=1e-05, Kd=5e-06, I=2e-05, Ki=1e-05)
@@ -4530,7 +4530,7 @@ $$
 
 ![pH (new pH) against pKa (pKa of the buffer acid) from 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-buffer-after-addition-curve)
 
-*pH (new pH) against pKa (pKa of the buffer acid) from 3.605 to 10.815. One curve for each value of pH0 (initial pH): 7.21, 3.605. Other inputs as in the worked example: C = 100.0 mol/m^3, V = 0.0001 m^3, n_add = 0.001 mol, added = base. 19 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, pKa = 7.21, pH = 7.38609.*
+*pH (new pH) against pKa (pKa of the buffer acid) from 3.605 to 10.815. One curve for each value of pH0 (initial pH): 7.21, 3.605. Other inputs as in the worked example: C = 100.0 mol/m^3, V = 9.999999999999999e-05 m^3, n_add = 0.001 mol, added = base. 19 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, pKa = 7.21, pH = 7.38609.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_buffer_after_addition', C=100.0, V=0.0001, pH0=7.21, pKa=7.21, n_add=0.001, added='base')
@@ -4582,7 +4582,7 @@ $$
 
 ![V1 (volume of stock) against C1 (stock concentration) from 500 mol/m^3 to 1500 mol/m^3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-c1v1-dilution-curve)
 
-*V1 (volume of stock) against C1 (stock concentration) from 500 mol/m^3 to 1500 mol/m^3. One curve for each value of C2 (final concentration): 50 mol/m^3, 25 mol/m^3, 100 mol/m^3. Other inputs as in the worked example: V2 = 1e-05 m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, C1 = 1000 mol/m^3, V1 = 5.0000e-07 m^3.*
+*V1 (volume of stock) against C1 (stock concentration) from 500 mol/m^3 to 1500 mol/m^3. One curve for each value of C2 (final concentration): 50 mol/m^3, 25 mol/m^3, 100 mol/m^3. Other inputs as in the worked example: V2 = 9.999999999999999e-06 m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, C1 = 1000 mol/m^3, V1 = 5.0000e-07 m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_c1v1_dilution', C1=1000.0, C2=50.0, V2=1e-05)
