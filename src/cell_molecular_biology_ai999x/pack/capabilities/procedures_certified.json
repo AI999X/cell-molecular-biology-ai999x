@@ -93,9 +93,19 @@
   "cmb_ionic_strength",
   "cmb_centrifuge_rcf",
   "cmb_centrifuge_rpm",
-  "cmb_sedimentation_time"
+  "cmb_sedimentation_time",
+  "cmb_microscope_resolution",
+  "cmb_specimen_size",
+  "cmb_water_potential",
+  "cmb_water_movement",
+  "cmb_reaction_free_energy",
+  "cmb_redox_free_energy",
+  "cmb_atp_yield",
+  "cmb_decimal_reduction_time",
+  "cmb_z_value",
+  "cmb_thermal_death_time"
  ],
- "generated": "2026-11-01",
+ "generated": "2026-11-13",
  "tool": "tools/certify_procedures.py",
  "report": "release/procedure_certification.json",
  "weak_references": {

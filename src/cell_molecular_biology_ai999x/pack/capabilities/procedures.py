@@ -19,7 +19,10 @@ catalytic efficiency, Lineweaver-Burk and nonlinear fits, competitive, uncompeti
 inhibition, Cheng-Prusoff, the Hill equation, Hill coefficients from EC10 and EC90, fraction bound, ligand depletion,
 Kd from rates, Scatchard fits, binding free energy, competitive occupancy, the MWC model, Q10, assay activity) and
 solution biochemistry (Henderson-Hasselbalch, buffer preparation, buffer capacity, buffers after acid or base, C1V1
-and serial dilutions, molarity and mass, percent w/v, ionic strength, centrifugation and sedimentation).
+and serial dilutions, molarity and mass, percent w/v, ionic strength, centrifugation and sedimentation); microscopy
+(magnification, Abbe resolution, specimen size from a micrograph); water potential and the direction of water
+movement; free energy of metabolism (at cellular concentrations, from reduction potentials); ATP yield per glucose;
+microbial killing (D-value, z-value, thermal death time).
 
 Each procedure states its inputs, outputs, conditions, method, LaTeX, the documented question form it parses, worked
 examples, an INDEPENDENT reference computation (used only by certification; the checking libraries are imported inside
@@ -3697,14 +3700,14 @@ _add("cmb_ligand_depletion_binding",
 def kd_from_rates(kon, koff):
     _pos("kon and koff", kon, koff)
     Kd = koff / kon
-    return _out(Kd=Kd, Kd_nM=Kd * 1e6, Ka_per_M=kon / koff / 1e3, half_life=LN2 / koff, residence_time=1.0 / koff)
+    return _out(Kd=Kd, Kd_nM=Kd * 1e6, Ka_per_M=kon / koff * 1e3, half_life=LN2 / koff, residence_time=1.0 / koff)
 
 
 def _ref_kd_rates(kon, koff):
     # equilibrium of the association-dissociation kinetics at a ligand level L: theta = kon L/(kon L + koff); Kd is the L giving 1/2
     Kd = _brentq(lambda L: kon * L / (kon * L + koff) - 0.5, 0.0, 1e6 * koff / kon)
     th = _brentq(lambda t: math.exp(-koff * t) - 0.5, 0.0, 10.0 / koff)
-    return {"Kd": Kd, "Kd_nM": Kd * 1e6, "Ka_per_M": 1e-3 / Kd, "half_life": th, "residence_time": 1.0 / koff}
+    return {"Kd": Kd, "Kd_nM": Kd * 1e6, "Ka_per_M": 1e3 / Kd, "half_life": th, "residence_time": 1.0 / koff}
 
 
 _add("cmb_kd_from_rates",
@@ -3718,7 +3721,7 @@ _add("cmb_kd_from_rates",
      primary="Kd", conditions=["kon, koff > 0", "simple 1:1 binding"],
      method="Kd = koff/kon; t1/2 = ln 2/koff; tau = 1/koff", latex=r"K_d = \frac{k_{off}}{k_{on}},\quad t_{1/2} = \frac{\ln 2}{k_{off}}",
      run=kd_from_rates, reference=_ref_kd_rates,
-     wrong=lambda kon, koff: (lambda K: _out(Kd=K, Kd_nM=K * 1e6, Ka_per_M=1e-3 / K, half_life=LN2 / koff, residence_time=1.0 / koff))(kon / koff),
+     wrong=lambda kon, koff: (lambda K: _out(Kd=K, Kd_nM=K * 1e6, Ka_per_M=1.0 / K, half_life=LN2 / koff, residence_time=1.0 / koff))(kon / koff),
      rand=lambda rng: {"kon": _sig(_lu(rng, 1e0, 1e6), 3), "koff": _sig(_lu(rng, 1e-5, 10.0), 3)},
      phrases=("Kd from rate constants", "Dissociation constant from rates"),
      examples=[_ex({"kon": 1e3, "koff": 1e-3}), _ex({"kon": 5e2, "koff": 0.2})],
@@ -4558,7 +4561,7 @@ _EXV = {
     'cmb_hill_coefficient_from_ec': [{'n': 1.0, 'EC50': 0.009, 'ratio': 81.0}, {'n': 2.0, 'EC50': 0.03, 'ratio': 9.0}],
     'cmb_fraction_bound': [{'theta': 0.666666666667, 'theta_percent': 66.6666666667}, {'theta': 0.166666666667, 'theta_percent': 16.6666666667, 'bound': 8.33333333333e-06}],
     'cmb_ligand_depletion_binding': [{'RL': 5.85786437627e-06, 'fraction_receptor_bound': 0.585786437627, 'free_ligand': 1.41421356237e-05, 'fraction_ligand_bound': 0.292893218813}, {'RL': 4.81432234456e-05, 'fraction_receptor_bound': 0.481432234456, 'free_ligand': 1.85677655437e-06, 'fraction_ligand_bound': 0.962864468913}],
-    'cmb_kd_from_rates': [{'Kd': 1e-06, 'Kd_nM': 1.0, 'Ka_per_M': 1000.0, 'half_life': 693.14718056, 'residence_time': 1000.0}, {'Kd': 0.0004, 'Kd_nM': 400.0, 'Ka_per_M': 2.5, 'half_life': 3.4657359028, 'residence_time': 5.0}],
+    'cmb_kd_from_rates': [{'Kd': 1e-06, 'Kd_nM': 1.0, 'Ka_per_M': 1000000000.0, 'half_life': 693.14718056, 'residence_time': 1000.0}, {'Kd': 0.0004, 'Kd_nM': 400.0, 'Ka_per_M': 2500000.0, 'half_life': 3.4657359028, 'residence_time': 5.0}],
     'cmb_scatchard_fit': [{'Kd': 4.98648892749, 'Bmax': 99.9303765767, 'slope': -0.20054190725, 'intercept': 20.0402283109, 'r2': 0.99999711189}, {'Kd': 4.14004859731, 'Bmax': 84.4319637729, 'slope': -0.241543058372, 'intercept': 20.393954754, 'r2': 0.992705787788}],
     'cmb_binding_free_energy': [{'dG': -45664.0760203, 'dG_kJ_mol': -45.6640760203, 'dG_kcal_mol': -10.9139761043}, {'dG': -33263.6126368, 'dG_kJ_mol': -33.2636126368, 'dG_kcal_mol': -7.95019422487}],
     'cmb_competitive_occupancy': [{'occupancy_L': 0.4, 'occupancy_I': 0.4, 'free_fraction': 0.2, 'Kd_app': 1.5e-05}, {'occupancy_L': 0.0454545454545, 'occupancy_I': 0.909090909091, 'free_fraction': 0.0454545454545, 'Kd_app': 0.0021}],
@@ -4584,3 +4587,616 @@ for _k, _vals in _EXV.items():
     if _k in PROCEDURES:
         for _e, _v in zip(PROCEDURES[_k]["examples"], _vals):
             _e["outputs"].update(_v)
+
+
+# ================================================================================================ CORE GAPS (2026-11-12)
+# Microscopy, water potential, free energy of metabolism, ATP yield of respiration and heat killing of microbes. The
+# worked-example values below are hand-worked (exact where the inputs allow) and are written into each example.
+# Conventions: Abbe resolution limit d = lambda / (2 NA); water potential psi = -i C R T + psi_p (C in mol/m^3 gives
+# Pa); free energies use the biochemical standard state (1 M, pH 7 folded into dG0'; water and H+ omitted) and a
+# species with a coefficient is listed that many times; ATP per glucose counts 4 substrate-level ATP (net 2 from
+# glycolysis, 2 GTP/ATP from the citric acid cycle), 8 mitochondrial NADH, 2 FADH2 and 2 cytosolic NADH that enter
+# through the named shuttle (malate-aspartate: as NADH; glycerol-phosphate: as FADH2); fermentation yields 2 ATP; heat
+# killing is first-order (log-linear survivor curves, D-value and z-value in their classical definitions).
+
+_MM = ("mm", 1e3)
+_MPA = ("MPa", 1e-6)
+_VOLT = ("V", 1.0)
+
+
+def microscope_resolution(M_obj, M_oc, wavelength, NA):
+    _pos("the magnifications, the wavelength and the numerical aperture", M_obj, M_oc, wavelength, NA)
+    _need(NA <= 1.6, "the numerical aperture of a light microscope cannot exceed about 1.6 (oil immersion is about 1.4)")
+    M = M_obj * M_oc
+    d = wavelength / (2.0 * NA)
+    return _out(M=M, d=d, d_nm=d * 1e9, d_um=d * 1e6)
+
+
+def _ref_microscope_resolution(M_obj, M_oc, wavelength, NA):
+    import numpy as np
+    # Abbe's grating argument: the finest period p still imaged is the one whose first diffraction order (sin = lambda/p)
+    # is just collected when the illumination arrives at the edge of an aperture of the same NA (oblique illumination)
+    p = _brentq(lambda pp: wavelength / pp - NA - NA, wavelength / 4.0, wavelength * 100.0)
+    M = float(np.prod([M_obj, M_oc]))
+    return {"M": M, "d": p, "d_nm": p * 1e9, "d_um": p * 1e6}
+
+
+_add("cmb_microscope_resolution",
+     name="Light microscope: total magnification and resolution limit", topic="microscopy / magnification and resolution",
+     purpose="The total magnification of a compound light microscope (objective x eyepiece) and its resolution limit d = lambda / (2 NA) (Abbe).",
+     inputs=[_numin("M_obj", "magnification of the objective lens (e.g. 40 for 40x)", words=("x",)),
+             _numin("M_oc", "magnification of the eyepiece (ocular) lens (e.g. 10 for 10x)", words=("x",)),
+             _phys("wavelength", "length", "wavelength of the light", show=_NM),
+             _numin("NA", "numerical aperture of the objective")],
+     outputs=[_o("M", "number", "total magnification"), _o("d", "length", "resolution limit (smallest resolvable separation)"),
+              _o("d_nm", "number", "resolution limit in nanometres"), _o("d_um", "number", "resolution limit in micrometres")],
+     primary="d", conditions=["magnifications > 0", "wavelength > 0", "0 < NA <= 1.6"],
+     method="M = M_objective x M_eyepiece; d = lambda / (2 NA) (Abbe)",
+     latex=r"M = M_{obj}\,M_{oc},\quad d = \frac{\lambda}{2\,\mathrm{NA}}",
+     run=microscope_resolution, reference=_ref_microscope_resolution,
+     wrong=lambda M_obj, M_oc, wavelength, NA: _out(M=M_obj * M_oc, d=wavelength / NA, d_nm=wavelength / NA * 1e9, d_um=wavelength / NA * 1e6),
+     rand=lambda rng: {"M_obj": rng.choice([4.0, 10.0, 20.0, 40.0, 60.0, 100.0]), "M_oc": rng.choice([5.0, 10.0, 15.0, 20.0]),
+                       "wavelength": _sig(rng.uniform(4e-7, 7e-7), 3), "NA": _sig(rng.uniform(0.1, 1.4), 3)},
+     phrases=("Microscope resolution", "Microscope magnification and resolution", "Resolution limit of a microscope"),
+     examples=[_ex({"M_obj": 40.0, "M_oc": 10.0, "wavelength": 5.5e-7, "NA": 0.65},
+                   {"M": 400.0, "d": 4.23076923077e-07, "d_nm": 423.076923077, "d_um": 0.423076923077}),
+               _ex({"M_obj": 100.0, "M_oc": 10.0, "wavelength": 4.5e-7, "NA": 1.25},
+                   {"M": 1000.0, "d": 1.8e-07, "d_nm": 180.0, "d_um": 0.18})],
+     level="beginner",
+     extra_q=[{"q": "Microscope resolution: M_obj = 40 x, M_oc = 10 x, wavelength = 0.55 um, NA = 0.65", "like": 0},
+              {"q": "Microscope resolution: M_obj = 40, M_oc = 10, wavelength = 550 nm, NA = 2", "outcome": "INVALID_INPUT"}],
+     weak="Abbe's grating condition re-solved with brentq (the same Abbe limit reached through the diffraction-order argument)")
+
+
+def specimen_size(image_size, M=None, bar_image=None, bar_label=None):
+    _pos("the measured image size", image_size)
+    bars = bar_image is not None or bar_label is not None
+    _need(not (M is not None and bars), "give either the magnification M or the scale bar (bar_image and bar_label), not both")
+    if M is not None:
+        _pos("the magnification M", M)
+        Meff = M
+        size = image_size / M
+    else:
+        _need(bar_image is not None and bar_label is not None,
+              "give the magnification M, or both the scale bar's length on the image (bar_image) and the length it stands for (bar_label)")
+        _pos("the scale-bar lengths", bar_image, bar_label)
+        Meff = bar_image / bar_label
+        size = image_size * bar_label / bar_image
+    return _out(size=size, size_um=size * 1e6, M_image=Meff)
+
+
+def _ref_specimen_size(image_size, M=None, bar_image=None, bar_label=None):
+    from fractions import Fraction as Fr
+    if M is not None:
+        Meff = Fr(M)
+        size = Fr(image_size) / Fr(M)
+    else:
+        Meff = Fr(bar_image) / Fr(bar_label)
+        size = Fr(image_size) / Meff
+    return {"size": float(size), "size_um": float(size * 10 ** 6), "M_image": float(Meff)}
+
+
+def _wrong_specimen_size(image_size, M=None, bar_image=None, bar_label=None):
+    if M is not None:
+        size = image_size * M                            # multiplied instead of divided
+        return _out(size=size, size_um=size * 1e6, M_image=M)
+    size = image_size * bar_image / bar_label              # scale-bar ratio inverted
+    return _out(size=size, size_um=size * 1e6, M_image=bar_image / bar_label)
+
+
+def _rand_specimen(rng):
+    img = _sig(rng.uniform(2e-3, 6e-2), 3)
+    if rng.random() < 0.5:
+        return {"image_size": img, "M": rng.choice([40.0, 100.0, 400.0, 1000.0, 2500.0, 10000.0])}
+    return {"image_size": img, "bar_image": _sig(rng.uniform(5e-3, 4e-2), 3), "bar_label": rng.choice([1e-6, 2e-6, 5e-6, 1e-5, 2e-5, 5e-5, 1e-4])}
+
+
+_add("cmb_specimen_size",
+     name="Actual size of a specimen from a micrograph", topic="microscopy / magnification and resolution",
+     purpose="The actual size of an object from its size measured on an image (drawing or micrograph), by the magnification or by the image's scale bar; also the magnification of the image.",
+     inputs=[_phys("image_size", "length", "size of the object measured on the image", show=_MM),
+             _numin("M", "magnification of the image (give this or the scale bar)", required=False, words=("x",)),
+             _phys("bar_image", "length", "length of the scale bar measured on the image (optional, with bar_label)", required=False, show=_MM),
+             _phys("bar_label", "length", "length the scale bar stands for (optional, with bar_image)", required=False, show=_UM)],
+     outputs=[_o("size", "length", "actual size of the object"), _o("size_um", "number", "actual size in micrometres"),
+              _o("M_image", "number", "magnification of the image")],
+     primary="size", conditions=["all lengths > 0", "either the magnification or both scale-bar lengths, not both"],
+     method="actual size = image size / M; with a scale bar M = bar length on the image / length it represents",
+     latex=r"\text{actual size} = \frac{\text{image size}}{M},\quad M = \frac{\text{bar on image}}{\text{bar label}}",
+     run=specimen_size, reference=_ref_specimen_size, wrong=_wrong_specimen_size, rand=_rand_specimen,
+     phrases=("Specimen size from a micrograph", "Actual size from magnification", "Actual size of a specimen"),
+     examples=[_ex({"image_size": 0.012, "M": 400.0}, {"size": 3e-05, "size_um": 30.0, "M_image": 400.0}),
+               _ex({"image_size": 0.018, "bar_image": 0.025, "bar_label": 1e-05}, {"size": 7.2e-06, "size_um": 7.2, "M_image": 2500.0})],
+     level="beginner",
+     extra_q=[{"q": "Actual size from magnification: image_size = 1.2 cm, M = 400 x", "like": 0},
+              {"q": "Specimen size from a micrograph: image_size = 18 mm, M = 400, bar_image = 25 mm, bar_label = 10 um", "outcome": "INVALID_INPUT"}],
+     weak="the same definition in exact rational arithmetic")
+
+
+def water_potential(i, C, T, psi_p):
+    _pos("the van 't Hoff factor i and T", i, T)
+    _nonneg("the solute concentration C", C)
+    _fin(psi_p)
+    psi_s = -i * C * R_GAS * T
+    psi = psi_s + psi_p
+    return _out(psi_s=psi_s, psi_s_MPa=psi_s * 1e-6, psi=psi, psi_MPa=psi * 1e-6)
+
+
+def _ref_water_potential(i, C, T, psi_p):
+    sc = _sc()
+    c_mol_per_L = C * sc.liter                                      # mol/m^3 -> mol/L
+    pi = i * c_mol_per_L * sc.R * T / sc.liter                      # osmotic pressure (van 't Hoff) in Pa
+    psi_s = -pi
+    return {"psi_s": psi_s, "psi_s_MPa": psi_s / sc.mega, "psi": psi_s + psi_p, "psi_MPa": (psi_s + psi_p) / sc.mega}
+
+
+_add("cmb_water_potential",
+     name="Water potential of a plant cell or solution (solute plus pressure potential)", topic="membranes and diffusion / water potential",
+     purpose="The solute potential psi_s = -i C R T and the water potential psi = psi_s + psi_p of a solution or cell (pure water at atmospheric pressure = 0).",
+     inputs=[_numin("i", "ionization (van 't Hoff) constant: 1 for sucrose, about 2 for NaCl"),
+             _phys("C", "molar_concentration", "molar concentration of the solute"),
+             _phys("T", "temperature", "absolute temperature (degC is converted)", show=_KELVIN),
+             _phys("psi_p", "pressure", "pressure potential (turgor; 0 for an open solution)", show=_MPA)],
+     outputs=[_o("psi_s", "pressure", "solute (osmotic) potential"), _o("psi_s_MPa", "number", "solute potential in MPa"),
+              _o("psi", "pressure", "water potential"), _o("psi_MPa", "number", "water potential in MPa")],
+     primary="psi", conditions=["i > 0, T > 0", "C >= 0", "ideal dilute solution"],
+     method="psi_s = -i C R T; psi = psi_s + psi_p", latex=r"\Psi_s = -iCRT,\quad \Psi = \Psi_s + \Psi_p",
+     run=water_potential, reference=_ref_water_potential,
+     wrong=lambda i, C, T, psi_p: (lambda s: _out(psi_s=s, psi_s_MPa=s * 1e-6, psi=s + psi_p, psi_MPa=(s + psi_p) * 1e-6))(i * C * R_GAS * T),
+     rand=lambda rng: {"i": rng.choice([1.0, 1.0, 1.8, 2.0, 3.0]), "C": _sig(_lu(rng, 1.0, 1000.0), 3),
+                       "T": _sig(rng.uniform(278.0, 313.0), 5), "psi_p": _sig(rng.uniform(0.0, 1e6), 3)},
+     phrases=("Water potential", "Solute potential and water potential"),
+     examples=[_ex({"i": 1.0, "C": 150.0, "T": 293.15, "psi_p": 0.0},
+                   {"psi_s": -365607.707477, "psi_s_MPa": -0.365607707477, "psi": -365607.707477, "psi_MPa": -0.365607707477}),
+               _ex({"i": 2.0, "C": 100.0, "T": 298.15, "psi_p": 300000.0},
+                   {"psi_s": -495791.40592, "psi_s_MPa": -0.49579140592, "psi": -195791.40592, "psi_MPa": -0.19579140592})],
+     level="beginner",
+     extra_q=[{"q": "Water potential: i = 1, C = 0.15 M, T = 20 degC, psi_p = 0 MPa", "like": 0},
+              {"q": "Water potential: i = 0, C = 0.15 M, T = 293.15 K, psi_p = 0 MPa", "outcome": "INVALID_INPUT"}],
+     weak="the same relation evaluated with scipy.constants through litres (the osmotic pressure route)")
+
+
+def water_movement(i_cell, C_cell, P_cell, i_out, C_out, P_out, T):
+    _pos("the van 't Hoff factors and T", i_cell, i_out, T)
+    _nonneg("the concentrations", C_cell, C_out)
+    _fin(P_cell, P_out)
+    psi_cell = -i_cell * C_cell * R_GAS * T + P_cell
+    psi_out = -i_out * C_out * R_GAS * T + P_out
+    d = psi_out - psi_cell
+    if abs(d) <= 1e-9 * (abs(psi_cell) + abs(psi_out)):
+        d = 0.0
+    if d > 0:
+        word = "into the cell"
+    elif d < 0:
+        word = "out of the cell"
+    else:
+        word = "no net movement"
+    return _out(psi_cell=psi_cell, psi_out=psi_out, dpsi=d, dpsi_MPa=d * 1e-6, direction=word)
+
+
+def _ref_water_movement(i_cell, C_cell, P_cell, i_out, C_out, P_out, T):
+    sc = _sc()
+    pc = -i_cell * C_cell * sc.R * T + P_cell
+    po = -i_out * C_out * sc.R * T + P_out
+    d = po - pc
+    if abs(d) <= 1e-9 * (abs(pc) + abs(po)):
+        d = 0.0
+    word = "no net movement" if d == 0 else ("into the cell" if pc < po else "out of the cell")
+    return {"psi_cell": pc, "psi_out": po, "dpsi": d, "dpsi_MPa": d / sc.mega, "direction": word}
+
+
+def _wrong_water_movement(i_cell, C_cell, P_cell, i_out, C_out, P_out, T):
+    r = water_movement(i_cell, C_cell, P_cell, i_out, C_out, P_out, T)
+    flip = {"into the cell": "out of the cell", "out of the cell": "into the cell", "no net movement": "no net movement"}
+    return _out(psi_cell=r["psi_cell"], psi_out=r["psi_out"], dpsi=-r["dpsi"], dpsi_MPa=-r["dpsi_MPa"], direction=flip[r["direction"]])
+
+
+_add("cmb_water_movement",
+     name="Direction of water movement between a cell and its surroundings", topic="membranes and diffusion / water potential",
+     purpose="The water potentials of a cell and of the surrounding solution and the direction of net water movement (from higher to lower water potential).",
+     inputs=[_numin("i_cell", "ionization constant of the cell's solute"),
+             _phys("C_cell", "molar_concentration", "solute concentration in the cell"),
+             _phys("P_cell", "pressure", "pressure potential of the cell (turgor)", show=_MPA),
+             _numin("i_out", "ionization constant of the outside solute"),
+             _phys("C_out", "molar_concentration", "solute concentration outside"),
+             _phys("P_out", "pressure", "pressure potential outside (0 for an open solution)", show=_MPA),
+             _phys("T", "temperature", "absolute temperature (degC is converted)", show=_KELVIN)],
+     outputs=[_o("psi_cell", "pressure", "water potential of the cell"), _o("psi_out", "pressure", "water potential outside"),
+              _o("dpsi", "pressure", "outside minus cell water potential"), _o("dpsi_MPa", "number", "outside minus cell water potential in MPa"),
+              _o("direction", "number", "net water movement: into the cell, out of the cell or no net movement")],
+     primary="direction", conditions=["i > 0, T > 0", "concentrations >= 0", "equal within 1e-9 = no net movement"],
+     method="psi = -i C R T + psi_p for each side; water moves from the higher to the lower water potential",
+     latex=r"\Psi = -iCRT + \Psi_p,\quad \text{water moves toward lower } \Psi",
+     run=water_movement, reference=_ref_water_movement, wrong=_wrong_water_movement,
+     rand=lambda rng: {"i_cell": rng.choice([1.0, 2.0]), "C_cell": _sig(rng.uniform(50.0, 800.0), 3), "P_cell": _sig(rng.uniform(0.0, 8e5), 3),
+                       "i_out": rng.choice([1.0, 2.0]), "C_out": _sig(rng.uniform(0.0, 800.0), 3), "P_out": 0.0,
+                       "T": _sig(rng.uniform(278.0, 313.0), 5)},
+     phrases=("Water movement between a cell and its surroundings", "Direction of water movement", "Osmotic water movement"),
+     examples=[_ex({"i_cell": 1.0, "C_cell": 200.0, "P_cell": 200000.0, "i_out": 1.0, "C_out": 100.0, "P_out": 0.0, "T": 298.15},
+                   {"psi_cell": -295791.40592, "psi_out": -247895.70296, "dpsi": 47895.70296, "dpsi_MPa": 0.04789570296,
+                    "direction": "into the cell"}),
+               _ex({"i_cell": 1.0, "C_cell": 300.0, "P_cell": 0.0, "i_out": 2.0, "C_out": 200.0, "P_out": 0.0, "T": 310.15},
+                   {"psi_cell": -773619.174306, "psi_out": -1031492.23241, "dpsi": -257873.058102, "dpsi_MPa": -0.257873058102,
+                    "direction": "out of the cell"})],
+     level="intermediate",
+     extra_q=[{"q": "Direction of water movement: i_cell = 1, C_cell = 0.2 M, P_cell = 0.2 MPa, i_out = 1, C_out = 0.1 M, P_out = 0 MPa, T = 25 degC", "like": 0},
+              {"q": "Direction of water movement: i_cell = 1, C_cell = -200 mM, P_cell = 0.2 MPa, i_out = 1, C_out = 100 mM, P_out = 0 MPa, T = 298.15 K",
+               "outcome": "INVALID_INPUT"}],
+     weak="the same relation evaluated with scipy.constants")
+
+
+def _ln_q(products, reactants):
+    _need(len(products) >= 1 and len(reactants) >= 1, "give at least one product and one reactant concentration")
+    s = 0.0
+    for c in products:
+        _need(_isnum(c) and c > 0 and c <= 10000.0, "concentrations must be above 0 and at most 10 M (10000 mM)")
+        s += math.log(c * 1e-3)
+    for c in reactants:
+        _need(_isnum(c) and c > 0 and c <= 10000.0, "concentrations must be above 0 and at most 10 M (10000 mM)")
+        s -= math.log(c * 1e-3)
+    return s
+
+
+def reaction_free_energy(dG0, T, products, reactants):
+    _fin(dG0)
+    _pos("T", T)
+    _need(abs(dG0) <= 500000.0, "the standard free-energy change must be within 500 kJ/mol")
+    lnQ = _ln_q(products, reactants)
+    RT = R_GAS * T
+    dG = dG0 + RT * lnQ
+    if abs(dG) <= 1e-9 * (abs(dG0) + RT):
+        dG = 0.0
+    if dG < 0:
+        word = "forward"
+    elif dG > 0:
+        word = "reverse"
+    else:
+        word = "at equilibrium"
+    return _out(Q=math.exp(lnQ), dG=dG, dG_kJ_mol=dG / 1000.0, K_eq=math.exp(-dG0 / RT), direction=word)
+
+
+def _ref_reaction_free_energy(dG0, T, products, reactants):
+    import numpy as np
+    sc = _sc()
+    Q = float(np.prod(np.array(products, dtype=float) / 1000.0) / np.prod(np.array(reactants, dtype=float) / 1000.0))
+    RT = sc.R * T
+    K = math.exp(-dG0 / RT)
+    dG = RT * math.log(Q / K)
+    if abs(dG) <= 1e-9 * (abs(dG0) + RT):
+        dG = 0.0
+    word = "at equilibrium" if dG == 0 else ("forward" if Q < K else "reverse")
+    return {"Q": Q, "dG": dG, "dG_kJ_mol": dG / 1000.0, "K_eq": K, "direction": word}
+
+
+def _wrong_reaction_free_energy(dG0, T, products, reactants):
+    lnQ = _ln_q(products, reactants)
+    RT = R_GAS * T
+    dG = dG0 + RT * lnQ / math.log(10.0)                 # log10 Q used in place of ln Q
+    word = "forward" if dG < 0 else ("reverse" if dG > 0 else "at equilibrium")
+    return _out(Q=math.exp(lnQ), dG=dG, dG_kJ_mol=dG / 1000.0, K_eq=math.exp(-dG0 / RT), direction=word)
+
+
+def _rand_rxn_dg(rng):
+    return {"dG0": _sig(rng.uniform(-60000.0, 40000.0), 3), "T": _sig(rng.uniform(288.0, 315.0), 5),
+            "products": [_sig(_lu(rng, 0.001, 20.0), 3) for _ in range(rng.randint(1, 3))],
+            "reactants": [_sig(_lu(rng, 0.001, 20.0), 3) for _ in range(rng.randint(1, 3))]}
+
+
+_add("cmb_reaction_free_energy",
+     name="Free-energy change of a reaction at cellular concentrations", topic="metabolism / free energy",
+     purpose="The actual free-energy change dG = dG0' + RT ln Q of a biochemical reaction at the concentrations in the cell (standard state 1 M), its equilibrium constant and the direction it proceeds.",
+     inputs=[_phys("dG0", "molar_energy", "standard free-energy change dG0' (biochemical standard state, pH 7)"),
+             _phys("T", "temperature", "absolute temperature (degC is converted)", show=_KELVIN),
+             _vecin("products", "product concentrations in mM (list a species twice for a coefficient of 2; omit water and H+)", 1, 10),
+             _vecin("reactants", "reactant concentrations in mM (list a species twice for a coefficient of 2; omit water and H+)", 1, 10)],
+     outputs=[_o("Q", "number", "reaction quotient (concentrations relative to 1 M)"), _o("dG", "molar_energy", "actual free-energy change"),
+              _o("dG_kJ_mol", "number", "actual free-energy change in kJ/mol"), _o("K_eq", "number", "equilibrium constant exp(-dG0'/RT)"),
+              _o("direction", "number", "forward (dG < 0), reverse (dG > 0) or at equilibrium")],
+     primary="dG", conditions=["T > 0", "|dG0'| <= 500 kJ/mol", "0 < each concentration <= 10 M", "ideal (activities = concentrations / 1 M)"],
+     method="Q = prod(products / 1 M) / prod(reactants / 1 M); dG = dG0' + R T ln Q; K = exp(-dG0'/RT)",
+     latex=r"\Delta G = \Delta G^{\circ\prime} + RT\ln Q,\quad Q = \frac{\prod [P]}{\prod [R]}",
+     run=reaction_free_energy, reference=_ref_reaction_free_energy, wrong=_wrong_reaction_free_energy, rand=_rand_rxn_dg,
+     phrases=("Free energy at cellular concentrations", "Actual free-energy change of a reaction", "Reaction free energy"),
+     examples=[_ex({"dG0": -30500.0, "T": 310.15, "products": [0.25, 1.65], "reactants": [2.25]},
+                   {"Q": 0.000183333333333, "dG": -52687.9254459, "dG_kJ_mol": -52.6879254459, "direction": "forward"}),
+               _ex({"dG0": 5000.0, "T": 298.15, "products": [1.0], "reactants": [1000.0]},
+                   {"Q": 0.001, "dG": -12124.0285076, "dG_kJ_mol": -12.1240285076, "direction": "forward"})],
+     level="intermediate",
+     extra_q=[{"q": "Reaction free energy: dG0 = -30.5 kJ/mol, T = 37 degC, products = [0.25, 1.65], reactants = [2.25]", "like": 0},
+              {"q": "Reaction free energy: dG0 = -30.5 kJ/mol, T = 310.15 K, products = [0, 1.65], reactants = [2.25]", "outcome": "INVALID_INPUT"}],
+     weak="numpy products of the concentrations and dG = RT ln(Q/K) with scipy.constants (the same relation in its Q/K form)")
+
+
+def redox_free_energy(E_acceptor, E_donor, n):
+    _fin(E_acceptor, E_donor)
+    _need(isinstance(n, int) and not isinstance(n, bool) and n >= 1, "the number of electrons n must be a whole number of at least 1")
+    _need(abs(E_acceptor) <= 3.0 and abs(E_donor) <= 3.0, "reduction potentials must be within 3 V")
+    dE = E_acceptor - E_donor
+    dG = -n * FARADAY * dE
+    if dE > 0:
+        word = "favourable as written"
+    elif dE < 0:
+        word = "unfavourable as written"
+    else:
+        word = "at equilibrium"
+    return _out(dE=dE, dE_mV=dE * 1e3, dG=dG, dG_kJ_mol=dG / 1000.0, direction=word)
+
+
+def _ref_redox_free_energy(E_acceptor, E_donor, n):
+    sc = _sc()
+    F = sc.physical_constants["Faraday constant"][0]
+    dE = _brentq(lambda x: x - (E_acceptor - E_donor), -10.0, 10.0) if E_acceptor != E_donor else 0.0
+    T = 298.15
+    lnK = n * F * dE / (sc.R * T)                       # through the equilibrium constant: dG0' = -RT ln K
+    dG = -sc.R * T * lnK
+    word = "at equilibrium" if dE == 0 else ("favourable as written" if dG < 0 else "unfavourable as written")
+    return {"dE": dE, "dE_mV": dE * 1e3, "dG": dG, "dG_kJ_mol": dG / 1000.0, "direction": word}
+
+
+_add("cmb_redox_free_energy",
+     name="Free-energy change of a redox reaction from reduction potentials", topic="metabolism / free energy",
+     purpose="The standard free-energy change dG0' = -n F dE0' of electron transfer from a donor couple to an acceptor couple, from their standard reduction potentials.",
+     inputs=[_phys("E_acceptor", "voltage", "standard reduction potential of the electron acceptor couple (E0')", show=_VOLT),
+             _phys("E_donor", "voltage", "standard reduction potential of the electron donor couple (E0')", show=_VOLT),
+             _intin("n", "number of electrons transferred", lo=1, hi=12)],
+     outputs=[_o("dE", "voltage", "potential difference E0'(acceptor) - E0'(donor)"), _o("dE_mV", "number", "potential difference in mV"),
+              _o("dG", "molar_energy", "standard free-energy change"), _o("dG_kJ_mol", "number", "standard free-energy change in kJ/mol"),
+              _o("direction", "number", "favourable as written (dG < 0), unfavourable or at equilibrium")],
+     primary="dG", conditions=["n a whole number >= 1", "|E0'| <= 3 V", "standard (pH 7) conditions"],
+     method="dE0' = E0'(acceptor) - E0'(donor); dG0' = -n F dE0'",
+     latex=r"\Delta G^{\circ\prime} = -nF\,\Delta E^{\circ\prime},\quad \Delta E^{\circ\prime} = E^{\circ\prime}_{acceptor} - E^{\circ\prime}_{donor}",
+     run=redox_free_energy, reference=_ref_redox_free_energy,
+     wrong=lambda E_acceptor, E_donor, n: (lambda dE: _out(dE=dE, dE_mV=dE * 1e3, dG=-n * FARADAY * dE, dG_kJ_mol=-n * FARADAY * dE / 1000.0,
+                                                           direction="favourable as written" if dE > 0 else ("unfavourable as written" if dE < 0 else "at equilibrium")))(E_donor - E_acceptor),
+     rand=lambda rng: {"E_acceptor": _sig(rng.uniform(-0.45, 0.85), 3), "E_donor": _sig(rng.uniform(-0.45, 0.85), 3), "n": rng.choice([1, 2, 2, 4])},
+     phrases=("Redox free energy", "Free energy from reduction potentials", "Free energy of electron transfer"),
+     examples=[_ex({"E_acceptor": 0.816, "E_donor": -0.32, "n": 2},
+                   {"dE": 1.136, "dE_mV": 1136.0, "dG": -219214.674584, "dG_kJ_mol": -219.214674584, "direction": "favourable as written"}),
+               _ex({"E_acceptor": 0.045, "E_donor": -0.219, "n": 2},
+                   {"dE": 0.264, "dE_mV": 264.0, "dG": -50944.2553611, "dG_kJ_mol": -50.9442553611, "direction": "favourable as written"})],
+     level="intermediate",
+     extra_q=[{"q": "Redox free energy: E_acceptor = 816 mV, E_donor = -320 mV, n = 2", "like": 0},
+              {"q": "Redox free energy: E_acceptor = 0.816 V, E_donor = -0.32 V, n = 0", "outcome": "INVALID_INPUT"}],
+     weak="dG0' = -RT ln K with ln K = n F dE0' / RT and scipy.constants (the same relation through the equilibrium constant)")
+
+
+def atp_yield(P_O_NADH, P_O_FADH2, shuttle, dG_ATP=None, dG_glucose=None):
+    _pos("the P/O ratios", P_O_NADH, P_O_FADH2)
+    _need(P_O_NADH <= 3.0 and P_O_FADH2 <= 3.0, "P/O ratios must be at most 3")
+    _need(shuttle in ("malate-aspartate", "glycerol-phosphate"), "the shuttle must be malate-aspartate or glycerol-phosphate")
+    substrate = 4.0                       # net 2 ATP from glycolysis + 2 GTP/ATP from the citric acid cycle
+    if shuttle == "malate-aspartate":
+        per_cyto = P_O_NADH
+    else:
+        per_cyto = P_O_FADH2
+    oxidative = 8.0 * P_O_NADH + 2.0 * P_O_FADH2 + 2.0 * per_cyto
+    total = substrate + oxidative
+    ferm = 2.0
+    out = {"ATP_aerobic": total, "ATP_fermentation": ferm, "ratio": total / ferm, "ATP_oxidative": oxidative,
+           "ATP_substrate_level": substrate, "NADH_total": 10.0, "FADH2_total": 2.0}
+    if dG_ATP is not None or dG_glucose is not None:
+        _need(dG_ATP is not None and dG_glucose is not None, "give both dG_ATP and dG_glucose for the efficiencies")
+        _pos("the energies dG_ATP and dG_glucose (as positive magnitudes)", dG_ATP, dG_glucose)
+        eff = total * dG_ATP / dG_glucose
+        _need(eff <= 1.0, "the ATP captured cannot hold more energy than the oxidation of glucose releases")
+        out["efficiency_aerobic"] = eff
+        out["efficiency_fermentation"] = ferm * dG_ATP / dG_glucose
+    return _out(**out)
+
+
+def _ref_atp_yield(P_O_NADH, P_O_FADH2, shuttle, dG_ATP=None, dG_glucose=None):
+    # an explicit ledger of the steps per glucose: (step, ATP or GTP, cytosolic NADH, mitochondrial NADH, FADH2)
+    ledger = [("hexokinase", -1, 0, 0, 0), ("phosphofructokinase", -1, 0, 0, 0),
+              ("glyceraldehyde-3-phosphate dehydrogenase x2", 0, 2, 0, 0), ("phosphoglycerate kinase x2", 2, 0, 0, 0),
+              ("pyruvate kinase x2", 2, 0, 0, 0), ("pyruvate dehydrogenase x2", 0, 0, 2, 0),
+              ("isocitrate dehydrogenase x2", 0, 0, 2, 0), ("alpha-ketoglutarate dehydrogenase x2", 0, 0, 2, 0),
+              ("succinyl-CoA synthetase x2", 2, 0, 0, 0), ("succinate dehydrogenase x2", 0, 0, 0, 2),
+              ("malate dehydrogenase x2", 0, 0, 2, 0)]
+    atp = sum(s[1] for s in ledger)
+    cyto = sum(s[2] for s in ledger)
+    mito = sum(s[3] for s in ledger)
+    fadh2 = sum(s[4] for s in ledger)
+    shuttle_po = P_O_NADH if shuttle == "malate-aspartate" else P_O_FADH2
+    ox = mito * P_O_NADH + fadh2 * P_O_FADH2 + cyto * shuttle_po
+    glycolysis_net = sum(s[1] for s in ledger[:5])          # what fermentation keeps (NADH re-oxidised to lactate/ethanol)
+    total = atp + ox
+    out = {"ATP_aerobic": float(total), "ATP_fermentation": float(glycolysis_net), "ratio": total / glycolysis_net,
+           "ATP_oxidative": float(ox), "ATP_substrate_level": float(atp), "NADH_total": float(cyto + mito), "FADH2_total": float(fadh2)}
+    if dG_ATP is not None:
+        out["efficiency_aerobic"] = total * dG_ATP / dG_glucose
+        out["efficiency_fermentation"] = glycolysis_net * dG_ATP / dG_glucose
+    return out
+
+
+def _wrong_atp_yield(P_O_NADH, P_O_FADH2, shuttle, dG_ATP=None, dG_glucose=None):
+    r = dict(atp_yield(P_O_NADH, P_O_FADH2, shuttle))     # gross glycolysis: the 2 ATP invested are not subtracted
+    r["ATP_aerobic"] += 2.0
+    r["ATP_fermentation"] += 2.0
+    r["ATP_substrate_level"] += 2.0
+    r["ratio"] = r["ATP_aerobic"] / r["ATP_fermentation"]
+    if dG_ATP is not None and dG_glucose is not None:
+        r["efficiency_aerobic"] = r["ATP_aerobic"] * dG_ATP / dG_glucose
+        r["efficiency_fermentation"] = r["ATP_fermentation"] * dG_ATP / dG_glucose
+    return _out(**r)
+
+
+def _rand_atp(rng):
+    d = {"P_O_NADH": rng.choice([2.5, 3.0, 2.7, 2.0]), "P_O_FADH2": rng.choice([1.5, 2.0, 1.6]),
+         "shuttle": rng.choice(["malate-aspartate", "glycerol-phosphate"])}
+    if rng.random() < 0.5:
+        d["dG_ATP"] = _sig(rng.uniform(30000.0, 55000.0), 3)
+        d["dG_glucose"] = _sig(rng.uniform(2800000.0, 2900000.0), 4)
+    return d
+
+
+_add("cmb_atp_yield",
+     name="ATP yield per glucose: aerobic respiration versus fermentation", topic="metabolism / cellular respiration",
+     purpose="The ATP made per glucose by aerobic respiration (substrate-level plus oxidative phosphorylation from NADH and FADH2 at stated P/O ratios and the shuttle for cytosolic NADH) and by fermentation, and optionally the energy efficiency of each.",
+     inputs=[_numin("P_O_NADH", "ATP made per mitochondrial NADH (P/O ratio, e.g. 2.5 or 3)"),
+             _numin("P_O_FADH2", "ATP made per FADH2 (P/O ratio, e.g. 1.5 or 2)"),
+             _choice("shuttle", ("malate-aspartate", "glycerol-phosphate"), "shuttle that carries the 2 cytosolic NADH into the mitochondrion"),
+             _phys("dG_ATP", "molar_energy", "free energy stored per mol of ATP, a positive magnitude (optional, e.g. 30.5 kJ/mol)", required=False),
+             _phys("dG_glucose", "molar_energy", "free energy released by complete oxidation of glucose, a positive magnitude (optional, e.g. 2870 kJ/mol)", required=False)],
+     outputs=[_o("ATP_aerobic", "number", "ATP per glucose by aerobic respiration"), _o("ATP_fermentation", "number", "ATP per glucose by fermentation"),
+              _o("ratio", "number", "aerobic yield / fermentation yield"), _o("ATP_oxidative", "number", "ATP from oxidative phosphorylation"),
+              _o("ATP_substrate_level", "number", "ATP (and GTP) from substrate-level phosphorylation, net"),
+              _o("NADH_total", "number", "NADH made per glucose"), _o("FADH2_total", "number", "FADH2 made per glucose"),
+              _o("efficiency_aerobic", "number", "fraction of glucose's free energy stored in ATP, aerobic (when energies are given)"),
+              _o("efficiency_fermentation", "number", "fraction of glucose's complete-oxidation free energy stored in ATP, fermentation (when energies are given)")],
+     primary="ATP_aerobic", conditions=["0 < P/O <= 3", "both energies or neither", "efficiency <= 1"],
+     method="ATP = 4 (substrate level, net) + 8 P/O(NADH) + 2 P/O(FADH2) + 2 P/O(shuttle); fermentation = 2; efficiency = ATP dG_ATP / dG_glucose",
+     latex=r"N_{ATP} = 4 + 8\,(P/O)_{NADH} + 2\,(P/O)_{FADH_2} + 2\,(P/O)_{shuttle},\quad \eta = \frac{N_{ATP}\,\Delta G_{ATP}}{\Delta G_{glucose}}",
+     run=atp_yield, reference=_ref_atp_yield, wrong=_wrong_atp_yield, rand=_rand_atp,
+     phrases=("ATP yield per glucose", "ATP per glucose", "ATP yield of respiration"),
+     examples=[_ex({"P_O_NADH": 2.5, "P_O_FADH2": 1.5, "shuttle": "malate-aspartate", "dG_ATP": 30500.0, "dG_glucose": 2870000.0},
+                   {"ATP_aerobic": 32.0, "ATP_fermentation": 2.0, "ratio": 16.0, "ATP_oxidative": 28.0, "ATP_substrate_level": 4.0,
+                    "efficiency_aerobic": 0.34006968641, "efficiency_fermentation": 0.0212543554007}),
+               _ex({"P_O_NADH": 2.5, "P_O_FADH2": 1.5, "shuttle": "glycerol-phosphate"},
+                   {"ATP_aerobic": 30.0, "ATP_fermentation": 2.0, "ratio": 15.0, "ATP_oxidative": 26.0}),
+               _ex({"P_O_NADH": 3.0, "P_O_FADH2": 2.0, "shuttle": "malate-aspartate"},
+                   {"ATP_aerobic": 38.0, "ratio": 19.0, "ATP_oxidative": 34.0})],
+     level="intermediate",
+     extra_q=[{"q": "ATP per glucose: P_O_NADH = 2.5, P_O_FADH2 = 1.5, shuttle = malate aspartate, dG_ATP = 30.5 kJ/mol, dG_glucose = 2870 kJ/mol", "like": 0},
+              {"q": "ATP yield per glucose: P_O_NADH = 5, P_O_FADH2 = 1.5, shuttle = malate-aspartate", "outcome": "INVALID_INPUT"}],
+     weak="an explicit step-by-step ledger of glycolysis, pyruvate oxidation and the citric acid cycle, summed")
+
+
+def decimal_reduction_time(N0, N, t):
+    _pos("the counts N0 and N and the time t", N0, N, t)
+    _need(N < N0, "the surviving count N must be below the initial count N0")
+    lr = math.log10(N0 / N)
+    D = t / lr
+    k = math.log(10.0) / D
+    return _out(log_reduction=lr, D=D, D_min=D / MINUTE, k_per_min=k * MINUTE, survival_fraction=N / N0)
+
+
+def _ref_decimal_reduction(N0, N, t):
+    slope, icpt, _r2 = _linregress([0.0, t], [math.log10(N0), math.log10(N)])
+    D = -1.0 / slope
+    lr = icpt - math.log10(N)
+    return {"log_reduction": lr, "D": D, "D_min": D / 60.0, "k_per_min": -slope * math.log(10.0) * 60.0, "survival_fraction": 10.0 ** (-lr)}
+
+
+def _rand_drt(rng):
+    N0 = _sig(_lu(rng, 1e3, 1e9), 3)
+    return {"N0": N0, "N": _sig(N0 * 10.0 ** (-rng.uniform(0.5, 8.0)), 3), "t": _sig(_lu(rng, 10.0, 3600.0), 3)}
+
+
+_add("cmb_decimal_reduction_time",
+     name="D-value (decimal reduction time) from survivor counts", topic="microbial control / heat and chemical killing",
+     purpose="The number of log10 reductions and the D-value (time for a 90 % kill) of a treatment from the viable counts before and after a stated time, assuming first-order (log-linear) death.",
+     inputs=[_numin("N0", "initial viable count (CFU/mL or CFU)"),
+             _numin("N", "surviving viable count after the treatment (same units as N0)"),
+             _phys("t", "time", "treatment (exposure) time", show=_MINUTES)],
+     outputs=[_o("log_reduction", "number", "number of log10 reductions log10(N0/N)"), _o("D", "time", "D-value (decimal reduction time)"),
+              _o("D_min", "number", "D-value in minutes"), _o("k_per_min", "number", "first-order death rate constant in 1/min"),
+              _o("survival_fraction", "number", "surviving fraction N/N0")],
+     primary="D", conditions=["0 < N < N0", "t > 0", "first-order (log-linear) killing"],
+     method="log reductions = log10(N0/N); D = t / log10(N0/N); k = ln 10 / D",
+     latex=r"D = \frac{t}{\log_{10}(N_0/N)},\quad k = \frac{\ln 10}{D}",
+     run=decimal_reduction_time, reference=_ref_decimal_reduction,
+     wrong=lambda N0, N, t: (lambda lr: _out(log_reduction=lr, D=t / lr, D_min=t / lr / MINUTE, k_per_min=math.log(10.0) / (t / lr) * MINUTE,
+                                             survival_fraction=N / N0))(math.log(N0 / N)),
+     rand=_rand_drt,
+     phrases=("D-value from survivor counts", "Decimal reduction time", "D-value"),
+     examples=[_ex({"N0": 1e6, "N": 100.0, "t": 600.0},
+                   {"log_reduction": 4.0, "D": 150.0, "D_min": 2.5, "k_per_min": 0.921034037198, "survival_fraction": 0.0001}),
+               _ex({"N0": 5e7, "N": 5e4, "t": 270.0}, {"log_reduction": 3.0, "D": 90.0, "D_min": 1.5, "survival_fraction": 0.001})],
+     level="beginner",
+     extra_q=[{"q": "Decimal reduction time: N0 = 1e6, N = 100, t = 10 min", "like": 0},
+              {"q": "D-value: N0 = 1000, N = 5000, t = 10 min", "outcome": "INVALID_INPUT"}])
+
+
+def z_value(D1, T1, D2, T2):
+    _pos("the D-values and temperatures", D1, D2, T1, T2)
+    _need(T1 != T2 and D1 != D2, "the two temperatures and the two D-values must differ")
+    _need((T2 - T1) * (D1 - D2) > 0, "the D-value must fall as the temperature rises (z > 0)")
+    z = (T2 - T1) / math.log10(D1 / D2)
+    return _out(z=z, fold_per_10_degrees=10.0 ** (10.0 / z))
+
+
+def _ref_z_value(D1, T1, D2, T2):
+    slope, _i, _r2 = _linregress([T1, T2], [math.log10(D1), math.log10(D2)])
+    z = -1.0 / slope
+    return {"z": z, "fold_per_10_degrees": 10.0 ** (-10.0 * slope)}
+
+
+def _rand_z(rng):
+    T1 = _sig(rng.uniform(333.15, 393.15), 5)
+    dT = _sig(rng.uniform(3.0, 20.0), 3)
+    z = rng.uniform(4.0, 25.0)
+    D1 = _sig(_lu(rng, 30.0, 3000.0), 3)
+    D2 = _sig(D1 * 10.0 ** (-dT / z), 3)
+    if D2 >= D1:
+        D2 = _sig(D1 * 0.5, 3)
+    return {"D1": D1, "T1": T1, "D2": D2, "T2": _sig(T1 + dT, 5)}
+
+
+_add("cmb_z_value",
+     name="z-value from D-values at two temperatures", topic="microbial control / heat and chemical killing",
+     purpose="The z-value (temperature rise that reduces the D-value ten-fold) from the D-values measured at two temperatures, and the fold change of D per 10 degrees.",
+     inputs=[_phys("D1", "time", "D-value at the first temperature", show=_MINUTES),
+             _phys("T1", "temperature", "first temperature (degC is converted)", show=_KELVIN),
+             _phys("D2", "time", "D-value at the second temperature", show=_MINUTES),
+             _phys("T2", "temperature", "second temperature (degC is converted)", show=_KELVIN)],
+     outputs=[_o("z", "number", "z-value in kelvin (= degrees Celsius of difference)"),
+              _o("fold_per_10_degrees", "number", "factor by which D falls for a 10-degree rise")],
+     primary="z", conditions=["D-values and temperatures > 0", "T1 != T2", "D falls as T rises (z > 0)", "log-linear thermal death curve"],
+     method="z = (T2 - T1) / log10(D1 / D2)", latex=r"z = \frac{T_2 - T_1}{\log_{10}(D_1/D_2)}",
+     run=z_value, reference=_ref_z_value,
+     wrong=lambda D1, T1, D2, T2: (lambda z: _out(z=z, fold_per_10_degrees=10.0 ** (10.0 / z)))((T2 - T1) / math.log(D1 / D2)),
+     rand=_rand_z,
+     phrases=("z-value", "z value from two D-values", "Thermal resistance z-value"),
+     examples=[_ex({"D1": 600.0, "T1": 383.15, "D2": 60.0, "T2": 393.15}, {"z": 10.0, "fold_per_10_degrees": 10.0}),
+               _ex({"D1": 240.0, "T1": 385.15, "D2": 30.0, "T2": 394.15}, {"z": 9.96578428466})],
+     level="intermediate",
+     extra_q=[{"q": "z-value: D1 = 10 min, T1 = 110 degC, D2 = 1 min, T2 = 120 degC", "like": 0},
+              {"q": "z-value: D1 = 1 min, T1 = 110 degC, D2 = 10 min, T2 = 120 degC", "outcome": "INVALID_INPUT"}])
+
+
+def thermal_death_time(D_ref, T_ref, z, T, log_reductions):
+    _pos("D_ref, T_ref, z, T and the number of log reductions", D_ref, T_ref, z, T, log_reductions)
+    _need(abs(T - T_ref) / z <= 50.0, "the temperature is too far from the reference temperature for this z-value")
+    L = 10.0 ** ((T - T_ref) / z)
+    D_T = D_ref / L
+    t = log_reductions * D_T
+    return _out(D_T=D_T, D_T_min=D_T / MINUTE, t=t, t_min=t / MINUTE, lethal_rate=L)
+
+
+def _ref_thermal_death_time(D_ref, T_ref, z, T, log_reductions):
+    import numpy as np
+    logD = float(np.polyval([-1.0 / z, math.log10(D_ref) + T_ref / z], T))     # the thermal death line log10 D(T)
+    D_T = 10.0 ** logD
+    # time for n log reductions: the integral of 1/D over the hold reaches n
+    t = _brentq(lambda tt: _quad(lambda s: 1.0 / D_T, 0.0, tt) - log_reductions, 0.0, 2.0 * log_reductions * D_T + 1e-300)
+    return {"D_T": D_T, "D_T_min": D_T / 60.0, "t": t, "t_min": t / 60.0, "lethal_rate": D_ref / D_T}
+
+
+_add("cmb_thermal_death_time",
+     name="D-value at a new temperature and time to a target kill (z-value)", topic="microbial control / heat and chemical killing",
+     purpose="The D-value at temperature T from a reference D-value and the z-value, and the holding time needed for a stated number of log10 reductions at T.",
+     inputs=[_phys("D_ref", "time", "D-value at the reference temperature", show=_MINUTES),
+             _phys("T_ref", "temperature", "reference temperature (degC is converted)", show=_KELVIN),
+             _numin("z", "z-value in degrees (a temperature difference: degC = K)", words=("degC", "C", "K")),
+             _phys("T", "temperature", "process temperature (degC is converted)", show=_KELVIN),
+             _numin("log_reductions", "number of log10 reductions required (e.g. 12)")],
+     outputs=[_o("D_T", "time", "D-value at T"), _o("D_T_min", "number", "D-value at T in minutes"),
+              _o("t", "time", "holding time for the required log reductions at T"), _o("t_min", "number", "holding time in minutes"),
+              _o("lethal_rate", "number", "lethal rate 10^((T - T_ref)/z) relative to the reference temperature")],
+     primary="t", conditions=["D_ref, z, log reductions > 0", "|T - T_ref| / z <= 50", "log-linear thermal death"],
+     method="D_T = D_ref x 10^((T_ref - T)/z); t = n D_T",
+     latex=r"D_T = D_{ref}\,10^{(T_{ref}-T)/z},\quad t = n\,D_T",
+     run=thermal_death_time, reference=_ref_thermal_death_time,
+     wrong=lambda D_ref, T_ref, z, T, log_reductions: (lambda L: _out(D_T=D_ref * L, D_T_min=D_ref * L / MINUTE, t=log_reductions * D_ref * L,
+                                                                         t_min=log_reductions * D_ref * L / MINUTE, lethal_rate=L))(10.0 ** ((T - T_ref) / z)),
+     rand=lambda rng: (lambda Tr: {"D_ref": _sig(_lu(rng, 6.0, 600.0), 3), "T_ref": Tr, "z": _sig(rng.uniform(5.0, 15.0), 3),
+                                   "T": _sig(Tr + rng.choice([-1.0, 1.0]) * rng.uniform(2.0, 15.0), 5),
+                                   "log_reductions": rng.choice([1.0, 3.0, 5.0, 6.0, 12.0])})(rng.choice([394.25, 343.15, 353.15, 373.15])),
+     phrases=("Thermal death time", "Time to a target kill", "D-value at a new temperature"),
+     examples=[_ex({"D_ref": 12.0, "T_ref": 394.25, "z": 10.0, "T": 384.25, "log_reductions": 12.0},
+                   {"D_T": 120.0, "D_T_min": 2.0, "t": 1440.0, "t_min": 24.0, "lethal_rate": 0.1}),
+               _ex({"D_ref": 15.0, "T_ref": 394.25, "z": 10.0, "T": 399.25, "log_reductions": 5.0},
+                   {"D_T": 4.74341649025, "D_T_min": 0.0790569415042, "t": 23.7170824513, "t_min": 0.395284707521, "lethal_rate": 3.16227766017})],
+     level="intermediate",
+     extra_q=[{"q": "Thermal death time: D_ref = 0.2 min, T_ref = 394.25 K, z = 10 degC, T = 384.25 K, log_reductions = 12", "like": 0},
+              {"q": "Thermal death time: D_ref = 0.2 min, T_ref = 121.1 degC, z = 0 degC, T = 111.1 degC, log_reductions = 12", "outcome": "INVALID_INPUT"}])

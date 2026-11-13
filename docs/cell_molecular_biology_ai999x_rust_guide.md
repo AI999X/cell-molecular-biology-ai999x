@@ -1,8 +1,8 @@
 # cell-molecular-biology: the Cell and Molecular Biology program, user guide
 
-**cell-molecular-biology-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
+**cell-molecular-biology-ai999x 1.6.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
-Cell and Molecular Biology covers membranes and diffusion, osmosis and membrane potentials, cell growth and the cell cycle, DNA and RNA melting temperatures and quantification, sequences, PCR and qPCR, gene expression, enzyme kinetics, inhibition and binding, buffers and dilutions. This guide is about `cell-molecular-biology`, the model as a self-contained program for Windows and Linux: 94 capabilities in 7 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/cell-molecular-biology-ai999x/); the Python package (`pip install cell-molecular-biology-ai999x`) has its own guide. Every command output printed here is what the program printed.
+Cell and Molecular Biology covers membranes and diffusion, osmosis and membrane potentials, cell growth and the cell cycle, DNA and RNA melting temperatures and quantification, sequences, PCR and qPCR, gene expression, enzyme kinetics, inhibition and binding, buffers and dilutions. This guide is about `cell-molecular-biology`, the model as a self-contained program for Windows and Linux: 104 capabilities in 10 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/cell-molecular-biology-ai999x/); the Python package (`pip install cell-molecular-biology-ai999x`) has its own guide. Every command output printed here is what the program printed.
 
 ## Contents
 
@@ -17,37 +17,37 @@ Cell and Molecular Biology covers membranes and diffusion, osmosis and membrane 
 
 ## 1. Get it
 
-Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.6.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Cell and Molecular Biology | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cell-molecular-biology-1.5.0-windows-x86_64.zip |
-| Desktop app: Cell and Molecular Biology | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cell-molecular-biology-1.5.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz |
+| Desktop app: Cell and Molecular Biology | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-cell-molecular-biology-1.6.0-windows-x86_64.zip |
+| Desktop app: Cell and Molecular Biology | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-cell-molecular-biology-1.6.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
-Cell and Molecular Biology in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-cell-molecular-biology-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-cell-molecular-biology.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+Cell and Molecular Biology in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-cell-molecular-biology-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-cell-molecular-biology.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cell-molecular-biology-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-cell-molecular-biology-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-cell-molecular-biology-1.5.0-linux-x86_64.tar.gz
-./ai999x-cell-molecular-biology-1.5.0-linux-x86_64/ai999x-cell-molecular-biology
+tar xzf ai999x-cell-molecular-biology-1.6.0-linux-x86_64.tar.gz
+./ai999x-cell-molecular-biology-1.6.0-linux-x86_64/ai999x-cell-molecular-biology
 ```
 
-It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
-./ai999x-1.5.0-linux-x86_64/ai999x
+tar xzf ai999x-1.6.0-linux-x86_64.tar.gz
+./ai999x-1.6.0-linux-x86_64/ai999x
 ```
 
 ### Command line: Linux
@@ -55,11 +55,11 @@ tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
 The bundle holds one program per model; `cell-molecular-biology` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.6.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.6.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 cell-molecular-biology --version
 ```
 
@@ -68,12 +68,12 @@ cell-molecular-biology --version
 The fourth line should print True.
 
 ```powershell
-$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.6.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.6.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 cell-molecular-biology --version
 ```
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ cell-molecular-biology --version
-cell-molecular-biology-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)
+cell-molecular-biology-ai999x 1.6.0 (Rust build, ax-engine 1.6.0)
 ```
 
 ### 2.2 Find a capability
@@ -107,12 +107,12 @@ Search the capabilities by what you want to know; the first column is the id to 
 $ cell-molecular-biology search "nernst equilibrium potential of an ion across a cell membrane"
 cmb_nernst_potential                 Nernst equilibrium potential of an ion across a cell membrane  (membranes and diffusion / membrane potential)
 cmb_cell_equilibration               Equilibration of a solute across a spherical cell's membrane  (membranes and diffusion / permeability)
-cmb_donnan_equilibrium               Donnan equilibrium with an impermeant anion  (membranes and diffusion / membrane potential)
+cmb_water_potential                  Water potential of a plant cell or solution (solute plus pressure potential)  (membranes and diffusion / water potential)
 cmb_channel_current                  Macroscopic current through ion channels  (membranes and diffusion / ion channels)
-cmb_cell_volume_osmotic              Cell volume after an osmotic change (Boyle-van 't Hoff)  (membranes and diffusion / osmosis)
-cmb_ionic_strength                   Ionic strength of a solution  (solution biochemistry / ionic strength)
-cmb_membrane_permeability            Membrane permeability coefficient and flux  (membranes and diffusion / permeability)
-cmb_osmolarity_tonicity              Osmolarity of a solution and its tonicity for a cell  (membranes and diffusion / osmosis)
+cmb_donnan_equilibrium               Donnan equilibrium with an impermeant anion  (membranes and diffusion / membrane potential)
+cmb_water_movement                   Direction of water movement between a cell and its surroundings  (membranes and diffusion / water potential)
+cmb_redox_free_energy                Free-energy change of a redox reaction from reduction potentials  (metabolism / free energy)
+cmb_reaction_free_energy             Free-energy change of a reaction at cellular concentrations  (metabolism / free energy)
 … 12 more
 ```
 
@@ -123,14 +123,14 @@ Every capability the program answers: its id (what you pass to solve) and its na
 ```shell
 $ cell-molecular-biology list
 cmb_absorbance_ratios                    A260/A280 and A260/A230 purity ratios
+cmb_atp_yield                            ATP yield per glucose: aerobic respiration versus fermentation
 cmb_binding_free_energy                  Standard binding free energy from Kd
 cmb_buffer_after_addition                Buffer pH after adding strong acid or base
 cmb_buffer_capacity                      Buffer capacity of a weak-acid buffer
 cmb_buffer_preparation                   Recipe for a buffer of given pH and concentration
 cmb_c1v1_dilution                        Dilution of a stock solution (C1 V1 = C2 V2)
 cmb_cell_cycle_age_corrected             Cell-cycle phase durations corrected for the exponential age distribution
-cmb_cell_cycle_phase_durations           Cell-cycle phase durations from phase fractions
-… 86 more
+… 96 more
 ```
 
 ### 2.4 What a capability needs
@@ -1995,7 +1995,7 @@ $$
 $ cell-molecular-biology solve cmb_kd_from_rates "kon=1000000 1/((mol/L)*s)" "koff=0.001 1/s"
 Kd = 1e-06 mol/m^3
 Kd_nM = 1
-Ka_per_M = 1000
+Ka_per_M = 1000000000
 half_life = 693.1471806 s
 residence_time = 1000 s
   by: Dissociation constant from association and dissociation rates  (Kd = koff/kon; t1/2 = ln 2/koff; tau = 1/koff)
@@ -2281,7 +2281,7 @@ dG_kcal_mol = -10.9139761
 
 **What the worked example means:** This calculation determines the standard Gibbs free energy change for a binding interaction using the relationship between the dissociation constant and thermodynamic stability. By inputting the measured dissociation constant 10 (nmol/L) and the absolute temperature 298.15 K, the model computes the energy required to separate the complex into its components under standard conditions of one molar concentration. The resulting value, expressed as -45664.1 J/mol in joules per mole or equivalently -45.6641 in kilojoules per mole, indicates the spontaneity of the association; a negative value signifies favorable binding where the complex is more stable than the separated parts.
 
-### Membranes and diffusion (14)
+### Membranes and diffusion (16)
 
 <a id="cmb_cell_volume_osmotic"></a>
 
@@ -2389,6 +2389,53 @@ k_per_M_s = 2.081102449e+10
 ```
 
 In the worked example, DA = 100 um^2/s, DB = 1000 um^2/s, rA = 2 nm, rB = 0.5 nm go through the equation above and give k = 20811024.49 m^3/(mol*s), k_per_M_s = 2.081102449e+10. It applies only when all inputs > 0; reaction on every contact, no interaction forces: outside that it says what is wrong instead of returning a number.
+
+<a id="cmb_water_movement"></a>
+
+#### Direction of water movement between a cell and its surroundings, `cmb_water_movement`
+
+The water potentials of a cell and of the surrounding solution and the direction of net water movement (from higher to lower water potential).
+
+$$
+\Psi = -iCRT + \Psi_p,\quad \text{water moves toward lower } \Psi
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `i_cell` | in | ionization constant of the cell's solute | - |
+| `C_cell` | in | solute concentration in the cell | mol/m^3 |
+| `P_cell` | in | pressure potential of the cell (turgor) | Pa |
+| `i_out` | in | ionization constant of the outside solute | - |
+| `C_out` | in | solute concentration outside | mol/m^3 |
+| `P_out` | in | pressure potential outside (0 for an open solution) | Pa |
+| `T` | in | absolute temperature (degC is converted) | K |
+| `psi_cell` | out | water potential of the cell | Pa |
+| `psi_out` | out | water potential outside | Pa |
+| `dpsi` | out | outside minus cell water potential | Pa |
+| `dpsi_MPa` | out | outside minus cell water potential in MPa | - |
+| `direction` | out | net water movement: into the cell, out of the cell or no net movement | - |
+
+**Applies when:** i > 0, T > 0; concentrations >= 0; equal within 1e-9 = no net movement.
+
+```shell
+$ cell-molecular-biology solve cmb_water_movement i_cell=1 "C_cell=200 (mmol/L)" "P_cell=0.2 MPa" i_out=1 "C_out=100 (mmol/L)" "P_out=0 MPa" "T=298.15 K"
+psi_cell = -295791.4059 Pa
+psi_out = -247895.703 Pa
+dpsi = 47895.70296 Pa
+dpsi_MPa = 0.04789570296
+direction = into the cell
+  by: Direction of water movement between a cell and its surroundings  (psi = -i C R T + psi_p for each side; water moves from the higher to the lower water potential)
+  i_cell = 1
+  C_cell = 200 mol/m^3
+  P_cell = 200000 Pa
+  i_out = 1
+  C_out = 100 mol/m^3
+  P_out = 0 Pa
+  T = 298.15 K
+  assumes: i > 0, T > 0; concentrations >= 0; equal within 1e-9 = no net movement
+```
+
+In the worked example, i_cell = 1, C_cell = 200 (mmol/L), P_cell = 0.2 MPa, i_out = 1, C_out = 100 (mmol/L), P_out = 0 MPa, T = 298.15 K go through the equation above and give psi_cell = -295791.4059 Pa, psi_out = -247895.703 Pa, dpsi = 47895.70296 Pa, dpsi_MPa = 0.04789570296. It applies only when i > 0, T > 0; concentrations >= 0; equal within 1e-9 = no net movement: outside that it says what is wrong instead of returning a number.
 
 <a id="cmb_donnan_equilibrium"></a>
 
@@ -2787,6 +2834,370 @@ t_min = 0.0002777777778
 ```
 
 **What the worked example means:** This calculation determines the time required for a molecule to achieve a root-mean-square displacement of 10 um through diffusion. Using the diffusion coefficient of 1000 um^2/s and considering 3 dimensions, the resulting time is 0.0166667 s. This duration represents how long it takes for random thermal motion to move the substance across that specific distance.
+
+<a id="cmb_water_potential"></a>
+
+#### Water potential of a plant cell or solution (solute plus pressure potential), `cmb_water_potential`
+
+The solute potential psi_s = -i C R T and the water potential psi = psi_s + psi_p of a solution or cell (pure water at atmospheric pressure = 0).
+
+$$
+\Psi_s = -iCRT,\quad \Psi = \Psi_s + \Psi_p
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `i` | in | ionization (van 't Hoff) constant: 1 for sucrose, about 2 for NaCl | - |
+| `C` | in | molar concentration of the solute | mol/m^3 |
+| `T` | in | absolute temperature (degC is converted) | K |
+| `psi_p` | in | pressure potential (turgor; 0 for an open solution) | Pa |
+| `psi_s` | out | solute (osmotic) potential | Pa |
+| `psi_s_MPa` | out | solute potential in MPa | - |
+| `psi` | out | water potential | Pa |
+| `psi_MPa` | out | water potential in MPa | - |
+
+**Applies when:** i > 0, T > 0; C >= 0; ideal dilute solution.
+
+```shell
+$ cell-molecular-biology solve cmb_water_potential i=1 "C=150 (mmol/L)" "T=293.15 K" "psi_p=0 MPa"
+psi_s = -365607.7075 Pa
+psi_s_MPa = -0.3656077075
+psi = -365607.7075 Pa
+psi_MPa = -0.3656077075
+  by: Water potential of a plant cell or solution (solute plus pressure potential)  (psi_s = -i C R T; psi = psi_s + psi_p)
+  i = 1
+  C = 150 mol/m^3
+  T = 293.15 K
+  psi_p = 0 Pa
+  assumes: i > 0, T > 0; C >= 0; ideal dilute solution
+```
+
+In the worked example, i = 1, C = 150 (mmol/L), T = 293.15 K, psi_p = 0 MPa go through the equation above and give psi_s = -365607.7075 Pa, psi_s_MPa = -0.3656077075, psi = -365607.7075 Pa, psi_MPa = -0.3656077075. It applies only when i > 0, T > 0; C >= 0; ideal dilute solution: outside that it says what is wrong instead of returning a number.
+
+### Metabolism (3)
+
+<a id="cmb_atp_yield"></a>
+
+#### ATP yield per glucose: aerobic respiration versus fermentation, `cmb_atp_yield`
+
+The ATP made per glucose by aerobic respiration (substrate-level plus oxidative phosphorylation from NADH and FADH2 at stated P/O ratios and the shuttle for cytosolic NADH) and by fermentation, and optionally the energy efficiency of each.
+
+$$
+N_{ATP} = 4 + 8\,(P/O)_{NADH} + 2\,(P/O)_{FADH_2} + 2\,(P/O)_{shuttle},\quad \eta = \frac{N_{ATP}\,\Delta G_{ATP}}{\Delta G_{glucose}}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `P_O_NADH` | in | ATP made per mitochondrial NADH (P/O ratio, e.g. 2.5 or 3) | - |
+| `P_O_FADH2` | in | ATP made per FADH2 (P/O ratio, e.g. 1.5 or 2) | - |
+| `shuttle` | in | shuttle that carries the 2 cytosolic NADH into the mitochondrion | - |
+| `dG_ATP` | in | free energy stored per mol of ATP, a positive magnitude (optional, e.g. 30.5 kJ/mol) (optional) | J/mol |
+| `dG_glucose` | in | free energy released by complete oxidation of glucose, a positive magnitude (optional, e.g. 2870 kJ/mol) (optional) | J/mol |
+| `ATP_aerobic` | out | ATP per glucose by aerobic respiration | - |
+| `ATP_fermentation` | out | ATP per glucose by fermentation | - |
+| `ratio` | out | aerobic yield / fermentation yield | - |
+| `ATP_oxidative` | out | ATP from oxidative phosphorylation | - |
+| `ATP_substrate_level` | out | ATP (and GTP) from substrate-level phosphorylation, net | - |
+| `NADH_total` | out | NADH made per glucose | - |
+| `FADH2_total` | out | FADH2 made per glucose | - |
+| `efficiency_aerobic` | out | fraction of glucose's free energy stored in ATP, aerobic (when energies are given) | - |
+| `efficiency_fermentation` | out | fraction of glucose's complete-oxidation free energy stored in ATP, fermentation (when energies are given) | - |
+
+**Applies when:** 0 < P/O <= 3; both energies or neither; efficiency <= 1.
+
+```shell
+$ cell-molecular-biology solve cmb_atp_yield P_O_NADH=2.5 P_O_FADH2=1.5 shuttle=malate-aspartate "dG_ATP=30.5 kJ/mol" "dG_glucose=2870 kJ/mol"
+ATP_aerobic = 32
+ATP_fermentation = 2
+ratio = 16
+ATP_oxidative = 28
+ATP_substrate_level = 4
+NADH_total = 10
+FADH2_total = 2
+efficiency_aerobic = 0.3400696864
+efficiency_fermentation = 0.0212543554
+  by: ATP yield per glucose: aerobic respiration versus fermentation  (ATP = 4 (substrate level, net) + 8 P/O(NADH) + 2 P/O(FADH2) + 2 P/O(shuttle); fermentation = 2; efficiency = ATP dG_ATP / dG_glucose)
+  P_O_NADH = 2.5
+  P_O_FADH2 = 1.5
+  dG_ATP = 30500 J/mol
+  dG_glucose = 2870000 J/mol
+  shuttle = malate-aspartate
+  assumes: 0 < P/O <= 3; both energies or neither; efficiency <= 1
+```
+
+In the worked example, P_O_NADH = 2.5, P_O_FADH2 = 1.5, shuttle = malate-aspartate, dG_ATP = 30.5 kJ/mol, dG_glucose = 2870 kJ/mol go through the equation above and give ATP_aerobic = 32, ATP_fermentation = 2, ratio = 16, ATP_oxidative = 28. It applies only when 0 < P/O <= 3; both energies or neither; efficiency <= 1: outside that it says what is wrong instead of returning a number.
+
+<a id="cmb_reaction_free_energy"></a>
+
+#### Free-energy change of a reaction at cellular concentrations, `cmb_reaction_free_energy`
+
+The actual free-energy change dG = dG0' + RT ln Q of a biochemical reaction at the concentrations in the cell (standard state 1 M), its equilibrium constant and the direction it proceeds.
+
+$$
+\Delta G = \Delta G^{\circ\prime} + RT\ln Q,\quad Q = \frac{\prod [P]}{\prod [R]}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `dG0` | in | standard free-energy change dG0' (biochemical standard state, pH 7) | J/mol |
+| `T` | in | absolute temperature (degC is converted) | K |
+| `products` | in | product concentrations in mM (list a species twice for a coefficient of 2; omit water and H+) | - |
+| `reactants` | in | reactant concentrations in mM (list a species twice for a coefficient of 2; omit water and H+) | - |
+| `Q` | out | reaction quotient (concentrations relative to 1 M) | - |
+| `dG` | out | actual free-energy change | J/mol |
+| `dG_kJ_mol` | out | actual free-energy change in kJ/mol | - |
+| `K_eq` | out | equilibrium constant exp(-dG0'/RT) | - |
+| `direction` | out | forward (dG < 0), reverse (dG > 0) or at equilibrium | - |
+
+**Applies when:** T > 0; |dG0'| <= 500 kJ/mol; 0 < each concentration <= 10 M; ideal (activities = concentrations / 1 M).
+
+```shell
+$ cell-molecular-biology solve cmb_reaction_free_energy "dG0=-30.5 kJ/mol" "T=310.15 K" "products=[0.25, 1.65]" "reactants=[2.25]"
+Q = 0.0001833333333
+dG = -52687.92545 J/mol
+dG_kJ_mol = -52.68792545
+K_eq = 136971.0459
+direction = forward
+  by: Free-energy change of a reaction at cellular concentrations  (Q = prod(products / 1 M) / prod(reactants / 1 M); dG = dG0' + R T ln Q; K = exp(-dG0'/RT))
+  dG0 = -30500 J/mol
+  T = 310.15 K
+  assumes: T > 0; |dG0'| <= 500 kJ/mol; 0 < each concentration <= 10 M; ideal (activities = concentrations / 1 M)
+```
+
+In the worked example, dG0 = -30.5 kJ/mol, T = 310.15 K, products = [0.25, 1.65], reactants = [2.25] go through the equation above and give Q = 0.0001833333333, dG = -52687.92545 J/mol, dG_kJ_mol = -52.68792545, K_eq = 136971.0459. It applies only when T > 0; |dG0'| <= 500 kJ/mol; 0 < each concentration <= 10 M; ideal (activities = concentrations / 1 M): outside that it says what is wrong instead of returning a number.
+
+<a id="cmb_redox_free_energy"></a>
+
+#### Free-energy change of a redox reaction from reduction potentials, `cmb_redox_free_energy`
+
+The standard free-energy change dG0' = -n F dE0' of electron transfer from a donor couple to an acceptor couple, from their standard reduction potentials.
+
+$$
+\Delta G^{\circ\prime} = -nF\,\Delta E^{\circ\prime},\quad \Delta E^{\circ\prime} = E^{\circ\prime}_{acceptor} - E^{\circ\prime}_{donor}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `E_acceptor` | in | standard reduction potential of the electron acceptor couple (E0') | V |
+| `E_donor` | in | standard reduction potential of the electron donor couple (E0') | V |
+| `n` | in | number of electrons transferred | - |
+| `dE` | out | potential difference E0'(acceptor) - E0'(donor) | V |
+| `dE_mV` | out | potential difference in mV | - |
+| `dG` | out | standard free-energy change | J/mol |
+| `dG_kJ_mol` | out | standard free-energy change in kJ/mol | - |
+| `direction` | out | favourable as written (dG < 0), unfavourable or at equilibrium | - |
+
+**Applies when:** n a whole number >= 1; |E0'| <= 3 V; standard (pH 7) conditions.
+
+```shell
+$ cell-molecular-biology solve cmb_redox_free_energy "E_acceptor=0.816 V" "E_donor=-0.32 V" n=2
+dE = 1.136 V
+dE_mV = 1136
+dG = -219214.6746 J/mol
+dG_kJ_mol = -219.2146746
+direction = favourable as written
+  by: Free-energy change of a redox reaction from reduction potentials  (dE0' = E0'(acceptor) - E0'(donor); dG0' = -n F dE0')
+  E_acceptor = 0.816 V
+  E_donor = -0.32 V
+  assumes: n a whole number >= 1; |E0'| <= 3 V; standard (pH 7) conditions
+```
+
+In the worked example, E_acceptor = 0.816 V, E_donor = -0.32 V, n = 2 go through the equation above and give dE = 1.136 V, dE_mV = 1136, dG = -219214.6746 J/mol, dG_kJ_mol = -219.2146746. It applies only when n a whole number >= 1; |E0'| <= 3 V; standard (pH 7) conditions: outside that it says what is wrong instead of returning a number.
+
+### Microbial control (3)
+
+<a id="cmb_decimal_reduction_time"></a>
+
+#### D-value (decimal reduction time) from survivor counts, `cmb_decimal_reduction_time`
+
+The number of log10 reductions and the D-value (time for a 90 % kill) of a treatment from the viable counts before and after a stated time, assuming first-order (log-linear) death.
+
+$$
+D = \frac{t}{\log_{10}(N_0/N)},\quad k = \frac{\ln 10}{D}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `N0` | in | initial viable count (CFU/mL or CFU) | - |
+| `N` | in | surviving viable count after the treatment (same units as N0) | - |
+| `t` | in | treatment (exposure) time | s |
+| `log_reduction` | out | number of log10 reductions log10(N0/N) | - |
+| `D` | out | D-value (decimal reduction time) | s |
+| `D_min` | out | D-value in minutes | - |
+| `k_per_min` | out | first-order death rate constant in 1/min | - |
+| `survival_fraction` | out | surviving fraction N/N0 | - |
+
+**Applies when:** 0 < N < N0; t > 0; first-order (log-linear) killing.
+
+```shell
+$ cell-molecular-biology solve cmb_decimal_reduction_time N0=1000000 N=100 "t=10 min"
+log_reduction = 4
+D = 150 s
+D_min = 2.5
+k_per_min = 0.9210340372
+survival_fraction = 0.0001
+  by: D-value (decimal reduction time) from survivor counts  (log reductions = log10(N0/N); D = t / log10(N0/N); k = ln 10 / D)
+  N0 = 1000000
+  N = 100
+  t = 600 s
+  assumes: 0 < N < N0; t > 0; first-order (log-linear) killing
+```
+
+In the worked example, N0 = 1000000, N = 100, t = 10 min go through the equation above and give log_reduction = 4, D = 150 s, D_min = 2.5, k_per_min = 0.9210340372. It applies only when 0 < N < N0; t > 0; first-order (log-linear) killing: outside that it says what is wrong instead of returning a number.
+
+<a id="cmb_thermal_death_time"></a>
+
+#### D-value at a new temperature and time to a target kill (z-value), `cmb_thermal_death_time`
+
+The D-value at temperature T from a reference D-value and the z-value, and the holding time needed for a stated number of log10 reductions at T.
+
+$$
+D_T = D_{ref}\,10^{(T_{ref}-T)/z},\quad t = n\,D_T
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `D_ref` | in | D-value at the reference temperature | s |
+| `T_ref` | in | reference temperature (degC is converted) | K |
+| `z` | in | z-value in degrees (a temperature difference: degC = K) | - |
+| `T` | in | process temperature (degC is converted) | K |
+| `log_reductions` | in | number of log10 reductions required (e.g. 12) | - |
+| `D_T` | out | D-value at T | s |
+| `D_T_min` | out | D-value at T in minutes | - |
+| `t` | out | holding time for the required log reductions at T | s |
+| `t_min` | out | holding time in minutes | - |
+| `lethal_rate` | out | lethal rate 10^((T - T_ref)/z) relative to the reference temperature | - |
+
+**Applies when:** D_ref, z, log reductions > 0; |T - T_ref| / z <= 50; log-linear thermal death.
+
+```shell
+$ cell-molecular-biology solve cmb_thermal_death_time "D_ref=0.2 min" "T_ref=394.25 K" z=10 "T=384.25 K" log_reductions=12
+D_T = 120 s
+D_T_min = 2
+t = 1440 s
+t_min = 24
+lethal_rate = 0.1
+  by: D-value at a new temperature and time to a target kill (z-value)  (D_T = D_ref x 10^((T_ref - T)/z); t = n D_T)
+  D_ref = 12 s
+  T_ref = 394.25 K
+  z = 10
+  T = 384.25 K
+  log_reductions = 12
+  assumes: D_ref, z, log reductions > 0; |T - T_ref| / z <= 50; log-linear thermal death
+```
+
+In the worked example, D_ref = 0.2 min, T_ref = 394.25 K, z = 10, T = 384.25 K, log_reductions = 12 go through the equation above and give D_T = 120 s, D_T_min = 2, t = 1440 s, t_min = 24. It applies only when D_ref, z, log reductions > 0; |T - T_ref| / z <= 50; log-linear thermal death: outside that it says what is wrong instead of returning a number.
+
+<a id="cmb_z_value"></a>
+
+#### z-value from D-values at two temperatures, `cmb_z_value`
+
+The z-value (temperature rise that reduces the D-value ten-fold) from the D-values measured at two temperatures, and the fold change of D per 10 degrees.
+
+$$
+z = \frac{T_2 - T_1}{\log_{10}(D_1/D_2)}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `D1` | in | D-value at the first temperature | s |
+| `T1` | in | first temperature (degC is converted) | K |
+| `D2` | in | D-value at the second temperature | s |
+| `T2` | in | second temperature (degC is converted) | K |
+| `z` | out | z-value in kelvin (= degrees Celsius of difference) | - |
+| `fold_per_10_degrees` | out | factor by which D falls for a 10-degree rise | - |
+
+**Applies when:** D-values and temperatures > 0; T1 != T2; D falls as T rises (z > 0); log-linear thermal death curve.
+
+```shell
+$ cell-molecular-biology solve cmb_z_value "D1=10 min" "T1=383.15 K" "D2=1 min" "T2=393.15 K"
+z = 10
+fold_per_10_degrees = 10
+  by: z-value from D-values at two temperatures  (z = (T2 - T1) / log10(D1 / D2))
+  D1 = 600 s
+  T1 = 383.15 K
+  D2 = 60 s
+  T2 = 393.15 K
+  assumes: D-values and temperatures > 0; T1 != T2; D falls as T rises (z > 0); log-linear thermal death curve
+```
+
+In the worked example, D1 = 10 min, T1 = 383.15 K, D2 = 1 min, T2 = 393.15 K go through the equation above and give z = 10, fold_per_10_degrees = 10. It applies only when D-values and temperatures > 0; T1 != T2; D falls as T rises (z > 0); log-linear thermal death curve: outside that it says what is wrong instead of returning a number.
+
+### Microscopy (2)
+
+<a id="cmb_specimen_size"></a>
+
+#### Actual size of a specimen from a micrograph, `cmb_specimen_size`
+
+The actual size of an object from its size measured on an image (drawing or micrograph), by the magnification or by the image's scale bar; also the magnification of the image.
+
+$$
+\text{actual size} = \frac{\text{image size}}{M},\quad M = \frac{\text{bar on image}}{\text{bar label}}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `image_size` | in | size of the object measured on the image | m |
+| `M` | in | magnification of the image (give this or the scale bar) (optional) | - |
+| `bar_image` | in | length of the scale bar measured on the image (optional, with bar_label) (optional) | m |
+| `bar_label` | in | length the scale bar stands for (optional, with bar_image) (optional) | m |
+| `size` | out | actual size of the object | m |
+| `size_um` | out | actual size in micrometres | - |
+| `M_image` | out | magnification of the image | - |
+
+**Applies when:** all lengths > 0; either the magnification or both scale-bar lengths, not both.
+
+```shell
+$ cell-molecular-biology solve cmb_specimen_size "image_size=12 mm" M=400
+size = 3e-05 m
+size_um = 30
+M_image = 400
+  by: Actual size of a specimen from a micrograph  (actual size = image size / M; with a scale bar M = bar length on the image / length it represents)
+  image_size = 0.012 m
+  M = 400
+  assumes: all lengths > 0; either the magnification or both scale-bar lengths, not both
+```
+
+In the worked example, image_size = 12 mm, M = 400 go through the equation above and give size = 3e-05 m, size_um = 30, M_image = 400. It applies only when all lengths > 0; either the magnification or both scale-bar lengths, not both: outside that it says what is wrong instead of returning a number.
+
+<a id="cmb_microscope_resolution"></a>
+
+#### Light microscope: total magnification and resolution limit, `cmb_microscope_resolution`
+
+The total magnification of a compound light microscope (objective x eyepiece) and its resolution limit d = lambda / (2 NA) (Abbe).
+
+$$
+M = M_{obj}\,M_{oc},\quad d = \frac{\lambda}{2\,\mathrm{NA}}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `M_obj` | in | magnification of the objective lens (e.g. 40 for 40x) | - |
+| `M_oc` | in | magnification of the eyepiece (ocular) lens (e.g. 10 for 10x) | - |
+| `wavelength` | in | wavelength of the light | m |
+| `NA` | in | numerical aperture of the objective | - |
+| `M` | out | total magnification | - |
+| `d` | out | resolution limit (smallest resolvable separation) | m |
+| `d_nm` | out | resolution limit in nanometres | - |
+| `d_um` | out | resolution limit in micrometres | - |
+
+**Applies when:** magnifications > 0; wavelength > 0; 0 < NA <= 1.6.
+
+```shell
+$ cell-molecular-biology solve cmb_microscope_resolution M_obj=40 M_oc=10 "wavelength=550 nm" NA=0.65
+M = 400
+d = 4.230769231e-07 m
+d_nm = 423.0769231
+d_um = 0.4230769231
+  by: Light microscope: total magnification and resolution limit  (M = M_objective x M_eyepiece; d = lambda / (2 NA) (Abbe))
+  M_obj = 40
+  M_oc = 10
+  wavelength = 5.5e-07 m
+  NA = 0.65
+  assumes: magnifications > 0; wavelength > 0; 0 < NA <= 1.6
+```
+
+In the worked example, M_obj = 40, M_oc = 10, wavelength = 550 nm, NA = 0.65 go through the equation above and give M = 400, d = 4.230769231e-07 m, d_nm = 423.0769231, d_um = 0.4230769231. It applies only when magnifications > 0; wavelength > 0; 0 < NA <= 1.6: outside that it says what is wrong instead of returning a number.
 
 ### PCR and gene expression (11)
 

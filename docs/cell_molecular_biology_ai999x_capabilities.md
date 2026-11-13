@@ -50,6 +50,11 @@ result.show()
 | Membranes and diffusion / osmosis | [Osmotic pressure (van 't Hoff)](#cmb_osmotic_pressure), [Osmolarity of a solution and its tonicity for a cell](#cmb_osmolarity_tonicity), [Cell volume after an osmotic change (Boyle-van 't Hoff)](#cmb_cell_volume_osmotic) |
 | Membranes and diffusion / permeability | [Membrane permeability coefficient and flux](#cmb_membrane_permeability), [Equilibration of a solute across a spherical cell's membrane](#cmb_cell_equilibration) |
 | Membranes and diffusion / random walk | [Root-mean-square displacement of a diffusing particle](#cmb_rms_displacement), [Time to diffuse a distance](#cmb_diffusion_time) |
+| Membranes and diffusion / water potential | [Water potential of a plant cell or solution (solute plus pressure potential)](#cmb_water_potential), [Direction of water movement between a cell and its surroundings](#cmb_water_movement) |
+| Metabolism / cellular respiration | [ATP yield per glucose: aerobic respiration versus fermentation](#cmb_atp_yield) |
+| Metabolism / free energy | [Free-energy change of a reaction at cellular concentrations](#cmb_reaction_free_energy), [Free-energy change of a redox reaction from reduction potentials](#cmb_redox_free_energy) |
+| Microbial control / heat and chemical killing | [D-value (decimal reduction time) from survivor counts](#cmb_decimal_reduction_time), [Z-value from D-values at two temperatures](#cmb_z_value), [D-value at a new temperature and time to a target kill (z-value)](#cmb_thermal_death_time) |
+| Microscopy / magnification and resolution | [Light microscope: total magnification and resolution limit](#cmb_microscope_resolution), [Actual size of a specimen from a micrograph](#cmb_specimen_size) |
 | PCR and gene expression / gene expression | [Steady-state mRNA and protein numbers](#cmb_expression_steady_state), [MRNA and protein after switching a gene on](#cmb_induction_dynamics), [MRNA half-life fitted to a decay time course](#cmb_mrna_half_life_fit) |
 | PCR and gene expression / PCR | [PCR amplification after n cycles](#cmb_pcr_amplification), [PCR cycles needed to reach a number of copies](#cmb_pcr_cycles_needed) |
 | PCR and gene expression / qPCR | [QPCR relative expression by the delta-delta Ct method](#cmb_qpcr_delta_delta_ct), [QPCR relative expression with efficiency correction (Pfaffl)](#cmb_qpcr_pfaffl_ratio), [QPCR standard curve: slope, intercept and efficiency](#cmb_qpcr_standard_curve), [Quantity from a Ct and a standard curve](#cmb_qpcr_quantify) |
@@ -193,6 +198,16 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 | cmb_centrifuge_rcf | Relative centrifugal force from rotor speed | rpm, r | RCF, rpm_value |
 | cmb_centrifuge_rpm | Rotor speed for a required centrifugal force | RCF, r | omega, rpm_value |
 | cmb_sedimentation_time | Time to pellet a particle in a centrifuge (k-factor) | s, rpm, r_min, r_max | t, t_h, k_factor |
+| cmb_microscope_resolution | Light microscope: total magnification and resolution limit | M_obj, M_oc, wavelength, NA | M, d, d_nm, d_um |
+| cmb_specimen_size | Actual size of a specimen from a micrograph | image_size, M, bar_image, bar_label | size, size_um, M_image |
+| cmb_water_potential | Water potential of a plant cell or solution (solute plus pressure potential) | i, C, T, psi_p | psi_s, psi_s_MPa, psi, psi_MPa |
+| cmb_water_movement | Direction of water movement between a cell and its surroundings | i_cell, C_cell, P_cell, i_out, C_out, P_out, T | psi_cell, psi_out, dpsi, dpsi_MPa, direction |
+| cmb_reaction_free_energy | Free-energy change of a reaction at cellular concentrations | dG0, T, products, reactants | Q, dG, dG_kJ_mol, K_eq, direction |
+| cmb_redox_free_energy | Free-energy change of a redox reaction from reduction potentials | E_acceptor, E_donor, n | dE, dE_mV, dG, dG_kJ_mol, direction |
+| cmb_atp_yield | ATP yield per glucose: aerobic respiration versus fermentation | P_O_NADH, P_O_FADH2, shuttle, dG_ATP, dG_glucose | ATP_aerobic, ATP_fermentation, ratio, ATP_oxidative, ATP_substrate_level, NADH_total, FADH2_total, efficiency_aerobic, efficiency_fermentation |
+| cmb_decimal_reduction_time | D-value (decimal reduction time) from survivor counts | N0, N, t | log_reduction, D, D_min, k_per_min, survival_fraction |
+| cmb_z_value | z-value from D-values at two temperatures | D1, T1, D2, T2 | z, fold_per_10_degrees |
+| cmb_thermal_death_time | D-value at a new temperature and time to a target kill (z-value) | D_ref, T_ref, z, T, log_reductions | D_T, D_T_min, t, t_min, lethal_rate |
 
 <a id="cmb_fick_flux"></a>
 
@@ -3998,23 +4013,23 @@ $$
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_kd_from_rates', kon=1000.0, koff=0.001)
-# -> Kd = 1e-06 mol/m^3, Kd_nM = 1, Ka_per_M = 1000, half_life = 693.147 s, residence_time = 1000 s   (SOLVED)
+# -> Kd = 1e-06 mol/m^3, Kd_nM = 1, Ka_per_M = 1e+09, half_life = 693.147 s, residence_time = 1000 s   (SOLVED)
 ```
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_kd_from_rates', kon=500.0, koff=0.2)
-# -> Kd = 0.0004 mol/m^3, Kd_nM = 400, Ka_per_M = 2.5, half_life = 3.46574 s, residence_time = 5 s   (SOLVED)
+# -> Kd = 0.0004 mol/m^3, Kd_nM = 400, Ka_per_M = 2.5e+06, half_life = 3.46574 s, residence_time = 5 s   (SOLVED)
 ```
 
 **Questions in words (documented forms), as executed:**
 
 | question | outcome | result |
 |---|---|---|
-| Kd from rate constants: kon = 1000000 1/(M*s), koff = 0.001 1/s | SOLVED | Kd = 1e-06 mol/m^3, Kd_nM = 1, Ka_per_M = 1000, half_life = 693.147 s, residence_time = 1000 s |
-| Kd from rate constants: kon = 500000 1/(M*s), koff = 0.2 1/s | SOLVED | Kd = 0.0004 mol/m^3, Kd_nM = 400, Ka_per_M = 2.5, half_life = 3.46574 s, residence_time = 5 s |
+| Kd from rate constants: kon = 1000000 1/(M*s), koff = 0.001 1/s | SOLVED | Kd = 1e-06 mol/m^3, Kd_nM = 1, Ka_per_M = 1e+09, half_life = 693.147 s, residence_time = 1000 s |
+| Kd from rate constants: kon = 500000 1/(M*s), koff = 0.2 1/s | SOLVED | Kd = 0.0004 mol/m^3, Kd_nM = 400, Ka_per_M = 2.5e+06, half_life = 3.46574 s, residence_time = 5 s |
 | Kd from rate constants: koff = 0.001 1/s | NEEDS_INPUT | cmb_kd_from_rates needs kon (association rate constant). Example: solve('cmb_kd_from_rates', kon='1000 m^3/(mol*s)', kof |
 | Kd from rate constants: kon = 1000000 1/(M*s), koff = 0.001 1/s, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
-| Kd from rate constants: kon = 1e6 1/(M*s), koff = 0.001 1/s | SOLVED | Kd = 1e-06 mol/m^3, Kd_nM = 1, Ka_per_M = 1000, half_life = 693.147 s, residence_time = 1000 s |
+| Kd from rate constants: kon = 1e6 1/(M*s), koff = 0.001 1/s | SOLVED | Kd = 1e-06 mol/m^3, Kd_nM = 1, Ka_per_M = 1e+09, half_life = 693.147 s, residence_time = 1000 s |
 
 <a id="cmb_scatchard_fit"></a>
 
@@ -5005,3 +5020,561 @@ cell_molecular_biology_ai999x.solve('cmb_sedimentation_time', s=4.4, rpm=6283.18
 | Sedimentation time: rpm = 40000 rpm, r_min = 5 cm, r_max = 10 cm | NEEDS_INPUT | cmb_sedimentation_time needs s (sedimentation coefficient in svedbergs). Example: solve('cmb_sedimentation_time', s=70,  |
 | Sedimentation time: s = 70 S, rpm = 40000 rpm, r_min = 5 cm, r_max = 10 cm, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
 | Sedimentation time: s = 70 S, rpm = 40000 rpm, r_min = 5 cm, r_max = 10 cm | SOLVED | t = 5643.52 s, t_h = 1.56764, k_factor = 109.735 |
+
+<a id="cmb_microscope_resolution"></a>
+
+### Light microscope: total magnification and resolution limit, `cmb_microscope_resolution`
+
+The total magnification of a compound light microscope (objective x eyepiece) and its resolution limit d = lambda / (2 NA) (Abbe).
+
+$$
+M = M_{obj}\,M_{oc},\quad d = \frac{\lambda}{2\,\mathrm{NA}}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `M_obj` | magnification of the objective lens (e.g. 40 for 40x) |  |
+| `M_oc` | magnification of the eyepiece (ocular) lens (e.g. 10 for 10x) |  |
+| `wavelength` | wavelength of the light |  |
+| `NA` | numerical aperture of the objective |  |
+
+| output | meaning |
+|---|---|
+| `M` | total magnification |
+| `d` | resolution limit (smallest resolvable separation) |
+| `d_nm` | resolution limit in nanometres |
+| `d_um` | resolution limit in micrometres |
+
+- **Method:** M = M_objective x M_eyepiece; d = lambda / (2 NA) (Abbe)
+- **Assumes:** magnifications > 0; wavelength > 0; $0 < NA  \leq  1.6$
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![d (resolution limit (smallest resolvable separation)) against NA (numerical aperture of the objective) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-microscope-resolution-curve)
+
+*d (resolution limit (smallest resolvable separation)) against NA (numerical aperture of the objective) from 0.325 to 0.975. One curve for each value of wavelength (wavelength of the light): 5.5000e-07 m, 2.7500e-07 m, 1.1000e-06 m. Other inputs as in the worked example: M_obj = 40.0, M_oc = 10.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, NA = 0.65, d = 4.2308e-07 m.*
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_microscope_resolution', M_obj=40.0, M_oc=10.0, wavelength=5.5e-07, NA=0.65)
+# -> M = 400, d = 4.23077e-07 m, d_nm = 423.077, d_um = 0.423077   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_microscope_resolution', M_obj=100.0, M_oc=10.0, wavelength=4.5e-07, NA=1.25)
+# -> M = 1000, d = 1.8e-07 m, d_nm = 180, d_um = 0.18   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Microscope resolution: M_obj = 40 x, M_oc = 10 x, wavelength = 550 nm, NA = 0.65 | SOLVED | M = 400, d = 4.23077e-07 m, d_nm = 423.077, d_um = 0.423077 |
+| Microscope resolution: M_obj = 100 x, M_oc = 10 x, wavelength = 450 nm, NA = 1.25 | SOLVED | M = 1000, d = 1.8e-07 m, d_nm = 180, d_um = 0.18 |
+| Microscope resolution: M_oc = 10 x, wavelength = 550 nm, NA = 0.65 | NEEDS_INPUT | cmb_microscope_resolution needs M_obj (magnification of the objective lens (e.g. 40 for 40x)). Example: solve('cmb_micro |
+| Microscope resolution: M_obj = 40 x, M_oc = 10 x, wavelength = 550 nm, NA = 0.65, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
+| Microscope resolution: M_obj = 40 x, M_oc = 10 x, wavelength = 0.55 um, NA = 0.65 | SOLVED | M = 400, d = 4.23077e-07 m, d_nm = 423.077, d_um = 0.423077 |
+| Microscope resolution: M_obj = 40, M_oc = 10, wavelength = 550 nm, NA = 2 | INVALID_INPUT | Light microscope: total magnification and resolution limit: the numerical aperture of a light microscope cannot exceed a |
+
+<a id="cmb_specimen_size"></a>
+
+### Actual size of a specimen from a micrograph, `cmb_specimen_size`
+
+The actual size of an object from its size measured on an image (drawing or micrograph), by the magnification or by the image's scale bar; also the magnification of the image.
+
+$$
+\text{actual size} = \frac{\text{image size}}{M},\quad M = \frac{\text{bar on image}}{\text{bar label}}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `image_size` | size of the object measured on the image |  |
+| `M` | magnification of the image (give this or the scale bar) |  |
+| `bar_image` | length of the scale bar measured on the image (optional, with bar_label) |  |
+| `bar_label` | length the scale bar stands for (optional, with bar_image) |  |
+
+| output | meaning |
+|---|---|
+| `size` | actual size of the object |
+| `size_um` | actual size in micrometres |
+| `M_image` | magnification of the image |
+
+- **Method:** actual size = image size / M; with a scale bar M = bar length on the image / length it represents
+- **Assumes:** all lengths > 0; either the magnification or both scale-bar lengths, not both
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![size (actual size of the object) against M (magnification of the image (give this or the scale bar)) from 200 to 600](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-specimen-size-curve)
+
+*size (actual size of the object) against M (magnification of the image (give this or the scale bar)) from 200 to 600. One curve for each value of image_size (size of the object measured on the image): 0.012 m, 0.006 m, 0.024 m. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, M = 400, size = 3.0000e-05 m.*
+
+![size (actual size of the object) over image_size (size of the object measured on the image) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-specimen-size-field)
+
+*size (actual size of the object) over image_size (size of the object measured on the image) from 0.006 m to 0.018 m and M (magnification of the image (give this or the scale bar)) from 200 to 600: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 1.0000e-05 m to dark 9.0000e-05 m); iso-lines at size = 2.00e-5, 4.00e-5, 6.00e-5, 8.00e-5 m. Marked: the worked example, image_size = 0.012 m, M = 400, size = 3.0000e-05 m.*
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_specimen_size', image_size=0.012, M=400.0)
+# -> size = 3e-05 m, size_um = 30, M_image = 400   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_specimen_size', image_size=0.018, bar_image=0.025, bar_label=1e-05)
+# -> size = 7.2e-06 m, size_um = 7.2, M_image = 2500   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Specimen size from a micrograph: image_size = 12 mm, M = 400 x | SOLVED | size = 3e-05 m, size_um = 30, M_image = 400 |
+| Specimen size from a micrograph: image_size = 18 mm, bar_image = 25 mm, bar_label = 10 um | SOLVED | size = 7.2e-06 m, size_um = 7.2, M_image = 2500 |
+| Specimen size from a micrograph: M = 400 x | NEEDS_INPUT | cmb_specimen_size needs image_size (size of the object measured on the image). Example: solve('cmb_specimen_size', image |
+| Specimen size from a micrograph: image_size = 12 mm, M = 400 x, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
+| Actual size from magnification: image_size = 1.2 cm, M = 400 x | SOLVED | size = 3e-05 m, size_um = 30, M_image = 400 |
+| Specimen size from a micrograph: image_size = 18 mm, M = 400, bar_image = 25 mm, bar_label = 10 um | INVALID_INPUT | Actual size of a specimen from a micrograph: give either the magnification M or the scale bar (bar_image and bar_label), |
+
+<a id="cmb_water_potential"></a>
+
+### Water potential of a plant cell or solution (solute plus pressure potential), `cmb_water_potential`
+
+The solute potential $psi_s = -i$ C R T and the water potential $\psi = psi_s + psi_p$ of a solution or cell (pure water at atmospheric pressure = 0).
+
+$$
+\Psi_s = -iCRT,\quad \Psi = \Psi_s + \Psi_p
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `i` | ionization (van 't Hoff) constant: 1 for sucrose, about 2 for NaCl |  |
+| `C` | molar concentration of the solute |  |
+| `T` | absolute temperature (degC is converted) |  |
+| `psi_p` | pressure potential (turgor; 0 for an open solution) |  |
+
+| output | meaning |
+|---|---|
+| `psi_s` | solute (osmotic) potential |
+| `psi_s_MPa` | solute potential in MPa |
+| `psi` | water potential |
+| `psi_MPa` | water potential in MPa |
+
+- **Method:** $psi_s = -i$ C R T; $\psi = psi_s + psi_p$
+- **Assumes:** $i > 0$, $T > 0$; $C  \geq  0$; ideal dilute solution
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![psi (water potential) against i (ionization (van 't Hoff) constant: 1 for sucrose, about 2 for NaCl) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-potential-curve)
+
+*psi (water potential) against i (ionization (van 't Hoff) constant: 1 for sucrose, about 2 for NaCl) from 0.5 to 1.5. One curve for each value of C (molar concentration of the solute): 150 mol/m^3, 75 mol/m^3, 300 mol/m^3. Other inputs as in the worked example: T = 293.15 K, psi_p = 0.0 Pa. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, i = 1, psi = -365608 Pa.*
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_water_potential', i=1.0, C=150.0, T=293.15, psi_p=0.0)
+# -> psi_s = -365608 Pa, psi_s_MPa = -0.365608, psi = -365608 Pa, psi_MPa = -0.365608   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_water_potential', i=2.0, C=100.0, T=298.15, psi_p=300000.0)
+# -> psi_s = -495791 Pa, psi_s_MPa = -0.495791, psi = -195791 Pa, psi_MPa = -0.195791   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Water potential: i = 1, C = 150 mM, T = 293.15 K, psi_p = 0 MPa | SOLVED | psi_s = -365608 Pa, psi_s_MPa = -0.365608, psi = -365608 Pa, psi_MPa = -0.365608 |
+| Water potential: i = 2, C = 100 mM, T = 298.15 K, psi_p = 0.3 MPa | SOLVED | psi_s = -495791 Pa, psi_s_MPa = -0.495791, psi = -195791 Pa, psi_MPa = -0.195791 |
+| Water potential: C = 150 mM, T = 293.15 K, psi_p = 0 MPa | NEEDS_INPUT | cmb_water_potential needs i (ionization (van 't Hoff) constant: 1 for sucrose, about 2 for NaCl). Example: solve('cmb_wa |
+| Water potential: i = 1, C = 150 mM, T = 293.15 K, psi_p = 0 MPa, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
+| Water potential: i = 1, C = 0.15 M, T = 20 degC, psi_p = 0 MPa | SOLVED | psi_s = -365608 Pa, psi_s_MPa = -0.365608, psi = -365608 Pa, psi_MPa = -0.365608 |
+| Water potential: i = 0, C = 0.15 M, T = 293.15 K, psi_p = 0 MPa | INVALID_INPUT | Water potential of a plant cell or solution (solute plus pressure potential): the van 't Hoff factor i and T must be a p |
+
+<a id="cmb_water_movement"></a>
+
+### Direction of water movement between a cell and its surroundings, `cmb_water_movement`
+
+The water potentials of a cell and of the surrounding solution and the direction of net water movement (from higher to lower water potential).
+
+$$
+\Psi = -iCRT + \Psi_p,\quad \text{water moves toward lower } \Psi
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `i_cell` | ionization constant of the cell's solute |  |
+| `C_cell` | solute concentration in the cell |  |
+| `P_cell` | pressure potential of the cell (turgor) |  |
+| `i_out` | ionization constant of the outside solute |  |
+| `C_out` | solute concentration outside |  |
+| `P_out` | pressure potential outside (0 for an open solution) |  |
+| `T` | absolute temperature (degC is converted) |  |
+
+| output | meaning |
+|---|---|
+| `psi_cell` | water potential of the cell |
+| `psi_out` | water potential outside |
+| `dpsi` | outside minus cell water potential |
+| `dpsi_MPa` | outside minus cell water potential in MPa |
+| `direction` | net water movement: into the cell, out of the cell or no net movement |
+
+- **Method:** $\psi = -i$ C R T + psi_p for each side; water moves from the higher to the lower water potential
+- **Assumes:** $i > 0$, $T > 0$; concentrations >= 0; equal within $1e-9 = no$ net movement
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![net water movement: into the cell, out of the cell or no net movement (direction) over i_cell (ionization constant of the cell's solute) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-movement-decision)
+
+*net water movement: into the cell, out of the cell or no net movement (direction) over i_cell (ionization constant of the cell's solute) from 0.1 to 10 and C_cell (solute concentration in the cell) from 20 mol/m^3 to 2000 mol/m^3 (logarithmic axes): each of the 31 × 21 cells is one run of cell-molecular-biology-ai999x, coloured by the verdict it returned, into the cell: 341 cells, out of the cell: 310 cells. Other inputs as in the worked example: P_cell = 200000.0 Pa, i_out = 1.0, C_out = 100.0 mol/m^3, P_out = 0.0 Pa, T = 298.15 K. Marked: the worked example, i_cell = 1, C_cell = 200 mol/m^3 → into the cell.*
+
+![psi_cell (water potential of the cell) against i_cell (ionization constant of the cell's solute) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-movement-curve)
+
+*psi_cell (water potential of the cell) against i_cell (ionization constant of the cell's solute) from 0.5 to 1.5. One curve for each value of C_cell (solute concentration in the cell): 200 mol/m^3, 100 mol/m^3, 400 mol/m^3. Other inputs as in the worked example: P_cell = 200000.0 Pa, i_out = 1.0, C_out = 100.0 mol/m^3, P_out = 0.0 Pa, T = 298.15 K. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, i_cell = 1, psi_cell = -295791 Pa.*
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_water_movement', i_cell=1.0, C_cell=200.0, P_cell=200000.0, i_out=1.0, C_out=100.0, P_out=0.0, T=298.15)
+# -> psi_cell = -295791 Pa, psi_out = -247896 Pa, dpsi = 47895.7 Pa, dpsi_MPa = 0.0478957, direction = into the cell   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_water_movement', i_cell=1.0, C_cell=300.0, P_cell=0.0, i_out=2.0, C_out=200.0, P_out=0.0, T=310.15)
+# -> psi_cell = -773619 Pa, psi_out = -1.03149e+06 Pa, dpsi = -257873 Pa, dpsi_MPa = -0.257873, direction = out of the cell   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Water movement between a cell and its surroundings: i_cell = 1, C_cell = 200 mM, P_cell = 0.2 MPa, i_out = 1, C_out = 100 mM, P_out = 0 MPa, T = 298.15 K | SOLVED | psi_cell = -295791 Pa, psi_out = -247896 Pa, dpsi = 47895.7 Pa, dpsi_MPa = 0.0478957, direction = into the cell |
+| Water movement between a cell and its surroundings: i_cell = 1, C_cell = 300 mM, P_cell = 0 MPa, i_out = 2, C_out = 200 mM, P_out = 0 MPa, T = 310.15 K | SOLVED | psi_cell = -773619 Pa, psi_out = -1.03149e+06 Pa, dpsi = -257873 Pa, dpsi_MPa = -0.257873, direction = out of the cell |
+| Water movement between a cell and its surroundings: C_cell = 200 mM, P_cell = 0.2 MPa, i_out = 1, C_out = 100 mM, P_out = 0 MPa, T = 298.15 K | NEEDS_INPUT | cmb_water_movement needs i_cell (ionization constant of the cell's solute). Example: solve('cmb_water_movement', i_cell= |
+| Water movement between a cell and its surroundings: i_cell = 1, C_cell = 200 mM, P_cell = 0.2 MPa, i_out = 1, C_out = 100 mM, P_out = 0 MPa, T = 298.15 K, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
+| Direction of water movement: i_cell = 1, C_cell = 0.2 M, P_cell = 0.2 MPa, i_out = 1, C_out = 0.1 M, P_out = 0 MPa, T = 25 degC | SOLVED | psi_cell = -295791 Pa, psi_out = -247896 Pa, dpsi = 47895.7 Pa, dpsi_MPa = 0.0478957, direction = into the cell |
+| Direction of water movement: i_cell = 1, C_cell = -200 mM, P_cell = 0.2 MPa, i_out = 1, C_out = 100 mM, P_out = 0 MPa, T = 298.15 K | INVALID_INPUT | Direction of water movement between a cell and its surroundings: the concentrations must be zero or positive. |
+
+<a id="cmb_reaction_free_energy"></a>
+
+### Free-energy change of a reaction at cellular concentrations, `cmb_reaction_free_energy`
+
+The actual free-energy change $dG = dG0$' + RT ln Q of a biochemical reaction at the concentrations in the cell (standard state 1 M), its equilibrium constant and the direction it proceeds.
+
+$$
+\Delta G = \Delta G^{\circ\prime} + RT\ln Q,\quad Q = \frac{\prod [P]}{\prod [R]}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `dG0` | standard free-energy change dG0' (biochemical standard state, pH 7) |  |
+| `T` | absolute temperature (degC is converted) |  |
+| `products` | product concentrations in mM (list a species twice for a coefficient of 2; omit water and H+) |  |
+| `reactants` | reactant concentrations in mM (list a species twice for a coefficient of 2; omit water and H+) |  |
+
+| output | meaning |
+|---|---|
+| `Q` | reaction quotient (concentrations relative to 1 M) |
+| `dG` | actual free-energy change |
+| `dG_kJ_mol` | actual free-energy change in kJ/mol |
+| `K_eq` | equilibrium constant exp(-dG0'/RT) |
+| `direction` | forward $(dG < 0)$, reverse $(dG > 0)$ or at equilibrium |
+
+- **Method:** Q = prod(products / 1 M) / prod(reactants / 1 M); $dG = dG0$' + R T ln Q; $K = exp$(-dG0'/RT)
+- **Assumes:** $T > 0$; |dG0'| <= 500 kJ/mol; 0 < each concentration <= 10 M; ideal (activities = concentrations / 1 M)
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![dG (actual free-energy change) against T (absolute temperature (degC is converted)) from 155](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-reaction-free-energy-curve)
+
+*dG (actual free-energy change) against T (absolute temperature (degC is converted)) from 155.075 K to 465.225 K. One curve for each value of dG0 (standard free-energy change dG0' (biochemical standard state, pH 7)): -30500 J/mol, -15250 J/mol, -61000 J/mol. Other inputs as in the worked example: products = [0.25, 1.65], reactants = [2.25]. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, T = 310.15 K, dG = -52687.9 J/mol.*
+
+![dG (actual free-energy change) over T (absolute temperature (degC is converted)) from 155](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-reaction-free-energy-field)
+
+*dG (actual free-energy change) over T (absolute temperature (degC is converted)) from 155.075 K to 465.225 K and dG0 (standard free-energy change dG0' (biochemical standard state, pH 7)) from -45750 J/mol to -15250 J/mol: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light -79031.9 J/mol to dark -26344 J/mol); iso-lines at dG = -70000, -60000, -50000, -40000, -30000 J/mol. Other inputs as in the worked example: products = [0.25, 1.65], reactants = [2.25]. Marked: the worked example, T = 310.15 K, dG0 = -30500 J/mol, dG = -52687.9 J/mol.*
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_reaction_free_energy', dG0=-30500.0, T=310.15, products=[0.25, 1.65], reactants=[2.25])
+# -> Q = 0.000183333, dG = -52687.9 J/mol, dG_kJ_mol = -52.6879, K_eq = 136971, direction = forward   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_reaction_free_energy', dG0=5000.0, T=298.15, products=[1.0], reactants=[1000.0])
+# -> Q = 0.001, dG = -12124 J/mol, dG_kJ_mol = -12.124, K_eq = 0.133057, direction = forward   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Free energy at cellular concentrations: dG0 = -30.5 kJ/mol, T = 310.15 K, products = [0.25, 1.65], reactants = [2.25] | SOLVED | Q = 0.000183333, dG = -52687.9 J/mol, dG_kJ_mol = -52.6879, K_eq = 136971, direction = forward |
+| Free energy at cellular concentrations: dG0 = 5 kJ/mol, T = 298.15 K, products = [1], reactants = [1000] | SOLVED | Q = 0.001, dG = -12124 J/mol, dG_kJ_mol = -12.124, K_eq = 0.133057, direction = forward |
+| Free energy at cellular concentrations: T = 310.15 K, products = [0.25, 1.65], reactants = [2.25] | NEEDS_INPUT | cmb_reaction_free_energy needs dG0 (standard free-energy change dG0' (biochemical standard state, pH 7)). Example: solve |
+| Free energy at cellular concentrations: dG0 = -30.5 kJ/mol, T = 310.15 K, products = [0.25, 1.65], reactants = [2.25], zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
+| Reaction free energy: dG0 = -30.5 kJ/mol, T = 37 degC, products = [0.25, 1.65], reactants = [2.25] | SOLVED | Q = 0.000183333, dG = -52687.9 J/mol, dG_kJ_mol = -52.6879, K_eq = 136971, direction = forward |
+| Reaction free energy: dG0 = -30.5 kJ/mol, T = 310.15 K, products = [0, 1.65], reactants = [2.25] | INVALID_INPUT | Free-energy change of a reaction at cellular concentrations: concentrations must be above 0 and at most 10 M (10000 mM). |
+
+<a id="cmb_redox_free_energy"></a>
+
+### Free-energy change of a redox reaction from reduction potentials, `cmb_redox_free_energy`
+
+The standard free-energy change dG0' = -n F dE0' of electron transfer from a donor couple to an acceptor couple, from their standard reduction potentials.
+
+$$
+\Delta G^{\circ\prime} = -nF\,\Delta E^{\circ\prime},\quad \Delta E^{\circ\prime} = E^{\circ\prime}_{acceptor} - E^{\circ\prime}_{donor}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `E_acceptor` | standard reduction potential of the electron acceptor couple (E0') |  |
+| `E_donor` | standard reduction potential of the electron donor couple (E0') |  |
+| `n` | number of electrons transferred |  |
+
+| output | meaning |
+|---|---|
+| `dE` | potential difference E0'(acceptor) - E0'(donor) |
+| `dE_mV` | potential difference in mV |
+| `dG` | standard free-energy change |
+| `dG_kJ_mol` | standard free-energy change in kJ/mol |
+| `direction` | favourable as written $(dG < 0)$, unfavourable or at equilibrium |
+
+- **Method:** dE0' = E0'(acceptor) - E0'(donor); dG0' = -n F dE0'
+- **Assumes:** n a whole number >= 1; |E0'| <= 3 V; standard (pH 7) conditions
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![dG (standard free-energy change) against E_acceptor (standard reduction potential of the electron acceptor couple (E0')) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-redox-free-energy-curve)
+
+*dG (standard free-energy change) against E_acceptor (standard reduction potential of the electron acceptor couple (E0')) from 0.408 V to 1.224 V. One curve for each value of n (number of electrons transferred): 2, 3, 4. Other inputs as in the worked example: E_donor = -0.32 V. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, E_acceptor = 0.816 V, dG = -219215 J/mol.*
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_redox_free_energy', E_acceptor=0.816, E_donor=-0.32, n=2)
+# -> dE = 1.136 V, dE_mV = 1136, dG = -219215 J/mol, dG_kJ_mol = -219.215, direction = favourable as written   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_redox_free_energy', E_acceptor=0.045, E_donor=-0.219, n=2)
+# -> dE = 0.264 V, dE_mV = 264, dG = -50944.3 J/mol, dG_kJ_mol = -50.9443, direction = favourable as written   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Redox free energy: E_acceptor = 0.816 V, E_donor = -0.32 V, n = 2 | SOLVED | dE = 1.136 V, dE_mV = 1136, dG = -219215 J/mol, dG_kJ_mol = -219.215, direction = favourable as written |
+| Redox free energy: E_acceptor = 0.045 V, E_donor = -0.219 V, n = 2 | SOLVED | dE = 0.264 V, dE_mV = 264, dG = -50944.3 J/mol, dG_kJ_mol = -50.9443, direction = favourable as written |
+| Redox free energy: E_donor = -0.32 V, n = 2 | NEEDS_INPUT | cmb_redox_free_energy needs E_acceptor (standard reduction potential of the electron acceptor couple (E0')). Example: so |
+| Redox free energy: E_acceptor = 0.816 V, E_donor = -0.32 V, n = 2, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
+| Redox free energy: E_acceptor = 816 mV, E_donor = -320 mV, n = 2 | SOLVED | dE = 1.136 V, dE_mV = 1136, dG = -219215 J/mol, dG_kJ_mol = -219.215, direction = favourable as written |
+| Redox free energy: E_acceptor = 0.816 V, E_donor = -0.32 V, n = 0 | INVALID_INPUT | n: must be at least 1, got 0. |
+
+<a id="cmb_atp_yield"></a>
+
+### ATP yield per glucose: aerobic respiration versus fermentation, `cmb_atp_yield`
+
+The ATP made per glucose by aerobic respiration (substrate-level plus oxidative phosphorylation from NADH and FADH2 at stated P/O ratios and the shuttle for cytosolic NADH) and by fermentation, and optionally the energy efficiency of each.
+
+$$
+N_{ATP} = 4 + 8\,(P/O)_{NADH} + 2\,(P/O)_{FADH_2} + 2\,(P/O)_{shuttle},\quad \eta = \frac{N_{ATP}\,\Delta G_{ATP}}{\Delta G_{glucose}}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `P_O_NADH` | ATP made per mitochondrial NADH (P/O ratio, e.g. 2.5 or 3) |  |
+| `P_O_FADH2` | ATP made per FADH2 (P/O ratio, e.g. 1.5 or 2) |  |
+| `shuttle` | shuttle that carries the 2 cytosolic NADH into the mitochondrion |  |
+| `dG_ATP` | free energy stored per mol of ATP, a positive magnitude (optional, e.g. 30.5 kJ/mol) |  |
+| `dG_glucose` | free energy released by complete oxidation of glucose, a positive magnitude (optional, e.g. 2870 kJ/mol) |  |
+
+| output | meaning |
+|---|---|
+| `ATP_aerobic` | ATP per glucose by aerobic respiration |
+| `ATP_fermentation` | ATP per glucose by fermentation |
+| `ratio` | aerobic yield / fermentation yield |
+| `ATP_oxidative` | ATP from oxidative phosphorylation |
+| `ATP_substrate_level` | ATP (and GTP) from substrate-level phosphorylation, net |
+| `NADH_total` | NADH made per glucose |
+| `FADH2_total` | FADH2 made per glucose |
+| `efficiency_aerobic` | fraction of glucose's free energy stored in ATP, aerobic (when energies are given) |
+| `efficiency_fermentation` | fraction of glucose's complete-oxidation free energy stored in ATP, fermentation (when energies are given) |
+
+- **Method:** ATP = 4 (substrate level, net) + 8 P/O(NADH) + 2 P/O(FADH2) + 2 P/O(shuttle); fermentation = 2; efficiency = ATP dG_ATP / dG_glucose
+- **Assumes:** $0 < P/O  \leq  3$; both energies or neither; efficiency <= 1
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![ATP_aerobic (ATP per glucose by aerobic respiration) against P_O_NADH (ATP made per mitochondrial NADH (P/O ratio, e](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-atp-yield-curve)
+
+*ATP_aerobic (ATP per glucose by aerobic respiration) against P_O_NADH (ATP made per mitochondrial NADH (P/O ratio, e.g. 2.5 or 3)) from 1.25 to 3.75. One curve for each value of P_O_FADH2 (ATP made per FADH2 (P/O ratio, e.g. 1.5 or 2)): 1.5, 0.75, 3. Other inputs as in the worked example: shuttle = malate-aspartate, dG_ATP = 30500.0 J/mol, dG_glucose = 2870000.0 J/mol. 22 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, P_O_NADH = 2.5, ATP_aerobic = 32.*
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_atp_yield', P_O_NADH=2.5, P_O_FADH2=1.5, shuttle='malate-aspartate', dG_ATP=30500.0, dG_glucose=2870000.0)
+# -> ATP_aerobic = 32, ATP_fermentation = 2, ratio = 16, ATP_oxidative = 28, ATP_substrate_level = 4, NADH_total = 10, FADH2_total = 2, efficiency_aerobic = 0.34007, efficiency_fermentation = 0.0212544   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_atp_yield', P_O_NADH=2.5, P_O_FADH2=1.5, shuttle='glycerol-phosphate')
+# -> ATP_aerobic = 30, ATP_fermentation = 2, ratio = 15, ATP_oxidative = 26, ATP_substrate_level = 4, NADH_total = 10, FADH2_total = 2   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_atp_yield', P_O_NADH=3.0, P_O_FADH2=2.0, shuttle='malate-aspartate')
+# -> ATP_aerobic = 38, ATP_fermentation = 2, ratio = 19, ATP_oxidative = 34, ATP_substrate_level = 4, NADH_total = 10, FADH2_total = 2   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| ATP yield per glucose: P_O_NADH = 2.5, P_O_FADH2 = 1.5, shuttle = malate-aspartate, dG_ATP = 30.5 kJ/mol, dG_glucose = 2870 kJ/mol | SOLVED | ATP_aerobic = 32, ATP_fermentation = 2, ratio = 16, ATP_oxidative = 28, ATP_substrate_level = 4, NADH_total = 10, FADH2_total = 2, efficiency_aerobic = 0.34007, efficiency_fermentation = 0.0212544 |
+| ATP yield per glucose: P_O_NADH = 2.5, P_O_FADH2 = 1.5, shuttle = glycerol-phosphate | SOLVED | ATP_aerobic = 30, ATP_fermentation = 2, ratio = 15, ATP_oxidative = 26, ATP_substrate_level = 4, NADH_total = 10, FADH2_total = 2 |
+| ATP yield per glucose: P_O_NADH = 3, P_O_FADH2 = 2, shuttle = malate-aspartate | SOLVED | ATP_aerobic = 38, ATP_fermentation = 2, ratio = 19, ATP_oxidative = 34, ATP_substrate_level = 4, NADH_total = 10, FADH2_total = 2 |
+| ATP yield per glucose: P_O_FADH2 = 1.5, shuttle = malate-aspartate, dG_ATP = 30.5 kJ/mol, dG_glucose = 2870 kJ/mol | NEEDS_INPUT | cmb_atp_yield needs P_O_NADH (ATP made per mitochondrial NADH (P/O ratio, e.g. 2.5 or 3)). Example: solve('cmb_atp_yield |
+| ATP yield per glucose: P_O_NADH = 2.5, P_O_FADH2 = 1.5, shuttle = malate-aspartate, dG_ATP = 30.5 kJ/mol, dG_glucose = 2870 kJ/mol, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
+| ATP per glucose: P_O_NADH = 2.5, P_O_FADH2 = 1.5, shuttle = malate aspartate, dG_ATP = 30.5 kJ/mol, dG_glucose = 2870 kJ/mol | SOLVED | ATP_aerobic = 32, ATP_fermentation = 2, ratio = 16, ATP_oxidative = 28, ATP_substrate_level = 4, NADH_total = 10, FADH2_total = 2, efficiency_aerobic = 0.34007, efficiency_fermentation = 0.0212544 |
+| ATP yield per glucose: P_O_NADH = 5, P_O_FADH2 = 1.5, shuttle = malate-aspartate | INVALID_INPUT | ATP yield per glucose: aerobic respiration versus fermentation: P/O ratios must be at most 3. |
+
+<a id="cmb_decimal_reduction_time"></a>
+
+### D-value (decimal reduction time) from survivor counts, `cmb_decimal_reduction_time`
+
+The number of log10 reductions and the D-value (time for a 90 % kill) of a treatment from the viable counts before and after a stated time, assuming first-order (log-linear) death.
+
+$$
+D = \frac{t}{\log_{10}(N_0/N)},\quad k = \frac{\ln 10}{D}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `N0` | initial viable count (CFU/mL or CFU) |  |
+| `N` | surviving viable count after the treatment (same units as N0) |  |
+| `t` | treatment (exposure) time |  |
+
+| output | meaning |
+|---|---|
+| `log_reduction` | number of log10 reductions log10(N0/N) |
+| `D` | D-value (decimal reduction time) |
+| `D_min` | D-value in minutes |
+| `k_per_min` | first-order death rate constant in 1/min |
+| `survival_fraction` | surviving fraction $N/N_{0}$ |
+
+- **Method:** log reductions = log10(N0/N); $D = t / log10$(N0/N); $k = ln$ $10 / D$
+- **Assumes:** $0 < N < N_{0}$; $t > 0$; first-order (log-linear) killing
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![D (D-value (decimal reduction time)) against t (treatment (exposure) time) from 300 s to 900 s](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-decimal-reduction-time-curve)
+
+*D (D-value (decimal reduction time)) against t (treatment (exposure) time) from 300 s to 900 s. One curve for each value of N0 (initial viable count (CFU/mL or CFU)): 1e+06, 500000, 2e+06. Other inputs as in the worked example: N = 100.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, t = 600 s, D = 150 s.*
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_decimal_reduction_time', N0=1000000.0, N=100.0, t=600.0)
+# -> log_reduction = 4, D = 150 s, D_min = 2.5, k_per_min = 0.921034, survival_fraction = 0.0001   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_decimal_reduction_time', N0=50000000.0, N=50000.0, t=270.0)
+# -> log_reduction = 3, D = 90 s, D_min = 1.5, k_per_min = 1.53506, survival_fraction = 0.001   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| D-value from survivor counts: N0 = 1000000, N = 100, t = 10 min | SOLVED | log_reduction = 4, D = 150 s, D_min = 2.5, k_per_min = 0.921034, survival_fraction = 0.0001 |
+| D-value from survivor counts: N0 = 50000000, N = 50000, t = 4.5 min | SOLVED | log_reduction = 3, D = 90 s, D_min = 1.5, k_per_min = 1.53506, survival_fraction = 0.001 |
+| D-value from survivor counts: N = 100, t = 10 min | NEEDS_INPUT | cmb_decimal_reduction_time needs N0 (initial viable count (CFU/mL or CFU)). Example: solve('cmb_decimal_reduction_time', |
+| D-value from survivor counts: N0 = 1000000, N = 100, t = 10 min, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
+| Decimal reduction time: N0 = 1e6, N = 100, t = 10 min | SOLVED | log_reduction = 4, D = 150 s, D_min = 2.5, k_per_min = 0.921034, survival_fraction = 0.0001 |
+| D-value: N0 = 1000, N = 5000, t = 10 min | INVALID_INPUT | D-value (decimal reduction time) from survivor counts: the surviving count N must be below the initial count N0. |
+
+<a id="cmb_z_value"></a>
+
+### z-value from D-values at two temperatures, `cmb_z_value`
+
+The z-value (temperature rise that reduces the D-value ten-fold) from the D-values measured at two temperatures, and the fold change of D per 10 degrees.
+
+$$
+z = \frac{T_2 - T_1}{\log_{10}(D_1/D_2)}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `D1` | D-value at the first temperature |  |
+| `T1` | first temperature (degC is converted) |  |
+| `D2` | D-value at the second temperature |  |
+| `T2` | second temperature (degC is converted) |  |
+
+| output | meaning |
+|---|---|
+| `z` | z-value in kelvin (= degrees Celsius of difference) |
+| `fold_per_10_degrees` | factor by which D falls for a 10-degree rise |
+
+- **Method:** $z = (T_{2} - T_{1}) / log10$(D1 / D2)
+- **Assumes:** D-values and temperatures > 0; $T_{1}  \neq  T_{2}$; D falls as T rises $(z > 0)$; log-linear thermal death curve
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![z (z-value in kelvin (= degrees Celsius of difference)) against D1 (D-value at the first temperature) from 60 s to 6000 s on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-z-value-curve)
+
+*z (z-value in kelvin (= degrees Celsius of difference)) against D1 (D-value at the first temperature) from 60 s to 6000 s on a logarithmic axis. One curve for each value of T2 (second temperature (degC is converted)): 393.15 K, 786.3 K. Other inputs as in the worked example: T1 = 383.15 K, D2 = 60.0 s. 40 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, D1 = 600 s, z = 10.*
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_z_value', D1=600.0, T1=383.15, D2=60.0, T2=393.15)
+# -> z = 10, fold_per_10_degrees = 10   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_z_value', D1=240.0, T1=385.15, D2=30.0, T2=394.15)
+# -> z = 9.96578, fold_per_10_degrees = 10.0794   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| z-value: D1 = 10 min, T1 = 383.15 K, D2 = 1 min, T2 = 393.15 K | SOLVED | z = 10, fold_per_10_degrees = 10 |
+| z-value: D1 = 4 min, T1 = 385.15 K, D2 = 0.5 min, T2 = 394.15 K | SOLVED | z = 9.96578, fold_per_10_degrees = 10.0794 |
+| z-value: T1 = 383.15 K, D2 = 1 min, T2 = 393.15 K | NEEDS_INPUT | cmb_z_value needs D1 (D-value at the first temperature). Example: solve('cmb_z_value', D1='600 s', T1='383.15 K', D2='60 |
+| z-value: D1 = 10 min, T1 = 383.15 K, D2 = 1 min, T2 = 393.15 K, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
+| z-value: D1 = 10 min, T1 = 110 degC, D2 = 1 min, T2 = 120 degC | SOLVED | z = 10, fold_per_10_degrees = 10 |
+| z-value: D1 = 1 min, T1 = 110 degC, D2 = 10 min, T2 = 120 degC | INVALID_INPUT | z-value from D-values at two temperatures: the D-value must fall as the temperature rises (z > 0). |
+
+<a id="cmb_thermal_death_time"></a>
+
+### D-value at a new temperature and time to a target kill (z-value), `cmb_thermal_death_time`
+
+The D-value at temperature T from a reference D-value and the z-value, and the holding time needed for a stated number of log10 reductions at T.
+
+$$
+D_T = D_{ref}\,10^{(T_{ref}-T)/z},\quad t = n\,D_T
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `D_ref` | D-value at the reference temperature |  |
+| `T_ref` | reference temperature (degC is converted) |  |
+| `z` | z-value in degrees (a temperature difference: degC = K) |  |
+| `T` | process temperature (degC is converted) |  |
+| `log_reductions` | number of log10 reductions required (e.g. 12) |  |
+
+| output | meaning |
+|---|---|
+| `D_T` | D-value at T |
+| `D_T_min` | D-value at T in minutes |
+| `t` | holding time for the required log reductions at T |
+| `t_min` | holding time in minutes |
+| `lethal_rate` | lethal rate 10^((T - T_ref)/z) relative to the reference temperature |
+
+- **Method:** D_T = D_ref x 10^((T_ref - T)/z); $t = n$ D_T
+- **Assumes:** D_ref, z, log reductions > 0; |T - T_ref| / $z  \leq  50$; log-linear thermal death
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![t (holding time for the required log reductions at T) against z (z-value in degrees (a temperature difference: degC = K)) from 1 to 100 on a logarithmic axis, logarithmic output axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-thermal-death-time-curve)
+
+*t (holding time for the required log reductions at T) against z (z-value in degrees (a temperature difference: degC = K)) from 1 to 100 on a logarithmic axis, logarithmic output axis. One curve for each value of T_ref (reference temperature (degC is converted)): 394.25 K, 197.125 K, 788.5 K. Other inputs as in the worked example: D_ref = 12.0 s, T = 384.25 K, log_reductions = 12.0. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, z = 10, t = 1440 s.*
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_thermal_death_time', D_ref=12.0, T_ref=394.25, z=10.0, T=384.25, log_reductions=12.0)
+# -> D_T = 120 s, D_T_min = 2, t = 1440 s, t_min = 24, lethal_rate = 0.1   (SOLVED)
+```
+
+```python
+cell_molecular_biology_ai999x.solve('cmb_thermal_death_time', D_ref=15.0, T_ref=394.25, z=10.0, T=399.25, log_reductions=5.0)
+# -> D_T = 4.74342 s, D_T_min = 0.0790569, t = 23.7171 s, t_min = 0.395285, lethal_rate = 3.16228   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Thermal death time: D_ref = 0.2 min, T_ref = 394.25 K, z = 10 degC, T = 384.25 K, log_reductions = 12 | SOLVED | D_T = 120 s, D_T_min = 2, t = 1440 s, t_min = 24, lethal_rate = 0.1 |
+| Thermal death time: D_ref = 0.25 min, T_ref = 394.25 K, z = 10 degC, T = 399.25 K, log_reductions = 5 | SOLVED | D_T = 4.74342 s, D_T_min = 0.0790569, t = 23.7171 s, t_min = 0.395285, lethal_rate = 3.16228 |
+| Thermal death time: T_ref = 394.25 K, z = 10 degC, T = 384.25 K, log_reductions = 12 | NEEDS_INPUT | cmb_thermal_death_time needs D_ref (D-value at the reference temperature). Example: solve('cmb_thermal_death_time', D_re |
+| Thermal death time: D_ref = 0.2 min, T_ref = 394.25 K, z = 10 degC, T = 384.25 K, log_reductions = 12, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |
+| Thermal death time: D_ref = 0.2 min, T_ref = 394.25 K, z = 10 degC, T = 384.25 K, log_reductions = 12 | SOLVED | D_T = 120 s, D_T_min = 2, t = 1440 s, t_min = 24, lethal_rate = 0.1 |
+| Thermal death time: D_ref = 0.2 min, T_ref = 121.1 degC, z = 0 degC, T = 111.1 degC, log_reductions = 12 | INVALID_INPUT | D-value at a new temperature and time to a target kill (z-value): D_ref, T_ref, z, T and the number of log reductions mu |

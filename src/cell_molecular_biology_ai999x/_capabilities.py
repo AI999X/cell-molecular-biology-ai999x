@@ -15,7 +15,7 @@ def _bind(product) -> None:
     _P = product
 
 
-CapabilityId = Literal["cmb_absorbance_ratios", "cmb_binding_free_energy", "cmb_buffer_after_addition", "cmb_buffer_capacity", "cmb_buffer_preparation", "cmb_c1v1_dilution", "cmb_cell_cycle_age_corrected", "cmb_cell_cycle_phase_durations", "cmb_cell_equilibration", "cmb_cell_geometry", "cmb_cell_volume_osmotic", "cmb_centrifuge_rcf", "cmb_centrifuge_rpm", "cmb_channel_current", "cmb_competitive_inhibition", "cmb_competitive_occupancy", "cmb_diffusion_limited_rate", "cmb_diffusion_time", "cmb_dna_copy_number", "cmb_donnan_equilibrium", "cmb_doubling_time_from_counts", "cmb_enzyme_assay_activity", "cmb_exponential_growth", "cmb_expression_steady_state", "cmb_fick_flux", "cmb_fraction_bound", "cmb_frap_diffusion", "cmb_gc_content", "cmb_genome_coverage", "cmb_growth_rate_fit", "cmb_hemocytometer_count", "cmb_henderson_hasselbalch", "cmb_hill_coefficient_from_ec", "cmb_hill_equation", "cmb_hill_ligand_for_fraction", "cmb_ic50_to_ki", "cmb_induction_dynamics", "cmb_ionic_strength", "cmb_kcat_catalytic_efficiency", "cmb_kd_from_rates", "cmb_library_size", "cmb_ligand_depletion_binding", "cmb_ligation_insert_mass", "cmb_lineweaver_burk_fit", "cmb_logistic_growth", "cmb_logistic_time_to_reach", "cmb_mass_for_molarity", "cmb_membrane_permeability", "cmb_michaelis_menten_nonlinear_fit", "cmb_michaelis_menten_rate", "cmb_mixed_inhibition", "cmb_molarity_from_mass", "cmb_molecules_per_cell", "cmb_monod_batch_time", "cmb_monod_growth_rate", "cmb_mrna_half_life_fit", "cmb_mutation_rate_p0", "cmb_mwc_saturation", "cmb_nernst_potential", "cmb_noncompetitive_inhibition", "cmb_nucleic_acid_a260", "cmb_oligo_extinction_coefficient", "cmb_oligo_molecular_weight", "cmb_orf_finder", "cmb_osmolarity_tonicity", "cmb_osmotic_pressure", "cmb_pcr_amplification", "cmb_pcr_cycles_needed", "cmb_percent_wv_to_molarity", "cmb_plate_count", "cmb_protein_concentration_a280", "cmb_q10_temperature", "cmb_qpcr_delta_delta_ct", "cmb_qpcr_pfaffl_ratio", "cmb_qpcr_quantify", "cmb_qpcr_standard_curve", "cmb_reverse_complement", "cmb_rms_displacement", "cmb_scatchard_fit", "cmb_sedimentation_time", "cmb_serial_dilution", "cmb_stokes_einstein", "cmb_substrate_for_fraction_of_vmax", "cmb_tm_basic", "cmb_tm_nearest_neighbor", "cmb_tm_salt_adjusted", "cmb_tm_wallace", "cmb_transcribe", "cmb_transcription_time", "cmb_transformation_efficiency", "cmb_translate", "cmb_translation_time", "cmb_uncompetitive_inhibition", "cmb_warburg_christian"]
+CapabilityId = Literal["cmb_absorbance_ratios", "cmb_atp_yield", "cmb_binding_free_energy", "cmb_buffer_after_addition", "cmb_buffer_capacity", "cmb_buffer_preparation", "cmb_c1v1_dilution", "cmb_cell_cycle_age_corrected", "cmb_cell_cycle_phase_durations", "cmb_cell_equilibration", "cmb_cell_geometry", "cmb_cell_volume_osmotic", "cmb_centrifuge_rcf", "cmb_centrifuge_rpm", "cmb_channel_current", "cmb_competitive_inhibition", "cmb_competitive_occupancy", "cmb_decimal_reduction_time", "cmb_diffusion_limited_rate", "cmb_diffusion_time", "cmb_dna_copy_number", "cmb_donnan_equilibrium", "cmb_doubling_time_from_counts", "cmb_enzyme_assay_activity", "cmb_exponential_growth", "cmb_expression_steady_state", "cmb_fick_flux", "cmb_fraction_bound", "cmb_frap_diffusion", "cmb_gc_content", "cmb_genome_coverage", "cmb_growth_rate_fit", "cmb_hemocytometer_count", "cmb_henderson_hasselbalch", "cmb_hill_coefficient_from_ec", "cmb_hill_equation", "cmb_hill_ligand_for_fraction", "cmb_ic50_to_ki", "cmb_induction_dynamics", "cmb_ionic_strength", "cmb_kcat_catalytic_efficiency", "cmb_kd_from_rates", "cmb_library_size", "cmb_ligand_depletion_binding", "cmb_ligation_insert_mass", "cmb_lineweaver_burk_fit", "cmb_logistic_growth", "cmb_logistic_time_to_reach", "cmb_mass_for_molarity", "cmb_membrane_permeability", "cmb_michaelis_menten_nonlinear_fit", "cmb_michaelis_menten_rate", "cmb_microscope_resolution", "cmb_mixed_inhibition", "cmb_molarity_from_mass", "cmb_molecules_per_cell", "cmb_monod_batch_time", "cmb_monod_growth_rate", "cmb_mrna_half_life_fit", "cmb_mutation_rate_p0", "cmb_mwc_saturation", "cmb_nernst_potential", "cmb_noncompetitive_inhibition", "cmb_nucleic_acid_a260", "cmb_oligo_extinction_coefficient", "cmb_oligo_molecular_weight", "cmb_orf_finder", "cmb_osmolarity_tonicity", "cmb_osmotic_pressure", "cmb_pcr_amplification", "cmb_pcr_cycles_needed", "cmb_percent_wv_to_molarity", "cmb_plate_count", "cmb_protein_concentration_a280", "cmb_q10_temperature", "cmb_qpcr_delta_delta_ct", "cmb_qpcr_pfaffl_ratio", "cmb_qpcr_quantify", "cmb_qpcr_standard_curve", "cmb_reaction_free_energy", "cmb_redox_free_energy", "cmb_reverse_complement", "cmb_rms_displacement", "cmb_scatchard_fit", "cmb_sedimentation_time", "cmb_serial_dilution", "cmb_specimen_size", "cmb_stokes_einstein", "cmb_substrate_for_fraction_of_vmax", "cmb_thermal_death_time", "cmb_tm_basic", "cmb_tm_nearest_neighbor", "cmb_tm_salt_adjusted", "cmb_tm_wallace", "cmb_transcribe", "cmb_transcription_time", "cmb_transformation_efficiency", "cmb_translate", "cmb_translation_time", "cmb_uncompetitive_inhibition", "cmb_warburg_christian", "cmb_water_movement", "cmb_water_potential", "cmb_z_value"]
 
 
 def solve(find: CapabilityId | str, given: dict | None = None, conditions=(), *, target: str | None = None, **inputs):
@@ -43,6 +43,21 @@ def cmb_absorbance_ratios(A260=None, A280=None, A230=None, A320=None):
     """
     given = {k: v for k, v in dict(A260=A260, A280=A280, A230=A230, A320=A320).items() if v is not None}
     return _P.solve("cmb_absorbance_ratios", **given)
+
+def cmb_atp_yield(P_O_NADH=None, P_O_FADH2=None, shuttle=None, dG_ATP=None, dG_glucose=None):
+    """ATP yield per glucose: aerobic respiration versus fermentation. The ATP made per glucose by aerobic respiration (substrate-level plus oxidative phosphorylation from NADH and FADH2 at stated P/O ratios and the shuttle for cytosolic NADH) and by fermentation, and optionally the energy efficiency of each.
+    Formula: N_{ATP} = 4 + 8\\,(P/O)_{NADH} + 2\\,(P/O)_{FADH_2} + 2\\,(P/O)_{shuttle},\\quad \\eta = \\frac{N_{ATP}\\,\\Delta G_{ATP}}{\\Delta G_{glucose}}
+    Inputs:
+        P_O_NADH: ATP made per mitochondrial NADH (P/O ratio, e.g. 2.5 or 3)
+        P_O_FADH2: ATP made per FADH2 (P/O ratio, e.g. 1.5 or 2)
+        shuttle: shuttle that carries the 2 cytosolic NADH into the mitochondrion
+        dG_ATP: free energy stored per mol of ATP, a positive magnitude (optional, e.g. 30.5 kJ/mol) (optional)
+        dG_glucose: free energy released by complete oxidation of glucose, a positive magnitude (optional, e.g. 2870 kJ/mol) (optional)
+    Outputs: ATP_aerobic (ATP per glucose by aerobic respiration), ATP_fermentation (ATP per glucose by fermentation), ratio (aerobic yield / fermentation yield), ATP_oxidative (ATP from oxidative phosphorylation), ATP_substrate_level (ATP (and GTP) from substrate-level phosphorylation, net), NADH_total (NADH made per glucose), FADH2_total (FADH2 made per glucose), efficiency_aerobic (fraction of glucose's free energy stored in ATP, aerobic (when energies are given)), efficiency_fermentation (fraction of glucose's complete-oxidation free energy stored in ATP, fermentation (when energies are given))
+    See also: help("cmb_atp_yield")
+    """
+    given = {k: v for k, v in dict(P_O_NADH=P_O_NADH, P_O_FADH2=P_O_FADH2, shuttle=shuttle, dG_ATP=dG_ATP, dG_glucose=dG_glucose).items() if v is not None}
+    return _P.solve("cmb_atp_yield", **given)
 
 def cmb_binding_free_energy(Kd=None, T=None):
     """Standard binding free energy from Kd. The standard free energy of binding dG = RT ln(Kd / 1 M) (negative for favourable binding) at temperature T.
@@ -245,6 +260,19 @@ def cmb_competitive_occupancy(L=None, Kd=None, I=None, Ki=None):
     """
     given = {k: v for k, v in dict(L=L, Kd=Kd, I=I, Ki=Ki).items() if v is not None}
     return _P.solve("cmb_competitive_occupancy", **given)
+
+def cmb_decimal_reduction_time(N0=None, N=None, t=None):
+    """D-value (decimal reduction time) from survivor counts. The number of log10 reductions and the D-value (time for a 90 % kill) of a treatment from the viable counts before and after a stated time, assuming first-order (log-linear) death.
+    Formula: D = \\frac{t}{\\log_{10}(N_0/N)},\\quad k = \\frac{\\ln 10}{D}
+    Inputs:
+        N0: initial viable count (CFU/mL or CFU)
+        N: surviving viable count after the treatment (same units as N0)
+        t: treatment (exposure) time
+    Outputs: log_reduction (number of log10 reductions log10(N0/N)), D (D-value (decimal reduction time)), D_min (D-value in minutes), k_per_min (first-order death rate constant in 1/min), survival_fraction (surviving fraction N/N0)
+    See also: help("cmb_decimal_reduction_time")
+    """
+    given = {k: v for k, v in dict(N0=N0, N=N, t=t).items() if v is not None}
+    return _P.solve("cmb_decimal_reduction_time", **given)
 
 def cmb_diffusion_limited_rate(DA=None, DB=None, rA=None, rB=None):
     """Diffusion-limited association rate constant (Smoluchowski). The maximum (diffusion-limited) bimolecular association rate constant of two spheres that react on contact.
@@ -695,6 +723,20 @@ def cmb_michaelis_menten_rate(Vmax=None, Km=None, S=None):
     given = {k: v for k, v in dict(Vmax=Vmax, Km=Km, S=S).items() if v is not None}
     return _P.solve("cmb_michaelis_menten_rate", **given)
 
+def cmb_microscope_resolution(M_obj=None, M_oc=None, wavelength=None, NA=None):
+    """Light microscope: total magnification and resolution limit. The total magnification of a compound light microscope (objective x eyepiece) and its resolution limit d = lambda / (2 NA) (Abbe).
+    Formula: M = M_{obj}\\,M_{oc},\\quad d = \\frac{\\lambda}{2\\,\\mathrm{NA}}
+    Inputs:
+        M_obj: magnification of the objective lens (e.g. 40 for 40x)
+        M_oc: magnification of the eyepiece (ocular) lens (e.g. 10 for 10x)
+        wavelength: wavelength of the light
+        NA: numerical aperture of the objective
+    Outputs: M (total magnification), d (resolution limit (smallest resolvable separation)), d_nm (resolution limit in nanometres), d_um (resolution limit in micrometres)
+    See also: help("cmb_microscope_resolution")
+    """
+    given = {k: v for k, v in dict(M_obj=M_obj, M_oc=M_oc, wavelength=wavelength, NA=NA).items() if v is not None}
+    return _P.solve("cmb_microscope_resolution", **given)
+
 def cmb_mixed_inhibition(Vmax=None, Km=None, S=None, I=None, Ki=None, Kii=None):
     """Mixed inhibition rate. The rate, apparent Km and apparent Vmax of an enzyme with a mixed inhibitor that binds free enzyme (Ki) and the enzyme-substrate complex (Kii) with different affinities.
     Formula: v = \\frac{V_{max}[S]}{K_m\\left(1 + \\frac{[I]}{K_i}\\right) + [S]\\left(1 + \\frac{[I]}{K_i'}\\right)}
@@ -1044,6 +1086,33 @@ def cmb_qpcr_standard_curve(quantity=None, Ct=None):
     given = {k: v for k, v in dict(quantity=quantity, Ct=Ct).items() if v is not None}
     return _P.solve("cmb_qpcr_standard_curve", **given)
 
+def cmb_reaction_free_energy(dG0=None, T=None, products=None, reactants=None):
+    """Free-energy change of a reaction at cellular concentrations. The actual free-energy change dG = dG0' + RT ln Q of a biochemical reaction at the concentrations in the cell (standard state 1 M), its equilibrium constant and the direction it proceeds.
+    Formula: \\Delta G = \\Delta G^{\\circ\\prime} + RT\\ln Q,\\quad Q = \\frac{\\prod [P]}{\\prod [R]}
+    Inputs:
+        dG0: standard free-energy change dG0' (biochemical standard state, pH 7)
+        T: absolute temperature (degC is converted)
+        products: product concentrations in mM (list a species twice for a coefficient of 2; omit water and H+)
+        reactants: reactant concentrations in mM (list a species twice for a coefficient of 2; omit water and H+)
+    Outputs: Q (reaction quotient (concentrations relative to 1 M)), dG (actual free-energy change), dG_kJ_mol (actual free-energy change in kJ/mol), K_eq (equilibrium constant exp(-dG0'/RT)), direction (forward (dG < 0), reverse (dG > 0) or at equilibrium)
+    See also: help("cmb_reaction_free_energy")
+    """
+    given = {k: v for k, v in dict(dG0=dG0, T=T, products=products, reactants=reactants).items() if v is not None}
+    return _P.solve("cmb_reaction_free_energy", **given)
+
+def cmb_redox_free_energy(E_acceptor=None, E_donor=None, n=None):
+    """Free-energy change of a redox reaction from reduction potentials. The standard free-energy change dG0' = -n F dE0' of electron transfer from a donor couple to an acceptor couple, from their standard reduction potentials.
+    Formula: \\Delta G^{\\circ\\prime} = -nF\\,\\Delta E^{\\circ\\prime},\\quad \\Delta E^{\\circ\\prime} = E^{\\circ\\prime}_{acceptor} - E^{\\circ\\prime}_{donor}
+    Inputs:
+        E_acceptor: standard reduction potential of the electron acceptor couple (E0')
+        E_donor: standard reduction potential of the electron donor couple (E0')
+        n: number of electrons transferred
+    Outputs: dE (potential difference E0'(acceptor) - E0'(donor)), dE_mV (potential difference in mV), dG (standard free-energy change), dG_kJ_mol (standard free-energy change in kJ/mol), direction (favourable as written (dG < 0), unfavourable or at equilibrium)
+    See also: help("cmb_redox_free_energy")
+    """
+    given = {k: v for k, v in dict(E_acceptor=E_acceptor, E_donor=E_donor, n=n).items() if v is not None}
+    return _P.solve("cmb_redox_free_energy", **given)
+
 def cmb_reverse_complement(seq=None):
     """Reverse complement of a DNA or RNA sequence. The reverse complement (the other strand read 5'->3'), the complement and the reverse of a DNA or RNA sequence.
     Formula: \\mathrm{rc}(s) = \\overline{s_N}\\cdots\\overline{s_1}
@@ -1108,6 +1177,20 @@ def cmb_serial_dilution(C0=None, f=None, n=None, V=None):
     given = {k: v for k, v in dict(C0=C0, f=f, n=n, V=V).items() if v is not None}
     return _P.solve("cmb_serial_dilution", **given)
 
+def cmb_specimen_size(image_size=None, M=None, bar_image=None, bar_label=None):
+    """Actual size of a specimen from a micrograph. The actual size of an object from its size measured on an image (drawing or micrograph), by the magnification or by the image's scale bar; also the magnification of the image.
+    Formula: \\text{actual size} = \\frac{\\text{image size}}{M},\\quad M = \\frac{\\text{bar on image}}{\\text{bar label}}
+    Inputs:
+        image_size: size of the object measured on the image
+        M: magnification of the image (give this or the scale bar) (optional)
+        bar_image: length of the scale bar measured on the image (optional, with bar_label) (optional)
+        bar_label: length the scale bar stands for (optional, with bar_image) (optional)
+    Outputs: size (actual size of the object), size_um (actual size in micrometres), M_image (magnification of the image)
+    See also: help("cmb_specimen_size")
+    """
+    given = {k: v for k, v in dict(image_size=image_size, M=M, bar_image=bar_image, bar_label=bar_label).items() if v is not None}
+    return _P.solve("cmb_specimen_size", **given)
+
 def cmb_stokes_einstein(T=None, eta=None, r=None):
     """Stokes-Einstein diffusion coefficient. The diffusion coefficient of a sphere of hydrodynamic radius r in a fluid of viscosity eta at temperature T.
     Formula: D = \\frac{k_B T}{6\\pi\\eta r}
@@ -1132,6 +1215,21 @@ def cmb_substrate_for_fraction_of_vmax(Km=None, f=None):
     """
     given = {k: v for k, v in dict(Km=Km, f=f).items() if v is not None}
     return _P.solve("cmb_substrate_for_fraction_of_vmax", **given)
+
+def cmb_thermal_death_time(D_ref=None, T_ref=None, z=None, T=None, log_reductions=None):
+    """D-value at a new temperature and time to a target kill (z-value). The D-value at temperature T from a reference D-value and the z-value, and the holding time needed for a stated number of log10 reductions at T.
+    Formula: D_T = D_{ref}\\,10^{(T_{ref}-T)/z},\\quad t = n\\,D_T
+    Inputs:
+        D_ref: D-value at the reference temperature
+        T_ref: reference temperature (degC is converted)
+        z: z-value in degrees (a temperature difference: degC = K)
+        T: process temperature (degC is converted)
+        log_reductions: number of log10 reductions required (e.g. 12)
+    Outputs: D_T (D-value at T), D_T_min (D-value at T in minutes), t (holding time for the required log reductions at T), t_min (holding time in minutes), lethal_rate (lethal rate 10^((T - T_ref)/z) relative to the reference temperature)
+    See also: help("cmb_thermal_death_time")
+    """
+    given = {k: v for k, v in dict(D_ref=D_ref, T_ref=T_ref, z=z, T=T, log_reductions=log_reductions).items() if v is not None}
+    return _P.solve("cmb_thermal_death_time", **given)
 
 def cmb_tm_basic(seq=None):
     """Basic GC melting temperature of an oligonucleotide. The basic melting temperature of a DNA oligonucleotide of 14 nt or more, Tm = 64.9 + 41 (G + C - 16.4) / N (50 mM Na+ assumed, no salt term).
@@ -1271,5 +1369,50 @@ def cmb_warburg_christian(A280=None, A260=None):
     given = {k: v for k, v in dict(A280=A280, A260=A260).items() if v is not None}
     return _P.solve("cmb_warburg_christian", **given)
 
+def cmb_water_movement(i_cell=None, C_cell=None, P_cell=None, i_out=None, C_out=None, P_out=None, T=None):
+    """Direction of water movement between a cell and its surroundings. The water potentials of a cell and of the surrounding solution and the direction of net water movement (from higher to lower water potential).
+    Formula: \\Psi = -iCRT + \\Psi_p,\\quad \\text{water moves toward lower } \\Psi
+    Inputs:
+        i_cell: ionization constant of the cell's solute
+        C_cell: solute concentration in the cell
+        P_cell: pressure potential of the cell (turgor)
+        i_out: ionization constant of the outside solute
+        C_out: solute concentration outside
+        P_out: pressure potential outside (0 for an open solution)
+        T: absolute temperature (degC is converted)
+    Outputs: psi_cell (water potential of the cell), psi_out (water potential outside), dpsi (outside minus cell water potential), dpsi_MPa (outside minus cell water potential in MPa), direction (net water movement: into the cell, out of the cell or no net movement)
+    See also: help("cmb_water_movement")
+    """
+    given = {k: v for k, v in dict(i_cell=i_cell, C_cell=C_cell, P_cell=P_cell, i_out=i_out, C_out=C_out, P_out=P_out, T=T).items() if v is not None}
+    return _P.solve("cmb_water_movement", **given)
 
-__all__ = ["CapabilityId", "solve", "help", "cmb_absorbance_ratios", "cmb_binding_free_energy", "cmb_buffer_after_addition", "cmb_buffer_capacity", "cmb_buffer_preparation", "cmb_c1v1_dilution", "cmb_cell_cycle_age_corrected", "cmb_cell_cycle_phase_durations", "cmb_cell_equilibration", "cmb_cell_geometry", "cmb_cell_volume_osmotic", "cmb_centrifuge_rcf", "cmb_centrifuge_rpm", "cmb_channel_current", "cmb_competitive_inhibition", "cmb_competitive_occupancy", "cmb_diffusion_limited_rate", "cmb_diffusion_time", "cmb_dna_copy_number", "cmb_donnan_equilibrium", "cmb_doubling_time_from_counts", "cmb_enzyme_assay_activity", "cmb_exponential_growth", "cmb_expression_steady_state", "cmb_fick_flux", "cmb_fraction_bound", "cmb_frap_diffusion", "cmb_gc_content", "cmb_genome_coverage", "cmb_growth_rate_fit", "cmb_hemocytometer_count", "cmb_henderson_hasselbalch", "cmb_hill_coefficient_from_ec", "cmb_hill_equation", "cmb_hill_ligand_for_fraction", "cmb_ic50_to_ki", "cmb_induction_dynamics", "cmb_ionic_strength", "cmb_kcat_catalytic_efficiency", "cmb_kd_from_rates", "cmb_library_size", "cmb_ligand_depletion_binding", "cmb_ligation_insert_mass", "cmb_lineweaver_burk_fit", "cmb_logistic_growth", "cmb_logistic_time_to_reach", "cmb_mass_for_molarity", "cmb_membrane_permeability", "cmb_michaelis_menten_nonlinear_fit", "cmb_michaelis_menten_rate", "cmb_mixed_inhibition", "cmb_molarity_from_mass", "cmb_molecules_per_cell", "cmb_monod_batch_time", "cmb_monod_growth_rate", "cmb_mrna_half_life_fit", "cmb_mutation_rate_p0", "cmb_mwc_saturation", "cmb_nernst_potential", "cmb_noncompetitive_inhibition", "cmb_nucleic_acid_a260", "cmb_oligo_extinction_coefficient", "cmb_oligo_molecular_weight", "cmb_orf_finder", "cmb_osmolarity_tonicity", "cmb_osmotic_pressure", "cmb_pcr_amplification", "cmb_pcr_cycles_needed", "cmb_percent_wv_to_molarity", "cmb_plate_count", "cmb_protein_concentration_a280", "cmb_q10_temperature", "cmb_qpcr_delta_delta_ct", "cmb_qpcr_pfaffl_ratio", "cmb_qpcr_quantify", "cmb_qpcr_standard_curve", "cmb_reverse_complement", "cmb_rms_displacement", "cmb_scatchard_fit", "cmb_sedimentation_time", "cmb_serial_dilution", "cmb_stokes_einstein", "cmb_substrate_for_fraction_of_vmax", "cmb_tm_basic", "cmb_tm_nearest_neighbor", "cmb_tm_salt_adjusted", "cmb_tm_wallace", "cmb_transcribe", "cmb_transcription_time", "cmb_transformation_efficiency", "cmb_translate", "cmb_translation_time", "cmb_uncompetitive_inhibition", "cmb_warburg_christian"]
+def cmb_water_potential(i=None, C=None, T=None, psi_p=None):
+    """Water potential of a plant cell or solution (solute plus pressure potential). The solute potential psi_s = -i C R T and the water potential psi = psi_s + psi_p of a solution or cell (pure water at atmospheric pressure = 0).
+    Formula: \\Psi_s = -iCRT,\\quad \\Psi = \\Psi_s + \\Psi_p
+    Inputs:
+        i: ionization (van 't Hoff) constant: 1 for sucrose, about 2 for NaCl
+        C: molar concentration of the solute
+        T: absolute temperature (degC is converted)
+        psi_p: pressure potential (turgor; 0 for an open solution)
+    Outputs: psi_s (solute (osmotic) potential), psi_s_MPa (solute potential in MPa), psi (water potential), psi_MPa (water potential in MPa)
+    See also: help("cmb_water_potential")
+    """
+    given = {k: v for k, v in dict(i=i, C=C, T=T, psi_p=psi_p).items() if v is not None}
+    return _P.solve("cmb_water_potential", **given)
+
+def cmb_z_value(D1=None, T1=None, D2=None, T2=None):
+    """z-value from D-values at two temperatures. The z-value (temperature rise that reduces the D-value ten-fold) from the D-values measured at two temperatures, and the fold change of D per 10 degrees.
+    Formula: z = \\frac{T_2 - T_1}{\\log_{10}(D_1/D_2)}
+    Inputs:
+        D1: D-value at the first temperature
+        T1: first temperature (degC is converted)
+        D2: D-value at the second temperature
+        T2: second temperature (degC is converted)
+    Outputs: z (z-value in kelvin (= degrees Celsius of difference)), fold_per_10_degrees (factor by which D falls for a 10-degree rise)
+    See also: help("cmb_z_value")
+    """
+    given = {k: v for k, v in dict(D1=D1, T1=T1, D2=D2, T2=T2).items() if v is not None}
+    return _P.solve("cmb_z_value", **given)
+
+
+__all__ = ["CapabilityId", "solve", "help", "cmb_absorbance_ratios", "cmb_atp_yield", "cmb_binding_free_energy", "cmb_buffer_after_addition", "cmb_buffer_capacity", "cmb_buffer_preparation", "cmb_c1v1_dilution", "cmb_cell_cycle_age_corrected", "cmb_cell_cycle_phase_durations", "cmb_cell_equilibration", "cmb_cell_geometry", "cmb_cell_volume_osmotic", "cmb_centrifuge_rcf", "cmb_centrifuge_rpm", "cmb_channel_current", "cmb_competitive_inhibition", "cmb_competitive_occupancy", "cmb_decimal_reduction_time", "cmb_diffusion_limited_rate", "cmb_diffusion_time", "cmb_dna_copy_number", "cmb_donnan_equilibrium", "cmb_doubling_time_from_counts", "cmb_enzyme_assay_activity", "cmb_exponential_growth", "cmb_expression_steady_state", "cmb_fick_flux", "cmb_fraction_bound", "cmb_frap_diffusion", "cmb_gc_content", "cmb_genome_coverage", "cmb_growth_rate_fit", "cmb_hemocytometer_count", "cmb_henderson_hasselbalch", "cmb_hill_coefficient_from_ec", "cmb_hill_equation", "cmb_hill_ligand_for_fraction", "cmb_ic50_to_ki", "cmb_induction_dynamics", "cmb_ionic_strength", "cmb_kcat_catalytic_efficiency", "cmb_kd_from_rates", "cmb_library_size", "cmb_ligand_depletion_binding", "cmb_ligation_insert_mass", "cmb_lineweaver_burk_fit", "cmb_logistic_growth", "cmb_logistic_time_to_reach", "cmb_mass_for_molarity", "cmb_membrane_permeability", "cmb_michaelis_menten_nonlinear_fit", "cmb_michaelis_menten_rate", "cmb_microscope_resolution", "cmb_mixed_inhibition", "cmb_molarity_from_mass", "cmb_molecules_per_cell", "cmb_monod_batch_time", "cmb_monod_growth_rate", "cmb_mrna_half_life_fit", "cmb_mutation_rate_p0", "cmb_mwc_saturation", "cmb_nernst_potential", "cmb_noncompetitive_inhibition", "cmb_nucleic_acid_a260", "cmb_oligo_extinction_coefficient", "cmb_oligo_molecular_weight", "cmb_orf_finder", "cmb_osmolarity_tonicity", "cmb_osmotic_pressure", "cmb_pcr_amplification", "cmb_pcr_cycles_needed", "cmb_percent_wv_to_molarity", "cmb_plate_count", "cmb_protein_concentration_a280", "cmb_q10_temperature", "cmb_qpcr_delta_delta_ct", "cmb_qpcr_pfaffl_ratio", "cmb_qpcr_quantify", "cmb_qpcr_standard_curve", "cmb_reaction_free_energy", "cmb_redox_free_energy", "cmb_reverse_complement", "cmb_rms_displacement", "cmb_scatchard_fit", "cmb_sedimentation_time", "cmb_serial_dilution", "cmb_specimen_size", "cmb_stokes_einstein", "cmb_substrate_for_fraction_of_vmax", "cmb_thermal_death_time", "cmb_tm_basic", "cmb_tm_nearest_neighbor", "cmb_tm_salt_adjusted", "cmb_tm_wallace", "cmb_transcribe", "cmb_transcription_time", "cmb_transformation_efficiency", "cmb_translate", "cmb_translation_time", "cmb_uncompetitive_inhibition", "cmb_warburg_christian", "cmb_water_movement", "cmb_water_potential", "cmb_z_value"]
