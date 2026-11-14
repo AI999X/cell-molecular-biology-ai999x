@@ -333,6 +333,30 @@ fn reading_unit(si: &str, meaning: &str, v: f64) -> Option<(String, crate::units
             }
         }
     }
+    // 1c. quantities nobody reads in SI, as the scene's tags show them: 0.3253 mol/L, not 325.3 mol/m^3; 74.37 g/mol,
+    // not 0.07437 kg/mol; 5 mL, not 5e-06 m^3; a 2-hour time in h (reviews of 2026-11-14: charts in SI beside
+    // scenes in lab units on chemistry, cell biology and physiology sheets)
+    // air quality reads in µg/m³ (environmental verification: µg/L on charts beside µg/m³ in the scenes)
+    let ml = meaning.to_lowercase();
+    let air = si == "kg/m^3" && ["air", "plume", "indoor", "ambient", "ground-level", "ground level", "stack"]
+        .iter().any(|w| ml.contains(w)) && v.abs() < 1e-2;
+    let lab: &[&str] = match si { "mol/m^3" => &["mol/L", "mmol/L", "umol/L", "nmol/L"], "kg/mol" => &["g/mol"],
+                                  "m^3" => &["L", "mL", "uL"], "kg/m^3" if air => &["ug/m^3", "mg/m^3", "ng/m^3"], _ => &[] };
+    for t in lab {
+        if let Some(u) = same(t) {
+            let d = (v * base.factor + base.offset - u.offset) / u.factor;
+            if v == 0.0 || (0.1..1e4).contains(&d.abs()) {
+                return Some((t.to_string(), u));
+            }
+        }
+    }
+    if si == "s" && v.abs() >= 60.0 {
+        let a = v.abs();
+        let t = if a >= 3.15576e7 { "yr" } else if a >= 86400.0 { "day" } else if a >= 3600.0 { "h" } else { "min" };
+        if let Some(u) = same(t) {
+            return Some((t.to_string(), u));
+        }
+    }
     // 2. by size, only when the SI number itself is awkward to read
     let a = (v - base.offset).abs() * base.factor;
     if a == 0.0 || (0.1..1e4).contains(&a) {
@@ -692,6 +716,9 @@ struct Knob {
     tracks: Vec<Track>,
     /// the verdict this input changes (shaded bands), if any
     cat: Option<String>,
+    /// the verdict this input changes whichever answer the sweep follows: the colours of the decision map (the bands
+    /// of a sweep are left out when its followed answer is not that verdict's own, the map is not)
+    verdict: Option<String>,
     /// a wider range (three times the value either side): the answer changes only further away
     wide: bool,
     /// an entry of a matrix input: `base` holds the matrix row by row, this many columns
@@ -707,7 +734,7 @@ struct Knob {
 impl Knob {
     fn plain(sym: &str, x0: f64, int: bool, label: String, unit: String) -> Knob {
         Knob { sym: sym.to_string(), idx: None, x0, int, rest: String::new(), label, unit, base: vec![], lo_lim: None,
-               hi_lim: None, text: None, step: None, tracks: vec![], cat: None, wide: false, mat_cols: None,
+               hi_lim: None, text: None, step: None, tracks: vec![], cat: None, verdict: None, wide: false, mat_cols: None,
                logwide: false, scan: false, pts: None }
     }
 }
@@ -884,7 +911,7 @@ fn knobs(specs: &[InSpec], given: &[(String, Input)]) -> Vec<Knob> {
                 }
                 for (i, x) in vs.iter().enumerate().take(6) {
                     elems.push(Knob { idx: Some(i), base: vs.clone(),
-                                      ..Knob::plain(name, *x, whole, entry_label(&meaning, i, vs.len()), sp.unit.clone()) });
+                                      ..Knob::plain(name, *x, whole, entry_label_of(name, &meaning, i, vs.len()), sp.unit.clone()) });
                 }
             }
             "matrix" => {
@@ -922,6 +949,12 @@ fn knobs(specs: &[InSpec], given: &[(String, Input)]) -> Vec<Knob> {
                 // a node is a label, not a quantity: a node input ("node_b" = 0) is never varied, and in a netlist only
                 // the element values are (the node numbers after each element's name stay; electrical review,
                 // 2026-11-14: curves over "the number 1 marked [ ] in netlist" and over node_b were meaningless)
+                // the coefficients of a reaction equation are the reaction itself, not a quantity: varied with K held
+                // fixed they drew reactions that do not exist (chemistry verification, 2026-11-14)
+                if ["->", "→", "⇌", "<=>", "<->", "="].iter().any(|w| t.contains(w)) && t.chars().any(|c| c.is_ascii_uppercase())
+                    && (ml.contains("reaction") || ml.contains("chemical equation")) {
+                    continue;
+                }
                 let netlist = ml.contains("node") && (ml.contains("elements separated") || ml.contains("netlist"));
                 if ml.contains("node") && !netlist {
                     continue;
@@ -930,7 +963,13 @@ fn knobs(specs: &[InSpec], given: &[(String, Input)]) -> Vec<Knob> {
                 for &(s, e, n) in &nums {
                     // a number written more than once is marked where it is varied: "the number 2 in 2x^2 - 3x + 1"
                     // swept the exponent under a title that read as the coefficient (math foundations review, 11-13)
-                    let label = if nums.iter().filter(|x| x.2 == n).count() > 1 {
+                    // a netlist value is named by its element ("V1 in netlist", not "the number 12 in netlist ...")
+                    let element = if netlist {
+                        t[..s].rsplit(';').next().and_then(|seg| seg.split_whitespace().next()).map(|e| e.to_string())
+                    } else { None };
+                    let label = if let Some(e) = element {
+                        format!("{e} in {name} (value {n})")
+                    } else if nums.iter().filter(|x| x.2 == n).count() > 1 {
                         match (t.get(..s), t.get(s..e), t.get(e..)) {
                             (Some(a), Some(m), Some(z)) => {
                                 let marked = format!("{a}[{m}]{z}");
@@ -962,8 +1001,20 @@ fn knobs(specs: &[InSpec], given: &[(String, Input)]) -> Vec<Knob> {
             lens.push((e.sym.clone(), e.base.len()));
         }
     }
-    let paired: Vec<String> = lens.iter().filter(|(_, n)| *n >= 2 && lens.iter().filter(|(_, m)| m == n).count() >= 2)
-        .map(|(s, _)| s.clone()).collect();
+    // ... but lists that are each ONE geometric object (two vectors, two points, two sides) are no measured series: the
+    // entries of u in u.v or of a point in a distance are its coordinates, and the sweep of one of them is the
+    // textbook picture (the rule had taken the published sweeps of the dot product, the angle and distance between
+    // vectors and the parallelogram area; linear algebra crate test, 2026-11-14)
+    let one_object = |sym: &str| -> bool {
+        let m = specs.iter().find(|s| s.sym == sym).map(|s| s.meaning.to_lowercase()).unwrap_or_default();
+        let words: Vec<&str> = m.split(|c: char| !c.is_alphanumeric()).collect();
+        ["vector", "point", "side"].iter().any(|w| words.contains(w))
+            && !m.contains("point load") && !m.contains("hand side")
+    };
+    let paired: Vec<String> = lens.iter().filter(|(_, n)| {
+        let group: Vec<&String> = lens.iter().filter(|(_, m)| m == n).map(|(s, _)| s).collect();
+        *n >= 2 && group.len() >= 2 && !group.iter().all(|s| one_object(s))
+    }).map(|(s, _)| s.clone()).collect();
     elems.retain(|e| !(e.text.is_none() && paired.contains(&e.sym)));
     // single numbers first; entries of lists and numbers inside texts after (at most a few of them)
     let room = MAX_KNOBS.saturating_sub(out.len()).min(8);
@@ -1011,6 +1062,12 @@ fn with_value(given: &[(String, Input)], sym: &str, text: &str) -> Vec<(String, 
 }
 
 fn knob_range(k: &Knob) -> (f64, f64) {
+    // a list of calendar dates (rate-change dates 2021.5, 2023.0): each moves by years, not by a share of 2,000 years
+    // (actuarial verification, 2026-11-14: one swept from year 1000 to 3500)
+    let ll = k.label.to_lowercase();
+    if k.idx.is_some() && (1800.0..=2200.0).contains(&k.x0) && (ll.contains("date") || ll.contains("year")) {
+        return (k.x0 - 20.0, k.x0 + 20.0);
+    }
     let (mut lo, mut hi) = if let Some(s) = k.step {
         (k.x0 - 8.0 * s, k.x0 + 8.0 * s)
     } else if k.logwide && k.x0 > 0.0 {
@@ -1187,6 +1244,19 @@ fn aliased(line: &[(f64, f64)]) -> bool {
 /// The words for entry `i` of a list of `n`: the entry's own name when the meaning names them in order ("A, b, c of the
 /// line a x + b y = c" -> "c of the line a x + b y = c"), else "<meaning>, entry i+1" (the axis read "A, b, c of the
 /// line ..., entry 3"; math foundations review, 2026-11-13).
+/// `entry_label`, and a signal's samples, coefficients or taps are named from index 0 by the input's own symbol
+/// ("x[2]"), as the scenes and the formulas count them (signal processing verification, 2026-11-14: "x[4] = 4" for a
+/// 4-sample signal).
+fn entry_label_of(sym: &str, meaning: &str, i: usize, n: usize) -> String {
+    let m = meaning.to_lowercase();
+    let zero = ["sample", "sequence", "coefficient", "tap", "impulse response", "signal values"].iter().any(|w| m.contains(w))
+        && !m.contains("[1") && !meaning.contains("[0");
+    if zero && !sym.is_empty() {
+        return format!("{}[{i}] ({})", sym, meaning.trim());
+    }
+    entry_label(meaning, i, n)
+}
+
 fn entry_label(meaning: &str, i: usize, n: usize) -> String {
     if let Some((head, rest)) = meaning.split_once(" of ") {
         let names: Vec<&str> = head.split(',').map(|s| s.trim()).collect();
@@ -1346,6 +1416,7 @@ fn figures_from(p: &Pack, key: &str, given: &[(String, Input)], target: Option<&
         if let Some(mut k) = ks.into_iter().next() {
             k.tracks = b.tracks.clone();
             k.cat = b.cat.clone();
+            k.verdict = b.cat.clone();
             if k.int && k.x0 >= 16.0 && k.text.is_none() && k.idx.is_none() && cx.room() < 3 {
                 // fewer solves than the usual steps: smaller whole numbers, halving (where the work grows with the
                 // number, they cost little together; the work allowed stops the rest)
@@ -1481,6 +1552,7 @@ fn figures_from(p: &Pack, key: &str, given: &[(String, Input)], target: Option<&
             }
             k.cat = (0..cat_cands.len()).find(|j| changed[*j]).and_then(|j| cat_cands[j].clone())
                 .or_else(|| b.cat.clone());
+            k.verdict = k.cat.clone();
             // with several verdicts, the shading must be the followed answer's own: the one whose name it shares the
             // longest start with (total_variance -> total_variance_type); none related, no shading (the bands of the
             // spending variance under a curve of the total variance read "favourable" where the total was not;
@@ -1533,9 +1605,13 @@ fn figures_from(p: &Pack, key: &str, given: &[(String, Input)], target: Option<&
             push(&mut figs, kind, f);
         }
     }
-    if knobs_ranked.len() >= 2 && knobs_ranked[0].cat.is_some() && knobs_ranked[0].idx.is_none()
+    // the map is coloured by the verdict the first input changes, even when that input's sweep follows another answer
+    // and so is not shaded by it: the shading rule (several verdicts, 2026-11-14) had taken the map of "circumpolar"
+    // over latitude and declination away with the bands (astronomy crate test, 2026-11-14)
+    if knobs_ranked.len() >= 2 && knobs_ranked[0].verdict.is_some() && knobs_ranked[0].idx.is_none()
         && knobs_ranked[1].idx.is_none() && knobs_ranked[0].text.is_none() && knobs_ranked[1].text.is_none() {
-        push(&mut figs, "decision", fig_grid(&mut cx, &b, &knobs_ranked[0], &knobs_ranked[1]));
+        let k1 = Knob { cat: knobs_ranked[0].verdict.clone(), ..knobs_ranked[0].clone() };
+        push(&mut figs, "decision", fig_grid(&mut cx, &b, &k1, &knobs_ranked[1]));
     }
     if knobs_ranked.len() > swept && figs.len() < MAX_FIGS {
         for k in knobs_ranked.iter().skip(swept).take(2) {
@@ -1585,11 +1661,22 @@ pub(crate) fn inputs_note(given: &[(String, Input)]) -> String {
     if shown.is_empty() { String::new() } else { format!(" Your inputs: {}.", shown.join(", ")) }
 }
 
+/// The unit an output is read in on a chart's words: reactive power in var and apparent power in VA, though the engine
+/// gives both in its power unit W ("Q = 1150 W"; electrical verification, 2026-11-14).
+fn shown_unit(o: &Out) -> String {
+    let m = o.meaning.to_lowercase();
+    if o.unit == "W" && m.contains("reactive") { "var".into() } else if o.unit == "W" && m.contains("apparent") { "VA".into() }
+    else { o.unit.clone() }
+}
+
 fn header_of(outs: &[Out], tracks: &[Track], primary: &str) -> String {
     let show = |o: &Out| -> Option<String> {
-        let u = if o.unit.is_empty() || o.unit == "1" { String::new() } else { format!(" {}", o.unit) };
+        let su = shown_unit(o);
+        let u = if su.is_empty() || su == "1" { String::new() } else { format!(" {su}") };
         if let Some(x) = numv(&o.val) {
-            return Some(format!("{} = {}{u}", o.sym, py_g(x, 4)));
+            // 4 digits, more for a large number with a fraction (MJD 51,544.5 read "5.154e+04"; astronomy verify)
+            let t = if (1e4..1e7).contains(&x.abs()) { py_g(x, 7) } else { py_g(x, 4) };
+            return Some(format!("{} = {}{u}", o.sym, t));
         }
         if let Some((re, im)) = cxv(&o.val) {
             return Some(format!("{} = {}", o.sym, cx_text(re, im)));
@@ -1611,7 +1698,8 @@ fn header_of(outs: &[Out], tracks: &[Track], primary: &str) -> String {
     if !first.map(|f| numv(&f.val).is_some()).unwrap_or(true) {
         if let Some(o) = outs.iter().find(|o| Some(&o.sym) != first.map(|f| &f.sym) && numv(&o.val).is_some()) {
             if let Some(t) = show(o) {
-                h = if h.chars().count() + t.chars().count() <= 60 { format!("{h};  {t}") } else { format!("{t};  {h}") };
+                h = if h.is_empty() { t } else if h.chars().count() + t.chars().count() <= 60 { format!("{h};  {t}") }
+                    else { format!("{t};  {h}") };
                 return clip(&h, 64);
             }
         }
@@ -1622,7 +1710,9 @@ fn header_of(outs: &[Out], tracks: &[Track], primary: &str) -> String {
             continue;
         }
         if let Some(t) = show(o) {
-            if h.chars().count() + t.chars().count() < 56 {
+            if h.is_empty() {
+                h = t;
+            } else if h.chars().count() + t.chars().count() < 56 {
                 h = format!("{h};  {t}");
             }
             break;
@@ -1653,7 +1743,7 @@ fn out_label(outs: &[Out], t: &Track) -> String {
         Track::E(s, i) => (s.clone(), format!(", entry {}", i + 1)),
     };
     let o = outs.iter().find(|o| o.sym == sym);
-    let unit = o.map(|o| o.unit.clone()).filter(|u| !u.is_empty() && u != "1");
+    let unit = o.map(shown_unit).filter(|u| !u.is_empty() && u != "1");
     // a meaning that is a formula ("pi (R^2 - r^2)", "|y''| / (1 + y'^2)^(3/2)") names nothing: the symbol's words do
     // (chart titles read "Pi as outer radius varies"; geometry verification, 2026-11-13)
     let m = o.map(|o| o.meaning.clone()).filter(|m| !m.is_empty() && !formula_like(m))
@@ -1722,9 +1812,13 @@ fn fig_sweep(cx: &mut Ctx, b: &Base, k: &Knob, n: usize) -> Option<(String, Stri
     if !k.int && k.step.is_none() && k.pts.is_none() && !k.scan && k.unit == "s" && k.idx.is_none() && k.text.is_none() {
         let period = b.outs.iter().filter_map(|o| {
             let v = numv(&o.val).filter(|v| *v > 0.0 && v.is_finite())?;
+            let m = o.meaning.to_lowercase();
             match o.unit.as_str() {
                 "Hz" => Some(1.0 / v),
                 "rad/s" => Some(std::f64::consts::TAU / v),
+                // a frequency written in 1/s (a Rabi frequency): angular when its meaning says so (quantum verification)
+                "1/s" if m.contains("frequency") => Some(if m.contains("angular") || m.contains("omega") {
+                    std::f64::consts::TAU / v } else { 1.0 / v }),
                 _ => None,
             }
         }).fold(f64::INFINITY, f64::min);
@@ -2170,6 +2264,8 @@ fn k_sym(k: &Knob) -> String {
             let c = k.mat_cols.unwrap_or(1).max(1);
             format!("{}[{},{}]", k.sym, i / c + 1, i % c + 1)
         }
+        // counted from 0 when the label names the entry so ("x[2] (...)"), else from 1
+        Some(i) if k.label.split_once(' ').is_some_and(|(h, _)| h.ends_with(&format!("[{i}]"))) => format!("{}[{}]", pretty_sym(&k.sym), i),
         Some(i) => format!("{}[{}]", pretty_sym(&k.sym), i + 1),
         None => pretty_sym(&k.sym),
     }
@@ -2918,7 +3014,9 @@ fn fig_prefix(cx: &mut Ctx, b: &Base) -> Option<(String, String, String)> {
         (sp.ty == "text" && t.chars().count() >= 3 && t.chars().count() <= 400
          // one unbroken sequence only: a list of sequences written with spaces was cut mid-sequence into a "43-site"
          // prefix axis (computational biology review, 2026-11-14)
-         && t.chars().all(|c| c.is_alphabetic())).then(|| (n.clone(), t))
+         && t.chars().all(|c| c.is_alphabetic())
+         // ... in one case (DNA, a protein): a formula's prefixes "N", "Na", "NaC" are no compounds (chemistry review)
+         && !(t.chars().any(|c| c.is_uppercase()) && t.chars().any(|c| c.is_lowercase()))).then(|| (n.clone(), t))
     }).take(2).collect();
     let ylab = out_label(&b.outs, &t0);
     if texts.len() == 2 {
@@ -3943,6 +4041,21 @@ fn path_of(pts: &[Option<(f64, f64)>], xa: &Ax, ya: &Ax) -> String {
 const LINE_CLASSES: [&str; 4] = ["axp-c", "axp-c2", "axp-c3", "axp-c4"];
 const BAR_CLASSES: [&str; 4] = ["axp-b", "axp-b2", "axp-b3", "axp-b4"];
 const BAND_CLASSES: [&str; 4] = ["axp-s", "axp-s2", "axp-s3", "axp-s4"];
+
+/// A verdict's shading: a bad verdict (unstable, no, fails, unfavourable) pink, a good one (stable, yes, achieved,
+/// favourable) green, whatever order they appear in ("stable" was pink and "unstable" green on one chart; power
+/// electronics verification, 2026-11-14); other verdicts by their order.
+fn band_class(name: &str, k: usize) -> &'static str {
+    let n = name.to_lowercase();
+    let words: Vec<&str> = n.split(|c: char| !c.is_alphanumeric()).filter(|w| !w.is_empty()).collect();
+    let bad = ["unstable", "no", "not", "fails", "fail", "failed", "unsafe", "false", "infeasible", "reject", "rejected",
+               "unfavourable", "unfavorable", "violated", "exceeds", "unacceptable", "insufficient"];
+    let good = ["stable", "yes", "achieved", "favourable", "favorable", "pass", "passes", "safe", "true", "feasible",
+                "accept", "accepted", "ok", "satisfied", "acceptable", "sufficient"];
+    if words.iter().any(|w| bad.contains(w)) { "axp-s" }
+    else if words.iter().any(|w| good.contains(w)) { "axp-s2" }
+    else { BAND_CLASSES[k % 4] }
+}
 const DOT_CLASSES: [&str; 4] = ["axp-d", "axp-d2", "axp-d3", "axp-d4"];
 
 #[allow(clippy::too_many_arguments)]
@@ -4017,7 +4130,7 @@ pub(crate) fn line_chart_xy(series: &[(String, Vec<Option<(f64, f64)>>)], bands:
             let (l, r) = (xa.px(left).max(X0), xa.px(right).min(X1));
             if r > l {
                 out.push_str(&format!("<rect class=\"{}\" x=\"{l:.1}\" y=\"{Y0}\" width=\"{:.1}\" height=\"{}\"/>",
-                                      BAND_CLASSES[k % 4], r - l, Y1 - Y0));
+                                      band_class(&c, k), r - l, Y1 - Y0));
             }
             i = j + 1;
         }
@@ -4025,7 +4138,7 @@ pub(crate) fn line_chart_xy(series: &[(String, Vec<Option<(f64, f64)>>)], bands:
         for (k, n) in names.iter().enumerate().take(4) {
             out.push_str(&format!("<rect class=\"{}\" x=\"{}\" y=\"{:.1}\" width=\"12\" height=\"10\"/>\
                                    <text class=\"axp-lt\" x=\"{}\" y=\"{:.1}\">{}</text>",
-                                  BAND_CLASSES[k % 4], X0 + 8.0, y - 9.0, X0 + 24.0, y, esc(&clip(n, 40))));
+                                  band_class(n, k), X0 + 8.0, y - 9.0, X0 + 24.0, y, esc(&clip(n, 40))));
             y += 16.0;
         }
     }
