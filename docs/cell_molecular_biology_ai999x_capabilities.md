@@ -2496,7 +2496,7 @@ cell_molecular_biology_ai999x.solve('cmb_orf_finder', seq='TTATTACTTCCAGCCAGCCAT
 
 ### Sequencing coverage and uncovered fraction (Lander-Waterman), `cmb_genome_coverage`
 
-The mean sequencing depth $C = L$ N / G, the expected fraction and number of bases not covered $(e^{-C})$ and the expected number of contigs (N e^-C).
+The mean sequencing depth $C = L$ N / G, the expected fraction and number of bases not covered $(e^{-C})$ and the expected number of contigs (N $e^{-C}$, at least one).
 
 $$
 C = \frac{LN}{G},\quad P_0 = e^{-C}
@@ -2513,7 +2513,7 @@ $$
 | `coverage` | mean coverage (depth) |
 | `fraction_uncovered` | fraction of bases not covered $e^{-C}$ |
 | `bases_uncovered` | expected bases not covered |
-| `contigs` | expected number of contigs N $e^{-C}$ |
+| `contigs` | expected number of contigs max(1, N e^-C) |
 
 - **Method:** $C = L$ N / G; P(0 reads) = e^-C (Poisson)
 - **Assumes:** L, N whole numbers >= 1; $G > 0$; reads placed uniformly at random
@@ -2525,7 +2525,7 @@ $$
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_genome_coverage', L=150, N=2000000, G=5000000.0)
-# -> coverage = 60, fraction_uncovered = 8.75651e-27, bases_uncovered = 4.37826e-20, contigs = 1.7513e-20   (SOLVED)
+# -> coverage = 60, fraction_uncovered = 8.75651e-27, bases_uncovered = 4.37826e-20, contigs = 1   (SOLVED)
 ```
 
 ```python
@@ -2537,7 +2537,7 @@ cell_molecular_biology_ai999x.solve('cmb_genome_coverage', L=100, N=30000, G=100
 
 | question | outcome | result |
 |---|---|---|
-| Genome coverage: L = 150 bp, N = 2000000, G = 5000000 bp | SOLVED | coverage = 60, fraction_uncovered = 8.75651e-27, bases_uncovered = 4.37826e-20, contigs = 1.7513e-20 |
+| Genome coverage: L = 150 bp, N = 2000000, G = 5000000 bp | SOLVED | coverage = 60, fraction_uncovered = 8.75651e-27, bases_uncovered = 4.37826e-20, contigs = 1 |
 | Genome coverage: L = 100 bp, N = 30000, G = 1000000 bp | SOLVED | coverage = 3, fraction_uncovered = 0.0497871, bases_uncovered = 49787.1, contigs = 1493.61 |
 | Genome coverage: N = 2000000, G = 5000000 bp | NEEDS_INPUT | cmb_genome_coverage needs L (read length in bp). Example: solve('cmb_genome_coverage', L=150, N=2e+06, G=5e+06). |
 | Genome coverage: L = 150 bp, N = 2000000, G = 5000000 bp, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: cell_molecular_biology_ai999x.tem |

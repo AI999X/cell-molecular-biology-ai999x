@@ -436,13 +436,13 @@ def cmb_gc_content(seq=None):
     return _P.solve("cmb_gc_content", **given)
 
 def cmb_genome_coverage(L=None, N=None, G=None):
-    """Sequencing coverage and uncovered fraction (Lander-Waterman). The mean sequencing depth C = L N / G, the expected fraction and number of bases not covered (e^-C) and the expected number of contigs (N e^-C).
+    """Sequencing coverage and uncovered fraction (Lander-Waterman). The mean sequencing depth C = L N / G, the expected fraction and number of bases not covered (e^-C) and the expected number of contigs (N e^-C, at least one).
     Formula: C = \\frac{LN}{G},\\quad P_0 = e^{-C}
     Inputs:
         L: read length in bp
         N: number of reads
         G: genome size in bp
-    Outputs: coverage (mean coverage (depth)), fraction_uncovered (fraction of bases not covered e^-C), bases_uncovered (expected bases not covered), contigs (expected number of contigs N e^-C)
+    Outputs: coverage (mean coverage (depth)), fraction_uncovered (fraction of bases not covered e^-C), bases_uncovered (expected bases not covered), contigs (expected number of contigs max(1, N e^-C))
     See also: help("cmb_genome_coverage")
     """
     given = {k: v for k, v in dict(L=L, N=N, G=G).items() if v is not None}

@@ -1,5 +1,5 @@
 {
- "package": "1.6.0",
+ "package": "1.6.1",
  "pack": "1.0.0",
  "knowledge_db": null,
  "files": {
@@ -7,8 +7,8 @@
   "dictionary/terms.json": "3781eac9e78cc74a52dfbb7f7c6ecd5f218e2a208be5aad6dabd1094f82ddc60",
   "knowledge/relations.json": "ad2816bb4809b84d79c594fe77203ca2201289a98e787a29f4a883688f649048",
   "knowledge/reference_cases.json": "7414a14e2c4202a7fae8cdd14e1a2ef7267f35a9665b0633001349c698d4e4e7",
-  "capabilities/procedures.py": "0391c7254ec892a392a52ddf93b6c78f51904ee211beca520fc821d96239dc2b",
-  "capabilities/procedures_certified.json": "0e1728b028355068fcd6effd6c6aec6fcbbffb68ae5166b0637425d7cf9e2f97",
+  "capabilities/procedures.py": "c6da9af53ebd72641488c75653e91de4751f44bac340d492f42698dd66f491f0",
+  "capabilities/procedures_certified.json": "1fbcd003ab2de2e456ebb992d6802d75ec907f9db7caa8181f2e0f6afc492cfa",
   "cell_molecular_biology_knowledge_public.sqlite": "5bab41962273062bc0d43e819fe6b2c6b6c61ea888cf77fb60b0a3753921f13f"
  },
  "engine": [

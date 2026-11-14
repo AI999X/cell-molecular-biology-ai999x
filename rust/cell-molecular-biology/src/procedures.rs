@@ -1721,7 +1721,7 @@ fn f_genome_coverage(mut v_L: Py, mut v_N: Py, mut v_G: Py) -> R {
     let _ = f__pos(Py::str("the genome size G"), Py::tuple(vec![v_G.clone()]))?;
     v_c = py::truediv(&py::mul(&v_L.clone(), &v_N.clone())?, &v_G.clone())?;
     v_p0 = py::math1("exp", &py::neg(&v_c.clone())?)?;
-    return Ok(f__out(Py::dict(vec![(Py::str("coverage"), v_c.clone()), (Py::str("fraction_uncovered"), v_p0.clone()), (Py::str("bases_uncovered"), py::mul(&v_G.clone(), &v_p0.clone())?), (Py::str("contigs"), py::mul(&v_N.clone(), &v_p0.clone())?)]))?);
+    return Ok(f__out(Py::dict(vec![(Py::str("coverage"), v_c.clone()), (Py::str("fraction_uncovered"), v_p0.clone()), (Py::str("bases_uncovered"), py::mul(&v_G.clone(), &v_p0.clone())?), (Py::str("contigs"), py::minmax(&[Py::Float(1.0), py::mul(&v_N.clone(), &v_p0.clone())?], true)?)]))?);
     #[allow(unreachable_code)]
     Ok(Py::None)
 }

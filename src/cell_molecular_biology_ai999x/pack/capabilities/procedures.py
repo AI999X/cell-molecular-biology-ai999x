@@ -2585,23 +2585,25 @@ def genome_coverage(L, N, G):
     _pos("the genome size G", G)
     c = L * N / G
     p0 = math.exp(-c)
-    return _out(coverage=c, fraction_uncovered=p0, bases_uncovered=G * p0, contigs=N * p0)
+    # a genome with reads is at least one contig: N e^-C counts the gaps between islands and falls below 1 at high
+    # depth (60x gave "1.751e-20 contigs"; review 2026-11-14)
+    return _out(coverage=c, fraction_uncovered=p0, bases_uncovered=G * p0, contigs=max(1.0, N * p0))
 
 
 def _ref_coverage(L, N, G):
     from scipy.stats import poisson
     c = L * N / G
     p0 = float(poisson.pmf(0, c))
-    return {"coverage": c, "fraction_uncovered": p0, "bases_uncovered": G * p0, "contigs": N * p0}
+    return {"coverage": c, "fraction_uncovered": p0, "bases_uncovered": G * p0, "contigs": max(1.0, N * p0)}
 
 
 _add("cmb_genome_coverage",
      name="Sequencing coverage and uncovered fraction (Lander-Waterman)", topic="DNA and RNA / genomics",
-     purpose="The mean sequencing depth C = L N / G, the expected fraction and number of bases not covered (e^-C) and the expected number of contigs (N e^-C).",
+     purpose="The mean sequencing depth C = L N / G, the expected fraction and number of bases not covered (e^-C) and the expected number of contigs (N e^-C, at least one).",
      inputs=[_intin("L", "read length in bp", lo=1, words=("bp", "nt")), _intin("N", "number of reads", lo=1),
              _numin("G", "genome size in bp", words=("bp",))],
      outputs=[_o("coverage", "number", "mean coverage (depth)"), _o("fraction_uncovered", "number", "fraction of bases not covered e^-C"),
-              _o("bases_uncovered", "number", "expected bases not covered"), _o("contigs", "number", "expected number of contigs N e^-C")],
+              _o("bases_uncovered", "number", "expected bases not covered"), _o("contigs", "number", "expected number of contigs max(1, N e^-C)")],
      primary="coverage", conditions=["L, N whole numbers >= 1", "G > 0", "reads placed uniformly at random"],
      method="C = L N / G; P(0 reads) = e^-C (Poisson)", latex=r"C = \frac{LN}{G},\quad P_0 = e^{-C}",
      run=genome_coverage, reference=_ref_coverage,
@@ -4532,7 +4534,7 @@ _EXV = {
     'cmb_transcribe': [{'mRNA': 'AUGGCCUUUAAG', 'length': 12}, {'mRNA': 'GAAUUUCCGGUA', 'length': 12}],
     'cmb_translate': [{'protein': 'MAIVMGR', 'full_translation': 'MAIVMGR*KGAR*', 'length_aa': 7, 'stops': 2}, {'protein': 'MKRISTTITTTITITTGNGAG', 'full_translation': 'MKRISTTITTTITITTGNGAG*', 'length_aa': 21, 'stops': 1}],
     'cmb_orf_finder': [{'strand': '+', 'start': 3, 'end': 68, 'length_nt': 66, 'length_aa': 21, 'protein': 'MKRISTTITTTITITTGNGAG', 'n_orfs': 1}, {'strand': '-', 'start': 14, 'end': 31, 'length_nt': 18, 'length_aa': 5, 'protein': 'MAGWK', 'n_orfs': 1}],
-    'cmb_genome_coverage': [{'coverage': 60.0, 'fraction_uncovered': 8.7565107627e-27, 'bases_uncovered': 4.37825538135e-20, 'contigs': 1.75130215254e-20}, {'coverage': 3.0, 'fraction_uncovered': 0.0497870683679, 'bases_uncovered': 49787.0683679, 'contigs': 1493.61205104}],
+    'cmb_genome_coverage': [{'coverage': 60.0, 'fraction_uncovered': 8.7565107627e-27, 'bases_uncovered': 4.37825538135e-20, 'contigs': 1.0}, {'coverage': 3.0, 'fraction_uncovered': 0.0497870683679, 'bases_uncovered': 49787.0683679, 'contigs': 1493.61205104}],
     'cmb_library_size': [{'clones_exact': 345385.46136, 'clones': 345386}, {'clones_exact': 2754.57555403, 'clones': 2755}],
     'cmb_mutation_rate_p0': [{'p0': 0.55, 'm': 0.597837000756, 'mutation_rate': 2.98918500378e-09}, {'p0': 0.0625, 'm': 2.77258872224, 'mutation_rate': 4.95105128971e-09}],
     'cmb_pcr_amplification': [{'N': 107374182400.0, 'fold': 1073741824.0, 'log10_fold': 9.03089986992}, {'N': 9307649568.83, 'fold': 9307649.56883, 'log10_fold': 6.96884002382}],

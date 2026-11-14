@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cell-molecular-biology-ai999x"
-version = "1.6.0"
+version = "1.6.1"
 description = "Offline cell and molecular biology solver: membranes and diffusion, osmosis and membrane potentials, cell growth and the cell cycle, DNA and RNA melting temperatures and quantification, sequences, PCR and qPCR, gene expression, enzyme kinetics, inhibition and binding, buffers and dilutions, with steps, LaTeX and honest refusals"
 readme = "README.md"
 requires-python = ">=3.10"

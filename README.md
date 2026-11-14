@@ -4,7 +4,7 @@
 
 **[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/cell-molecular-biology-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/cell-molecular-biology-ai999x/)** · **[Guides](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.6.0
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.6.1
 
 Field: **Life Sciences** · Tasks: Question Answering
 
@@ -274,7 +274,7 @@ _What this means:_ This calculation determines the time spent in each phase of t
 
 | Property | Value |
 |---|---|
-| Package | `cell-molecular-biology-ai999x` 1.6.0 (import `cell_molecular_biology_ai999x`) |
+| Package | `cell-molecular-biology-ai999x` 1.6.1 (import `cell_molecular_biology_ai999x`) |
 | Type | Deterministic neuro-symbolic cell and molecular biology engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 104 certified procedures |
 | Knowledge pack | version 1.0.0 |
@@ -308,7 +308,7 @@ cell_molecular_biology.ask("Who created you?").message
 # -> cell-molecular-biology-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-The Python package also installs a Python command, `cell-molecular-biology-ai999x "<question>"`; for the native program use `cell-molecular-biology` (above). The outputs above were produced by running this exact code on cell-molecular-biology-ai999x 1.6.0.
+The Python package also installs a Python command, `cell-molecular-biology-ai999x "<question>"`; for the native program use `cell-molecular-biology` (above). The outputs above were produced by running this exact code on cell-molecular-biology-ai999x 1.6.1.
 
 ## How every answer is verified
 
@@ -447,10 +447,10 @@ _td (doubling time) against N0 (initial cell count (or concentration)), with N =
 ## Citation
 
 ```bibtex
-@software{cell_molecular_biology_ai999x_1_6_0,
+@software{cell_molecular_biology_ai999x_1_6_1,
   title  = {cell-molecular-biology-ai999x: an offline, verified cell and molecular biology solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.6.0},
+  year   = {2026}, version = {1.6.1},
   url    = {https://huggingface.co/AI999X/cell-molecular-biology-ai999x}
 }
 ```
@@ -467,7 +467,7 @@ Created and engineered by **Ibnul Jaif Farabi** · **[AI999X](https://huggingfac
 
 ## Source and releases
 
-This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/cell-molecular-biology-ai999x/) (`pip install .` builds it). Releases are tagged `v1.6.0`; the [GitHub release](https://github.com/AI999X/cell-molecular-biology-ai999x/releases/tag/v1.6.0) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
+This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/cell-molecular-biology-ai999x/) (`pip install .` builds it). Releases are tagged `v1.6.1`; the [GitHub release](https://github.com/AI999X/cell-molecular-biology-ai999x/releases/tag/v1.6.1) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
 
 ## Build the program from source
 
