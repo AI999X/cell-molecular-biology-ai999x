@@ -1,6 +1,6 @@
 # cell-molecular-biology: the Cell and Molecular Biology program, user guide
 
-**cell-molecular-biology-ai999x 1.6.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
+**cell-molecular-biology-ai999x 1.6.3**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
 Cell and Molecular Biology covers membranes and diffusion, osmosis and membrane potentials, cell growth and the cell cycle, DNA and RNA melting temperatures and quantification, sequences, PCR and qPCR, gene expression, enzyme kinetics, inhibition and binding, buffers and dilutions. This guide is about `cell-molecular-biology`, the model as a self-contained program for Windows and Linux: 104 capabilities in 10 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/cell-molecular-biology-ai999x/); the Python package (`pip install cell-molecular-biology-ai999x`) has its own guide. Every command output printed here is what the program printed.
 
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ cell-molecular-biology --version
-cell-molecular-biology-ai999x 1.6.0 (Rust build, ax-engine 1.6.0)
+cell-molecular-biology-ai999x 1.6.3 (Rust build, ax-engine 1.6.3)
 ```
 
 ### 2.2 Find a capability
@@ -1373,7 +1373,7 @@ salt_term = -21.59709793
 
 #### Sequencing coverage and uncovered fraction (Lander-Waterman), `cmb_genome_coverage`
 
-The mean sequencing depth C = L N / G, the expected fraction and number of bases not covered (e^-C) and the expected number of contigs (N e^-C).
+The mean sequencing depth C = L N / G, the expected fraction and number of bases not covered (e^-C) and the expected number of contigs (N e^-C, at least one).
 
 $$
 C = \frac{LN}{G},\quad P_0 = e^{-C}
@@ -1387,7 +1387,7 @@ $$
 | `coverage` | out | mean coverage (depth) | - |
 | `fraction_uncovered` | out | fraction of bases not covered e^-C | - |
 | `bases_uncovered` | out | expected bases not covered | - |
-| `contigs` | out | expected number of contigs N e^-C | - |
+| `contigs` | out | expected number of contigs max(1, N e^-C) | - |
 
 **Applies when:** L, N whole numbers >= 1; G > 0; reads placed uniformly at random.
 
@@ -1396,13 +1396,13 @@ $ cell-molecular-biology solve cmb_genome_coverage L=150 N=2000000 G=5000000
 coverage = 60
 fraction_uncovered = 8.756510763e-27
 bases_uncovered = 4.378255381e-20
-contigs = 1.751302153e-20
+contigs = 1
   by: Sequencing coverage and uncovered fraction (Lander-Waterman)  (C = L N / G; P(0 reads) = e^-C (Poisson))
   G = 5000000
   assumes: L, N whole numbers >= 1; G > 0; reads placed uniformly at random
 ```
 
-**What the worked example means:** The model calculates the mean sequencing depth using the Lander-Waterman equation. Given a read length of 150 and a total number of reads of 2000000 mapped to a genome size of 5e+06, the resulting coverage is 60. This value determines the probability that any specific base is missed, which is calculated as e raised to the negative coverage, yielding an uncovered fraction of 8.75651e-27. Consequently, the expected number of bases not covered by any read is 4.37826e-20, and the expected number of contiguous sequences or contigs formed is 1.7513e-20.
+**What the worked example means:** The model calculates the mean sequencing depth using the Lander-Waterman equation. Given a read length of 150 and a total number of reads of 2000000 mapped to a genome size of 5e+06, the resulting coverage is 60. This value determines the probability that any specific base is missed, which is calculated as e raised to the negative coverage, yielding an uncovered fraction of 8.75651e-27. Consequently, the expected number of bases not covered by any read is 4.37826e-20, and the expected number of contiguous sequences or contigs formed is 1.
 
 <a id="cmb_transcribe"></a>
 

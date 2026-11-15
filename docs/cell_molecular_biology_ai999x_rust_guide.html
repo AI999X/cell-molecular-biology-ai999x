@@ -21,7 +21,7 @@ figcaption{font-size:9pt;color:#555}
 .pb{page-break-after:always}
 </style></head><body>
 <h1>cell-molecular-biology: the Cell and Molecular Biology program, user guide</h1>
-<p><strong>cell-molecular-biology-ai999x 1.6.0</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
+<p><strong>cell-molecular-biology-ai999x 1.6.3</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
 <p>Cell and Molecular Biology covers membranes and diffusion, osmosis and membrane potentials, cell growth and the cell cycle, DNA and RNA melting temperatures and quantification, sequences, PCR and qPCR, gene expression, enzyme kinetics, inhibition and binding, buffers and dilutions. This guide is about <code>cell-molecular-biology</code>, the model as a self-contained program for Windows and Linux: 104 capabilities in 10 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model&#x27;s page (https://www.ai999x.com/models/cell-molecular-biology-ai999x/); the Python package (<code>pip install cell-molecular-biology-ai999x</code>) has its own guide. Every command output printed here is what the program printed.</p>
 <h2>Contents</h2>
 <ul><li>1. Get it: desktop app, command line, browser, Python</li><li>2. Quick start</li><li>3. Writing inputs</li><li>4. Outcomes and exit codes</li><li>5. Scripts and agents: batch and JSON</li><li>6. Figures</li><li>7. In a web page or Node.js: WebAssembly</li><li>8. Every capability</li></ul>
@@ -67,7 +67,7 @@ cell-molecular-biology --version</code></pre>
 <h3>2.1 Check the install</h3>
 <p>Prints the model, its version and that this is the Rust build.</p>
 <pre><code class="shell">$ cell-molecular-biology --version
-cell-molecular-biology-ai999x 1.6.0 (Rust build, ax-engine 1.6.0)</code></pre>
+cell-molecular-biology-ai999x 1.6.3 (Rust build, ax-engine 1.6.3)</code></pre>
 <h3>2.2 Find a capability</h3>
 <p>Search the capabilities by what you want to know; the first column is the id to pass to info and solve.</p>
 <pre><code class="shell">$ cell-molecular-biology search &quot;nernst equilibrium potential of an ion across a cell membrane&quot;
@@ -620,19 +620,19 @@ salt_term = -21.59709793
   assumes: DNA letters only; N &gt;= 14; Na+ &gt; 0</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the thermal stability of a DNA oligonucleotide by estimating its melting temperature. The process begins by measuring the length and base composition of the sequence, specifically calculating the percentage of guanine and cytosine pairs as 41.6667. It then adjusts for ionic strength using the sodium concentration to produce a salt correction term of -21.5971. These values are combined with constant factors to yield the final melting temperature of 51.9862. This result indicates the temperature at which half of the DNA duplexes dissociate into single strands, serving as a critical parameter for designing primers and probes in molecular biology applications.</p>
 <h4 id="cmb_genome_coverage">Sequencing coverage and uncovered fraction (Lander-Waterman), <code>cmb_genome_coverage</code></h4>
-<p>The mean sequencing depth C = L N / G, the expected fraction and number of bases not covered (e^-C) and the expected number of contigs (N e^-C).</p>
+<p>The mean sequencing depth C = L N / G, the expected fraction and number of bases not covered (e^-C) and the expected number of contigs (N e^-C, at least one).</p>
 <div class="math">\[C = \frac{LN}{G},\quad P_0 = e^{-C}\]</div>
-<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>L</code></td><td>in</td><td>read length in bp</td><td>, </td></tr><tr><td><code>N</code></td><td>in</td><td>number of reads</td><td>, </td></tr><tr><td><code>G</code></td><td>in</td><td>genome size in bp</td><td>, </td></tr><tr><td><code>coverage</code></td><td>out</td><td>mean coverage (depth)</td><td>, </td></tr><tr><td><code>fraction_uncovered</code></td><td>out</td><td>fraction of bases not covered e^-C</td><td>, </td></tr><tr><td><code>bases_uncovered</code></td><td>out</td><td>expected bases not covered</td><td>, </td></tr><tr><td><code>contigs</code></td><td>out</td><td>expected number of contigs N e^-C</td><td>, </td></tr></tbody></table>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>L</code></td><td>in</td><td>read length in bp</td><td>, </td></tr><tr><td><code>N</code></td><td>in</td><td>number of reads</td><td>, </td></tr><tr><td><code>G</code></td><td>in</td><td>genome size in bp</td><td>, </td></tr><tr><td><code>coverage</code></td><td>out</td><td>mean coverage (depth)</td><td>, </td></tr><tr><td><code>fraction_uncovered</code></td><td>out</td><td>fraction of bases not covered e^-C</td><td>, </td></tr><tr><td><code>bases_uncovered</code></td><td>out</td><td>expected bases not covered</td><td>, </td></tr><tr><td><code>contigs</code></td><td>out</td><td>expected number of contigs max(1, N e^-C)</td><td>, </td></tr></tbody></table>
 <p><strong>Applies when:</strong> L, N whole numbers &gt;= 1; G &gt; 0; reads placed uniformly at random.</p>
 <pre><code class="shell">$ cell-molecular-biology solve cmb_genome_coverage L=150 N=2000000 G=5000000
 coverage = 60
 fraction_uncovered = 8.756510763e-27
 bases_uncovered = 4.378255381e-20
-contigs = 1.751302153e-20
+contigs = 1
   by: Sequencing coverage and uncovered fraction (Lander-Waterman)  (C = L N / G; P(0 reads) = e^-C (Poisson))
   G = 5000000
   assumes: L, N whole numbers &gt;= 1; G &gt; 0; reads placed uniformly at random</code></pre>
-<p><strong>What the worked example means:</strong> The model calculates the mean sequencing depth using the Lander-Waterman equation. Given a read length of 150 and a total number of reads of 2000000 mapped to a genome size of 5e+06, the resulting coverage is 60. This value determines the probability that any specific base is missed, which is calculated as e raised to the negative coverage, yielding an uncovered fraction of 8.75651e-27. Consequently, the expected number of bases not covered by any read is 4.37826e-20, and the expected number of contiguous sequences or contigs formed is 1.7513e-20.</p>
+<p><strong>What the worked example means:</strong> The model calculates the mean sequencing depth using the Lander-Waterman equation. Given a read length of 150 and a total number of reads of 2000000 mapped to a genome size of 5e+06, the resulting coverage is 60. This value determines the probability that any specific base is missed, which is calculated as e raised to the negative coverage, yielding an uncovered fraction of 8.75651e-27. Consequently, the expected number of bases not covered by any read is 4.37826e-20, and the expected number of contiguous sequences or contigs formed is 1.</p>
 <h4 id="cmb_transcribe">Transcription of a DNA strand into mRNA, <code>cmb_transcribe</code></h4>
 <p>The mRNA (5&#x27;-&gt;3&#x27;) transcribed from a DNA sequence given 5&#x27;-&gt;3&#x27; as either the coding (sense) strand or the template (antisense) strand.</p>
 <div class="math">\[\mathrm{mRNA} = \mathrm{coding}(T\to U) = \mathrm{rc}(\mathrm{template})(T\to U)\]</div>
