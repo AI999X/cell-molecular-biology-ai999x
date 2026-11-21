@@ -10,8 +10,8 @@ Cell and Molecular Biology covers membranes and diffusion, osmosis and membrane 
 
 | | |
 |---|---|
-| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cell-molecular-biology-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cell-molecular-biology-1.6.6-linux-x86_64.tar.gz) |
-| **Command line** `cell-molecular-biology` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-linux-x86_64.tar.gz) |
+| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.7/ai999x-cell-molecular-biology-1.6.7-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.7/ai999x-cell-molecular-biology-1.6.7-linux-x86_64.tar.gz) |
+| **Command line** `cell-molecular-biology` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.7/ai999x-cli-1.6.7-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.7/ai999x-cli-1.6.7-linux-x86_64.tar.gz) |
 | **Browser** (any device) | [Try it on the model page](https://www.ai999x.com/models/cell-molecular-biology-ai999x/#capabilities) |
 | **Python** 3.10+ | `pip install cell-molecular-biology-ai999x`: on Windows and Linux (x86-64) `pip` installs the same compiled engine; on other systems (macOS, ARM) it installs a pure-Python build that gives the same answers |
 
@@ -137,97 +137,6 @@ print(a.outcome, a.values)
 # SOLVED {'Y': 0.130842539341, 'R_fraction': 0.105920807646}
 ```
 
-## Command line: 15 examples
-
-Each command below was run with `cell-molecular-biology` of this release; the lines under it are the answer it printed (the full answer goes on with the method, every input in SI units and the conditions it assumes).
-
-```text
-$ cell-molecular-biology solve cmb_monod_batch_time "X0=0.1 g/L" "S0=10 g/L" Y=0.5 "mu_max=0.72 1/h" "Ks=0.2 g/L" "X=4 g/L"
-t = 18954.49601 s
-t_h = 5.265137782
-S = 2.2 kg/m^3
-S_g_L = 2.2
-
-$ cell-molecular-biology solve cmb_absorbance_ratios A260=0.9 A280=0.5 A230=0.42
-ratio_260_280 = 1.8
-ratio_260_230 = 2.142857143
-
-$ cell-molecular-biology solve cmb_competitive_inhibition "Vmax=6 (umol/L)/min" "Km=50 (umol/L)" "S=100 (umol/L)" "I=20 (umol/L)" "Ki=10 (umol/L)"
-v = 4e-05 mol/(m^3*s)
-Km_app = 0.15 mol/m^3
-Vmax_app = 0.0001 mol/(m^3*s)
-percent_inhibition = 40
-
-$ cell-molecular-biology solve cmb_ligand_depletion_binding "Rt=10 (nmol/L)" "Lt=20 (nmol/L)" "Kd=10 (nmol/L)"
-RL = 5.857864376e-06 mol/m^3
-fraction_receptor_bound = 0.5857864376
-free_ligand = 1.414213562e-05 mol/m^3
-fraction_ligand_bound = 0.2928932188
-
-$ cell-molecular-biology solve cmb_cell_volume_osmotic "V0=90 fL" b=0.4 "osm0=300 mmol/L" "osm1=600 mmol/L"
-V = 6.3e-17 m^3
-V_fL = 63
-ratio = 0.7
-
-$ cell-molecular-biology solve cmb_atp_yield P_O_NADH=2.5 P_O_FADH2=1.5 shuttle=malate-aspartate "dG_ATP=30.5 kJ/mol" "dG_glucose=2870 kJ/mol"
-ATP_aerobic = 32
-ATP_fermentation = 2
-ratio = 16
-ATP_oxidative = 28
-ATP_substrate_level = 4
-NADH_total = 10
-
-$ cell-molecular-biology solve cmb_decimal_reduction_time N0=1000000 N=100 "t=10 min"
-log_reduction = 4
-D = 150 s
-D_min = 2.5
-k_per_min = 0.9210340372
-survival_fraction = 0.0001
-
-$ cell-molecular-biology solve cmb_specimen_size "image_size=12 mm" M=400
-size = 3e-05 m
-size_um = 30
-M_image = 400
-
-$ cell-molecular-biology solve cmb_induction_dynamics "k_tx=36 1/h" "delta_m=7.2 1/h" "k_tl=180 1/h" "delta_p=0.36 1/h" "t=2 h"
-m = 4.999997213
-p = 1219.073084
-fraction_of_steady_state = 0.4876292336
-
-$ cell-molecular-biology solve cmb_buffer_capacity "C=100 (mmol/L)" pKa=7.21 pH=7.21
-beta = 57.56514274 mol/m^3
-beta_mM = 57.56514274
-beta_buffer_mM = 57.56462732
-
-$ cell-molecular-biology solve cmb_hemocytometer_count "counts=[52, 48, 55, 45]" dilution=2
-mean_count = 50
-cells_per_mL = 1000000
-
-$ cell-molecular-biology solve cmb_tm_basic seq=AGCGGATAACAATTTCACACAGGA
-Tm = 53.96666667
-gc_percent = 41.66666667
-length = 24
-
-$ cell-molecular-biology solve cmb_enzyme_assay_activity dA=0.12 "dt=1 min" "eps=6220 L/(mol*cm)" "l=1 cm" "V_assay=1 mL" "V_enzyme=20 uL" "protein=0.5 mg/mL"
-rate = 0.0003215434084 mol/(m^3*s)
-units = 0.0192926045
-units_per_mL = 0.9646302251
-specific_activity = 1.92926045
-
-$ cell-molecular-biology solve cmb_kd_from_rates "kon=1000000 1/((mol/L)*s)" "koff=0.001 1/s"
-Kd = 1e-06 mol/m^3
-Kd_nM = 1
-Ka_per_M = 1000000000
-half_life = 693.1471806 s
-residence_time = 1000 s
-
-$ cell-molecular-biology solve cmb_frap_diffusion "w=1 um" "t_half=0.5 s"
-D = 4.472955755e-13 m^2/s
-D_um2_s = 0.4472955755
-tauD = 0.5589145382 s
-gamma = 1.117829076
-```
-
 ## Guides
 
 - Desktop app guide: the window, every calculation, scenes and charts: [PDF](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_desktop_guide.pdf) · [HTML](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_desktop_guide.html) · [Markdown](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_desktop_guide.md)
@@ -236,13 +145,13 @@ gamma = 1.117829076
 
 Every calculation, with its formula, a worked example and its figures: **[Cell and Molecular Biology on ai999x.com](https://www.ai999x.com/models/cell-molecular-biology-ai999x/)**. Install guides for the app and the command line: [https://www.ai999x.com/desktop-cli/](https://www.ai999x.com/desktop-cli/).
 
-Version 1.6.6 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
+Version 1.6.7 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
 
 *The Future Is Self-Improving.*
 
 ## Source and releases
 
-This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/cell-molecular-biology-ai999x/) (`pip install .` builds it). Releases are tagged `v1.6.6`; the [GitHub release](https://github.com/AI999X/cell-molecular-biology-ai999x/releases/tag/v1.6.6) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
+This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/cell-molecular-biology-ai999x/) (`pip install .` builds it). Releases are tagged `v1.6.7`; the [GitHub release](https://github.com/AI999X/cell-molecular-biology-ai999x/releases/tag/v1.6.7) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
 
 ## Build the program from source
 
