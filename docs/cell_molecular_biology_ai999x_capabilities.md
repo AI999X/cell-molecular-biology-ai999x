@@ -235,13 +235,9 @@ $$
 - **Assumes:** $D > 0$, $dx > 0$; C1, $C_{2}  \geq  0$; steady state, linear profile
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Molar flux from side 1 to side 2 as C1 runs from 6 to 14 mM, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-fick-flux-live-1)
+![J (molar flux from side 1 to side 2) against dx (distance between the two sides) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-fick-flux-curve)
 
-*Molar flux from side 1 to side 2 as C1 runs from 6 to 14 mM, every other input as you entered it (41 solutions). Marked: your C1 = 10 mM gives J = 0.0008. Your inputs: D = 1000 um^2/s, C1 = 10 mM, C2 = 2 mM, dx = 10 um.*
-
-![Molar flux from side 1 to side 2 as D runs from 600 to 1400 um^2/s, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-fick-flux-live-2)
-
-*Molar flux from side 1 to side 2 as D runs from 600 to 1400 um^2/s, every other input as you entered it (29 solutions). Marked: your D = 1000 um^2/s gives J = 0.0008. Your inputs: D = 1000 um^2/s, C1 = 10 mM, C2 = 2 mM, dx = 10 um.*
+*J (molar flux from side 1 to side 2) against dx (distance between the two sides) from 5.0000e-06 m to 1.5000e-05 m. One curve for each value of C1 (concentration on side 1): 10 mol/m^3, 5 mol/m^3, 20 mol/m^3. Other inputs as in the worked example: D = 1e-09 m^2/s, C2 = 2.0 mol/m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, dx = 1.0000e-05 m, J = 0.0008 mol/(m^2*s).*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_fick_flux', D=1e-09, C1=10.0, C2=2.0, dx=1e-05)
@@ -289,13 +285,9 @@ $$
 - **Assumes:** $D > 0$, $t > 0$; dims = 1, 2 or 3
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Root-mean-square displacement as D runs from 600 to 1400 um^2/s, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-rms-displacement-live-1)
+![rms (root-mean-square displacement) against D (diffusion coefficient) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-rms-displacement-curve)
 
-*Root-mean-square displacement as D runs from 600 to 1400 um^2/s, every other input as you entered it (41 solutions). Marked: your D = 1000 um^2/s gives rms = 77.46 um. Your inputs: D = 1000 um^2/s, t = 1 s, dims = 3.*
-
-![Root-mean-square displacement as t runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-rms-displacement-live-2)
-
-*Root-mean-square displacement as t runs from 0.6 to 1.4 s, every other input as you entered it (29 solutions). Marked: your t = 1 s gives rms = 77.46 um. Your inputs: D = 1000 um^2/s, t = 1 s, dims = 3.*
+*rms (root-mean-square displacement) against D (diffusion coefficient) from 5.0000e-10 m^2/s to 1.5000e-09 m^2/s. One curve for each value of t (elapsed time): 1 s, 0.5 s, 2 s. Other inputs as in the worked example: dims = 3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, D = 1.0000e-09 m^2/s, rms = 7.7460e-05 m.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_rms_displacement', D=1e-09, t=1.0, dims=3)
@@ -342,13 +334,9 @@ $$
 - **Assumes:** $x > 0$, $D > 0$; dims = 1, 2 or 3
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Diffusion time as x runs from 6 to 14 um, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-diffusion-time-live-1)
+![t (diffusion time) against D (diffusion coefficient) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-diffusion-time-curve)
 
-*Diffusion time as x runs from 6 to 14 um, every other input as you entered it (41 solutions). Marked: your x = 10 um gives t = 16.67 ms. Your inputs: x = 10 um, D = 1000 um^2/s, dims = 3.*
-
-![Diffusion time as D runs from 600 to 1400 um^2/s, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-diffusion-time-live-2)
-
-*Diffusion time as D runs from 600 to 1400 um^2/s, every other input as you entered it (29 solutions). Marked: your D = 1000 um^2/s gives t = 16.67 ms. Your inputs: x = 10 um, D = 1000 um^2/s, dims = 3.*
+*t (diffusion time) against D (diffusion coefficient) from 5.0000e-10 m^2/s to 1.5000e-09 m^2/s. One curve for each value of x (distance (root-mean-square displacement to reach)): 1.0000e-05 m, 5.0000e-06 m, 2.0000e-05 m. Other inputs as in the worked example: dims = 3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, D = 1.0000e-09 m^2/s, t = 0.0166667 s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_diffusion_time', x=1e-05, D=1e-09, dims=3)
@@ -396,13 +384,9 @@ $$
 - **Assumes:** T, eta, $r > 0$; a sphere at low Reynolds number
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Diffusion coefficient as η runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-stokes-einstein-live-1)
+![D (diffusion coefficient) against eta (viscosity of the medium) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-stokes-einstein-curve)
 
-*Diffusion coefficient as η runs from 0.534 to 1.246 mPa*s, every other input as you entered it (41 solutions). Marked: your η = 0.89 mPa*s gives D = 9.815e-11. Your inputs: T = 298.15 K, eta = 0.89 mPa*s, r = 2.5 nm.*
-
-![Diffusion coefficient as r runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-stokes-einstein-live-2)
-
-*Diffusion coefficient as r runs from 1.5 to 3.5 nm, every other input as you entered it (29 solutions). Marked: your r = 2.5 nm gives D = 9.815e-11. Your inputs: T = 298.15 K, eta = 0.89 mPa*s, r = 2.5 nm.*
+*D (diffusion coefficient) against eta (viscosity of the medium) from 0.000445 Pa*s to 0.001335 Pa*s. One curve for each value of T (absolute temperature (degC is converted)): 298.15 K, 149.075 K, 596.3 K. Other inputs as in the worked example: r = 2.5e-09 m. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, eta = 0.00089 Pa*s, D = 9.8149e-11 m^2/s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_stokes_einstein', T=298.15, eta=0.00089, r=2.5e-09)
@@ -452,13 +436,9 @@ $$
 - **Assumes:** D, K, $L > 0$; concentrations >= 0; steady state, linear profile in the membrane
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Inward flux (positive into the cell) as C_out runs from 6 to 14 mM, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-membrane-permeability-live-1)
+![P (permeability coefficient) against L (membrane thickness) from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-membrane-permeability-curve)
 
-*Inward flux (positive into the cell) as C_out runs from 6 to 14 mM, every other input as you entered it (41 solutions). Marked: your C_out = 10 mM gives J = 0.0018. Your inputs: D = 100 um^2/s, K = 0.01, L = 5 nm, C_out = 10 mM, C_in = 1 mM.*
-
-![Permeability coefficient as D runs from 60 to 140 um^2/s, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-membrane-permeability-live-2)
-
-*Permeability coefficient as D runs from 60 to 140 um^2/s, every other input as you entered it (29 solutions). Marked: your D = 100 um^2/s gives P = 0.0002. Your inputs: D = 100 um^2/s, K = 0.01, L = 5 nm, C_out = 10 mM, C_in = 1 mM.*
+*P (permeability coefficient) against L (membrane thickness) from 2.5000e-09 m to 7.5000e-09 m. One curve for each value of K (membrane/water partition coefficient): 0.01, 0.26, 0.74. Other inputs as in the worked example: D = 1e-10 m^2/s, C_out = 10.0 mol/m^3, C_in = 1.0 mol/m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, L = 5.0000e-09 m, P = 0.0002 m/s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_membrane_permeability', D=1e-10, K=0.01, L=5e-09, C_out=10.0, C_in=1.0)
@@ -508,13 +488,9 @@ $$
 - **Assumes:** r, $P > 0$; C_out, C0, $t  \geq  0$; well-mixed cell of constant volume, outside unchanged
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Inside concentration at time t as P runs from 6e-06 to 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-equilibration-live-1)
+![C (inside concentration at time t) against r (cell radius) from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-equilibration-curve)
 
-*Inside concentration at time t as P runs from 6e-06 to 1.4e-05 cm/s, every other input as you entered it (41 solutions). Marked: your P = 1e-05 cm/s gives C = 5.934 mmol/L. Your inputs: r = 10 um, P = 1e-05 cm/s, C_out = 10 mM, C0 = 0 mM, t = 30 s.*
-
-![Inside concentration at time t as r runs from 6 to 14 um, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-equilibration-live-2)
-
-*Inside concentration at time t as r runs from 6 to 14 um, every other input as you entered it (29 solutions). Marked: your r = 10 um gives C = 5.934 mmol/L. Your inputs: r = 10 um, P = 1e-05 cm/s, C_out = 10 mM, C0 = 0 mM, t = 30 s.*
+*C (inside concentration at time t) against r (cell radius) from 1.0000e-06 m to 0.0001 m on a logarithmic axis. One curve for each value of C_out (constant outside concentration): 10 mol/m^3, 5 mol/m^3, 20 mol/m^3. Other inputs as in the worked example: P = 1.0000000000000001e-07 m/s, C0 = 0.0 mol/m^3, t = 30.0 s. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, r = 1.0000e-05 m, C = 5.9343 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_cell_equilibration', r=1e-05, P=1e-07, C_out=10.0, C0=0.0, t=30.0)
@@ -562,13 +538,9 @@ $$
 - **Assumes:** i, c, $T > 0$; ideal dilute solution
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Osmotic pressure as i runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-osmotic-pressure-live-1)
+![pi (osmotic pressure) against i (van 't Hoff factor (particles per formula unit, e](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-osmotic-pressure-curve)
 
-*Osmotic pressure as i runs from 0.5 to 3.5, every other input as you entered it (41 solutions). Marked: your i = 2 gives pi = 773.6 kPa. Your inputs: i = 2, c = 150 mM, T = 310.15 K.*
-
-![Osmotic pressure as c runs from 90 to 210 mM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-osmotic-pressure-live-2)
-
-*Osmotic pressure as c runs from 90 to 210 mM, every other input as you entered it (29 solutions). Marked: your c = 150 mM gives pi = 773.6 kPa. Your inputs: i = 2, c = 150 mM, T = 310.15 K.*
+*pi (osmotic pressure) against i (van 't Hoff factor (particles per formula unit, e.g. 2 for NaCl)) from 1 to 3. One curve for each value of c (solute concentration): 150 mol/m^3, 75 mol/m^3, 300 mol/m^3. Other inputs as in the worked example: T = 310.15 K. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, i = 2, pi = 773619 Pa.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_osmotic_pressure', i=2.0, c=150.0, T=310.15)
@@ -616,17 +588,9 @@ $$
 - **Assumes:** one factor per concentration; solutes impermeant (tonicity = osmolarity)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Tonicity (hypertonic, hypotonic or isotonic within 1 %) along osm_cell, the osmolarity of the cell interior, from 30 to 3000 mol/m^3 (logarithmic axis): 81 runs of the model, each band coloured by the verdict returned; it changes near osm_cell = 291](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-osmolarity-tonicity-decision)
+![hypertonic, hypotonic or isotonic (within 1 %) (tonicity) along osm_cell (osmolarity of the cell interior) from 30 mol/m^3 to 3000 mol/m^3 (logarithmic axis): 81 runs of cell-molecular-biology-ai999x, each band coloured by the verdict returned (hypertonic, hypotonic, isotonic); it changes near osm_cell = 291](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-osmolarity-tonicity-decision)
 
-*Tonicity (hypertonic, hypotonic or isotonic within 1 %) along osm_cell, the osmolarity of the cell interior, from 30 to 3000 mol/m^3 (logarithmic axis): 81 runs of the model, each band coloured by the verdict returned; it changes near osm_cell = 291.5, 308.8; the line is the difference, solution minus cell, that the model returns (the solution's osmolarity is 300 mOsm/L). Marked: osm_cell = 300 mol/m^3 gives isotonic. Your inputs: c = 150, i = 2, osm_cell = 300 mol/m^3.*
-
-![Solution minus cell osmolarity in mOsm/L as osm_cell runs from 180 to 420 mol/m^3, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-osmolarity-tonicity-live-1)
-
-*Solution minus cell osmolarity in mOsm/L as osm_cell runs from 180 to 420 mol/m^3, every other input as you entered it (41 solutions). Marked: your osm_cell = 300 mol/m^3 gives difference_mOsm = 0. Shaded by hypertonic, hypotonic or isotonic (within 1 %): hypertonic, isotonic, hypotonic. Your inputs: c = 150, i = 2, osm_cell = 300 mol/m^3.*
-
-![Osmolarity of the solution in mOsm/L as c[1] runs from 75 to 225, every other input as you entered it (27 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-osmolarity-tonicity-live-2)
-
-*Osmolarity of the solution in mOsm/L as c[1] runs from 75 to 225, every other input as you entered it (27 solutions). Marked: your c[1] = 150 gives osmolarity_mOsm = 300. Shaded by hypertonic, hypotonic or isotonic (within 1 %): hypotonic, isotonic, hypertonic. Your inputs: c = 150, i = 2, osm_cell = 300 mol/m^3.*
+*hypertonic, hypotonic or isotonic (within 1 %) (tonicity) along osm_cell (osmolarity of the cell interior) from 30 mol/m^3 to 3000 mol/m^3 (logarithmic axis): 81 runs of cell-molecular-biology-ai999x, each band coloured by the verdict returned (hypertonic, hypotonic, isotonic); it changes near osm_cell = 291.488 mol/m^3, 308.76 mol/m^3; the line is osmolarity_mOsm (osmolarity of the solution in mOsm/L). Other inputs as in the worked example: c = [150.0], i = [2.0]. Marked: the worked example, osm_cell = 300 mol/m^3 → isotonic.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_osmolarity_tonicity', c=[150.0], i=[2.0], osm_cell=300.0)
@@ -675,13 +639,9 @@ $$
 - **Assumes:** V0, osm0, osm1 > 0; $0  \leq  b < 1$; impermeant solutes, water in equilibrium
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![New equilibrium cell volume as V0 runs from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-volume-osmotic-live-1)
+![V (new equilibrium cell volume) against osm1 (new outside osmolarity) from 60 mol/m^3 to 6000 mol/m^3 on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-volume-osmotic-curve)
 
-*New equilibrium cell volume as V0 runs from 5.4e-17 to 1.26e-16 m^3, every other input as you entered it (41 solutions). Marked: your V0 = 9e-17 m^3 gives V = 6.3e-17. Your inputs: V0 = 9e-17 m^3, b = 0.4, osm0 = 300 mol/m^3, osm1 = 600 mol/m^3.*
-
-![New equilibrium cell volume as osm1 runs from 360 to 840 mol/m^3, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-volume-osmotic-live-2)
-
-*New equilibrium cell volume as osm1 runs from 360 to 840 mol/m^3, every other input as you entered it (29 solutions). Marked: your osm1 = 600 mol/m^3 gives V = 6.3e-17. Your inputs: V0 = 9e-17 m^3, b = 0.4, osm0 = 300 mol/m^3, osm1 = 600 mol/m^3.*
+*V (new equilibrium cell volume) against osm1 (new outside osmolarity) from 60 mol/m^3 to 6000 mol/m^3 on a logarithmic axis. One curve for each value of V0 (initial cell volume): 9.0000e-17 m^3, 4.5000e-17 m^3, 1.8000e-16 m^3. Other inputs as in the worked example: b = 0.4, osm0 = 300.0 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, osm1 = 600 mol/m^3, V = 6.3000e-17 m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_cell_volume_osmotic', V0=9e-17, b=0.4, osm0=300.0, osm1=600.0)
@@ -729,17 +689,13 @@ $$
 - **Assumes:** z a non-zero whole number; concentrations > 0; $T > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![E (equilibrium potential (inside minus outside)) against C_out (outside concentration) from 0](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-nernst-potential-e-vs-c-out.svg)
+![E (equilibrium potential (inside minus outside)) against C_out (outside concentration), with C_in = 140 mol/m^3, T = 310](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-nernst-potential-e-vs-c-out.svg)
 
-*E (equilibrium potential (inside minus outside)) against C_out (outside concentration) from 0.5 to 50 (logarithmic axis across), the other inputs as given: 31 points, each a run of the model. Marked: C_out = 5, E = -0.08906. Your inputs: z = 1, C_out = 5 mM, C_in = 140 mM, T = 310.15 K.*
+*E (equilibrium potential (inside minus outside)) against C_out (outside concentration), with C_in = 140 mol/m^3, T = 310.15 K, z = 1. 31 points computed by cell-molecular-biology-ai999x; marked: C_out = 5, E = -0.0890587 V.*
 
-![Equilibrium potential (inside minus outside) as z runs from 1 to 3, every other input as you entered it (3 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-nernst-potential-live-1)
+![E (equilibrium potential (inside minus outside)) against C_out (outside concentration) from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-nernst-potential-curve)
 
-*Equilibrium potential (inside minus outside) as z runs from 1 to 3, every other input as you entered it (3 solutions). Marked: your z = 1 gives E = -89.06 mV. Your inputs: z = 1, C_out = 5 mM, C_in = 140 mM, T = 310.15 K.*
-
-![Equilibrium potential (inside minus outside) as T runs from 270](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-nernst-potential-live-2)
-
-*Equilibrium potential (inside minus outside) as T runs from 270.1 to 350.1 K, every other input as you entered it (29 solutions). Marked: your T = 310.1 K gives E = -89.06 mV. Your inputs: z = 1, C_out = 5 mM, C_in = 140 mM, T = 310.15 K.*
+*E (equilibrium potential (inside minus outside)) against C_out (outside concentration) from 2.5 mol/m^3 to 7.5 mol/m^3. One curve for each value of T (absolute temperature (degC is converted)): 310.15 K, 155.075 K, 620.3 K. Other inputs as in the worked example: z = 1, C_in = 140.0 mol/m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, C_out = 5 mol/m^3, E = -0.0890587 V.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_nernst_potential', z=1, C_out=5.0, C_in=140.0, T=310.15)
@@ -792,13 +748,9 @@ $$
 - **Assumes:** A, c, $T > 0$; $zA = 1$, 2 or 3; ideal solutions, electroneutral compartments
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Inside cation concentration as c runs from 60 to 140 mM, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-donnan-equilibrium-live-1)
+![K_in (inside cation concentration) against A (concentration of impermeant anions inside) from 10 mol/m^3 to 1000 mol/m^3 on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-donnan-equilibrium-curve)
 
-*Inside cation concentration as c runs from 60 to 140 mM, every other input as you entered it (41 solutions). Marked: your c = 100 mM gives K_in = 0.1618 mol/L. Your inputs: A = 100 mM, zA = 1, c = 100 mM, T = 298.15 K.*
-
-![Inside cation concentration as zA runs from 1 to 3, every other input as you entered it (3 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-donnan-equilibrium-live-2)
-
-*Inside cation concentration as zA runs from 1 to 3, every other input as you entered it (3 solutions). Marked: your zA = 1 gives K_in = 0.1618 mol/L. Your inputs: A = 100 mM, zA = 1, c = 100 mM, T = 298.15 K.*
+*K_in (inside cation concentration) against A (concentration of impermeant anions inside) from 10 mol/m^3 to 1000 mol/m^3 on a logarithmic axis. One curve for each value of c (outside concentration of the monovalent salt): 100 mol/m^3, 50 mol/m^3, 200 mol/m^3. Other inputs as in the worked example: zA = 1, T = 298.15 K. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, A = 100 mol/m^3, K_in = 161.803 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_donnan_equilibrium', A=100.0, zA=1, c=100.0, T=298.15)
@@ -848,13 +800,9 @@ $$
 - **Assumes:** $N  \geq  1$; $0  \leq  Po  \leq  1$; $\gamma > 0$; ohmic open channels
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Macroscopic current (positive outward) as E runs from -0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-channel-current-live-1)
+![I (macroscopic current (positive outward)) against N (number of channels) from 1 to 2000 on a logarithmic axis, logarithmic output axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-channel-current-curve)
 
-*Macroscopic current (positive outward) as E runs from -0.126 to -0.054 V, every other input as you entered it (41 solutions). Marked: your E = -0.09 V gives I = 3e-10. Your inputs: N = 1000, Po = 0.3, gamma = 2e-11 S, V = -0.04 V, E = -0.09 V.*
-
-![Macroscopic current (positive outward) as Po runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-channel-current-live-2)
-
-*Macroscopic current (positive outward) as Po runs from 0.075 to 0.525, every other input as you entered it (29 solutions). Marked: your Po = 0.3 gives I = 3e-10. Your inputs: N = 1000, Po = 0.3, gamma = 2e-11 S, V = -0.04 V, E = -0.09 V.*
+*I (macroscopic current (positive outward)) against N (number of channels) from 1 to 2000 on a logarithmic axis, logarithmic output axis. One curve for each value of gamma (single-channel conductance): 2.0000e-11 S, 1.0000e-11 S, 4.0000e-11 S. Other inputs as in the worked example: Po = 0.3, V = -0.04 V, E = -0.09 V. 38 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, N = 1000, I = 3.0000e-10 A.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_channel_current', N=1000, Po=0.3, gamma=2e-11, V=-0.04, E=-0.09)
@@ -902,13 +850,9 @@ $$
 - **Assumes:** all inputs > 0; reaction on every contact, no interaction forces
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Diffusion-limited rate constant as DB runs from 600 to 1400 um^2/s, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-diffusion-limited-rate-live-1)
+![k (diffusion-limited rate constant) against DB (diffusion coefficient of molecule B) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-diffusion-limited-rate-curve)
 
-*Diffusion-limited rate constant as DB runs from 600 to 1400 um^2/s, every other input as you entered it (41 solutions). Marked: your DB = 1000 um^2/s gives k = 2.081e+07. Your inputs: DA = 100 um^2/s, DB = 1000 um^2/s, rA = 2 nm, rB = 0.5 nm.*
-
-![Diffusion-limited rate constant as rA runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-diffusion-limited-rate-live-2)
-
-*Diffusion-limited rate constant as rA runs from 1.2 to 2.8 nm, every other input as you entered it (29 solutions). Marked: your rA = 2 nm gives k = 2.081e+07. Your inputs: DA = 100 um^2/s, DB = 1000 um^2/s, rA = 2 nm, rB = 0.5 nm.*
+*k (diffusion-limited rate constant) against DB (diffusion coefficient of molecule B) from 5.0000e-10 m^2/s to 1.5000e-09 m^2/s. One curve for each value of rA (radius of molecule A): 2.0000e-09 m, 1.0000e-09 m, 4.0000e-09 m. Other inputs as in the worked example: DA = 1e-10 m^2/s, rB = 5e-10 m. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, DB = 1.0000e-09 m^2/s, k = 2.0811e+07 m^3/(mol*s).*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_diffusion_limited_rate', DA=1e-10, DB=1e-09, rA=2e-09, rB=5e-10)
@@ -955,17 +899,13 @@ $$
 - **Assumes:** w, t_half > 0; $2-D$ free diffusion, uniform circular bleach, full mobile fraction
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![D (diffusion coefficient) over w from 5e-07 to 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-frap-diffusion-field)
+![D (diffusion coefficient) against t_half (half-time of recovery) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-frap-diffusion-curve)
 
-*D (diffusion coefficient) over w from 5e-07 to 1.5e-06 and t_half from 0.25 to 0.75: each of the 21 x 15 cells is one run of the model, shaded by its value (light 7.455e-14 to dark 2.013e-12); iso-lines at D = 5e-13, 1e-12, 1.5e-12, 2e-12. Marked: the inputs given, w = 1e-06, t_half = 0.5, D = 4.473e-13. Your inputs: w = 1 um, t_half = 0.5 s.*
+*D (diffusion coefficient) against t_half (half-time of recovery) from 0.25 s to 0.75 s. One curve for each value of w (radius of the bleached spot): 1.0000e-06 m, 5.0000e-07 m, 2.0000e-06 m. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, t_half = 0.5 s, D = 4.4730e-13 m^2/s.*
 
-![Diffusion coefficient as w runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-frap-diffusion-live-1)
+![D (diffusion coefficient) over w (radius of the bleached spot) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-frap-diffusion-field)
 
-*Diffusion coefficient as w runs from 0.6 to 1.4 um, every other input as you entered it (41 solutions). Marked: your w = 1 um gives D = 4.473e-13. Your inputs: w = 1 um, t_half = 0.5 s.*
-
-![Diffusion coefficient as t_half runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-frap-diffusion-live-2)
-
-*Diffusion coefficient as t_half runs from 0.3 to 0.7 s, every other input as you entered it (29 solutions). Marked: your t_half = 0.5 s gives D = 4.473e-13. Your inputs: w = 1 um, t_half = 0.5 s.*
+*D (diffusion coefficient) over w (radius of the bleached spot) from 5.0000e-07 m to 1.5000e-06 m and t_half (half-time of recovery) from 0.25 s to 0.75 s: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 7.4549e-14 m^2/s to dark 2.0128e-12 m^2/s); iso-lines at D = 5.00e-13, 1.00e-12, 1.50e-12 m^2/s. Marked: the worked example, w = 1.0000e-06 m, t_half = 0.5 s, D = 4.4730e-13 m^2/s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_frap_diffusion', w=1e-06, t_half=0.5)
@@ -1014,13 +954,9 @@ $$
 - **Assumes:** N0, $td > 0$; $t  \geq  0$; balanced exponential growth (no lag, no limitation)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Number of cells at time t as td runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-exponential-growth-live-1)
+![N (number of cells at time t) against td (doubling (generation) time) from 600 s to 1800 s](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-exponential-growth-curve)
 
-*Number of cells at time t as td runs from 0.2 to 0.4667 h, every other input as you entered it (41 solutions). Marked: your td = 0.3333 h gives N = 6.4e+04. Your inputs: N0 = 1000, td = 0.3333333333 h, t = 2 h.*
-
-![Number of cells at time t as t runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-exponential-growth-live-2)
-
-*Number of cells at time t as t runs from 1.2 to 2.8 h, every other input as you entered it (29 solutions). Marked: your t = 2 h gives N = 6.4e+04. Your inputs: N0 = 1000, td = 0.3333333333 h, t = 2 h.*
+*N (number of cells at time t) against td (doubling (generation) time) from 600 s to 1800 s. One curve for each value of t (elapsed time): 7200 s, 3600 s, 14400 s. Other inputs as in the worked example: N0 = 1000.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, td = 1200 s, N = 64000.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_exponential_growth', N0=1000.0, td=1200.0, t=7200.0)
@@ -1070,17 +1006,13 @@ $$
 - **Assumes:** $N > N_{0} > 0$; $t > 0$; exponential growth over the interval
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![td (doubling time) against N0 (initial cell count (or concentration)) from 5000 to 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-doubling-time-from-counts-td-vs-n0)
+![td (doubling time) against N0 (initial cell count (or concentration)), with N = 1](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-doubling-time-from-counts-td-vs-n0.svg)
 
-*td (doubling time) against N0 (initial cell count (or concentration)) from 5000 to 1.5e+04, the other inputs as given: 31 points, each a run of the model. Marked: N0 = 1e+04, td = 7200. Your inputs: N0 = 10000, N = 160000, t = 8 h.*
+*td (doubling time) against N0 (initial cell count (or concentration)), with N = 1.60e5, t = 28800 s. 31 points computed by cell-molecular-biology-ai999x; marked: N0 = 10000, td = 7200 s.*
 
-![Doubling time as t runs from 4](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-doubling-time-from-counts-live-1)
+![td (doubling time) against N0 (initial cell count (or concentration)) from 1000 to 100000 on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-doubling-time-from-counts-curve)
 
-*Doubling time as t runs from 4.8 to 11.2 h, every other input as you entered it (41 solutions). Marked: your t = 8 h gives td = 2 h. Your inputs: N0 = 10000, N = 160000, t = 8 h.*
-
-![Doubling time as N runs from 4e+04 to 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-doubling-time-from-counts-live-2)
-
-*Doubling time as N runs from 4e+04 to 2.8e+05, every other input as you entered it (29 solutions). Marked: your N = 1.6e+05 gives td = 2 h. Your inputs: N0 = 10000, N = 160000, t = 8 h.*
+*td (doubling time) against N0 (initial cell count (or concentration)) from 1000 to 100000 on a logarithmic axis. One curve for each value of t (elapsed time): 28800 s, 14400 s, 57600 s. Other inputs as in the worked example: N = 160000.0. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, N0 = 10000, td = 7200 s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_doubling_time_from_counts', N0=10000.0, N=160000.0, t=28800.0)
@@ -1129,9 +1061,9 @@ $$
 - **Assumes:** at least 3 points; counts > 0, increasing; exponential phase only
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Growth data N against t as given (5 points, logarithmic count axis) and the exponential growth from the fitted N0 = 998](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-growth-rate-fit-xy)
+![The data N (cell counts or optical densities (positive)) against t (sampling times in hours) as given in the worked example (5 points)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-growth-rate-fit-xy)
 
-*Growth data N against t as given (5 points, logarithmic count axis) and the exponential growth from the fitted N0 = 998.4 and doubling time 0.9968 h, each point computed by the model's exponential growth capability. Returned: mu = 0.6954 per hour, r2 = 0.9998. Your inputs: t = 0, 1, 2, 3, 4, N = 1000, 1980, 4100, 7900....*
+*The data N (cell counts or optical densities (positive)) against t (sampling times in hours) as given in the worked example (5 points). Also returned: mu_per_h = 0.695379, td_h = 0.996791, N0_fit = 998.435, r2 = 0.999807.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_growth_rate_fit', t=[0.0, 1.0, 2.0, 3.0, 4.0], N=[1000.0, 1980.0, 4100.0, 7900.0, 16200.0])
@@ -1181,13 +1113,9 @@ $$
 - **Assumes:** $0 < N_{0} < K$; $r > 0$; $t  \geq  0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Population at time t as r runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-logistic-growth-live-1)
+![N (population at time t) against r (intrinsic growth rate) from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-logistic-growth-curve)
 
-*Population at time t as r runs from 0.432 to 1.008 1/h, every other input as you entered it (41 solutions). Marked: your r = 0.72 1/h gives N = 1.181e+07. Your inputs: N0 = 10000, K = 100000000, r = 0.72 1/h, t = 10 h.*
-
-![Population at time t as t runs from 6 to 14 h, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-logistic-growth-live-2)
-
-*Population at time t as t runs from 6 to 14 h, every other input as you entered it (29 solutions). Marked: your t = 10 h gives N = 1.181e+07. Your inputs: N0 = 10000, K = 100000000, r = 0.72 1/h, t = 10 h.*
+*N (population at time t) against r (intrinsic growth rate) from 2.0000e-05 1/s to 0.002 1/s on a logarithmic axis, logarithmic output axis. One curve for each value of t (elapsed time): 36000 s, 18000 s, 72000 s. Other inputs as in the worked example: N0 = 10000.0, K = 100000000.0. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, r = 0.0002 1/s, N = 1.1813e+07.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_logistic_growth', N0=10000.0, K=100000000.0, r=0.0002, t=36000.0)
@@ -1235,13 +1163,9 @@ $$
 - **Assumes:** $0 < N_{0} < N < K$; $r > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Time to reach N as r runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-logistic-time-to-reach-live-1)
+![t (time to reach N) against r (intrinsic growth rate) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-logistic-time-to-reach-curve)
 
-*Time to reach N as r runs from 0.432 to 1.008 1/h, every other input as you entered it (41 solutions). Marked: your r = 0.72 1/h gives t = 12.79 h. Your inputs: N0 = 10000, K = 100000000, r = 0.72 1/h, N = 50000000.*
-
-![Time to reach N as K runs from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-logistic-time-to-reach-live-2)
-
-*Time to reach N as K runs from 5.179e+07 to 1.75e+08, every other input as you entered it (24 solutions). Marked: your K = 1e+08 gives t = 12.79 h. Your inputs: N0 = 10000, K = 100000000, r = 0.72 1/h, N = 50000000.*
+*t (time to reach N) against r (intrinsic growth rate) from 0.0001 1/s to 0.0003 1/s. One curve for each value of N (target population): 5.0000e+07, 2.5000e+07. Other inputs as in the worked example: N0 = 10000.0, K = 100000000.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, r = 0.0002 1/s, t = 46051.2 s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_logistic_time_to_reach', N0=10000.0, K=100000000.0, r=0.0002, N=50000000.0)
@@ -1290,13 +1214,9 @@ $$
 - **Assumes:** mu_max, $Ks > 0$; $S  \geq  0$; a single limiting substrate
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Specific growth rate as μ_max runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-monod-growth-rate-live-1)
+![mu (specific growth rate) against S (limiting substrate concentration) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-monod-growth-rate-curve)
 
-*Specific growth rate as μ_max runs from 0.432 to 1.008 1/h, every other input as you entered it (41 solutions). Marked: your μ_max = 0.72 1/h gives μ = 0.6 1/h. Your inputs: mu_max = 0.72 1/h, S = 50 mg/L, Ks = 10 mg/L.*
-
-![Specific growth rate as S runs from 30 to 70 mg/L, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-monod-growth-rate-live-2)
-
-*Specific growth rate as S runs from 30 to 70 mg/L, every other input as you entered it (29 solutions). Marked: your S = 50 mg/L gives μ = 0.6 1/h. Your inputs: mu_max = 0.72 1/h, S = 50 mg/L, Ks = 10 mg/L.*
+*mu (specific growth rate) against S (limiting substrate concentration) from 0.005 kg/m^3 to 0.5 kg/m^3 on a logarithmic axis. One curve for each value of mu_max (maximum specific growth rate): 0.0002 1/s, 1.0000e-04 1/s, 0.0004 1/s. Other inputs as in the worked example: Ks = 0.01 kg/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, S = 0.05 kg/m^3, mu = 0.000166667 1/s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_monod_growth_rate', mu_max=0.0002, S=0.05, Ks=0.01)
@@ -1348,13 +1268,9 @@ $$
 - **Assumes:** all inputs > 0; $X_{0} < X < X_{0} + Y$ S0; no maintenance or death
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Time to reach X as S0 runs from 8 to 14 g/L, every other input as you entered it (31 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-monod-batch-time-live-1)
+![t (time to reach X) against mu_max (maximum specific growth rate) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-monod-batch-time-curve)
 
-*Time to reach X as S0 runs from 8 to 14 g/L, every other input as you entered it (31 solutions). Marked: your S0 = 10 g/L gives t = 5.265 h. Your inputs: X0 = 0.1 g/L, S0 = 10 g/L, Y = 0.5, mu_max = 0.72 1/h, Ks = 0.2 g/L, X = 4 g/L.*
-
-![Time to reach X as X runs from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-monod-batch-time-live-2)
-
-*Time to reach X as X runs from 2.4 to 5.029 g/L, every other input as you entered it (24 solutions). Marked: your X = 4 g/L gives t = 5.265 h. Your inputs: X0 = 0.1 g/L, S0 = 10 g/L, Y = 0.5, mu_max = 0.72 1/h, Ks = 0.2 g/L, X = 4 g/L.*
+*t (time to reach X) against mu_max (maximum specific growth rate) from 0.0001 1/s to 0.0003 1/s. One curve for each value of X0 (initial biomass concentration): 0.1 kg/m^3, 0.05 kg/m^3, 0.2 kg/m^3. Other inputs as in the worked example: S0 = 10.0 kg/m^3, Y = 0.5, Ks = 0.2 kg/m^3, X = 4.0 kg/m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, mu_max = 0.0002 1/s, t = 18954.5 s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_monod_batch_time', X0=0.1, S0=10.0, Y=0.5, mu_max=0.0002, Ks=0.2, X=4.0)
@@ -1402,9 +1318,9 @@ $$
 - **Assumes:** $Tc > 0$; four positive fractions summing to 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![G1 duration in hours as Tc runs from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-cycle-phase-durations-live-1)
+![G1_h (G1 duration in hours) against Tc (total cell-cycle time) from 43200 s to 129600 s](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-cycle-phase-durations-curve)
 
-*G1 duration in hours as Tc runs from 5.184e+04 to 1.21e+05 s, every other input as you entered it (29 solutions). Marked: your Tc = 8.64e+04 s gives G1_h = 10.8. Your inputs: Tc = 86400 s, fractions = 0.45, 0.35, 0.15, 0.05.*
+*G1_h (G1 duration in hours) against Tc (total cell-cycle time) from 43200 s to 129600 s. Other inputs as in the worked example: fractions = [0.45, 0.35, 0.15, 0.05]. 31 points computed by cell-molecular-biology-ai999x; marked: the worked example, Tc = 86400 s, G1_h = 10.8.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_cell_cycle_phase_durations', Tc=86400.0, fractions=[0.45, 0.35, 0.15, 0.05])
@@ -1451,9 +1367,9 @@ $$
 - **Assumes:** $Tc > 0$; four positive fractions summing to 1; balanced exponential growth
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![G1 duration in hours as Tc runs from 5](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-cell-cycle-age-corrected-live-1.svg)
+![G1_h (G1 duration in hours) against Tc (total cell-cycle (doubling) time) from 43200 s to 129600 s](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-cycle-age-corrected-curve)
 
-*G1 duration in hours as Tc runs from 5.184e+04 to 1.21e+05 s, every other input as you entered it (29 solutions). Marked: your Tc = 8.64e+04 s gives G1_h = 8.826. Your inputs: Tc = 86400 s, fractions = 0.45, 0.35, 0.15, 0.05.*
+*G1_h (G1 duration in hours) against Tc (total cell-cycle (doubling) time) from 43200 s to 129600 s. Other inputs as in the worked example: fractions = [0.45, 0.35, 0.15, 0.05]. 31 points computed by cell-molecular-biology-ai999x; marked: the worked example, Tc = 86400 s, G1_h = 8.82556.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_cell_cycle_age_corrected', Tc=86400.0, fractions=[0.45, 0.35, 0.15, 0.05])
@@ -1500,13 +1416,9 @@ $$
 - **Assumes:** counts >= 0; dilution >= 1; large squares of 0.1 uL
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Cells per mL as dilution runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hemocytometer-count-live-1)
+![cells_per_mL (cells per mL) against dilution (dilution factor of the counted sample (1 for undiluted, 2 for 1:1 trypan blue)) from 1 to 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hemocytometer-count-curve)
 
-*Cells per mL as dilution runs from 1.025 to 3.5, every other input as you entered it (34 solutions). Marked: your dilution = 2 gives cells_per_mL = 1e+06. Your inputs: counts = 52, 48, 55, 45, dilution = 2.*
-
-![Cells per mL as counts[3] runs from 27 to 83, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hemocytometer-count-live-2)
-
-*Cells per mL as counts[3] runs from 27 to 83, every other input as you entered it (29 solutions). Marked: your counts[3] = 55 gives cells_per_mL = 1e+06. Your inputs: counts = 52, 48, 55, 45, dilution = 2.*
+*cells_per_mL (cells per mL) against dilution (dilution factor of the counted sample (1 for undiluted, 2 for 1:1 trypan blue)) from 1 to 3. Other inputs as in the worked example: counts = [52.0, 48.0, 55.0, 45.0]. 31 points computed by cell-molecular-biology-ai999x; marked: the worked example, dilution = 2, cells_per_mL = 1e+06.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_hemocytometer_count', counts=[52.0, 48.0, 55.0, 45.0], dilution=2.0)
@@ -1552,13 +1464,9 @@ $$
 - **Assumes:** colonies a whole number; dilution >= 1; $V > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Colony-forming units per mL of the original](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-plate-count-live-1)
+![cfu_per_mL (colony-forming units per mL of the original culture) against colonies (colonies counted on the plate) from 1 to 300 on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-plate-count-curve)
 
-*Colony-forming units per mL of the original... as dilution runs from 2.5e+05 to 1.75e+06, every other input as you entered it (41 solutions). Marked: your dilution = 1e+06 gives cfu_per_mL = 1.5e+09. Your inputs: colonies = 150, dilution = 1000000, V = 0.1 mL.*
-
-![Colony-forming units per mL of the original](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-plate-count-live-2)
-
-*Colony-forming units per mL of the original... as V runs from 0.06 to 0.14 mL, every other input as you entered it (29 solutions). Marked: your V = 0.1 mL gives cfu_per_mL = 1.5e+09. Your inputs: colonies = 150, dilution = 1000000, V = 0.1 mL.*
+*cfu_per_mL (colony-forming units per mL of the original culture) against colonies (colonies counted on the plate) from 1 to 300 on a logarithmic axis. One curve for each value of dilution (dilution factor of the plated sample (1e6 for a 10^-6 dilution)): 1e+06, 500000, 2e+06. Other inputs as in the worked example: V = 1e-07 m^3. 34 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, colonies = 150, cfu_per_mL = 1.5000e+09.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_plate_count', colonies=150, dilution=1000000.0, V=1e-07)
@@ -1607,13 +1515,9 @@ $$
 - **Assumes:** colonies a whole number; m_DNA, volumes > 0; V_plated <= V_total
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Transformants per microgram of DNA as V_total runs from 600 to 1400 uL, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transformation-efficiency-live-1)
+![efficiency (transformants per microgram of DNA) against colonies (transformant colonies counted) from 1 to 400 on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transformation-efficiency-curve)
 
-*Transformants per microgram of DNA as V_total runs from 600 to 1400 uL, every other input as you entered it (41 solutions). Marked: your V_total = 1000 uL gives efficiency = 2e+06. Your inputs: colonies = 200, m_DNA = 1 ng, V_plated = 100 uL, V_total = 1000 uL.*
-
-![Transformants per microgram of DNA as m_DNA runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transformation-efficiency-live-2)
-
-*Transformants per microgram of DNA as m_DNA runs from 0.6 to 1.4 ng, every other input as you entered it (29 solutions). Marked: your m_DNA = 1 ng gives efficiency = 2e+06. Your inputs: colonies = 200, m_DNA = 1 ng, V_plated = 100 uL, V_total = 1000 uL.*
+*efficiency (transformants per microgram of DNA) against colonies (transformant colonies counted) from 1 to 400 on a logarithmic axis. One curve for each value of m_DNA (DNA mass used in the transformation): 1.0000e-12 kg, 5.0000e-13 kg, 2.0000e-12 kg. Other inputs as in the worked example: V_plated = 1.0000000000000001e-07 m^3, V_total = 1.0000000000000002e-06 m^3. 35 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, colonies = 200, efficiency = 2e+06.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_transformation_efficiency', colonies=200, m_DNA=1e-12, V_plated=1e-07, V_total=1e-06)
@@ -1660,9 +1564,9 @@ $$
 - **Assumes:** $d > 0$; a sphere
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Cell volume as d runs from 6 to 14 um, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-geometry-live-1)
+![V (cell volume) against d (cell diameter) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-cell-geometry-curve)
 
-*Cell volume as d runs from 6 to 14 um, every other input as you entered it (41 solutions). Marked: your d = 10 um gives V = 5.236e-16. Your inputs: d = 10 um.*
+*V (cell volume) against d (cell diameter) from 5.0000e-06 m to 1.5000e-05 m. 31 points computed by cell-molecular-biology-ai999x; marked: the worked example, d = 1.0000e-05 m, V = 5.2360e-16 m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_cell_geometry', d=1e-05)
@@ -1708,17 +1612,13 @@ $$
 - **Assumes:** c, $V > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![N (number of molecules) over c from 5e-05 to 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-molecules-per-cell-field)
+![N (number of molecules) against c (concentration) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-molecules-per-cell-curve)
 
-*N (number of molecules) over c from 5e-05 to 0.00015 and V from 1e-15 to 3e-15: each of the 21 x 15 cells is one run of the model, shaded by its value (light 3.011e+04 to dark 2.71e+05); iso-lines at N = 5e+04, 1e+05, 1.5e+05, 2e+05, 2.5e+05. Marked: the inputs given, c = 0.0001, V = 2e-15, N = 1.204e+05. Your inputs: c = 100 nM, V = 2000 fL.*
+*N (number of molecules) against c (concentration) from 5.0000e-07 mol/m^3 to 1.5000e-06 mol/m^3. One curve for each value of V (cell (compartment) volume): 1.0000e-18 m^3, 5.0000e-19 m^3, 2.0000e-18 m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, c = 1.0000e-06 mol/m^3, N = 0.602214.*
 
-![Number of molecules as V runs from 1200 to 2800 fL, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-molecules-per-cell-live-1)
+![N (number of molecules) over c (concentration) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-molecules-per-cell-field)
 
-*Number of molecules as V runs from 1200 to 2800 fL, every other input as you entered it (41 solutions). Marked: your V = 2000 fL gives N = 1.204e+05. Your inputs: c = 100 nM, V = 2000 fL.*
-
-![Number of molecules as c runs from 60 to 140 nM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-molecules-per-cell-live-2)
-
-*Number of molecules as c runs from 60 to 140 nM, every other input as you entered it (29 solutions). Marked: your c = 100 nM gives N = 1.204e+05. Your inputs: c = 100 nM, V = 2000 fL.*
+*N (number of molecules) over c (concentration) from 5.0000e-07 mol/m^3 to 1.5000e-06 mol/m^3 and V (cell (compartment) volume) from 5.0000e-19 m^3 to 1.5000e-18 m^3: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 0.150554 to dark 1.35498); iso-lines at N = 0.25, 0.5, 0.75, 1, 1.25. Marked: the worked example, c = 1.0000e-06 mol/m^3, V = 1.0000e-18 m^3, N = 0.602214.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_molecules_per_cell', c=1e-06, V=1e-18)
@@ -1768,13 +1668,9 @@ $$
 - **Assumes:** only A, C, G, T or U
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The sequence as given, base by base, G and C shaded (8 of 14 bases); the model returns gc_fraction = 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-gc-content-io)
+![The worked example of GC content of a DNA or RNA sequence as inputs and results: stated seq = ATGCGCGATTACGC; returned by cell-molecular-biology-ai999x: gc_fraction = 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-gc-content-io)
 
-*The sequence as given, base by base, G and C shaded (8 of 14 bases); the model returns gc_fraction = 0.571429, gc_percent = 57.1429 and the counts G = 4, C = 4, A = 3, T or U = 3. Your inputs: seq = ATGCGCGATTACGC.*
-
-![Fraction of G + C for the first 1, 2, ](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-gc-content-live-1)
-
-*Fraction of G + C for the first 1, 2, ... letters of seq; the last point is your full input (gc_fraction = 0.5714). Your inputs: seq = ATGCGCGATTACGC.*
+*The worked example of GC content of a DNA or RNA sequence as inputs and results: stated seq = ATGCGCGATTACGC; returned by cell-molecular-biology-ai999x: gc_fraction = 0.571429, gc_percent = 57.1429, length = 14, G = 4, C = 4, A = 3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_gc_content', seq='ATGCGCGATTACGC')
@@ -1819,13 +1715,9 @@ $$
 - **Assumes:** DNA letters only; at least 2 bases (meant for $14-20$ nt)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The oligonucleotide as given, G and C shaded (8 of 16 bases); the model returns Tm = 48, AT = 8, GC = 8](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-wallace-io)
+![The worked example of Primer melting temperature by the Wallace rule as inputs and results: stated seq = ACGTTGCAATGCCGTA; returned by cell-molecular-biology-ai999x: Tm = 48, AT = 8, GC = 8](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-wallace-io)
 
-*The oligonucleotide as given, G and C shaded (8 of 16 bases); the model returns Tm = 48, AT = 8, GC = 8. Your inputs: seq = ACGTTGCAATGCCGTA.*
-
-![Melting temperature in degC for the first 1, 2, ](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-wallace-live-1)
-
-*Melting temperature in degC for the first 1, 2, ... letters of seq; the last point is your full input (Tm = 48). Your inputs: seq = ACGTTGCAATGCCGTA.*
+*The worked example of Primer melting temperature by the Wallace rule as inputs and results: stated seq = ACGTTGCAATGCCGTA; returned by cell-molecular-biology-ai999x: Tm = 48, AT = 8, GC = 8.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_tm_wallace', seq='ACGTTGCAATGCCGTA')
@@ -1870,13 +1762,9 @@ $$
 - **Assumes:** DNA letters only; $N  \geq  14$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The oligonucleotide as given, G and C shaded (10 of 24 bases); the model returns Tm = 53](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-basic-io)
+![The worked example of Basic GC melting temperature of an oligonucleotide as inputs and results: stated seq = AGCGGATAACAATTTCACACAGGA; returned by cell-molecular-biology-ai999x: Tm = 53](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-basic-io)
 
-*The oligonucleotide as given, G and C shaded (10 of 24 bases); the model returns Tm = 53.9667, gc_percent = 41.6667, length = 24. In SI units: Tm = 53.97. Your inputs: seq = AGCGGATAACAATTTCACACAGGA.*
-
-![Melting temperature in degC for the first 1, 2, ](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-basic-live-1)
-
-*Melting temperature in degC for the first 1, 2, ... letters of seq; the last point is your full input (Tm = 53.97). Your inputs: seq = AGCGGATAACAATTTCACACAGGA.*
+*The worked example of Basic GC melting temperature of an oligonucleotide as inputs and results: stated seq = AGCGGATAACAATTTCACACAGGA; returned by cell-molecular-biology-ai999x: Tm = 53.9667, gc_percent = 41.6667, length = 24.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_tm_basic', seq='AGCGGATAACAATTTCACACAGGA')
@@ -1923,13 +1811,9 @@ $$
 - **Assumes:** DNA letters only; $N  \geq  14$; Na+ > 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Melting temperature in degC as Na runs from 30 to 70 mol/m^3, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-salt-adjusted-live-1)
+![Tm (melting temperature in degC) against Na (monovalent cation (Na+) concentration) from 5 mol/m^3 to 500 mol/m^3 on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-salt-adjusted-curve)
 
-*Melting temperature in degC as Na runs from 30 to 70 mol/m^3, every other input as you entered it (41 solutions). Marked: your Na = 50 mol/m^3 gives Tm = 51.99. Your inputs: seq = AGCGGATAACAATTTCACACAGGA, Na = 50 mol/m^3.*
-
-![Melting temperature in degC for the first 1, 2, ](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-salt-adjusted-live-2)
-
-*Melting temperature in degC for the first 1, 2, ... letters of seq; the last point is your full input (Tm = 51.99). Your inputs: seq = AGCGGATAACAATTTCACACAGGA, Na = 50 mol/m^3.*
+*Tm (melting temperature in degC) against Na (monovalent cation (Na+) concentration) from 5 mol/m^3 to 500 mol/m^3 on a logarithmic axis. Other inputs as in the worked example: seq = AGCGGATAACAATTTCACACAGGA. 41 points computed by cell-molecular-biology-ai999x; marked: the worked example, Na = 50 mol/m^3, Tm = 51.9862.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_tm_salt_adjusted', seq='AGCGGATAACAATTTCACACAGGA', Na=50.0)
@@ -1979,13 +1863,9 @@ $$
 - **Assumes:** DNA letters, length >= 2; Na+ > 0; $c_{1} > c_{2}/2$ (self-complementary: k = c1)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Melting temperature in degC as Na runs from 30 to 70 mol/m^3, every other input as you entered it (41 solutions)](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-tm-nearest-neighbor-live-1.svg)
+![Tm (melting temperature in degC) against c1 (concentration of the more concentrated strand) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-nearest-neighbor-curve)
 
-*Melting temperature in degC as Na runs from 30 to 70 mol/m^3, every other input as you entered it (41 solutions). Marked: your Na = 50 mol/m^3 gives Tm = 62.58. Your inputs: seq = CGTTCCAAAGATGTGGGCATGAGCTTAC, Na = 50 mol/m^3, c1 = 0.00025 mol/m^3, c2 = 0.00025 mol/m^3.*
-
-![Melting temperature in degC as c1 runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-tm-nearest-neighbor-live-2)
-
-*Melting temperature in degC as c1 runs from 0.00015 to 0.00035 mol/m^3, every other input as you entered it (29 solutions). Marked: your c1 = 0.00025 mol/m^3 gives Tm = 62.58. Your inputs: seq = CGTTCCAAAGATGTGGGCATGAGCTTAC, Na = 50 mol/m^3, c1 = 0.00025 mol/m^3, c2 = 0.00025 mol/m^3.*
+*Tm (melting temperature in degC) against c1 (concentration of the more concentrated strand) from 0.000125 mol/m^3 to 0.000375 mol/m^3. One curve for each value of Na (monovalent cation (Na+) concentration): 50 mol/m^3, 25 mol/m^3, 100 mol/m^3. Other inputs as in the worked example: seq = CGTTCCAAAGATGTGGGCATGAGCTTAC, c2 = 0.00025 mol/m^3. 30 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, c1 = 0.00025 mol/m^3, Tm = 62.5816.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_tm_nearest_neighbor', seq='CGTTCCAAAGATGTGGGCATGAGCTTAC', Na=50.0, c1=0.00025, c2=0.00025)
@@ -2032,17 +1912,9 @@ $$
 - **Assumes:** only A, C, G, T (DNA) or A, C, G, U (RNA)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![MW (molecular weight (5'-phosphate)) for each option of strands, one run of the model per option: single: 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-oligo-molecular-weight-bars)
+![MW (molecular weight (5'-phosphate)) for each option of strands (single strand or the duplex with its complement), one run of cell-molecular-biology-ai999x per option: single: 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-oligo-molecular-weight-bars)
 
-*MW (molecular weight (5'-phosphate)) for each option of strands, one run of the model per option: single: 3.107, double: 6.214. Highlighted: the option given, single. Your inputs: seq = ATGCATGCAT, strands = single.*
-
-![Molecular weight (5'-phosphate) for every choice of strands, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-oligo-molecular-weight-live-1)
-
-*Molecular weight (5'-phosphate) for every choice of strands, every other input as you entered it (highlighted: your choice). single: 3.107; double: 6.214. Your inputs: seq = ATGCATGCAT, strands = single.*
-
-![Molecular weight (5'-phosphate) for the first 1, 2, ](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-oligo-molecular-weight-live-2)
-
-*Molecular weight (5'-phosphate) for the first 1, 2, ... letters of seq; the last point is your full input (MW = 3.107). Your inputs: seq = ATGCATGCAT, strands = single.*
+*MW (molecular weight (5'-phosphate)) for each option of strands (single strand or the duplex with its complement), one run of cell-molecular-biology-ai999x per option: single: 3.10699 kg/mol, double: 6.21398 kg/mol. The worked example uses single. Other inputs as in the worked example: seq = ATGCATGCAT.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_oligo_molecular_weight', seq='ATGCATGCAT', strands='single')
@@ -2088,13 +1960,9 @@ $$
 - **Assumes:** DNA letters only; single strand
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The oligonucleotide as given (10 bases, each nearest-neighbour pair counts toward the extinction coefficient); the model returns eps = 9800 m^2/mol (98000 L/(mol cm)), 30](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-oligo-extinction-coefficient-io)
+![The worked example of Extinction coefficient of a DNA oligonucleotide at 260 nm (nearest neighbour) as inputs and results: stated seq = ATGCATGCAT; returned by cell-molecular-biology-ai999x: eps = 9800, eps_L_mol_cm = 98000, ug_per_A260 = 30](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-oligo-extinction-coefficient-io)
 
-*The oligonucleotide as given (10 bases, each nearest-neighbour pair counts toward the extinction coefficient); the model returns eps = 9800 m^2/mol (98000 L/(mol cm)), 30.8879 ug and 10.2041 nmol per A260 unit. Your inputs: seq = ATGCATGCAT.*
-
-![Molar extinction coefficient at 260 nm for the first 1, 2, ](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-oligo-extinction-coefficient-live-1)
-
-*Molar extinction coefficient at 260 nm for the first 1, 2, ... letters of seq; the last point is your full input (ε = 9800). Your inputs: seq = ATGCATGCAT.*
+*The worked example of Extinction coefficient of a DNA oligonucleotide at 260 nm (nearest neighbour) as inputs and results: stated seq = ATGCATGCAT; returned by cell-molecular-biology-ai999x: eps = 9800, eps_L_mol_cm = 98000, ug_per_A260 = 30.8879, nmol_per_A260 = 10.2041.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_oligo_extinction_coefficient', seq='ATGCATGCAT')
@@ -2143,21 +2011,13 @@ $$
 - **Assumes:** $A260  \geq  0$ (best within 0.1-1.0); dilution >= 1; $l > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![c (concentration of the stock) over A260 from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-nucleic-acid-a260-field)
+![c (concentration of the stock) against A260 (absorbance at 260 nm (blank-corrected)) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-nucleic-acid-a260-curve)
 
-*c (concentration of the stock) over A260 from 0.25 to 0.75 and dilution from 5 to 15: each of the 21 x 15 cells is one run of the model, shaded by its value (light 0.0625 to dark 0.5625); iso-lines at c = 0.1, 0.2, 0.3, 0.4, 0.5. Marked: the inputs given, A260 = 0.5, dilution = 10, c = 0.25. Your inputs: A260 = 0.5, molecule = dsDNA, dilution = 10.*
+*c (concentration of the stock) against A260 (absorbance at 260 nm (blank-corrected)) from 0.25 to 0.75. One curve for each value of dilution (dilution factor of the measured sample (default 1)): 10, 5, 20. Other inputs as in the worked example: molecule = dsDNA. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, A260 = 0.5, c = 0.25 kg/m^3.*
 
-![Concentration of the stock as A260 runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-nucleic-acid-a260-live-1)
+![c (concentration of the stock) over A260 (absorbance at 260 nm (blank-corrected)) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-nucleic-acid-a260-field)
 
-*Concentration of the stock as A260 runs from 0.125 to 0.875, every other input as you entered it (41 solutions). Marked: your A260 = 0.5 gives c = 0.25. Your inputs: A260 = 0.5, molecule = dsDNA, dilution = 10.*
-
-![Concentration of the stock for every choice of molecule, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-nucleic-acid-a260-live-2)
-
-*Concentration of the stock for every choice of molecule, every other input as you entered it (highlighted: your choice). dsDNA: 0.25; ssDNA: 0.165; RNA: 0.2. Your inputs: A260 = 0.5, molecule = dsDNA, dilution = 10.*
-
-![Concentration of the stock as dilution runs from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-nucleic-acid-a260-live-3)
-
-*Concentration of the stock as dilution runs from 2.5 to 17.5, every other input as you entered it (29 solutions). Marked: your dilution = 10 gives c = 0.25. Your inputs: A260 = 0.5, molecule = dsDNA, dilution = 10.*
+*c (concentration of the stock) over A260 (absorbance at 260 nm (blank-corrected)) from 0.25 to 0.75 and dilution (dilution factor of the measured sample (default 1)) from 5 to 15: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 0.0625 kg/m^3 to dark 0.5625 kg/m^3); iso-lines at c = 0.1, 0.2, 0.3, 0.4, 0.5 kg/m^3. Other inputs as in the worked example: molecule = dsDNA. Marked: the worked example, A260 = 0.5, dilution = 10, c = 0.25 kg/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_nucleic_acid_a260', A260=0.5, molecule='dsDNA', dilution=10.0)
@@ -2205,13 +2065,9 @@ $$
 - **Assumes:** absorbances > 0; A320 below the other readings
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A260/A280 after background subtraction as A260 runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-absorbance-ratios-live-1)
+![ratio_260_280 (A260/A280 after background subtraction) against A280 (absorbance at 280 nm) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-absorbance-ratios-curve)
 
-*A260/A280 after background subtraction as A260 runs from 0.225 to 1.575, every other input as you entered it (41 solutions). Marked: your A260 = 0.9 gives ratio_260_280 = 1.8. Your inputs: A260 = 0.9, A280 = 0.5, A230 = 0.42.*
-
-![A260/A280 after background subtraction as A280 runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-absorbance-ratios-live-2)
-
-*A260/A280 after background subtraction as A280 runs from 0.125 to 0.875, every other input as you entered it (29 solutions). Marked: your A280 = 0.5 gives ratio_260_280 = 1.8. Your inputs: A260 = 0.9, A280 = 0.5, A230 = 0.42.*
+*ratio_260_280 (A260/A280 after background subtraction) against A280 (absorbance at 280 nm) from 0.25 to 0.75. One curve for each value of A260 (absorbance at 260 nm): 0.9, 0.45, 1.8. Other inputs as in the worked example: A230 = 0.42. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, A280 = 0.5, ratio_260_280 = 1.8.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_absorbance_ratios', A260=0.9, A280=0.5, A230=0.42)
@@ -2257,17 +2113,13 @@ $$
 - **Assumes:** absorbances >= 0, 1 cm path; a positive estimate
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![protein (protein concentration) over A280 from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-warburg-christian-field)
+![protein (protein concentration) against A280 (absorbance at 280 nm) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-warburg-christian-curve)
 
-*protein (protein concentration) over A280 from 0.4 to 1.2 and A260 from 0.25 to 0.75: each of the 21 x 15 cells is one run of the model, shaded by its value (light 0.05 to dark 1.67); iso-lines at protein = 0.5, 1, 1.5. Marked: the inputs given, A280 = 0.8, A260 = 0.5, protein = 0.86. Your inputs: A280 = 0.8, A260 = 0.5.*
+*protein (protein concentration) against A280 (absorbance at 280 nm) from 0.4 to 1.2. One curve for each value of A260 (absorbance at 260 nm): 0.5, 0.25, 1. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, A280 = 0.8, protein = 0.86 kg/m^3.*
 
-![Protein concentration as A280 runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-warburg-christian-live-1)
+![protein (protein concentration) over A280 (absorbance at 280 nm) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-warburg-christian-field)
 
-*Protein concentration as A280 runs from 0.26 to 1.4, every other input as you entered it (39 solutions). Marked: your A280 = 0.8 gives protein = 0.86. Your inputs: A280 = 0.8, A260 = 0.5.*
-
-![Protein concentration as A260 runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-warburg-christian-live-2)
-
-*Protein concentration as A260 runs from 0.125 to 0.875, every other input as you entered it (29 solutions). Marked: your A260 = 0.5 gives protein = 0.86. Your inputs: A280 = 0.8, A260 = 0.5.*
+*protein (protein concentration) over A280 (absorbance at 280 nm) from 0.4 to 1.2 and A260 (absorbance at 260 nm) from 0.25 to 0.75: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 0.05 kg/m^3 to dark 1.67 kg/m^3); iso-lines at protein = 0.5, 1, 1.5 kg/m^3. Marked: the worked example, A280 = 0.8, A260 = 0.5, protein = 0.86 kg/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_warburg_christian', A280=0.8, A260=0.5)
@@ -2315,13 +2167,9 @@ $$
 - **Assumes:** $A280  \geq  0$; eps, $l > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Protein concentration as ε runs from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-protein-concentration-a280-live-1)
+![c (protein concentration) against eps (molar extinction coefficient at 280 nm) from 2178](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-protein-concentration-a280-curve)
 
-*Protein concentration as ε runs from 2.614e+04 to 6.1e+04 L/(mol*cm), every other input as you entered it (41 solutions). Marked: your ε = 4.357e+04 L/(mol*cm) gives c = 17.21 umol/L. Your inputs: A280 = 0.75, eps = 43570 L/(mol*cm), MW = 66430 g/mol.*
-
-![Protein concentration as A280 runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-protein-concentration-a280-live-2)
-
-*Protein concentration as A280 runs from 0.1875 to 1.312, every other input as you entered it (29 solutions). Marked: your A280 = 0.75 gives c = 17.21 umol/L. Your inputs: A280 = 0.75, eps = 43570 L/(mol*cm), MW = 66430 g/mol.*
+*c (protein concentration) against eps (molar extinction coefficient at 280 nm) from 2178.5 m^2/mol to 6535.5 m^2/mol. One curve for each value of A280 (absorbance at 280 nm): 0.75, 0.375, 1.5. Other inputs as in the worked example: MW = 66.43 kg/mol. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, eps = 4357 m^2/mol, c = 0.0172137 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_protein_concentration_a280', A280=0.75, eps=4357.0, MW=66.43)
@@ -2370,21 +2218,13 @@ $$
 - **Assumes:** $m > 0$; n a whole number >= 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![copies (number of molecules) over n from 300 to 3e+04 and m from 5e-13 to 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-dna-copy-number-field)
+![copies (number of molecules) against m (mass of nucleic acid) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-dna-copy-number-curve)
 
-*copies (number of molecules) over n from 300 to 3e+04 and m from 5e-13 to 1.5e-12 (logarithmic horizontal axis): each of the 21 x 15 cells is one run of the model, shaded by its value (light 1.624e+07 to dark 4.872e+09); iso-lines at copies = 1e+08, 1e+09. Marked: the inputs given, n = 3000, m = 1e-12, copies = 3.248e+08. Your inputs: m = 1e-12 kg, n = 3000, molecule = dsDNA.*
+*copies (number of molecules) against m (mass of nucleic acid) from 5.0000e-13 kg to 1.5000e-12 kg. One curve for each value of n (length in base pairs (dsDNA) or bases (ssDNA, RNA)): 3000, 1500, 6000. Other inputs as in the worked example: molecule = dsDNA. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, m = 1.0000e-12 kg, copies = 3.2483e+08.*
 
-![Number of molecules as m runs from 6e-13 to 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-dna-copy-number-live-1)
+![copies (number of molecules) over n (length in base pairs (dsDNA) or bases (ssDNA, RNA)) from 1 to 6000 and m (mass of nucleic acid) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-dna-copy-number-field)
 
-*Number of molecules as m runs from 6e-13 to 1.4e-12 kg, every other input as you entered it (41 solutions). Marked: your m = 1e-12 kg gives copies = 3.248e+08. Your inputs: m = 1e-12 kg, n = 3000, molecule = dsDNA.*
-
-![Number of molecules for every choice of molecule, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-dna-copy-number-live-2)
-
-*Number of molecules for every choice of molecule, every other input as you entered it (highlighted: your choice). dsDNA: 3.248e+08; ssDNA: 6.497e+08; RNA: 6.262e+08. Your inputs: m = 1e-12 kg, n = 3000, molecule = dsDNA.*
-
-![Number of molecules as n runs from 2980 to 3020, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-dna-copy-number-live-3)
-
-*Number of molecules as n runs from 2980 to 3020, every other input as you entered it (21 solutions). Marked: your n = 3000 gives copies = 3.248e+08. Your inputs: m = 1e-12 kg, n = 3000, molecule = dsDNA.*
+*copies (number of molecules) over n (length in base pairs (dsDNA) or bases (ssDNA, RNA)) from 1 to 6000 and m (mass of nucleic acid) from 5.0000e-13 kg to 1.5000e-12 kg (logarithmic horizontal axis): each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 8.1209e+07 to dark 1.3812e+12, logarithmic shading); iso-lines at copies = 1.00e8, 1.00e9, 1.00e10, 1.00e11, 1.00e12. Other inputs as in the worked example: molecule = dsDNA. Marked: the worked example, n = 3000, m = 1.0000e-12 kg, copies = 3.2483e+08.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_dna_copy_number', m=1e-12, n=3000, molecule='dsDNA')
@@ -2434,13 +2274,9 @@ $$
 - **Assumes:** masses, ratio > 0; lengths whole numbers >= 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Mass of insert as m_vector runs from 30 to 70 ng, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ligation-insert-mass-live-1)
+![m_insert (mass of insert) against m_vector (mass of vector DNA) from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ligation-insert-mass-curve)
 
-*Mass of insert as m_vector runs from 30 to 70 ng, every other input as you entered it (41 solutions). Marked: your m_vector = 50 ng gives m_insert = 5e-11. Your inputs: m_vector = 50 ng, L_vector = 3000, L_insert = 1000, ratio = 3.*
-
-![Mass of insert as ratio runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ligation-insert-mass-live-2)
-
-*Mass of insert as ratio runs from 0.75 to 5.25, every other input as you entered it (29 solutions). Marked: your ratio = 3 gives m_insert = 5e-11. Your inputs: m_vector = 50 ng, L_vector = 3000, L_insert = 1000, ratio = 3.*
+*m_insert (mass of insert) against m_vector (mass of vector DNA) from 2.5000e-11 kg to 7.5000e-11 kg. One curve for each value of L_vector (vector length in bp): 3000, 1500, 6000. Other inputs as in the worked example: L_insert = 1000, ratio = 3.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, m_vector = 5.0000e-11 kg, m_insert = 5.0000e-11 kg.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_ligation_insert_mass', m_vector=5e-11, L_vector=3000, L_insert=1000, ratio=3.0)
@@ -2486,9 +2322,9 @@ $$
 - **Assumes:** only A, C, G, T or U
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The strand as given (5' to 3') with the complement the model returns under it (3' to 5'), A-T (or A-U) pairs and G-C pairs in two colours; read 5' to 3', the partner strand is the reverse complement TCAGGTACGCAT](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-reverse-complement-io)
+![The worked example of Reverse complement of a DNA or RNA sequence as inputs and results: stated seq = ATGCGTACCTGA; returned by cell-molecular-biology-ai999x: reverse_complement = TCAGGTACGCAT, complement = TACGCATGGACT, reverse = AGTCCATGCGTA](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-reverse-complement-io)
 
-*The strand as given (5' to 3') with the complement the model returns under it (3' to 5'), A-T (or A-U) pairs and G-C pairs in two colours; read 5' to 3', the partner strand is the reverse complement TCAGGTACGCAT. Your inputs: seq = ATGCGTACCTGA.*
+*The worked example of Reverse complement of a DNA or RNA sequence as inputs and results: stated seq = ATGCGTACCTGA; returned by cell-molecular-biology-ai999x: reverse_complement = TCAGGTACGCAT, complement = TACGCATGGACT, reverse = AGTCCATGCGTA.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_reverse_complement', seq='ATGCGTACCTGA')
@@ -2533,13 +2369,9 @@ $$
 - **Assumes:** DNA letters only
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The DNA as given, read as the coding strand, and the mRNA the model returns (5' to 3'), T in the DNA and U in the mRNA shaded: mRNA = AUGGCCUUUAAG, length 12](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transcribe-io)
+![The worked example of Transcription of a DNA strand into mRNA as inputs and results: stated seq = ATGGCCTTTAAG, strand = coding; returned by cell-molecular-biology-ai999x: mRNA = AUGGCCUUUAAG, length = 12](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transcribe-io)
 
-*The DNA as given, read as the coding strand, and the mRNA the model returns (5' to 3'), T in the DNA and U in the mRNA shaded: mRNA = AUGGCCUUUAAG, length 12. Your inputs: seq = ATGGCCTTTAAG, strand = coding.*
-
-![Length in nt for the first 1, 2, ](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transcribe-live-1)
-
-*Length in nt for the first 1, 2, ... letters of seq; the last point is your full input (length = 12). Your inputs: seq = ATGGCCTTTAAG, strand = coding.*
+*The worked example of Transcription of a DNA strand into mRNA as inputs and results: stated seq = ATGGCCTTTAAG, strand = coding; returned by cell-molecular-biology-ai999x: mRNA = AUGGCCUUUAAG, length = 12.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_transcribe', seq='ATGGCCTTTAAG', strand='coding')
@@ -2585,13 +2417,9 @@ $$
 - **Assumes:** only A, C, G, T or U; at least one codon
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The sequence as given read in its 13 codons, each with the amino acid the model assigns under it (* a stop codon): full translation MAIVMGR*KGAR*, protein up to the first stop MAIVMGR (7 amino acids), 2 stop codons](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-translate-io)
+![The worked example of Translation of an mRNA or DNA sequence into protein as inputs and results: stated seq = AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG; returned by cell-molecular-biology-ai999x: protein = MAIVMGR, full_translation = MAIVMGR*KGAR*, length_aa = 7, stops = 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-translate-io)
 
-*The sequence as given read in its 13 codons, each with the amino acid the model assigns under it (* a stop codon): full translation MAIVMGR*KGAR*, protein up to the first stop MAIVMGR (7 amino acids), 2 stop codons. Your inputs: seq = AUGGCCAUUGUAAUGGGCCGCUGAA....*
-
-![Length of the protein up to the first stop for the first 1, 2, ](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-translate-live-1)
-
-*Length of the protein up to the first stop for the first 1, 2, ... letters of seq; the last point is your full input (length_aa = 7). Your inputs: seq = AUGGCCAUUGUAAUGGGCCGCUGAA....*
+*The worked example of Translation of an mRNA or DNA sequence into protein as inputs and results: stated seq = AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG; returned by cell-molecular-biology-ai999x: protein = MAIVMGR, full_translation = MAIVMGR*KGAR*, length_aa = 7, stops = 2.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_translate', seq='AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG')
@@ -2641,9 +2469,9 @@ $$
 - **Assumes:** DNA letters only; min_aa >= 1; at least one ORF
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The sequence as given (70 bases): the longest open reading frame the model finds is shaded, from base 3 to base 68 on the + strand (66 nt with the stop codon, start and stop in the second colour), and its protein below (21 amino acids)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-orf-finder-io)
+![The worked example of Longest open reading frame on both strands as inputs and results: stated seq = CCATGAAACGCATTAGCACCACCATTACCACCACCATCACCATTACCACAGGTAACGGTGCGGGCTGAGG, min_aa = 10; returned by cell-molecular-biology-ai999x: strand = +, start = 3, end = 68, length_nt = 66, length_aa = 21, protein = MKRISTTITTTITITTGNGAG](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-orf-finder-io)
 
-*The sequence as given (70 bases): the longest open reading frame the model finds is shaded, from base 3 to base 68 on the + strand (66 nt with the stop codon, start and stop in the second colour), and its protein below (21 amino acids). Open reading frames of at least the minimum length: 1. Your inputs: seq = CCATGAAACGCATTAGCACCACCAT..., min_aa = 10.*
+*The worked example of Longest open reading frame on both strands as inputs and results: stated seq = CCATGAAACGCATTAGCACCACCATTACCACCACCATCACCATTACCACAGGTAACGGTGCGGGCTGAGG, min_aa = 10; returned by cell-molecular-biology-ai999x: strand = +, start = 3, end = 68, length_nt = 66, length_aa = 21, protein = MKRISTTITTTITITTGNGAG.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_orf_finder', seq='CCATGAAACGCATTAGCACCACCATTACCACCACCATCACCATTACCACAGGTAACGGTGCGGGCTGAGG', min_aa=10)
@@ -2691,13 +2519,9 @@ $$
 - **Assumes:** L, N whole numbers >= 1; $G > 0$; reads placed uniformly at random
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Mean coverage as G runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-genome-coverage-live-1)
+![coverage (mean coverage (depth)) against L (read length in bp) from 1 to 300 on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-genome-coverage-curve)
 
-*Mean coverage as G runs from 1.25e+06 to 8.75e+06, every other input as you entered it (41 solutions). Marked: your G = 5e+06 gives coverage = 60. Your inputs: L = 150, N = 2000000, G = 5000000.*
-
-![Mean coverage as L runs from 130 to 170, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-genome-coverage-live-2)
-
-*Mean coverage as L runs from 130 to 170, every other input as you entered it (21 solutions). Marked: your L = 150 gives coverage = 60. Your inputs: L = 150, N = 2000000, G = 5000000.*
+*coverage (mean coverage (depth)) against L (read length in bp) from 1 to 300 on a logarithmic axis. One curve for each value of G (genome size in bp): 5e+06, 2.5e+06, 1.0000e+07. Other inputs as in the worked example: N = 2000000. 34 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, L = 150, coverage = 60.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_genome_coverage', L=150, N=2000000, G=5000000.0)
@@ -2743,13 +2567,9 @@ $$
 - **Assumes:** $0 < I < G$; $0 < P < 1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Number of clones as P runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-library-size-live-1)
+![clones_exact (number of clones (real value)) against P (desired probability (e](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-library-size-curve)
 
-*Number of clones as P runs from 0.2475 to 0.99, every other input as you entered it (21 solutions). Marked: your P = 0.99 gives clones_exact = 3.454e+05. Your inputs: G = 3000000000, I = 40000, P = 0.99.*
-
-![Number of clones as G runs from 7](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-library-size-live-2)
-
-*Number of clones as G runs from 7.5e+08 to 5.25e+09, every other input as you entered it (29 solutions). Marked: your G = 3e+09 gives clones_exact = 3.454e+05. Your inputs: G = 3000000000, I = 40000, P = 0.99.*
+*clones_exact (number of clones (real value)) against P (desired probability (e.g. 99%)) from 0.02 to 0.98. One curve for each value of G (genome size in bp): 3.0000e+09, 1.5000e+09, 6.0000e+09. Other inputs as in the worked example: I = 40000.0. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, P = 0.99, clones_exact = 345385.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_library_size', G=3000000000.0, I=40000.0, P=0.99)
@@ -2797,13 +2617,9 @@ $$
 - **Assumes:** $1  \leq  n_{0} < n$; $Nt > 0$; Poisson number of mutational events per culture
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Mean mutations per culture as n runs from 12 to 40, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mutation-rate-p0-live-1)
+![m (mean mutations per culture) against n0 (number of cultures with no mutants) from 1 to 22](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mutation-rate-p0-curve)
 
-*Mean mutations per culture as n runs from 12 to 40, every other input as you entered it (29 solutions). Marked: your n = 20 gives m = 0.5978. Your inputs: n0 = 11, n = 20, Nt = 200000000.*
-
-![Mean mutations per culture as n0 runs from 1 to 19, every other input as you entered it (10 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mutation-rate-p0-live-2)
-
-*Mean mutations per culture as n0 runs from 1 to 19, every other input as you entered it (10 solutions). Marked: your n0 = 11 gives m = 0.5978. Your inputs: n0 = 11, n = 20, Nt = 200000000.*
+*m (mean mutations per culture) against n0 (number of cultures with no mutants) from 1 to 22. One curve for each value of n (total number of cultures): 20, 10, 40. Other inputs as in the worked example: Nt = 200000000.0. 19 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, n0 = 11, m = 0.597837.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_mutation_rate_p0', n0=11, n=20, Nt=200000000.0)
@@ -2850,13 +2666,9 @@ $$
 - **Assumes:** $N_{0} > 0$; $0 < E  \leq  1$; $0  \leq  n  \leq  60$; exponential phase (no plateau)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Copies after n cycles as n runs from 10 to 50, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-pcr-amplification-live-1)
+![N (copies after n cycles) against N0 (initial template copies) from 50 to 150](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-pcr-amplification-curve)
 
-*Copies after n cycles as n runs from 10 to 50, every other input as you entered it (41 solutions). Marked: your n = 30 gives N = 1.074e+11. Your inputs: N0 = 100, E = 1, n = 30.*
-
-![Copies after n cycles as E runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-pcr-amplification-live-2)
-
-*Copies after n cycles as E runs from 0.25 to 1, every other input as you entered it (15 solutions). Marked: your E = 1 gives N = 1.074e+11. Your inputs: N0 = 100, E = 1, n = 30.*
+*N (copies after n cycles) against N0 (initial template copies) from 50 to 150. One curve for each value of n (number of cycles): 30, 15, 60. Other inputs as in the worked example: E = 1.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, N0 = 100, N = 1.0737e+11.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_pcr_amplification', N0=100.0, E=1.0, n=30)
@@ -2903,13 +2715,9 @@ $$
 - **Assumes:** $N > N_{0} > 0$; $0 < E  \leq  1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Cycles needed as E runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-pcr-cycles-needed-live-1)
+![cycles_exact (cycles needed (real value)) against E (amplification efficiency per cycle (0 to 1)) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-pcr-cycles-needed-curve)
 
-*Cycles needed as E runs from 0.2375 to 0.9856, every other input as you entered it (22 solutions). Marked: your E = 0.95 gives cycles_exact = 27.58. Your inputs: N0 = 100, N = 10000000000, E = 0.95.*
-
-![Cycles needed as N runs from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-pcr-cycles-needed-live-2)
-
-*Cycles needed as N runs from 2.5e+09 to 1.75e+10, every other input as you entered it (29 solutions). Marked: your N = 1e+10 gives cycles_exact = 27.58. Your inputs: N0 = 100, N = 10000000000, E = 0.95.*
+*cycles_exact (cycles needed (real value)) against E (amplification efficiency per cycle (0 to 1)) from 0.02 to 0.98. Other inputs as in the worked example: N0 = 100.0, N = 10000000000.0. 41 points computed by cell-molecular-biology-ai999x; marked: the worked example, E = 0.95, cycles_exact = 27.5829.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_pcr_cycles_needed', N0=100.0, N=10000000000.0, E=0.95)
@@ -2959,17 +2767,13 @@ $$
 - **Assumes:** $0 < Ct  \leq  60$; efficiencies of target and reference near 100 %
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![fold_change (relative expression 2^-ddCt) against Ct_target_treated (Ct of the target gene in the treated sample) from 12](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-qpcr-delta-delta-ct-fold-change-vs-ct-target-treated.svg)
+![fold_change (relative expression 2^-ddCt) against Ct_target_treated (Ct of the target gene in the treated sample), with Ct_ref_control = 18](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-qpcr-delta-delta-ct-fold-change-vs-ct-target-treated.svg)
 
-*fold_change (relative expression 2^-ddCt) against Ct_target_treated (Ct of the target gene in the treated sample) from 12.25 to 36.75 (logarithmic axis up), the other inputs as given: 31 points, each a run of the model. Marked: Ct_target_treated = 24.5, fold_change = 4.925. Your inputs: Ct_target_treated = 24.5, Ct_ref_treated = 18, Ct_target_control = 27, Ct_ref_control = 18.2.*
+*fold_change (relative expression 2^-ddCt) against Ct_target_treated (Ct of the target gene in the treated sample), with Ct_ref_control = 18.2, Ct_ref_treated = 18, Ct_target_control = 27. 31 points computed by cell-molecular-biology-ai999x; marked: Ct_target_treated = 24.5, fold_change = 4.92458.*
 
-![Fold change as Ct_target_treated runs from 6](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-delta-delta-ct-live-1)
+![fold_change (relative expression 2^-ddCt) against Ct_target_treated (Ct of the target gene in the treated sample) from 12](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-delta-delta-ct-curve)
 
-*Fold change as Ct_target_treated runs from 6.125 to 42.88, every other input as you entered it (41 solutions). Marked: your Ct_target_treated = 24.5 gives fold_change = 4.925. Your inputs: Ct_target_treated = 24.5, Ct_ref_treated = 18, Ct_target_control = 27, Ct_ref_control = 18.2.*
-
-![Fold change as Ct_ref_treated runs from 4](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-delta-delta-ct-live-2)
-
-*Fold change as Ct_ref_treated runs from 4.5 to 31.5, every other input as you entered it (29 solutions). Marked: your Ct_ref_treated = 18 gives fold_change = 4.925. Your inputs: Ct_target_treated = 24.5, Ct_ref_treated = 18, Ct_target_control = 27, Ct_ref_control = 18.2.*
+*fold_change (relative expression 2^-ddCt) against Ct_target_treated (Ct of the target gene in the treated sample) from 12.25 to 36.75, logarithmic output axis. One curve for each value of Ct_ref_treated (Ct of the reference gene in the treated sample): 18, 9, 36. Other inputs as in the worked example: Ct_target_control = 27.0, Ct_ref_control = 18.2. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Ct_target_treated = 24.5, fold_change = 4.92458.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_qpcr_delta_delta_ct', Ct_target_treated=24.5, Ct_ref_treated=18.0, Ct_target_control=27.0, Ct_ref_control=18.2)
@@ -3020,13 +2824,9 @@ $$
 - **Assumes:** $0 < E  \leq  1$; $0 < Ct  \leq  60$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Expression ratio sample/control as Ct_target_control runs from 6](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-pfaffl-ratio-live-1)
+![ratio (expression ratio sample/control) against Ct_target_control (target Ct in the control) from 13 to 39, logarithmic output axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-pfaffl-ratio-curve)
 
-*Expression ratio sample/control as Ct_target_control runs from 6.5 to 45.5, every other input as you entered it (41 solutions). Marked: your Ct_target_control = 26 gives ratio = 6.437. Your inputs: E_target = 0.95, E_ref = 0.9, Ct_target_control = 26, Ct_target_sample = 23.5, Ct_ref_control = 18, Ct_ref_sample = 18.3.*
-
-![Expression ratio sample/control as Ct_target_sample runs from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-pfaffl-ratio-live-2)
-
-*Expression ratio sample/control as Ct_target_sample runs from 5.875 to 41.12, every other input as you entered it (29 solutions). Marked: your Ct_target_sample = 23.5 gives ratio = 6.437. Your inputs: E_target = 0.95, E_ref = 0.9, Ct_target_control = 26, Ct_target_sample = 23.5, Ct_ref_control = 18, Ct_ref_sample = 18.3.*
+*ratio (expression ratio sample/control) against Ct_target_control (target Ct in the control) from 13 to 39, logarithmic output axis. One curve for each value of Ct_ref_sample (reference Ct in the sample): 18.3, 9.15, 36.6. Other inputs as in the worked example: E_target = 0.9500000000000001, E_ref = 0.9, Ct_target_sample = 23.5, Ct_ref_control = 18.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Ct_target_control = 26, ratio = 6.43743.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_qpcr_pfaffl_ratio', E_target=0.95, E_ref=0.9, Ct_target_control=26.0, Ct_target_sample=23.5, Ct_ref_control=18.0, Ct_ref_sample=18.3)
@@ -3075,9 +2875,9 @@ $$
 - **Assumes:** at least 3 standards; quantities > 0; negative slope
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![efficiency (efficiency 10^(-1/m) - 1) as value 5 of quantity moves from 50 to 150, the other values as given (1e+06, 1e+05, 1e+04, 1000, 100); 31 runs of the model](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-standard-curve-sensitivity)
+![efficiency (efficiency 10^(-1/m) - 1) as value 5 of quantity (starting quantities of the standards (copies or ng)) moves from 0 to 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-standard-curve-sensitivity)
 
-*efficiency (efficiency 10^(-1/m) - 1) as value 5 of quantity moves from 50 to 150, the other values as given (1e+06, 1e+05, 1e+04, 1000, 100); 31 runs of the model. Marked: quantity[5] = 100, efficiency = 0.9884. Your inputs: quantity = 1000000, 100000, 10000..., Ct = 15.1, 18.5, 21.8, 25.2, 28.5.*
+*efficiency (efficiency 10^(-1/m) - 1) as value 5 of quantity (starting quantities of the standards (copies or ng)) moves from 0 to 1.49995e+06, the other values as given ([1000000.0, 100000.0, 10000.0, 1000.0, 100.0]); 40 runs of cell-molecular-biology-ai999x. Other inputs: Ct = [15.1, 18.5, 21.8, 25.2, 28.5]. Marked: the worked example, quantity[5] = 100, efficiency = 0.988417.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_qpcr_standard_curve', quantity=[1000000.0, 100000.0, 10000.0, 1000.0, 100.0], Ct=[15.1, 18.5, 21.8, 25.2, 28.5])
@@ -3123,13 +2923,9 @@ $$
 - **Assumes:** slope < 0; Ct inside the range of the standards
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Starting quantity as intercept runs from 9](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-quantify-live-1)
+![quantity (starting quantity (unit of the standards)) against slope (standard-curve slope m (negative)) from -4](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-quantify-curve)
 
-*Starting quantity as intercept runs from 9.5 to 66.5, every other input as you entered it (41 solutions). Marked: your intercept = 38 gives quantity = 1.014e+04. Your inputs: slope = -3.32, intercept = 38, Ct = 24.7.*
-
-![Starting quantity as Ct runs from 6](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-qpcr-quantify-live-2)
-
-*Starting quantity as Ct runs from 6.175 to 43.23, every other input as you entered it (29 solutions). Marked: your Ct = 24.7 gives quantity = 1.014e+04. Your inputs: slope = -3.32, intercept = 38, Ct = 24.7.*
+*quantity (starting quantity (unit of the standards)) against slope (standard-curve slope m (negative)) from -4.98 to -1.66, logarithmic output axis. One curve for each value of intercept (standard-curve intercept b): 38, 19, 76. Other inputs as in the worked example: Ct = 24.7. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, slope = -3.32, quantity = 10139.7.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_qpcr_quantify', slope=-3.32, intercept=38.0, Ct=24.7)
@@ -3177,17 +2973,13 @@ $$
 - **Assumes:** $n  \geq  1$; rate > 0; constant elongation rate
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![t (transcription time) over rate from 20 to 60 and n from 2000 to 2e+05 (logarithmic vertical axis): each of the 21 x 15 cells is one run of the model, shaded by its value (light 33](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transcription-time-field)
+![t (transcription time) against rate (elongation rate in nucleotides per second) from 20 to 60](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transcription-time-curve)
 
-*t (transcription time) over rate from 20 to 60 and n from 2000 to 2e+05 (logarithmic vertical axis): each of the 21 x 15 cells is one run of the model, shaded by its value (light 33.33 to dark 1e+04); iso-lines at t = 100, 1000, 1e+04. Marked: the inputs given, rate = 40, n = 2e+04, t = 500. Your inputs: n = 20000, rate = 40.*
+*t (transcription time) against rate (elongation rate in nucleotides per second) from 20 to 60. One curve for each value of n (gene (transcript) length in nucleotides): 20000, 10000, 40000. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, rate = 40, t = 500 s.*
 
-![Transcription time as rate runs from 10 to 70, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transcription-time-live-1)
+![t (transcription time) over rate (elongation rate in nucleotides per second) from 20 to 60 and n (gene (transcript) length in nucleotides) from 1 to 40000 (logarithmic vertical axis): each of the 21 × 16 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transcription-time-field)
 
-*Transcription time as rate runs from 10 to 70, every other input as you entered it (41 solutions). Marked: your rate = 40 gives t = 8.333 min. Your inputs: n = 20000, rate = 40.*
-
-![Transcription time as n runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-transcription-time-live-2)
-
-*Transcription time as n runs from 1.998e+04 to 2.002e+04, every other input as you entered it (21 solutions). Marked: your n = 2e+04 gives t = 8.333 min. Your inputs: n = 20000, rate = 40.*
+*t (transcription time) over rate (elongation rate in nucleotides per second) from 20 to 60 and n (gene (transcript) length in nucleotides) from 1 to 40000 (logarithmic vertical axis): each of the 21 × 16 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 0.0166667 s to dark 2000 s, logarithmic shading); iso-lines at t = 0.1, 1, 10, 100, 1000 s. Marked: the worked example, rate = 40, n = 20000, t = 500 s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_transcription_time', n=20000, rate=40.0)
@@ -3237,17 +3029,13 @@ $$
 - **Assumes:** $n_aa  \geq  1$; rate > 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![t (translation time) over rate from 3 to 9 and n_aa from 30 to 3000 (logarithmic vertical axis): each of the 21 x 15 cells is one run of the model, shaded by its value (light 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-translation-time-field)
+![t (translation time) against n_aa (protein length in amino acids) from 1 to 600 on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-translation-time-curve)
 
-*t (translation time) over rate from 3 to 9 and n_aa from 30 to 3000 (logarithmic vertical axis): each of the 21 x 15 cells is one run of the model, shaded by its value (light 3.333 to dark 1000); iso-lines at t = 10, 100, 1000. Marked: the inputs given, rate = 6, n_aa = 300, t = 50. Your inputs: n_aa = 300, rate = 6.*
+*t (translation time) against n_aa (protein length in amino acids) from 1 to 600 on a logarithmic axis. One curve for each value of rate (elongation rate in amino acids per second): 6, 3, 12. 36 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, n_aa = 300, t = 50 s.*
 
-![Translation time as rate runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-translation-time-live-1)
+![t (translation time) over rate (elongation rate in amino acids per second) from 3 to 9 and n_aa (protein length in amino acids) from 1 to 600 (logarithmic vertical axis): each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-translation-time-field)
 
-*Translation time as rate runs from 1.5 to 10.5, every other input as you entered it (41 solutions). Marked: your rate = 6 gives t = 50. Your inputs: n_aa = 300, rate = 6.*
-
-![Translation time as n_aa runs from 280 to 320, every other input as you entered it (21 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-translation-time-live-2)
-
-*Translation time as n_aa runs from 280 to 320, every other input as you entered it (21 solutions). Marked: your n_aa = 300 gives t = 50. Your inputs: n_aa = 300, rate = 6.*
+*t (translation time) over rate (elongation rate in amino acids per second) from 3 to 9 and n_aa (protein length in amino acids) from 1 to 600 (logarithmic vertical axis): each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 0.111111 s to dark 200 s, logarithmic shading); iso-lines at t = 1, 10, 100 s. Marked: the worked example, rate = 6, n_aa = 300, t = 50 s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_translation_time', n_aa=300, rate=6.0)
@@ -3299,13 +3087,9 @@ $$
 - **Assumes:** all rates > 0; constant rates, first-order decay
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Steady-state protein per cell as δ_m runs from 4](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-expression-steady-state-live-1)
+![p_ss (steady-state protein per cell) against delta_m (mRNA decay rate constant) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-expression-steady-state-curve)
 
-*Steady-state protein per cell as δ_m runs from 4.32 to 10.08 1/h, every other input as you entered it (41 solutions). Marked: your δ_m = 7.2 1/h gives p_ss = 2500. Your inputs: k_tx = 36 1/h, delta_m = 7.2 1/h, k_tl = 180 1/h, delta_p = 0.36 1/h.*
-
-![Steady-state protein per cell as δ_p runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-expression-steady-state-live-2)
-
-*Steady-state protein per cell as δ_p runs from 0.216 to 0.504 1/h, every other input as you entered it (29 solutions). Marked: your δ_p = 0.36 1/h gives p_ss = 2500. Your inputs: k_tx = 36 1/h, delta_m = 7.2 1/h, k_tl = 180 1/h, delta_p = 0.36 1/h.*
+*p_ss (steady-state protein per cell) against delta_m (mRNA decay rate constant) from 0.001 1/s to 0.003 1/s. One curve for each value of k_tx (transcription rate (mRNA made per cell per unit time)): 0.01 Hz, 0.005 Hz, 0.02 Hz. Other inputs as in the worked example: k_tl = 0.05 Hz, delta_p = 9.999999999999999e-05 1/s. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, delta_m = 0.002 1/s, p_ss = 2500.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_expression_steady_state', k_tx=0.01, delta_m=0.002, k_tl=0.05, delta_p=0.0001)
@@ -3355,13 +3139,9 @@ $$
 - **Assumes:** all rates > 0; $t  \geq  0$; m(0) = p(0) = 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Protein per cell at time t as k_tx runs from 21](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-induction-dynamics-live-1)
+![p (protein per cell at time t) against delta_m (mRNA decay rate constant) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-induction-dynamics-curve)
 
-*Protein per cell at time t as k_tx runs from 21.6 to 50.4 1/h, every other input as you entered it (41 solutions). Marked: your k_tx = 36 1/h gives p = 1219. Your inputs: k_tx = 36 1/h, delta_m = 7.2 1/h, k_tl = 180 1/h, delta_p = 0.36 1/h, t = 2 h.*
-
-![Protein per cell at time t as k_tl runs from 108 to 252 1/h, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-induction-dynamics-live-2)
-
-*Protein per cell at time t as k_tl runs from 108 to 252 1/h, every other input as you entered it (29 solutions). Marked: your k_tl = 180 1/h gives p = 1219. Your inputs: k_tx = 36 1/h, delta_m = 7.2 1/h, k_tl = 180 1/h, delta_p = 0.36 1/h, t = 2 h.*
+*p (protein per cell at time t) against delta_m (mRNA decay rate constant) from 0.0002 1/s to 0.02 1/s on a logarithmic axis. One curve for each value of k_tx (transcription rate): 0.01 Hz, 0.005 Hz, 0.02 Hz. Other inputs as in the worked example: k_tl = 0.05 Hz, delta_p = 9.999999999999999e-05 1/s, t = 7200.0 s. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, delta_m = 0.002 1/s, p = 1219.07.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_induction_dynamics', k_tx=0.01, delta_m=0.002, k_tl=0.05, delta_p=0.0001, t=7200.0)
@@ -3408,9 +3188,9 @@ $$
 - **Assumes:** at least 3 points; levels > 0 and decaying; first-order decay
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Levels against time as given (5 points, logarithmic axis) and the decay line drawn with the returned fit: level at t = 0 = 99](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mrna-half-life-fit-xy)
+![The data level (measured levels (relative units, positive)) against t (times after the shut-off in minutes) as given in the worked example (5 points)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mrna-half-life-fit-xy)
 
-*Levels against time as given (5 points, logarithmic axis) and the decay line drawn with the returned fit: level at t = 0 = 99.96, k = 0.01159 per minute. Returned half-life 59.82 min (marked, where the line reaches half its start), r2 = 0.9998. Your inputs: t = 0, 30, 60, 90, 120, level = 100, 70, 50.5, 35.2, 24.8.*
+*The data level (measured levels (relative units, positive)) against t (times after the shut-off in minutes) as given in the worked example (5 points). Also returned: k_per_min = 0.011587, half_life_min = 59.8211, initial_fit = 99.9556, r2 = 0.999799.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_mrna_half_life_fit', t=[0.0, 30.0, 60.0, 90.0, 120.0], level=[100.0, 70.0, 50.5, 35.2, 24.8])
@@ -3457,13 +3237,9 @@ $$
 - **Assumes:** Vmax, $Km > 0$; $S  \geq  0$; initial-rate conditions, S >> E
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Initial rate as Vmax runs from 60 to 140 uM/min, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-michaelis-menten-rate-live-1)
+![v (initial rate) against Vmax (maximum rate) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-michaelis-menten-rate-curve)
 
-*Initial rate as Vmax runs from 60 to 140 uM/min, every other input as you entered it (41 solutions). Marked: your Vmax = 100 uM/min gives v = 0.001111. Your inputs: Vmax = 100 uM/min, Km = 50 uM, S = 100 uM.*
-
-![Initial rate as S runs from 60 to 140 uM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-michaelis-menten-rate-live-2)
-
-*Initial rate as S runs from 60 to 140 uM, every other input as you entered it (29 solutions). Marked: your S = 100 uM gives v = 0.001111. Your inputs: Vmax = 100 uM/min, Km = 50 uM, S = 100 uM.*
+*v (initial rate) against Vmax (maximum rate) from 0.000833333 mol/(m^3*s) to 0.0025 mol/(m^3*s). One curve for each value of Km (Michaelis constant): 0.05 mol/m^3, 0.025 mol/m^3, 0.1 mol/m^3. Other inputs as in the worked example: S = 0.1 mol/m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Vmax = 0.00166667 mol/(m^3*s), v = 0.00111111 mol/(m^3*s).*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_michaelis_menten_rate', Vmax=0.0016666666666666668, Km=0.05, S=0.1)
@@ -3510,17 +3286,13 @@ $$
 - **Assumes:** $Km > 0$; $0 < f < 1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![S (required substrate concentration) over f from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-substrate-for-fraction-of-vmax-field)
+![S (required substrate concentration) against f (fraction of Vmax (0 to 1)) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-substrate-for-fraction-of-vmax-curve)
 
-*S (required substrate concentration) over f from 0.45 to 0.99 and Km from 0.025 to 0.075: each of the 13 x 15 cells is one run of the model, shaded by its value (light 0.02045 to dark 7.425); iso-lines at S = 0.1, 1. Marked: the inputs given, f = 0.9, Km = 0.05, S = 0.45. Your inputs: Km = 0.05 mol/m^3, f = 0.9.*
+*S (required substrate concentration) against f (fraction of Vmax (0 to 1)) from 0.02 to 0.98, logarithmic output axis. One curve for each value of Km (Michaelis constant): 0.05 mol/m^3, 0.025 mol/m^3, 0.1 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, f = 0.9, S = 0.45 mol/m^3.*
 
-![Required substrate concentration as f runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-substrate-for-fraction-of-vmax-live-1)
+![S (required substrate concentration) over f (fraction of Vmax (0 to 1)) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-substrate-for-fraction-of-vmax-field)
 
-*Required substrate concentration as f runs from 0.225 to 0.9806, every other input as you entered it (41 solutions). Marked: your f = 0.9 gives S = 450 umol/L. Your inputs: Km = 0.05 mol/m^3, f = 0.9.*
-
-![Required substrate concentration as Km runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-substrate-for-fraction-of-vmax-live-2)
-
-*Required substrate concentration as Km runs from 0.03 to 0.07 mol/m^3, every other input as you entered it (29 solutions). Marked: your Km = 0.05 mol/m^3 gives S = 0.45 mmol/L. Your inputs: Km = 0.05 mol/m^3, f = 0.9.*
+*S (required substrate concentration) over f (fraction of Vmax (0 to 1)) from 0.02 to 0.98 and Km (Michaelis constant) from 0.025 mol/m^3 to 0.075 mol/m^3: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 0.000510204 mol/m^3 to dark 3.675 mol/m^3, logarithmic shading); iso-lines at S = 0.001, 0.01, 0.1, 1 mol/m^3. Marked: the worked example, f = 0.9, Km = 0.05 mol/m^3, S = 0.45 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_substrate_for_fraction_of_vmax', Km=0.05, f=0.9)
@@ -3570,13 +3342,9 @@ $$
 - **Assumes:** Vmax, Et, $Km > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Turnover number as Vmax runs from 36 to 84 uM/min, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-kcat-catalytic-efficiency-live-1)
+![kcat (turnover number) against Et (total enzyme concentration) from 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-kcat-catalytic-efficiency-curve)
 
-*Turnover number as Vmax runs from 36 to 84 uM/min, every other input as you entered it (41 solutions). Marked: your Vmax = 60 uM/min gives kcat = 100. Your inputs: Vmax = 60 uM/min, Et = 10 nM, Km = 25 uM.*
-
-![Turnover number as Et runs from 6 to 14 nM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-kcat-catalytic-efficiency-live-2)
-
-*Turnover number as Et runs from 6 to 14 nM, every other input as you entered it (29 solutions). Marked: your Et = 10 nM gives kcat = 100. Your inputs: Vmax = 60 uM/min, Et = 10 nM, Km = 25 uM.*
+*kcat (turnover number) against Et (total enzyme concentration) from 5.0000e-06 mol/m^3 to 1.5000e-05 mol/m^3. One curve for each value of Vmax (maximum rate): 0.001 mol/(m^3*s), 0.0005 mol/(m^3*s), 0.002 mol/(m^3*s). Other inputs as in the worked example: Km = 0.025 mol/m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Et = 1.0000e-05 mol/m^3, kcat = 100 1/s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_kcat_catalytic_efficiency', Vmax=0.001, Et=1e-05, Km=0.025)
@@ -3625,9 +3393,9 @@ $$
 - **Assumes:** at least 3 points; S, $v > 0$; positive slope and intercept
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Lineweaver-Burk plot: the 6 measurements as points at (1/S, 1/v) and the line of the returned slope 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-lineweaver-burk-fit-xy)
+![The data v (initial rates (any one unit)) against S (substrate concentrations (any one unit, e](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-lineweaver-burk-fit-xy)
 
-*Lineweaver-Burk plot: the 6 measurements as points at (1/S, 1/v) and the line of the returned slope 0.04988 and intercept 0.01001 (r2 = 1). Marked: 1/Vmax on the 1/v axis and -1/Km where the line crosses the 1/S axis, from the returned Km = 4.982 and Vmax = 99.89. Your inputs: S = 1, 2, 5, 10, 20, 50, v = 16.7, 28.6, 50, 66.7....*
+*The data v (initial rates (any one unit)) against S (substrate concentrations (any one unit, e.g. uM)) as given in the worked example (6 points). Also returned: Km = 4.98227, Vmax = 99.8888, slope = 0.0498781, intercept = 0.0100111, r2 = 1.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_lineweaver_burk_fit', S=[1.0, 2.0, 5.0, 10.0, 20.0, 50.0], v=[16.7, 28.6, 50.0, 66.7, 80.0, 90.9])
@@ -3674,9 +3442,9 @@ $$
 - **Assumes:** at least 3 points; S, $v > 0$; an interior least-squares minimum
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The 6 measured rates against substrate as given and the Michaelis-Menten curve of the fitted Km = 5](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-michaelis-menten-nonlinear-fit-xy)
+![The data v (initial rates (any one unit)) against S (substrate concentrations (any one unit)) as given in the worked example (6 points)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-michaelis-menten-nonlinear-fit-xy)
 
-*The 6 measured rates against substrate as given and the Michaelis-Menten curve of the fitted Km = 5.079 and Vmax = 100.7, each point computed by the model's rate capability (r2 = 0.9986, residual sum of squares 5.868). Marked: S = Km, where the rate is half of Vmax. Your inputs: S = 1, 2, 5, 10, 20, 50, v = 16, 29.5, 49, 68, 79, 92.*
+*The data v (initial rates (any one unit)) against S (substrate concentrations (any one unit)) as given in the worked example (6 points). Also returned: Km = 5.07928, Vmax = 100.714, rss = 5.86753, r2 = 0.998642.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_michaelis_menten_nonlinear_fit', S=[1.0, 2.0, 5.0, 10.0, 20.0, 50.0], v=[16.0, 29.5, 49.0, 68.0, 79.0, 92.0])
@@ -3726,13 +3494,9 @@ $$
 - **Assumes:** Vmax, Km, $Ki > 0$; S, $I  \geq  0$; rapid-equilibrium inhibitor binding
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Rate with the inhibitor and apparent Vmax as Vmax runs from 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-competitive-inhibition-live-1)
+![v (rate with the inhibitor) against Km (Michaelis constant) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-competitive-inhibition-curve)
 
-*Rate with the inhibitor and apparent Vmax as Vmax runs from 3.6 to 8.4 uM/min, every other input as you entered it (41 solutions). Marked: your Vmax = 6 uM/min gives v = 4e-05. Your inputs: Vmax = 6 uM/min, Km = 50 uM, S = 100 uM, I = 20 uM, Ki = 10 uM.*
-
-![Rate with the inhibitor as Km runs from 30 to 70 uM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-competitive-inhibition-live-2)
-
-*Rate with the inhibitor as Km runs from 30 to 70 uM, every other input as you entered it (29 solutions). Marked: your Km = 50 uM gives v = 4e-05. Your inputs: Vmax = 6 uM/min, Km = 50 uM, S = 100 uM, I = 20 uM, Ki = 10 uM.*
+*v (rate with the inhibitor) against Km (Michaelis constant) from 0.005 mol/m^3 to 0.5 mol/m^3 on a logarithmic axis. One curve for each value of Vmax (maximum rate without inhibitor): 0.0001 mol/(m^3*s), 5.0000e-05 mol/(m^3*s), 0.0002 mol/(m^3*s). Other inputs as in the worked example: S = 0.1 mol/m^3, I = 0.02 mol/m^3, Ki = 0.01 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Km = 0.05 mol/m^3, v = 4.0000e-05 mol/(m^3*s).*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_competitive_inhibition', Vmax=0.0001, Km=0.05, S=0.1, I=0.02, Ki=0.01)
@@ -3782,13 +3546,9 @@ $$
 - **Assumes:** Vmax, Km, $Ki > 0$; S, $I  \geq  0$; rapid-equilibrium inhibitor binding
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Rate with the inhibitor as Km runs from 30 to 70 uM, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-uncompetitive-inhibition-live-1)
+![v (rate with the inhibitor) against I (inhibitor concentration) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-uncompetitive-inhibition-curve)
 
-*Rate with the inhibitor as Km runs from 30 to 70 uM, every other input as you entered it (41 solutions). Marked: your Km = 50 uM gives v = 2.857e-05. Your inputs: Vmax = 6 uM/min, Km = 50 uM, S = 100 uM, I = 20 uM, Ki = 10 uM.*
-
-![Rate with the inhibitor and apparent Vmax as Vmax runs from 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-uncompetitive-inhibition-live-2)
-
-*Rate with the inhibitor and apparent Vmax as Vmax runs from 3.6 to 8.4 uM/min, every other input as you entered it (29 solutions). Marked: your Vmax = 6 uM/min gives v = 2.857e-05. Your inputs: Vmax = 6 uM/min, Km = 50 uM, S = 100 uM, I = 20 uM, Ki = 10 uM.*
+*v (rate with the inhibitor) against I (inhibitor concentration) from 0.002 mol/m^3 to 0.2 mol/m^3 on a logarithmic axis. One curve for each value of Vmax (maximum rate without inhibitor): 0.0001 mol/(m^3*s), 5.0000e-05 mol/(m^3*s), 0.0002 mol/(m^3*s). Other inputs as in the worked example: Km = 0.05 mol/m^3, S = 0.1 mol/m^3, Ki = 0.01 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, I = 0.02 mol/m^3, v = 2.8571e-05 mol/(m^3*s).*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_uncompetitive_inhibition', Vmax=0.0001, Km=0.05, S=0.1, I=0.02, Ki=0.01)
@@ -3838,13 +3598,9 @@ $$
 - **Assumes:** Vmax, Km, $Ki > 0$; S, $I  \geq  0$; rapid-equilibrium inhibitor binding
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Rate with the inhibitor and apparent Vmax as Vmax runs from 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-noncompetitive-inhibition-live-1)
+![v (rate with the inhibitor) against I (inhibitor concentration) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-noncompetitive-inhibition-curve)
 
-*Rate with the inhibitor and apparent Vmax as Vmax runs from 3.6 to 8.4 uM/min, every other input as you entered it (41 solutions). Marked: your Vmax = 6 uM/min gives v = 2.222e-05. Your inputs: Vmax = 6 uM/min, Km = 50 uM, S = 100 uM, I = 20 uM, Ki = 10 uM.*
-
-![Rate with the inhibitor as Km runs from 30 to 70 uM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-noncompetitive-inhibition-live-2)
-
-*Rate with the inhibitor as Km runs from 30 to 70 uM, every other input as you entered it (29 solutions). Marked: your Km = 50 uM gives v = 2.222e-05. Your inputs: Vmax = 6 uM/min, Km = 50 uM, S = 100 uM, I = 20 uM, Ki = 10 uM.*
+*v (rate with the inhibitor) against I (inhibitor concentration) from 0.002 mol/m^3 to 0.2 mol/m^3 on a logarithmic axis. One curve for each value of Vmax (maximum rate without inhibitor): 0.0001 mol/(m^3*s), 5.0000e-05 mol/(m^3*s), 0.0002 mol/(m^3*s). Other inputs as in the worked example: Km = 0.05 mol/m^3, S = 0.1 mol/m^3, Ki = 0.01 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, I = 0.02 mol/m^3, v = 2.2222e-05 mol/(m^3*s).*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_noncompetitive_inhibition', Vmax=0.0001, Km=0.05, S=0.1, I=0.02, Ki=0.01)
@@ -3895,13 +3651,9 @@ $$
 - **Assumes:** Vmax, Km, Ki, Kii > 0; S, $I  \geq  0$; rapid equilibrium
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Rate with the inhibitor as Ki runs from 6 to 14 uM, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mixed-inhibition-live-1)
+![v (rate with the inhibitor) against Kii (dissociation constant of ESI) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mixed-inhibition-curve)
 
-*Rate with the inhibitor as Ki runs from 6 to 14 uM, every other input as you entered it (41 solutions). Marked: your Ki = 10 uM gives v = 3.333e-05. Your inputs: Vmax = 6 uM/min, Km = 50 uM, S = 100 uM, I = 20 uM, Ki = 10 uM, Kii = 40 uM.*
-
-![Rate with the inhibitor and apparent Vmax as Vmax runs from 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mixed-inhibition-live-2)
-
-*Rate with the inhibitor and apparent Vmax as Vmax runs from 3.6 to 8.4 uM/min, every other input as you entered it (29 solutions). Marked: your Vmax = 6 uM/min gives v = 3.333e-05. Your inputs: Vmax = 6 uM/min, Km = 50 uM, S = 100 uM, I = 20 uM, Ki = 10 uM, Kii = 40 uM.*
+*v (rate with the inhibitor) against Kii (dissociation constant of ESI) from 0.004 mol/m^3 to 0.4 mol/m^3 on a logarithmic axis. One curve for each value of Vmax (maximum rate without inhibitor): 0.0001 mol/(m^3*s), 5.0000e-05 mol/(m^3*s), 0.0002 mol/(m^3*s). Other inputs as in the worked example: Km = 0.05 mol/m^3, S = 0.1 mol/m^3, I = 0.02 mol/m^3, Ki = 0.01 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Kii = 0.04 mol/m^3, v = 3.3333e-05 mol/(m^3*s).*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_mixed_inhibition', Vmax=0.0001, Km=0.05, S=0.1, I=0.02, Ki=0.01, Kii=0.04)
@@ -3948,17 +3700,9 @@ $$
 - **Assumes:** IC50, S, $Km > 0$; inhibitor not depleted (I >> E)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Inhibition constant as IC50 runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ic50-to-ki-live-1)
+![Ki (inhibition constant) against S (substrate concentration of the assay) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ic50-to-ki-curve)
 
-*Inhibition constant as IC50 runs from 0.006 to 0.014 mol/m^3, every other input as you entered it (41 solutions). Marked: your IC50 = 0.01 mol/m^3 gives Ki = 3.333 umol/L. Your inputs: mode = competitive, IC50 = 0.01 mol/m^3, S = 0.1 mol/m^3, Km = 0.05 mol/m^3.*
-
-![Inhibition constant for every choice of mode, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ic50-to-ki-live-2)
-
-*Inhibition constant for every choice of mode, every other input as you entered it (highlighted: your choice). competitive: 0.003333; uncompetitive: 0.006667; noncompetitive: 0.01. Your inputs: mode = competitive, IC50 = 0.01 mol/m^3, S = 0.1 mol/m^3, Km = 0.05 mol/m^3.*
-
-![Inhibition constant as Km runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ic50-to-ki-live-3)
-
-*Inhibition constant as Km runs from 0.03 to 0.07 mol/m^3, every other input as you entered it (29 solutions). Marked: your Km = 0.05 mol/m^3 gives Ki = 3.333 umol/L. Your inputs: mode = competitive, IC50 = 0.01 mol/m^3, S = 0.1 mol/m^3, Km = 0.05 mol/m^3.*
+*Ki (inhibition constant) against S (substrate concentration of the assay) from 0.01 mol/m^3 to 1 mol/m^3 on a logarithmic axis. One curve for each value of IC50 (inhibitor concentration giving 50 % inhibition): 0.01 mol/m^3, 0.005 mol/m^3, 0.02 mol/m^3. Other inputs as in the worked example: mode = competitive, Km = 0.05 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, S = 0.1 mol/m^3, Ki = 0.00333333 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_ic50_to_ki', mode='competitive', IC50=0.01, S=0.1, Km=0.05)
@@ -4005,17 +3749,13 @@ $$
 - **Assumes:** L, K, $n > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![theta (fractional saturation) against L (free ligand concentration) from 0](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-hill-equation-theta-vs-l.svg)
+![theta (fractional saturation) against L (free ligand concentration), with K = 0](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-hill-equation-theta-vs-l.svg)
 
-*theta (fractional saturation) against L (free ligand concentration) from 0.0026 to 0.26 (logarithmic axis across), the other inputs as given: 31 points, each a run of the model. Marked: L = 0.026, theta = 0.5. Your inputs: L = 26 uM, K = 26 uM, n = 2.8.*
+*theta (fractional saturation) against L (free ligand concentration), with K = 0.026 mol/m^3, n = 2.8. 31 points computed by cell-molecular-biology-ai999x; marked: L = 0.026, theta = 0.5.*
 
-![Fractional saturation as L runs from 15](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hill-equation-live-1)
+![theta (fractional saturation) against L (free ligand concentration) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hill-equation-curve)
 
-*Fractional saturation as L runs from 15.6 to 36.4 uM, every other input as you entered it (41 solutions). Marked: your L = 26 uM gives θ = 0.5. Your inputs: L = 26 uM, K = 26 uM, n = 2.8.*
-
-![Fractional saturation as K runs from 15](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hill-equation-live-2)
-
-*Fractional saturation as K runs from 15.6 to 36.4 uM, every other input as you entered it (29 solutions). Marked: your K = 26 uM gives θ = 0.5. Your inputs: L = 26 uM, K = 26 uM, n = 2.8.*
+*theta (fractional saturation) against L (free ligand concentration) from 0.0026 mol/m^3 to 0.26 mol/m^3 on a logarithmic axis. One curve for each value of K (ligand concentration for half saturation (K0.5)): 0.026 mol/m^3, 0.013 mol/m^3, 0.052 mol/m^3. Other inputs as in the worked example: n = 2.8. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, L = 0.026 mol/m^3, theta = 0.5.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_hill_equation', L=0.026, K=0.026, n=2.8)
@@ -4061,13 +3801,9 @@ $$
 - **Assumes:** K, $n > 0$; $0 < \theta < 1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Required ligand concentration as θ runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hill-ligand-for-fraction-live-1)
+![L (required ligand concentration) against n (Hill coefficient) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hill-ligand-for-fraction-curve)
 
-*Required ligand concentration as θ runs from 0.225 to 0.9675, every other input as you entered it (23 solutions). Marked: your θ = 0.9 gives L = 56.99 umol/L. Your inputs: K = 0.026 mol/m^3, n = 2.8, theta = 0.9.*
-
-![Required ligand concentration as n runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hill-ligand-for-fraction-live-2)
-
-*Required ligand concentration as n runs from 0.7 to 4.9, every other input as you entered it (29 solutions). Marked: your n = 2.8 gives L = 56.99 umol/L. Your inputs: K = 0.026 mol/m^3, n = 2.8, theta = 0.9.*
+*L (required ligand concentration) against n (Hill coefficient) from 0.28 to 28 on a logarithmic axis, logarithmic output axis. One curve for each value of K (half-saturation concentration K0.5): 0.026 mol/m^3, 0.013 mol/m^3, 0.052 mol/m^3. Other inputs as in the worked example: theta = 0.9. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, n = 2.8, L = 0.0569868 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_hill_ligand_for_fraction', K=0.026, n=2.8, theta=0.9)
@@ -4114,13 +3850,9 @@ $$
 - **Assumes:** $0 < EC10 < EC90$; a Hill curve
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Hill coefficient as EC10 runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hill-coefficient-from-ec-live-1)
+![n (Hill coefficient) against EC10 (concentration giving 10 % of the maximum) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hill-coefficient-from-ec-curve)
 
-*Hill coefficient as EC10 runs from 0.6 to 1.4 uM, every other input as you entered it (41 solutions). Marked: your EC10 = 1 uM gives n = 1. Your inputs: EC10 = 1 uM, EC90 = 81 uM.*
-
-![Hill coefficient as EC90 runs from 48](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-hill-coefficient-from-ec-live-2)
-
-*Hill coefficient as EC90 runs from 48.6 to 113.4 uM, every other input as you entered it (29 solutions). Marked: your EC90 = 81 uM gives n = 1. Your inputs: EC10 = 1 uM, EC90 = 81 uM.*
+*n (Hill coefficient) against EC10 (concentration giving 10 % of the maximum) from 0.0001 mol/m^3 to 0.01 mol/m^3 on a logarithmic axis. One curve for each value of EC90 (concentration giving 90 % of the maximum): 0.081 mol/m^3, 0.0405 mol/m^3, 0.162 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, EC10 = 0.001 mol/m^3, n = 1.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_hill_coefficient_from_ec', EC10=0.001, EC90=0.081)
@@ -4167,17 +3899,13 @@ $$
 - **Assumes:** L, $Kd > 0$; single independent site; ligand in excess (free = total)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![theta (fraction bound) over L from 1e-06 to 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-fraction-bound-field)
+![theta (fraction bound) against L (free ligand concentration) from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-fraction-bound-curve)
 
-*theta (fraction bound) over L from 1e-06 to 0.0001 and Kd from 5e-07 to 5e-05 (logarithmic axes): each of the 21 x 15 cells is one run of the model, shaded by its value (light 0.01961 to dark 0.995); iso-lines at theta = 0.2, 0.4, 0.6, 0.8. Marked: the inputs given, L = 1e-05, Kd = 5e-06, theta = 0.6667. Your inputs: L = 10 nM, Kd = 5 nM.*
+*theta (fraction bound) against L (free ligand concentration) from 1.0000e-06 mol/m^3 to 0.0001 mol/m^3 on a logarithmic axis. One curve for each value of Kd (dissociation constant): 5.0000e-06 mol/m^3, 2.5000e-06 mol/m^3, 1.0000e-05 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, L = 1.0000e-05 mol/m^3, theta = 0.666667.*
 
-![Fraction bound as L runs from 6 to 14 nM, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-fraction-bound-live-1)
+![theta (fraction bound) over L (free ligand concentration) from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-fraction-bound-field)
 
-*Fraction bound as L runs from 6 to 14 nM, every other input as you entered it (41 solutions). Marked: your L = 10 nM gives θ = 0.6667. Your inputs: L = 10 nM, Kd = 5 nM.*
-
-![Fraction bound as Kd runs from 3 to 7 nM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-fraction-bound-live-2)
-
-*Fraction bound as Kd runs from 3 to 7 nM, every other input as you entered it (29 solutions). Marked: your Kd = 5 nM gives θ = 0.6667. Your inputs: L = 10 nM, Kd = 5 nM.*
+*theta (fraction bound) over L (free ligand concentration) from 1.0000e-06 mol/m^3 to 0.0001 mol/m^3 and Kd (dissociation constant) from 5.0000e-07 mol/m^3 to 5.0000e-05 mol/m^3 (logarithmic axes): each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 0.0196078 to dark 0.995025); iso-lines at theta = 0.2, 0.4, 0.6, 0.8. Marked: the worked example, L = 1.0000e-05 mol/m^3, Kd = 5.0000e-06 mol/m^3, theta = 0.666667.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_fraction_bound', L=1e-05, Kd=5e-06)
@@ -4225,13 +3953,9 @@ $$
 - **Assumes:** Rt, Lt, $Kd > 0$; single site, 1:1 binding at equilibrium
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Complex concentration and free ligand Lt - RL as Lt runs from 12 to 28 nM, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ligand-depletion-binding-live-1)
+![RL (complex concentration) against Rt (total receptor concentration) from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ligand-depletion-binding-curve)
 
-*Complex concentration and free ligand Lt - RL as Lt runs from 12 to 28 nM, every other input as you entered it (41 solutions). Marked: your Lt = 20 nM gives RL = 5.858 nmol/L. Your inputs: Rt = 10 nM, Lt = 20 nM, Kd = 10 nM.*
-
-![Complex concentration and free ligand Lt - RL as Rt runs from 6 to 14 nM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ligand-depletion-binding-live-2)
-
-*Complex concentration and free ligand Lt - RL as Rt runs from 6 to 14 nM, every other input as you entered it (29 solutions). Marked: your Rt = 10 nM gives RL = 5.858 nmol/L. Your inputs: Rt = 10 nM, Lt = 20 nM, Kd = 10 nM.*
+*RL (complex concentration) against Rt (total receptor concentration) from 1.0000e-06 mol/m^3 to 0.0001 mol/m^3 on a logarithmic axis. One curve for each value of Lt (total ligand concentration): 2.0000e-05 mol/m^3, 1.0000e-05 mol/m^3, 4.0000e-05 mol/m^3. Other inputs as in the worked example: Kd = 9.999999999999999e-06 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, Rt = 1.0000e-05 mol/m^3, RL = 5.8579e-06 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_ligand_depletion_binding', Rt=1e-05, Lt=2e-05, Kd=1e-05)
@@ -4279,17 +4003,13 @@ $$
 - **Assumes:** kon, koff > 0; simple 1:1 binding
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Kd (dissociation constant) over kon from 500 to 1500 and koff from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-kd-from-rates-field)
+![Kd (dissociation constant) against kon (association rate constant) from 500 m^3/(mol*s) to 1500 m^3/(mol*s)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-kd-from-rates-curve)
 
-*Kd (dissociation constant) over kon from 500 to 1500 and koff from 0.0005 to 0.0015: each of the 21 x 15 cells is one run of the model, shaded by its value (light 3.333e-07 to dark 3e-06); iso-lines at Kd = 5e-07, 1e-06, 1.5e-06, 2e-06, 2.5e-06, 3e-06. Marked: the inputs given, kon = 1000, koff = 0.001, Kd = 1e-06. Your inputs: kon = 1000 m^3/(mol*s), koff = 0.001 1/s.*
+*Kd (dissociation constant) against kon (association rate constant) from 500 m^3/(mol*s) to 1500 m^3/(mol*s). One curve for each value of koff (dissociation rate constant): 0.001 1/s, 0.0005 1/s, 0.002 1/s. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, kon = 1000 m^3/(mol*s), Kd = 1.0000e-06 mol/m^3.*
 
-![Dissociation constant as kon runs from 600 to 1400 m^3/(mol*s), every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-kd-from-rates-live-1)
+![Kd (dissociation constant) over kon (association rate constant) from 500 m^3/(mol*s) to 1500 m^3/(mol*s) and koff (dissociation rate constant) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-kd-from-rates-field)
 
-*Dissociation constant as kon runs from 600 to 1400 m^3/(mol*s), every other input as you entered it (41 solutions). Marked: your kon = 1000 m^3/(mol*s) gives Kd = 1 nmol/L. Your inputs: kon = 1000 m^3/(mol*s), koff = 0.001 1/s.*
-
-![Dissociation constant as koff runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-kd-from-rates-live-2)
-
-*Dissociation constant as koff runs from 0.0006 to 0.0014 1/s, every other input as you entered it (29 solutions). Marked: your koff = 0.001 1/s gives Kd = 1 nmol/L. Your inputs: kon = 1000 m^3/(mol*s), koff = 0.001 1/s.*
+*Kd (dissociation constant) over kon (association rate constant) from 500 m^3/(mol*s) to 1500 m^3/(mol*s) and koff (dissociation rate constant) from 0.0005 1/s to 0.0015 1/s: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 3.3333e-07 mol/m^3 to dark 3.0000e-06 mol/m^3); iso-lines at Kd = 5.00e-7, 1.00e-6, 1.50e-6, 2.00e-6, 2.50e-6 mol/m^3. Marked: the worked example, kon = 1000 m^3/(mol*s), koff = 0.001 1/s, Kd = 1.0000e-06 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_kd_from_rates', kon=1000.0, koff=0.001)
@@ -4338,9 +4058,9 @@ $$
 - **Assumes:** at least 3 points; B, $F > 0$; negative slope (one class of sites)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Scatchard plot: the 5 measurements as points at (B, B/F) and the line of the returned slope -0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-scatchard-fit-xy)
+![The data F (free ligand concentrations (e](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-scatchard-fit-xy)
 
-*Scatchard plot: the 5 measurements as points at (B, B/F) and the line of the returned slope -0.2005 (= -1/Kd) and intercept 20.04 (= Bmax/Kd), r2 = 1. Returned Kd = 4.986; marked: Bmax = 99.93, where the line meets the bound axis. Your inputs: B = 16.7, 28.6, 50, 66.7, 80, F = 1, 2, 5, 10, 20.*
+*The data F (free ligand concentrations (e.g. nM)) against B (bound ligand concentrations (any one unit, e.g. nM or fmol/mg)) as given in the worked example (5 points). Also returned: Kd = 4.98649, Bmax = 99.9304, slope = -0.200542, intercept = 20.0402, r2 = 0.999997.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_scatchard_fit', B=[16.7, 28.6, 50.0, 66.7, 80.0], F=[1.0, 2.0, 5.0, 10.0, 20.0])
@@ -4386,17 +4106,13 @@ $$
 - **Assumes:** Kd, $T > 0$; standard state 1 M
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![dG (standard binding free energy) over T from 149](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-binding-free-energy-field)
+![dG (standard binding free energy) against T (absolute temperature (degC is converted)) from 149](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-binding-free-energy-curve)
 
-*dG (standard binding free energy) over T from 149.1 to 447.2 and Kd from 5e-06 to 1.5e-05: each of the 21 x 15 cells is one run of the model, shaded by its value (light -7.107e+04 to dark -2.233e+04); iso-lines at dG = -7e+04, -6e+04, -5e+04, -4e+04, -3e+04. Marked: the inputs given, T = 298.1, Kd = 1e-05, dG = -4.566e+04. Your inputs: Kd = 10 nM, T = 298.15 K.*
+*dG (standard binding free energy) against T (absolute temperature (degC is converted)) from 149.075 K to 447.225 K. One curve for each value of Kd (dissociation constant): 1.0000e-05 mol/m^3, 5.0000e-06 mol/m^3, 2.0000e-05 mol/m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, T = 298.15 K, dG = -45664.1 J/mol.*
 
-![Standard binding free energy as T runs from 258](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-binding-free-energy-live-1)
+![dG (standard binding free energy) over T (absolute temperature (degC is converted)) from 149](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-binding-free-energy-field)
 
-*Standard binding free energy as T runs from 258.1 to 338.1 K, every other input as you entered it (41 solutions). Marked: your T = 298.1 K gives dG = -4.566e+04. Your inputs: Kd = 10 nM, T = 298.15 K.*
-
-![Standard binding free energy as Kd runs from 6 to 14 nM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-binding-free-energy-live-2)
-
-*Standard binding free energy as Kd runs from 6 to 14 nM, every other input as you entered it (29 solutions). Marked: your Kd = 10 nM gives dG = -4.566e+04. Your inputs: Kd = 10 nM, T = 298.15 K.*
+*dG (standard binding free energy) over T (absolute temperature (degC is converted)) from 149.075 K to 447.225 K and Kd (dissociation constant) from 5.0000e-06 mol/m^3 to 1.5000e-05 mol/m^3: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light -71073.5 J/mol to dark -22329.5 J/mol); iso-lines at dG = -70000, -60000, -50000, -40000, -30000 J/mol. Marked: the worked example, T = 298.15 K, Kd = 1.0000e-05 mol/m^3, dG = -45664.1 J/mol.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_binding_free_energy', Kd=1e-05, T=298.15)
@@ -4446,13 +4162,9 @@ $$
 - **Assumes:** Kd, $Ki > 0$; L, $I  \geq  0$; one site, mutually exclusive binding, no depletion
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Fraction occupied by the ligand as Kd runs from 3 to 7 nM, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-competitive-occupancy-live-1)
+![occupancy_L (fraction occupied by the ligand) against L (free ligand concentration) from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-competitive-occupancy-curve)
 
-*Fraction occupied by the ligand as Kd runs from 3 to 7 nM, every other input as you entered it (41 solutions). Marked: your Kd = 5 nM gives occupancy_L = 0.4. Your inputs: L = 10 nM, Kd = 5 nM, I = 20 nM, Ki = 10 nM.*
-
-![Fraction occupied by the ligand as Ki runs from 6 to 14 nM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-competitive-occupancy-live-2)
-
-*Fraction occupied by the ligand as Ki runs from 6 to 14 nM, every other input as you entered it (29 solutions). Marked: your Ki = 10 nM gives occupancy_L = 0.4. Your inputs: L = 10 nM, Kd = 5 nM, I = 20 nM, Ki = 10 nM.*
+*occupancy_L (fraction occupied by the ligand) against L (free ligand concentration) from 1.0000e-06 mol/m^3 to 0.0001 mol/m^3 on a logarithmic axis. One curve for each value of Kd (ligand dissociation constant): 5.0000e-06 mol/m^3, 2.5000e-06 mol/m^3, 1.0000e-05 mol/m^3. Other inputs as in the worked example: I = 1.9999999999999998e-05 mol/m^3, Ki = 9.999999999999999e-06 mol/m^3. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, L = 1.0000e-05 mol/m^3, occupancy_L = 0.4.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_competitive_occupancy', L=1e-05, Kd=5e-06, I=2e-05, Ki=1e-05)
@@ -4500,13 +4212,9 @@ $$
 - **Assumes:** S, KR, c, $L_{0} > 0$; $1  \leq  n  \leq  12$; concerted R/T transition
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Fractional saturation as n runs from 1 to 8, every other input as you entered it (8 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mwc-saturation-live-1)
+![Y (fractional saturation) against n (number of binding sites) from 1 to 12](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mwc-saturation-curve)
 
-*Fractional saturation as n runs from 1 to 8, every other input as you entered it (8 solutions). Marked: your n = 4 gives Y = 0.1308. Your inputs: S = 10 uM, KR = 2 uM, c = 0.01, L0 = 9000, n = 4.*
-
-![Fractional saturation as S runs from 6 to 14 uM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mwc-saturation-live-2)
-
-*Fractional saturation as S runs from 6 to 14 uM, every other input as you entered it (29 solutions). Marked: your S = 10 uM gives Y = 0.1308. Your inputs: S = 10 uM, KR = 2 uM, c = 0.01, L0 = 9000, n = 4.*
+*Y (fractional saturation) against n (number of binding sites) from 1 to 12. One curve for each value of S (ligand concentration): 0.01 mol/m^3, 0.005 mol/m^3, 0.02 mol/m^3. Other inputs as in the worked example: KR = 0.002 mol/m^3, c = 0.01, L0 = 9000.0. 12 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, n = 4, Y = 0.130843.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_mwc_saturation', S=0.01, KR=0.002, c=0.01, L0=9000.0, n=4)
@@ -4555,13 +4263,9 @@ $$
 - **Assumes:** k1, $Q10 > 0$; $T_{1}  \neq  T_{2}$, both > 0 K
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Rate at T2 as T2 runs from 268](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-q10-temperature-live-1)
+![k2 (rate at T2 (unit of k1)) against k1 (rate at T1 (any unit)) from 5 to 15](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-q10-temperature-curve)
 
-*Rate at T2 as T2 runs from 268.1 to 348.1 K, every other input as you entered it (40 solutions). Values in this range where the inputs admit no answer (1 of 41) are left out. Marked: your T2 = 308.1 K gives k2 = 20. Your inputs: k1 = 10, T1 = 298.15 K, T2 = 308.15 K, Q10 = 2.*
-
-![Rate at T2 as T1 runs from 258](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-q10-temperature-live-2)
-
-*Rate at T2 as T1 runs from 258.1 to 338.1 K, every other input as you entered it (29 solutions). Marked: your T1 = 298.1 K gives k2 = 20. Your inputs: k1 = 10, T1 = 298.15 K, T2 = 308.15 K, Q10 = 2.*
+*k2 (rate at T2 (unit of k1)) against k1 (rate at T1 (any unit)) from 5 to 15. One curve for each value of T2 (second temperature (degC is converted)): 308.15 K, 154.075 K, 616.3 K. Other inputs as in the worked example: T1 = 298.15 K, Q10 = 2.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, k1 = 10, k2 = 20.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_q10_temperature', k1=10.0, T1=298.15, T2=308.15, Q10=2.0)
@@ -4614,13 +4318,9 @@ $$
 - **Assumes:** $dA  \neq  0$; dt, eps, l, volumes > 0; V_enzyme <= V_assay; linear initial rate
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Activity of the enzyme sample in U/mL as dt runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-enzyme-assay-activity-live-1)
+![units_per_mL (activity of the enzyme sample in U/mL) against dt (time of the absorbance change) from 30 s to 90 s](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-enzyme-assay-activity-curve)
 
-*Activity of the enzyme sample in U/mL as dt runs from 0.6 to 1.4 min, every other input as you entered it (41 solutions). Marked: your dt = 1 min gives units_per_mL = 0.9646. Your inputs: dA = 0.12, dt = 1 min, eps = 6220 L/(mol*cm), l = 1 cm, V_assay = 1 mL, V_enzyme = 20 uL, protein = 0.5 mg/mL.*
-
-![Activity of the enzyme sample in U/mL as ε runs from 3732 to 8708 L/(mol*cm), every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-enzyme-assay-activity-live-2)
-
-*Activity of the enzyme sample in U/mL as ε runs from 3732 to 8708 L/(mol*cm), every other input as you entered it (29 solutions). Marked: your ε = 6220 L/(mol*cm) gives units_per_mL = 0.9646. Your inputs: dA = 0.12, dt = 1 min, eps = 6220 L/(mol*cm), l = 1 cm, V_assay = 1 mL, V_enzyme = 20 uL, protein = 0.5 mg/mL.*
+*units_per_mL (activity of the enzyme sample in U/mL) against dt (time of the absorbance change) from 30 s to 90 s. One curve for each value of dA (absorbance change over dt): 0.12, 0.06, 0.24. Other inputs as in the worked example: eps = 622.0 m^2/mol, l = 0.01 m, V_assay = 1e-06 m^3, V_enzyme = 2e-08 m^3, protein = 0.5 kg/m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, dt = 60 s, units_per_mL = 0.96463.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_enzyme_assay_activity', dA=0.12, dt=60.0, eps=622.0, l=0.01, V_assay=1e-06, V_enzyme=2e-08, protein=0.5)
@@ -4668,13 +4368,9 @@ $$
 - **Assumes:** A, $HA > 0$; buffer concentrations well above [H+] and [OH-]
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Buffer pH as A runs from 36 to 84 mM, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-henderson-hasselbalch-live-1)
+![pH (buffer pH) against pKa (pKa of the weak acid) from 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-henderson-hasselbalch-curve)
 
-*Buffer pH as A runs from 36 to 84 mM, every other input as you entered it (41 solutions). Marked: your A = 60 mM gives pH = 7.386. Your inputs: pKa = 7.21, A = 60 mM, HA = 40 mM.*
-
-![Buffer pH as HA runs from 24 to 56 mM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-henderson-hasselbalch-live-2)
-
-*Buffer pH as HA runs from 24 to 56 mM, every other input as you entered it (29 solutions). Marked: your HA = 40 mM gives pH = 7.386. Your inputs: pKa = 7.21, A = 60 mM, HA = 40 mM.*
+*pH (buffer pH) against pKa (pKa of the weak acid) from 3.605 to 10.815. One curve for each value of A (conjugate base concentration): 60 mol/m^3, 30 mol/m^3, 120 mol/m^3. Other inputs as in the worked example: HA = 40.0 mol/m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, pKa = 7.21, pH = 7.38609.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_henderson_hasselbalch', pKa=7.21, A=60.0, HA=40.0)
@@ -4729,13 +4425,9 @@ $$
 - **Assumes:** C, $V > 0$; Henderson-Hasselbalch valid (pH within about 1 of pKa)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Base-form concentration and acid-form concentration as pH runs from 1](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/resolve/main/figures/cmb-buffer-preparation-live-1.svg)
+![C_base (base-form concentration) against pH (target pH) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-buffer-preparation-curve)
 
-*Base-form concentration and acid-form concentration as pH runs from 1.85 to 12.95, every other input as you entered it (41 solutions). Marked: your pH = 7.4 gives C_base = 60.77 mmol/L. Your inputs: C = 100 mM, V = 1000 mL, pH = 7.4, pKa = 7.21, MW_acid = 137.99 g/mol, MW_base = 141.96 g/mol.*
-
-![Base-form concentration and acid-form concentration as pKa runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-buffer-preparation-live-2)
-
-*Base-form concentration and acid-form concentration as pKa runs from 1.802 to 12.62, every other input as you entered it (29 solutions). Marked: your pKa = 7.21 gives C_base = 60.77 mmol/L. Your inputs: C = 100 mM, V = 1000 mL, pH = 7.4, pKa = 7.21, MW_acid = 137.99 g/mol, MW_base = 141.96 g/mol.*
+*C_base (base-form concentration) against pH (target pH) from 0.74 to 74 on a logarithmic axis, logarithmic output axis. One curve for each value of C (total buffer concentration): 100 mol/m^3, 50 mol/m^3, 200 mol/m^3. Other inputs as in the worked example: V = 0.001 m^3, pKa = 7.21, MW_acid = 0.13799 kg/mol, MW_base = 0.14196 kg/mol. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, pH = 7.4, C_base = 60.7661 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_buffer_preparation', C=100.0, V=0.001, pH=7.4, pKa=7.21, MW_acid=0.13799, MW_base=0.14196)
@@ -4783,13 +4475,9 @@ $$
 - **Assumes:** $C > 0$; monoprotic acid; $Kw = 1e-14$ (25 degC), ideal solution
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Buffer capacity per pH unit as pKa runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-buffer-capacity-live-1)
+![beta (buffer capacity per pH unit) against pH (pH) from 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-buffer-capacity-curve)
 
-*Buffer capacity per pH unit as pKa runs from 1.802 to 12.62, every other input as you entered it (41 solutions). Marked: your pKa = 7.21 gives β = 57.57 mmol/L. Your inputs: C = 100 mM, pKa = 7.21, pH = 7.21.*
-
-![Buffer capacity per pH unit as pH runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-buffer-capacity-live-2)
-
-*Buffer capacity per pH unit as pH runs from 1.802 to 12.62, every other input as you entered it (29 solutions). Marked: your pH = 7.21 gives β = 57.57 mmol/L. Your inputs: C = 100 mM, pKa = 7.21, pH = 7.21.*
+*beta (buffer capacity per pH unit) against pH (pH) from 3.605 to 10.815. One curve for each value of C (total buffer concentration): 100 mol/m^3, 50 mol/m^3, 200 mol/m^3. Other inputs as in the worked example: pKa = 7.21. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, pH = 7.21, beta = 57.5651 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_buffer_capacity', C=100.0, pKa=7.21, pH=7.21)
@@ -4840,17 +4528,9 @@ $$
 - **Assumes:** C, V, n_add > 0; the addition smaller than the form it consumes; Henderson-Hasselbalch valid
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![New pH as pH0 runs from 1](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-buffer-after-addition-live-1)
+![pH (new pH) against pKa (pKa of the buffer acid) from 3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-buffer-after-addition-curve)
 
-*New pH as pH0 runs from 1.802 to 8.021, every other input as you entered it (24 solutions). Marked: your pH0 = 7.21 gives pH = 7.386. Your inputs: C = 100 mol/m^3, V = 0.0001 m^3, pH0 = 7.21, pKa = 7.21, n_add = 0.001 mol, added = base.*
-
-![New pH for every choice of added, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-buffer-after-addition-live-2)
-
-*New pH for every choice of added, every other input as you entered it (highlighted: your choice). acid: 7.034; base: 7.386. Your inputs: C = 100 mol/m^3, V = 0.0001 m^3, pH0 = 7.21, pKa = 7.21, n_add = 0.001 mol, added = base.*
-
-![New pH as pKa runs from 6](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-buffer-after-addition-live-3)
-
-*New pH as pKa runs from 6.438 to 12.62, every other input as you entered it (17 solutions). Marked: your pKa = 7.21 gives pH = 7.386. Your inputs: C = 100 mol/m^3, V = 0.0001 m^3, pH0 = 7.21, pKa = 7.21, n_add = 0.001 mol, added = base.*
+*pH (new pH) against pKa (pKa of the buffer acid) from 3.605 to 10.815. One curve for each value of pH0 (initial pH): 7.21, 3.605. Other inputs as in the worked example: C = 100.0 mol/m^3, V = 9.999999999999999e-05 m^3, n_add = 0.001 mol, added = base. 19 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, pKa = 7.21, pH = 7.38609.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_buffer_after_addition', C=100.0, V=0.0001, pH0=7.21, pKa=7.21, n_add=0.001, added='base')
@@ -4900,13 +4580,9 @@ $$
 - **Assumes:** C1, C2, $V_{2} > 0$; $C_{2}  \leq  C_{1}$; volumes additive
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Volume of stock and volume of diluent as V2 runs from 6 to 14 mL, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-c1v1-dilution-live-1)
+![V1 (volume of stock) against C1 (stock concentration) from 500 mol/m^3 to 1500 mol/m^3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-c1v1-dilution-curve)
 
-*Volume of stock and volume of diluent as V2 runs from 6 to 14 mL, every other input as you entered it (41 solutions). Marked: your V2 = 10 mL gives V1 = 0.5 mL. Your inputs: C1 = 1000 mM, C2 = 50 mM, V2 = 10 mL.*
-
-![Volume of stock and volume of diluent as C1 runs from 600 to 1400 mM, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-c1v1-dilution-live-2)
-
-*Volume of stock and volume of diluent as C1 runs from 600 to 1400 mM, every other input as you entered it (29 solutions). Marked: your C1 = 1000 mM gives V1 = 0.5 mL. Your inputs: C1 = 1000 mM, C2 = 50 mM, V2 = 10 mL.*
+*V1 (volume of stock) against C1 (stock concentration) from 500 mol/m^3 to 1500 mol/m^3. One curve for each value of C2 (final concentration): 50 mol/m^3, 25 mol/m^3, 100 mol/m^3. Other inputs as in the worked example: V2 = 9.999999999999999e-06 m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, C1 = 1000 mol/m^3, V1 = 5.0000e-07 m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_c1v1_dilution', C1=1000.0, C2=50.0, V2=1e-05)
@@ -4957,21 +4633,13 @@ $$
 - **Assumes:** $C_{0} > 0$; $f > 1$; $1  \leq  n  \leq  30$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Serial dilution of the stock C0 = 10 mM by a factor 10 per step: the concentration after each of the 4 steps as the model returns it (1, 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-serial-dilution-series)
+![concentration after each step in mM (concentrations_mM) returned by cell-molecular-biology-ai999x for the worked example, one value for each position in the list (4 values, first 1, last 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-serial-dilution-series)
 
-*Serial dilution of the stock C0 = 10 mM by a factor 10 per step: the concentration after each of the 4 steps as the model returns it (1, 0.1, 0.01, 0.001), on a logarithmic axis. Total dilution 1e+04. Your inputs: C0 = 10 mM, f = 10, n = 4.*
+*concentration after each step in mM (concentrations_mM) returned by cell-molecular-biology-ai999x for the worked example, one value for each position in the list (4 values, first 1, last 0.001, largest 1). Inputs: C0 = 10.0 mol/m^3, f = 10.0, n = 4.*
 
-![Concentration after n steps as n runs from 1 to 8, every other input as you entered it (8 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-serial-dilution-live-1)
+![C_final (concentration after n steps) against f (dilution factor per step (e](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-serial-dilution-curve)
 
-*Concentration after n steps as n runs from 1 to 8, every other input as you entered it (8 solutions). Marked: your n = 4 gives C_final = 1 umol/L. Your inputs: C0 = 10 mM, f = 10, n = 4.*
-
-![Every entry of concentrations_mM as computed for your inputs (4 entries: 1, 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-serial-dilution-live-2)
-
-*Every entry of concentrations_mM as computed for your inputs (4 entries: 1, 0.1, 0.01, 0.001). Your inputs: C0 = 10 mM, f = 10, n = 4.*
-
-![Concentration after n steps as f runs from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-serial-dilution-live-3)
-
-*Concentration after n steps as f runs from 2.5 to 17.5, every other input as you entered it (29 solutions). Marked: your f = 10 gives C_final = 1 umol/L. Your inputs: C0 = 10 mM, f = 10, n = 4.*
+*C_final (concentration after n steps) against f (dilution factor per step (e.g. 10)) from 5 to 15. One curve for each value of n (number of dilution steps): 4, 2, 8. Other inputs as in the worked example: C0 = 10.0 mol/m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, f = 10, C_final = 0.001 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_serial_dilution', C0=10.0, f=10.0, n=4)
@@ -5020,13 +4688,9 @@ $$
 - **Assumes:** C, V, $MW > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Mass to weigh as C runs from 90 to 210 mM, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mass-for-molarity-live-1)
+![m (mass to weigh) against C (desired concentration) from 75 mol/m^3 to 225 mol/m^3](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mass-for-molarity-curve)
 
-*Mass to weigh as C runs from 90 to 210 mM, every other input as you entered it (41 solutions). Marked: your C = 150 mM gives m = 4.383 g. Your inputs: C = 150 mM, V = 500 mL, MW = 58.44 g/mol.*
-
-![Mass to weigh as V runs from 300 to 700 mL, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-mass-for-molarity-live-2)
-
-*Mass to weigh as V runs from 300 to 700 mL, every other input as you entered it (29 solutions). Marked: your V = 500 mL gives m = 4.383 g. Your inputs: C = 150 mM, V = 500 mL, MW = 58.44 g/mol.*
+*m (mass to weigh) against C (desired concentration) from 75 mol/m^3 to 225 mol/m^3. One curve for each value of V (volume of solution): 0.0005 m^3, 0.00025 m^3, 0.001 m^3. Other inputs as in the worked example: MW = 0.05844 kg/mol. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, C = 150 mol/m^3, m = 0.004383 kg.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_mass_for_molarity', C=150.0, V=0.0005, MW=0.05844)
@@ -5075,13 +4739,9 @@ $$
 - **Assumes:** m, MW, $V > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Molar concentration as MW runs from 35](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-molarity-from-mass-live-1)
+![C (molar concentration) against MW (molar mass) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-molarity-from-mass-curve)
 
-*Molar concentration as MW runs from 35.06 to 81.82 g/mol, every other input as you entered it (41 solutions). Marked: your MW = 58.44 g/mol gives C = 99.93 mmol/L. Your inputs: m = 2920 mg, MW = 58.44 g/mol, V = 500 mL.*
-
-![Molar concentration as V runs from 300 to 700 mL, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-molarity-from-mass-live-2)
-
-*Molar concentration as V runs from 300 to 700 mL, every other input as you entered it (29 solutions). Marked: your V = 500 mL gives C = 99.93 mmol/L. Your inputs: m = 2920 mg, MW = 58.44 g/mol, V = 500 mL.*
+*C (molar concentration) against MW (molar mass) from 0.02922 kg/mol to 0.08766 kg/mol. One curve for each value of m (mass of solute): 0.00292 kg, 0.00146 kg, 0.00584 kg. Other inputs as in the worked example: V = 0.0005 m^3. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, MW = 0.05844 kg/mol, C = 99.9316 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_molarity_from_mass', m=0.00292, MW=0.05844, V=0.0005)
@@ -5130,17 +4790,13 @@ $$
 - **Assumes:** $0 < p < 100$ %; $MW > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![C (molar concentration) over p from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-percent-wv-to-molarity-field)
+![C (molar concentration) against MW (molar mass of the solute) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-percent-wv-to-molarity-curve)
 
-*C (molar concentration) over p from 0.0045 to 0.0135 and MW from 0.02922 to 0.08766: each of the 21 x 15 cells is one run of the model, shaded by its value (light 51.33 to dark 462); iso-lines at C = 100, 200, 300, 400. Marked: the inputs given, p = 0.009, MW = 0.05844, C = 154. Your inputs: p = 0.009, MW = 0.05844 kg/mol.*
+*C (molar concentration) against MW (molar mass of the solute) from 0.02922 kg/mol to 0.08766 kg/mol. One curve for each value of p (concentration in per cent w/v (written with %, e.g. 0.9%)): 0.009, 0.26, 0.74. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, MW = 0.05844 kg/mol, C = 154.004 mol/m^3.*
 
-![Molar concentration as MW runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-percent-wv-to-molarity-live-1)
+![C (molar concentration) over p (concentration in per cent w/v (written with %, e](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-percent-wv-to-molarity-field)
 
-*Molar concentration as MW runs from 0.03506 to 0.08182 kg/mol, every other input as you entered it (41 solutions). Marked: your MW = 0.05844 kg/mol gives C = 0.154 mol/L. Your inputs: p = 0.009, MW = 0.05844 kg/mol.*
-
-![Molar concentration as p runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-percent-wv-to-molarity-live-2)
-
-*Molar concentration as p runs from 0.00225 to 0.01575, every other input as you entered it (29 solutions). Marked: your p = 0.009 gives C = 0.154 mol/L. Your inputs: p = 0.009, MW = 0.05844 kg/mol.*
+*C (molar concentration) over p (concentration in per cent w/v (written with %, e.g. 0.9%)) from 0.02 to 0.98 and MW (molar mass of the solute) from 0.02922 kg/mol to 0.08766 kg/mol: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 228.154 mol/m^3 to dark 33538.7 mol/m^3); iso-lines at C = 10000, 20000, 30000 mol/m^3. Marked: the worked example, p = 0.009, MW = 0.05844 kg/mol, C = 154.004 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_percent_wv_to_molarity', p=0.009, MW=0.05844)
@@ -5188,9 +4844,9 @@ $$
 - **Assumes:** one charge per concentration; charges non-zero whole numbers
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![I (ionic strength) as value 2 of c moves from 75 to 225, the other values as given (150, 150); 31 runs of the model](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ionic-strength-sensitivity)
+![I (ionic strength) as value 2 of c (ion concentrations in mM (one per ion)) moves from 75 to 225, the other values as given ([150](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-ionic-strength-sensitivity)
 
-*I (ionic strength) as value 2 of c moves from 75 to 225, the other values as given (150, 150); 31 runs of the model. Marked: c[2] = 150, I = 150. Your inputs: c = 150, 150, z = 1, -1.*
+*I (ionic strength) as value 2 of c (ion concentrations in mM (one per ion)) moves from 75 to 225, the other values as given ([150.0, 150.0]); 41 runs of cell-molecular-biology-ai999x. Other inputs: z = [1.0, -1.0]. Marked: the worked example, c[2] = 150, I = 150 mol/m^3.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_ionic_strength', c=[150.0, 150.0], z=[1.0, -1.0])
@@ -5235,17 +4891,13 @@ $$
 - **Assumes:** rpm, $r > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![RCF (relative centrifugal force in multiples of g) over rpm from 157](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-centrifuge-rcf-field)
+![RCF (relative centrifugal force in multiples of g) against rpm (rotor speed) from 157](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-centrifuge-rcf-curve)
 
-*RCF (relative centrifugal force in multiples of g) over rpm from 157.1 to 471.2 and r from 0.05 to 0.15: each of the 21 x 15 cells is one run of the model, shaded by its value (light 125.8 to dark 3397); iso-lines at RCF = 500, 1000, 1500, 2000, 2500, 3000. Marked: the inputs given, rpm = 314.2, r = 0.1, RCF = 1006. Your inputs: rpm = 3000 rpm, r = 10 cm.*
+*RCF (relative centrifugal force in multiples of g) against rpm (rotor speed) from 157.08 rad/s to 471.239 rad/s. One curve for each value of r (radius from the rotor axis): 0.1 m, 0.05 m, 0.2 m. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, rpm = 314.159 rad/s, RCF = 1006.42.*
 
-![Relative centrifugal force in multiples of g as rpm runs from 1800 to 4200 rpm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-centrifuge-rcf-live-1)
+![RCF (relative centrifugal force in multiples of g) over rpm (rotor speed) from 157](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-centrifuge-rcf-field)
 
-*Relative centrifugal force in multiples of g as rpm runs from 1800 to 4200 rpm, every other input as you entered it (41 solutions). Marked: your rpm = 3000 rpm gives RCF = 1006. Your inputs: rpm = 3000 rpm, r = 10 cm.*
-
-![Relative centrifugal force in multiples of g as r runs from 6 to 14 cm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-centrifuge-rcf-live-2)
-
-*Relative centrifugal force in multiples of g as r runs from 6 to 14 cm, every other input as you entered it (29 solutions). Marked: your r = 10 cm gives RCF = 1006. Your inputs: rpm = 3000 rpm, r = 10 cm.*
+*RCF (relative centrifugal force in multiples of g) over rpm (rotor speed) from 157.08 rad/s to 471.239 rad/s and r (radius from the rotor axis) from 0.05 m to 0.15 m: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 125.802 to dark 3396.67); iso-lines at RCF = 1000, 2000, 3000. Marked: the worked example, rpm = 314.159 rad/s, r = 0.1 m, RCF = 1006.42.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_centrifuge_rcf', rpm=314.1592653589793, r=0.1)
@@ -5290,17 +4942,13 @@ $$
 - **Assumes:** RCF, $r > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![omega (angular speed) over RCF from 500 to 1500 and r from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-centrifuge-rpm-field)
+![omega (angular speed) against r (radius from the rotor axis) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-centrifuge-rpm-curve)
 
-*omega (angular speed) over RCF from 500 to 1500 and r from 0.05 to 0.15: each of the 21 x 15 cells is one run of the model, shaded by its value (light 180.8 to dark 542.4); iso-lines at omega = 200, 300, 400, 500. Marked: the inputs given, RCF = 1000, r = 0.1, omega = 313.2. Your inputs: RCF = 1000, r = 10 cm.*
+*omega (angular speed) against r (radius from the rotor axis) from 0.05 m to 0.15 m. One curve for each value of RCF (required relative centrifugal force in multiples of g): 1000, 500, 2000. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, r = 0.1 m, omega = 313.156 rad/s.*
 
-![Angular speed as RCF runs from 250 to 1750, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-centrifuge-rpm-live-1)
+![omega (angular speed) over RCF (required relative centrifugal force in multiples of g) from 500 to 1500 and r (radius from the rotor axis) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-centrifuge-rpm-field)
 
-*Angular speed as RCF runs from 250 to 1750, every other input as you entered it (41 solutions). Marked: your RCF = 1000 gives ω = 313.2. Your inputs: RCF = 1000, r = 10 cm.*
-
-![Angular speed as r runs from 6 to 14 cm, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-centrifuge-rpm-live-2)
-
-*Angular speed as r runs from 6 to 14 cm, every other input as you entered it (29 solutions). Marked: your r = 10 cm gives ω = 313.2. Your inputs: RCF = 1000, r = 10 cm.*
+*omega (angular speed) over RCF (required relative centrifugal force in multiples of g) from 500 to 1500 and r (radius from the rotor axis) from 0.05 m to 0.15 m: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 180.801 rad/s to dark 542.402 rad/s); iso-lines at omega = 200, 300, 400, 500 rad/s. Marked: the worked example, RCF = 1000, r = 0.1 m, omega = 313.156 rad/s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_centrifuge_rpm', RCF=1000.0, r=0.1)
@@ -5349,13 +4997,9 @@ $$
 - **Assumes:** s, rpm > 0; 0 < r_min < r_max; constant s (no diffusion)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Sedimentation time as r_max runs from 6 to 14 cm, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-sedimentation-time-live-1)
+![t (sedimentation time) against rpm (rotor speed) from 2094](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-sedimentation-time-curve)
 
-*Sedimentation time as r_max runs from 6 to 14 cm, every other input as you entered it (41 solutions). Marked: your r_max = 10 cm gives t = 1.568 h. Your inputs: s = 70, rpm = 40000 rpm, r_min = 5 cm, r_max = 10 cm.*
-
-![Sedimentation time as rpm runs from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-sedimentation-time-live-2)
-
-*Sedimentation time as rpm runs from 2.4e+04 to 5.6e+04 rpm, every other input as you entered it (29 solutions). Marked: your rpm = 4e+04 rpm gives t = 1.568 h. Your inputs: s = 70, rpm = 40000 rpm, r_min = 5 cm, r_max = 10 cm.*
+*t (sedimentation time) against rpm (rotor speed) from 2094.4 rad/s to 6283.19 rad/s. One curve for each value of s (sedimentation coefficient in svedbergs): 70, 35, 140. Other inputs as in the worked example: r_min = 0.05 m, r_max = 0.1 m. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, rpm = 4188.79 rad/s, t = 5643.52 s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_sedimentation_time', s=70.0, rpm=4188.790204786391, r_min=0.05, r_max=0.1)
@@ -5405,13 +5049,9 @@ $$
 - **Assumes:** magnifications > 0; wavelength > 0; $0 < NA  \leq  1.6$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Resolution limit (smallest resolvable](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-microscope-resolution-live-1)
+![d (resolution limit (smallest resolvable separation)) against NA (numerical aperture of the objective) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-microscope-resolution-curve)
 
-*Resolution limit (smallest resolvable... as wavelength runs from 330 to 770 nm, every other input as you entered it (41 solutions). Marked: your wavelength = 550 nm gives d = 0.4231 um. Your inputs: M_obj = 40, M_oc = 10, wavelength = 550 nm, NA = 0.65.*
-
-![Total magnification as M_obj runs from 10 to 70, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-microscope-resolution-live-2)
-
-*Total magnification as M_obj runs from 10 to 70, every other input as you entered it (29 solutions). Marked: your M_obj = 40 gives M = 400. Your inputs: M_obj = 40, M_oc = 10, wavelength = 550 nm, NA = 0.65.*
+*d (resolution limit (smallest resolvable separation)) against NA (numerical aperture of the objective) from 0.325 to 0.975. One curve for each value of wavelength (wavelength of the light): 5.5000e-07 m, 2.7500e-07 m, 1.1000e-06 m. Other inputs as in the worked example: M_obj = 40.0, M_oc = 10.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, NA = 0.65, d = 4.2308e-07 m.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_microscope_resolution', M_obj=40.0, M_oc=10.0, wavelength=5.5e-07, NA=0.65)
@@ -5461,13 +5101,13 @@ $$
 - **Assumes:** all lengths > 0; either the magnification or both scale-bar lengths, not both
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Actual size of the object as image_size runs from 7](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-specimen-size-live-1)
+![size (actual size of the object) against M (magnification of the image (give this or the scale bar)) from 200 to 600](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-specimen-size-curve)
 
-*Actual size of the object as image_size runs from 7.2 to 16.8 mm, every other input as you entered it (41 solutions). Marked: your image_size = 12 mm gives size = 30 um. Your inputs: image_size = 12 mm, M = 400.*
+*size (actual size of the object) against M (magnification of the image (give this or the scale bar)) from 200 to 600. One curve for each value of image_size (size of the object measured on the image): 0.012 m, 0.006 m, 0.024 m. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, M = 400, size = 3.0000e-05 m.*
 
-![Actual size of the object as M runs from 100 to 700, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-specimen-size-live-2)
+![size (actual size of the object) over image_size (size of the object measured on the image) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-specimen-size-field)
 
-*Actual size of the object as M runs from 100 to 700, every other input as you entered it (29 solutions). Marked: your M = 400 gives size = 30 um. Your inputs: image_size = 12 mm, M = 400.*
+*size (actual size of the object) over image_size (size of the object measured on the image) from 0.006 m to 0.018 m and M (magnification of the image (give this or the scale bar)) from 200 to 600: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light 1.0000e-05 m to dark 9.0000e-05 m); iso-lines at size = 2.00e-5, 4.00e-5, 6.00e-5, 8.00e-5 m. Marked: the worked example, image_size = 0.012 m, M = 400, size = 3.0000e-05 m.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_specimen_size', image_size=0.012, M=400.0)
@@ -5518,13 +5158,9 @@ $$
 - **Assumes:** $i > 0$, $T > 0$; $C  \geq  0$; ideal dilute solution
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Water potential as ψ_p runs from -1 to 1 MPa, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-potential-live-1)
+![psi (water potential) against i (ionization (van 't Hoff) constant: 1 for sucrose, about 2 for NaCl) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-potential-curve)
 
-*Water potential as ψ_p runs from -1 to 1 MPa, every other input as you entered it (41 solutions). Marked: your ψ_p = 0 MPa gives ψ = -365.6 kPa. Your inputs: i = 1, C = 150 mM, T = 293.15 K, psi_p = 0 MPa.*
-
-![Water potential and solute (osmotic) potential as i runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-potential-live-2)
-
-*Water potential and solute (osmotic) potential as i runs from 0.25 to 1.75, every other input as you entered it (29 solutions). Marked: your i = 1 gives ψ = -365.6 kPa. Your inputs: i = 1, C = 150 mM, T = 293.15 K, psi_p = 0 MPa.*
+*psi (water potential) against i (ionization (van 't Hoff) constant: 1 for sucrose, about 2 for NaCl) from 0.5 to 1.5. One curve for each value of C (molar concentration of the solute): 150 mol/m^3, 75 mol/m^3, 300 mol/m^3. Other inputs as in the worked example: T = 293.15 K, psi_p = 0.0 Pa. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, i = 1, psi = -365608 Pa.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_water_potential', i=1.0, C=150.0, T=293.15, psi_p=0.0)
@@ -5579,17 +5215,13 @@ $$
 - **Assumes:** $i > 0$, $T > 0$; concentrations >= 0; equal within $1e-9 = no$ net movement
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Water potential of the cell as i_cell runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-movement-live-1)
+![net water movement: into the cell, out of the cell or no net movement (direction) over i_cell (ionization constant of the cell's solute) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-movement-decision)
 
-*Water potential of the cell as i_cell runs from 0.25 to 1.75, every other input as you entered it (41 solutions). Marked: your i_cell = 1 gives ψ_cell = -295.8 kPa. Shaded by net water movement: into the cell, out of the cell or no net movement: out of the cell, into the cell. Your inputs: i_cell = 1, C_cell = 200 mM, P_cell = 0.2 MPa, i_out = 1, C_out = 100 mM, P_out = 0 MPa, T = 298.15 K.*
+*net water movement: into the cell, out of the cell or no net movement (direction) over i_cell (ionization constant of the cell's solute) from 0.1 to 10 and C_cell (solute concentration in the cell) from 20 mol/m^3 to 2000 mol/m^3 (logarithmic axes): each of the 31 × 21 cells is one run of cell-molecular-biology-ai999x, coloured by the verdict it returned, into the cell: 341 cells, out of the cell: 310 cells. Other inputs as in the worked example: P_cell = 200000.0 Pa, i_out = 1.0, C_out = 100.0 mol/m^3, P_out = 0.0 Pa, T = 298.15 K. Marked: the worked example, i_cell = 1, C_cell = 200 mol/m^3 → into the cell.*
 
-![Net water movement: into the cell, out of the cell or no net movement for 25 5 x 5 combinations of i_cell and C_cell around your inputs (the other inputs as entered); the ring marks your inputs, which give into the cell](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-movement-live-2)
+![psi_cell (water potential of the cell) against i_cell (ionization constant of the cell's solute) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-movement-curve)
 
-*Net water movement: into the cell, out of the cell or no net movement for 25 5 x 5 combinations of i_cell and C_cell around your inputs (the other inputs as entered); the ring marks your inputs, which give into the cell. Blank cells admit no answer. Your inputs: i_cell = 1, C_cell = 200 mM, P_cell = 0.2 MPa, i_out = 1, C_out = 100 mM, P_out = 0 MPa, T = 298.15 K.*
-
-![Water potential of the cell as C_cell runs from 120 to 280 mM, every other input as you entered it (23 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-water-movement-live-3)
-
-*Water potential of the cell as C_cell runs from 120 to 280 mM, every other input as you entered it (23 solutions). Marked: your C_cell = 200 mM gives ψ_cell = -295.8 kPa. Shaded by net water movement: into the cell, out of the cell or no net movement: out of the cell, into the cell. Your inputs: i_cell = 1, C_cell = 200 mM, P_cell = 0.2 MPa, i_out = 1, C_out = 100 mM, P_out = 0 MPa, T = 298.15 K.*
+*psi_cell (water potential of the cell) against i_cell (ionization constant of the cell's solute) from 0.5 to 1.5. One curve for each value of C_cell (solute concentration in the cell): 200 mol/m^3, 100 mol/m^3, 400 mol/m^3. Other inputs as in the worked example: P_cell = 200000.0 Pa, i_out = 1.0, C_out = 100.0 mol/m^3, P_out = 0.0 Pa, T = 298.15 K. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, i_cell = 1, psi_cell = -295791 Pa.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_water_movement', i_cell=1.0, C_cell=200.0, P_cell=200000.0, i_out=1.0, C_out=100.0, P_out=0.0, T=298.15)
@@ -5641,13 +5273,13 @@ $$
 - **Assumes:** $T > 0$; |dG0'| <= 500 kJ/mol; 0 < each concentration <= 10 M; ideal (activities = concentrations / 1 M)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Actual free-energy change as T runs from 270](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-reaction-free-energy-live-1)
+![dG (actual free-energy change) against T (absolute temperature (degC is converted)) from 155](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-reaction-free-energy-curve)
 
-*Actual free-energy change as T runs from 270.1 to 350.1 K, every other input as you entered it (41 solutions). Marked: your T = 310.1 K gives dG = -5.269e+04. Your inputs: dG0 = -30500 J/mol, T = 310.15 K, products = 0.25, 1.65, reactants = 2.25.*
+*dG (actual free-energy change) against T (absolute temperature (degC is converted)) from 155.075 K to 465.225 K. One curve for each value of dG0 (standard free-energy change dG0' (biochemical standard state, pH 7)): -30500 J/mol, -15250 J/mol, -61000 J/mol. Other inputs as in the worked example: products = [0.25, 1.65], reactants = [2.25]. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, T = 310.15 K, dG = -52687.9 J/mol.*
 
-![Actual free-energy change as dG0 runs from -4](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-reaction-free-energy-live-2)
+![dG (actual free-energy change) over T (absolute temperature (degC is converted)) from 155](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-reaction-free-energy-field)
 
-*Actual free-energy change as dG0 runs from -4.27e+04 to -1.83e+04 J/mol, every other input as you entered it (25 solutions). Marked: your dG0 = -3.05e+04 J/mol gives dG = -5.269e+04. Your inputs: dG0 = -30500 J/mol, T = 310.15 K, products = 0.25, 1.65, reactants = 2.25.*
+*dG (actual free-energy change) over T (absolute temperature (degC is converted)) from 155.075 K to 465.225 K and dG0 (standard free-energy change dG0' (biochemical standard state, pH 7)) from -45750 J/mol to -15250 J/mol: each of the 21 × 15 cells is one run of cell-molecular-biology-ai999x, shaded by its value (light -79031.9 J/mol to dark -26344 J/mol); iso-lines at dG = -70000, -60000, -50000, -40000, -30000 J/mol. Other inputs as in the worked example: products = [0.25, 1.65], reactants = [2.25]. Marked: the worked example, T = 310.15 K, dG0 = -30500 J/mol, dG = -52687.9 J/mol.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_reaction_free_energy', dG0=-30500.0, T=310.15, products=[0.25, 1.65], reactants=[2.25])
@@ -5698,13 +5330,9 @@ $$
 - **Assumes:** n a whole number >= 1; |E0'| <= 3 V; standard (pH 7) conditions
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Standard free-energy change as n runs from 1 to 6, every other input as you entered it (6 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-redox-free-energy-live-1)
+![dG (standard free-energy change) against E_acceptor (standard reduction potential of the electron acceptor couple (E0')) from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-redox-free-energy-curve)
 
-*Standard free-energy change as n runs from 1 to 6, every other input as you entered it (6 solutions). Marked: your n = 2 gives dG = -2.192e+05. Your inputs: E_acceptor = 0.816 V, E_donor = -0.32 V, n = 2.*
-
-![Standard free-energy change as E_acceptor runs from 0](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-redox-free-energy-live-2)
-
-*Standard free-energy change as E_acceptor runs from 0.4896 to 1.142 V, every other input as you entered it (29 solutions). Marked: your E_acceptor = 0.816 V gives dG = -2.192e+05. Your inputs: E_acceptor = 0.816 V, E_donor = -0.32 V, n = 2.*
+*dG (standard free-energy change) against E_acceptor (standard reduction potential of the electron acceptor couple (E0')) from 0.408 V to 1.224 V. One curve for each value of n (number of electrons transferred): 2, 3, 4. Other inputs as in the worked example: E_donor = -0.32 V. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, E_acceptor = 0.816 V, dG = -219215 J/mol.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_redox_free_energy', E_acceptor=0.816, E_donor=-0.32, n=2)
@@ -5761,17 +5389,9 @@ $$
 - **Assumes:** $0 < P/O  \leq  3$; both energies or neither; efficiency <= 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Fraction of glucose's complete-oxidation](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-atp-yield-live-1)
+![ATP_aerobic (ATP per glucose by aerobic respiration) against P_O_NADH (ATP made per mitochondrial NADH (P/O ratio, e](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-atp-yield-curve)
 
-*Fraction of glucose's complete-oxidation... as dG_ATP runs from 1.83e+04 to 4.27e+04 J/mol, every other input as you entered it (41 solutions). Marked: your dG_ATP = 3.05e+04 J/mol gives efficiency_fermentation = 0.02125. Your inputs: P_O_NADH = 2.5, P_O_FADH2 = 1.5, shuttle = malate-aspartate, dG_ATP = 30500 J/mol, dG_glucose = 2870000 J/mol.*
-
-![ATP per glucose by aerobic respiration for every choice of shuttle, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-atp-yield-live-2)
-
-*ATP per glucose by aerobic respiration for every choice of shuttle, every other input as you entered it (highlighted: your choice). malate-aspartate: 32; glycerol-phosphate: 30. Your inputs: P_O_NADH = 2.5, P_O_FADH2 = 1.5, shuttle = malate-aspartate, dG_ATP = 30500 J/mol, dG_glucose = 2870000 J/mol.*
-
-![Fraction of glucose's free energy stored in](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-atp-yield-live-3)
-
-*Fraction of glucose's free energy stored in... as dG_glucose runs from 1.722e+06 to 4.018e+06 J/mol, every other input as you entered it (29 solutions). Marked: your dG_glucose = 2.87e+06 J/mol gives efficiency_aerobic = 0.3401. Your inputs: P_O_NADH = 2.5, P_O_FADH2 = 1.5, shuttle = malate-aspartate, dG_ATP = 30500 J/mol, dG_glucose = 2870000 J/mol.*
+*ATP_aerobic (ATP per glucose by aerobic respiration) against P_O_NADH (ATP made per mitochondrial NADH (P/O ratio, e.g. 2.5 or 3)) from 1.25 to 3.75. One curve for each value of P_O_FADH2 (ATP made per FADH2 (P/O ratio, e.g. 1.5 or 2)): 1.5, 0.75, 3. Other inputs as in the worked example: shuttle = malate-aspartate, dG_ATP = 30500.0 J/mol, dG_glucose = 2870000.0 J/mol. 22 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, P_O_NADH = 2.5, ATP_aerobic = 32.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_atp_yield', P_O_NADH=2.5, P_O_FADH2=1.5, shuttle='malate-aspartate', dG_ATP=30500.0, dG_glucose=2870000.0)
@@ -5828,13 +5448,9 @@ $$
 - **Assumes:** $0 < N < N_{0}$; $t > 0$; first-order (log-linear) killing
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![D-value (decimal reduction time) as N0 runs from 2](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-decimal-reduction-time-live-1)
+![D (D-value (decimal reduction time)) against t (treatment (exposure) time) from 300 s to 900 s](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-decimal-reduction-time-curve)
 
-*D-value (decimal reduction time) as N0 runs from 2.5e+05 to 1.75e+06, every other input as you entered it (41 solutions). Marked: your N0 = 1e+06 gives D = 2.5 min. Your inputs: N0 = 1000000, N = 100, t = 10 min.*
-
-![D-value (decimal reduction time) as N runs from 25 to 175, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-decimal-reduction-time-live-2)
-
-*D-value (decimal reduction time) as N runs from 25 to 175, every other input as you entered it (29 solutions). Marked: your N = 100 gives D = 2.5 min. Your inputs: N0 = 1000000, N = 100, t = 10 min.*
+*D (D-value (decimal reduction time)) against t (treatment (exposure) time) from 300 s to 900 s. One curve for each value of N0 (initial viable count (CFU/mL or CFU)): 1e+06, 500000, 2e+06. Other inputs as in the worked example: N = 100.0. 31 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, t = 600 s, D = 150 s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_decimal_reduction_time', N0=1000000.0, N=100.0, t=600.0)
@@ -5883,13 +5499,9 @@ $$
 - **Assumes:** D-values and temperatures > 0; $T_{1}  \neq  T_{2}$; D falls as T rises $(z > 0)$; log-linear thermal death curve
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Z-value in kelvin (= degrees Celsius of](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-z-value-live-1)
+![z (z-value in kelvin (= degrees Celsius of difference)) against D1 (D-value at the first temperature) from 60 s to 6000 s on a logarithmic axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-z-value-curve)
 
-*Z-value in kelvin (= degrees Celsius of... as T2 runs from 385.1 to 433.1 K, every other input as you entered it (25 solutions). Marked: your T2 = 393.1 K gives z = 10. Your inputs: D1 = 10 min, T1 = 383.15 K, D2 = 1 min, T2 = 393.15 K.*
-
-![Z-value in kelvin (= degrees Celsius of](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-z-value-live-2)
-
-*Z-value in kelvin (= degrees Celsius of... as T1 runs from 343.1 to 391.7 K, every other input as you entered it (18 solutions). Marked: your T1 = 383.1 K gives z = 10. Your inputs: D1 = 10 min, T1 = 383.15 K, D2 = 1 min, T2 = 393.15 K.*
+*z (z-value in kelvin (= degrees Celsius of difference)) against D1 (D-value at the first temperature) from 60 s to 6000 s on a logarithmic axis. One curve for each value of T2 (second temperature (degC is converted)): 393.15 K, 786.3 K. Other inputs as in the worked example: T1 = 383.15 K, D2 = 60.0 s. 40 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, D1 = 600 s, z = 10.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_z_value', D1=600.0, T1=383.15, D2=60.0, T2=393.15)
@@ -5942,13 +5554,9 @@ $$
 - **Assumes:** D_ref, z, log reductions > 0; |T - T_ref| / $z  \leq  50$; log-linear thermal death
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Holding time for the required log reductions](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-thermal-death-time-live-1)
+![t (holding time for the required log reductions at T) against z (z-value in degrees (a temperature difference: degC = K)) from 1 to 100 on a logarithmic axis, logarithmic output axis](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-thermal-death-time-curve)
 
-*Holding time for the required log reductions... as T_ref runs from 354.2 to 434.2 K, every other input as you entered it (41 solutions). Marked: your T_ref = 394.2 K gives t = 24 min. Your inputs: D_ref = 0.2 min, T_ref = 394.25 K, z = 10, T = 384.25 K, log_reductions = 12.*
-
-![Holding time for the required log reductions](https://www.ai999x.com/?ax_fig=cell-molecular-biology-ai999x/cmb-thermal-death-time-live-2)
-
-*Holding time for the required log reductions... as T runs from 344.2 to 424.2 K, every other input as you entered it (29 solutions). Marked: your T = 384.2 K gives t = 24 min. Your inputs: D_ref = 0.2 min, T_ref = 394.25 K, z = 10, T = 384.25 K, log_reductions = 12.*
+*t (holding time for the required log reductions at T) against z (z-value in degrees (a temperature difference: degC = K)) from 1 to 100 on a logarithmic axis, logarithmic output axis. One curve for each value of T_ref (reference temperature (degC is converted)): 394.25 K, 197.125 K, 788.5 K. Other inputs as in the worked example: D_ref = 12.0 s, T = 384.25 K, log_reductions = 12.0. 41 points per curve computed by cell-molecular-biology-ai999x; marked: the worked example, z = 10, t = 1440 s.*
 
 ```python
 cell_molecular_biology_ai999x.solve('cmb_thermal_death_time', D_ref=12.0, T_ref=394.25, z=10.0, T=384.25, log_reductions=12.0)
