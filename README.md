@@ -10,8 +10,8 @@ Cell and Molecular Biology covers membranes and diffusion, osmosis and membrane 
 
 | | |
 |---|---|
-| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-cell-molecular-biology-1.6.5-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-cell-molecular-biology-1.6.5-linux-x86_64.tar.gz) |
-| **Command line** `cell-molecular-biology` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-cli-1.6.4-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-cli-1.6.4-linux-x86_64.tar.gz) |
+| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cell-molecular-biology-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cell-molecular-biology-1.6.6-linux-x86_64.tar.gz) |
+| **Command line** `cell-molecular-biology` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-linux-x86_64.tar.gz) |
 | **Browser** (any device) | [Try it on the model page](https://www.ai999x.com/models/cell-molecular-biology-ai999x/#capabilities) |
 | **Python** 3.10+ | `pip install cell-molecular-biology-ai999x`: on Windows and Linux (x86-64) `pip` installs the same compiled engine; on other systems (macOS, ARM) it installs a pure-Python build that gives the same answers |
 
@@ -228,124 +228,6 @@ tauD = 0.5589145382 s
 gamma = 1.117829076
 ```
 
-## Rust library: 15 examples
-
-The crate `cell-molecular-biology-ai999x` (in `rust/` of the GitHub repository) answers a JSON request with `cell_molecular_biology_ai999x::solve_json`. Each call below was compiled and run on this release; the comment under it is what it printed. The whole program is `rust/cell-molecular-biology/examples/readme.rs`: `cd rust && cargo run --release --example readme -p cell-molecular-biology-ai999x`.
-
-```rust
-use serde_json::{json, Value};
-
-fn show(request: Value) {
-    let answer: Value = serde_json::from_str(&cell_molecular_biology_ai999x::solve_json(&request.to_string())).unwrap();
-    println!("{}", answer["outcome"].as_str().unwrap_or(""));
-    for v in answer["values"].as_array().into_iter().flatten() {
-        let unit = v[2].as_str().unwrap_or("");
-        let unit = if unit.is_empty() || unit == "1" { String::new() } else { format!(" {unit}") };
-        println!("{} = {}{}", v[0].as_str().unwrap_or(""), v[1], unit);
-    }
-}
-
-show(json!({"key": "cmb_monod_batch_time", "inputs": {"X0": "0.1 g/L", "S0": "10 g/L", "Y": "0.5", "mu_max": "0.72 1/h", "Ks": "0.2 g/L", "X": "4 g/L"}}));
-// SOLVED
-// t = 18954.4960144 s
-// t_h = 5.26513778177
-// S = 2.2 kg/m^3
-// S_g_L = 2.2
-
-show(json!({"key": "cmb_absorbance_ratios", "inputs": {"A260": "0.9", "A280": "0.5", "A230": "0.42"}}));
-// SOLVED
-// ratio_260_280 = 1.8
-// ratio_260_230 = 2.14285714286
-
-show(json!({"key": "cmb_competitive_inhibition", "inputs": {"Vmax": "6 (umol/L)/min", "Km": "50 (umol/L)", "S": "100 (umol/L)", "I": "20 (umol/L)", "Ki": "10 (umol/L)"}}));
-// SOLVED
-// v = 0.00004 mol/(m^3*s)
-// Km_app = 0.15 mol/m^3
-// Vmax_app = 0.0001 mol/(m^3*s)
-// percent_inhibition = 40.0
-
-show(json!({"key": "cmb_ligand_depletion_binding", "inputs": {"Rt": "10 (nmol/L)", "Lt": "20 (nmol/L)", "Kd": "10 (nmol/L)"}}));
-// SOLVED
-// RL = 5.85786437627e-6 mol/m^3
-// fraction_receptor_bound = 0.585786437627
-// free_ligand = 0.0000141421356237 mol/m^3
-// fraction_ligand_bound = 0.292893218813
-
-show(json!({"key": "cmb_cell_volume_osmotic", "inputs": {"V0": "90 fL", "b": "0.4", "osm0": "300 mmol/L", "osm1": "600 mmol/L"}}));
-// SOLVED
-// V = 6.3e-17 m^3
-// V_fL = 63.0
-// ratio = 0.7
-
-show(json!({"key": "cmb_atp_yield", "inputs": {"P_O_NADH": "2.5", "P_O_FADH2": "1.5", "shuttle": "malate-aspartate", "dG_ATP": "30.5 kJ/mol", "dG_glucose": "2870 kJ/mol"}}));
-// SOLVED
-// ATP_aerobic = 32.0
-// ATP_fermentation = 2.0
-// ratio = 16.0
-// ATP_oxidative = 28.0
-// ATP_substrate_level = 4.0
-// NADH_total = 10.0
-
-show(json!({"key": "cmb_decimal_reduction_time", "inputs": {"N0": "1000000", "N": "100", "t": "10 min"}}));
-// SOLVED
-// log_reduction = 4.0
-// D = 150.0 s
-// D_min = 2.5
-// k_per_min = 0.921034037198
-// survival_fraction = 0.0001
-
-show(json!({"key": "cmb_specimen_size", "inputs": {"image_size": "12 mm", "M": "400"}}));
-// SOLVED
-// size = 0.00003 m
-// size_um = 30.0
-// M_image = 400.0
-
-show(json!({"key": "cmb_induction_dynamics", "inputs": {"k_tx": "36 1/h", "delta_m": "7.2 1/h", "k_tl": "180 1/h", "delta_p": "0.36 1/h", "t": "2 h"}}));
-// SOLVED
-// m = 4.99999721305
-// p = 1219.07308397
-// fraction_of_steady_state = 0.487629233589
-
-show(json!({"key": "cmb_buffer_capacity", "inputs": {"C": "100 (mmol/L)", "pKa": "7.21", "pH": "7.21"}}));
-// SOLVED
-// beta = 57.5651427367 mol/m^3
-// beta_mM = 57.5651427367
-// beta_buffer_mM = 57.5646273249
-
-show(json!({"key": "cmb_hemocytometer_count", "inputs": {"counts": [52, 48, 55, 45], "dilution": "2"}}));
-// SOLVED
-// mean_count = 50.0
-// cells_per_mL = 1000000.0
-
-show(json!({"key": "cmb_tm_basic", "inputs": {"seq": "AGCGGATAACAATTTCACACAGGA"}}));
-// SOLVED
-// Tm = 53.9666666667
-// gc_percent = 41.6666666667
-// length = 24
-
-show(json!({"key": "cmb_enzyme_assay_activity", "inputs": {"dA": "0.12", "dt": "1 min", "eps": "6220 L/(mol*cm)", "l": "1 cm", "V_assay": "1 mL", "V_enzyme": "20 uL", "protein": "0.5 mg/mL"}}));
-// SOLVED
-// rate = 0.00032154340836 mol/(m^3*s)
-// units = 0.0192926045016
-// units_per_mL = 0.96463022508
-// specific_activity = 1.92926045016
-
-show(json!({"key": "cmb_kd_from_rates", "inputs": {"kon": "1000000 1/((mol/L)*s)", "koff": "0.001 1/s"}}));
-// SOLVED
-// Kd = 1e-6 mol/m^3
-// Kd_nM = 1.0
-// Ka_per_M = 1000000000.0
-// half_life = 693.14718056 s
-// residence_time = 1000.0 s
-
-show(json!({"key": "cmb_frap_diffusion", "inputs": {"w": "1 um", "t_half": "0.5 s"}}));
-// SOLVED
-// D = 4.47295575496e-13 m^2/s
-// D_um2_s = 0.447295575496
-// tauD = 0.558914538162 s
-// gamma = 1.11782907632
-```
-
 ## Guides
 
 - Desktop app guide: the window, every calculation, scenes and charts: [PDF](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_desktop_guide.pdf) · [HTML](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_desktop_guide.html) · [Markdown](https://huggingface.co/AI999X/cell-molecular-biology-ai999x/blob/main/docs/cell_molecular_biology_ai999x_desktop_guide.md)
@@ -354,7 +236,7 @@ show(json!({"key": "cmb_frap_diffusion", "inputs": {"w": "1 um", "t_half": "0.5 
 
 Every calculation, with its formula, a worked example and its figures: **[Cell and Molecular Biology on ai999x.com](https://www.ai999x.com/models/cell-molecular-biology-ai999x/)**. Install guides for the app and the command line: [https://www.ai999x.com/desktop-cli/](https://www.ai999x.com/desktop-cli/).
 
-Version 1.6.4 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
+Version 1.6.6 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
 
 *The Future Is Self-Improving.*
 
